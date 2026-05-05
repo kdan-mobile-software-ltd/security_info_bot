@@ -1,0 +1,7 @@
+[
+  {"unit": "系統組", "responsibility": "伺服器、資料庫、容器平台的維護與修補"},
+  {"unit": "網路組", "responsibility": "防火牆、交換器、VPN 及網路設備管理"},
+  {"unit": "應用開發組", "responsibility": "Web / App 應用程式安全修補與版本更新"},
+  {"unit": "資訊服務組", "responsibility": "端點設備、郵件系統、SaaS 服務管理"},
+  {"unit": "資安組", "responsibility": "整體資安政策、事件應變、情資追蹤"}
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "category": "對外 Web 服務",
+    "items": ["Apache HTTP Server 2.4", "Nginx 1.24", "Tomcat 10"],
+    "owner": "系統組"
+  },
+  {
+    "category": "資料庫",
+    "items": ["PostgreSQL 15", "Redis 7", "MongoDB 6"],
+    "owner": "系統組"
+  },
+  {
+    "category": "網路設備",
+    "items": ["Fortinet FortiGate 7.4", "Cisco ASA 9.x"],
+    "owner": "網路組"
+  },
+  {
+    "category": "端點作業系統",
+    "items": ["Windows 11 23H2", "macOS 14 Sonoma", "Ubuntu 22.04"],
+    "owner": "資訊服務組"
+  },
+  {
+    "category": "開發框架",
+    "items": ["Spring Boot 3.x", "React 18", "Django 5.x", ".NET 8"],
+    "owner": "應用開發組"
+  },
+  {
+    "category": "容器平台",
+    "items": ["Docker 25.x", "Kubernetes 1.29"],
+    "owner": "系統組"
+  },
+  {
+    "category": "郵件系統",
+    "items": ["Microsoft 365 Exchange Online"],
+    "owner": "資訊服務組"
+  }
+]

@@ -1,0 +1,44 @@
+{
+  "title": "Known Exploited Vulnerabilities Catalog",
+  "catalogVersion": "2024.01.01",
+  "dateReleased": "2024-04-15T00:00:00Z",
+  "count": 3,
+  "vulnerabilities": [
+    {
+      "cveID": "CVE-2024-12345",
+      "vendorProject": "Apache",
+      "product": "HTTP Server",
+      "vulnerabilityName": "Apache HTTP Server RCE Vulnerability",
+      "dateAdded": "2024-04-15",
+      "shortDescription": "Apache HTTP Server contains a remote code execution vulnerability that allows attackers to execute arbitrary code.",
+      "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
+      "dueDate": "2024-05-06",
+      "knownRansomwareCampaignUse": "Known",
+      "notes": "https://httpd.apache.org/security/"
+    },
+    {
+      "cveID": "CVE-2024-67890",
+      "vendorProject": "Microsoft",
+      "product": "Windows",
+      "vulnerabilityName": "Windows Kernel Privilege Escalation",
+      "dateAdded": "2024-04-15",
+      "shortDescription": "Windows kernel contains a privilege escalation vulnerability.",
+      "requiredAction": "Apply updates per vendor instructions.",
+      "dueDate": "2024-05-06",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": ""
+    },
+    {
+      "cveID": "CVE-2024-11111",
+      "vendorProject": "Cisco",
+      "product": "IOS XE",
+      "vulnerabilityName": "Cisco IOS XE Web UI Command Injection",
+      "dateAdded": "2024-04-14",
+      "shortDescription": "An older entry that should not be picked up for 2024-04-15.",
+      "requiredAction": "Apply updates.",
+      "dueDate": "2024-05-05",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": ""
+    }
+  ]
+}
