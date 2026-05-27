@@ -22,8 +22,6 @@ ASSETS_WORKSHEET = os.environ.get("ASSETS_WORKSHEET", "工作表1")
 GIT_ARCHIVE_BRANCH = os.environ.get("GIT_ARCHIVE_BRANCH", "")
 GIT_ARCHIVE_AUTO_PUSH = os.environ.get("GIT_ARCHIVE_AUTO_PUSH", "false").lower() == "true"
 
-MATTERMOST_OPS_WEBHOOK = os.environ.get("MATTERMOST_OPS_WEBHOOK", "")
-
 USE_FIXTURE_DATA = os.environ.get("USE_FIXTURE_DATA", "true").lower() == "true"
 FIXTURE_DIR = Path(__file__).parent.parent / "tests" / "fixtures"
 

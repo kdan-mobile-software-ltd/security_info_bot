@@ -47,7 +47,7 @@ uv run python main.py --source cisa_kev
 | `--source {twcert,cisa_kev}` | 情資來源（必填） |
 | `--since YYYY-MM-DD` | 僅擷取指定日期（含）之後的情資，**預設為今天** |
 | `--limit N` | 限制最多處理 N 筆（測試用） |
-| `--dry-run` | 模擬執行，不寫入 Sheet、不 commit archive、不發 Mattermost |
+| `--dry-run` | 模擬執行，不寫入 Sheet、不 commit archive |
 | `--list-data [--source 前綴]` | 列出 `src/data/` 下已儲存的中間檔案 |
 
 ### 分階段執行
@@ -146,7 +146,6 @@ uv run python main.py --list-data --source analysis_twcert  # 只看 Stage 2 twc
 | `ASSETS_WORKSHEET` | 資產清冊工作表名稱（預設 `工作表1`） | 否 |
 | `GIT_ARCHIVE_BRANCH` | IoC / JSON 存檔的 git 分支名稱（留空停用，建議 `data`） | 否 |
 | `GIT_ARCHIVE_AUTO_PUSH` | 設為 `true` 時每次 commit 後自動 push（CI 用） | 否 |
-| `MATTERMOST_OPS_WEBHOOK` | Mattermost 維運頻道 Webhook（登入失敗等警報） | 否 |
 | `USE_FIXTURE_DATA` | 設為 `true` 使用樣板資料開發（預設 `true`） | 否 |
 
 ## 專案結構

@@ -24,7 +24,6 @@ jobs:
           ASSETS_SHEET_ID:       ${{ secrets.ASSETS_SHEET_ID }}
           ASSETS_WORKSHEET:      ${{ secrets.ASSETS_WORKSHEET || '工作表1' }}
           GOOGLE_SA_JSON_B64:    ${{ secrets.GOOGLE_SA_JSON_B64 }}
-          MATTERMOST_OPS_WEBHOOK: ${{ secrets.MATTERMOST_OPS_WEBHOOK }}
           GIT_ARCHIVE_BRANCH:    ${{ secrets.GIT_ARCHIVE_BRANCH || 'data' }}
           GIT_ARCHIVE_AUTO_PUSH: 'true'
           USE_FIXTURE_DATA:      'false'
