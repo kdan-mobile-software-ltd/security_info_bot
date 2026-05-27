@@ -74,11 +74,16 @@ def _ensure_worktree() -> Path:
     return wt
 
 
-def commit_files(files: list[Path], message: str, dest_subdir: str = "ioc") -> None:
+def commit_files(
+    files: list[Path],
+    message: str,
+    archive_dir: str | Path | None = None,
+) -> None:
     """Commit files to the archive branch.
 
-    Files under the repo root preserve their relative path; files outside
-    (e.g. /tmp IoC txts) are placed under dest_subdir/ in the worktree.
+    When archive_dir is given, all files land in that directory inside the
+    worktree (e.g. 'twcert/2026-05').  Otherwise, files under the repo root
+    preserve their relative path; files outside go to 'ioc/'.
     No-ops when GIT_ARCHIVE_BRANCH is empty.
     """
     if not GIT_ARCHIVE_BRANCH:
@@ -92,10 +97,13 @@ def commit_files(files: list[Path], message: str, dest_subdir: str = "ioc") -> N
     repo = _repo_root()
 
     for src in existing:
-        try:
-            rel = src.relative_to(repo)
-        except ValueError:
-            rel = Path(dest_subdir) / src.name
+        if archive_dir is not None:
+            rel = Path(archive_dir) / src.name
+        else:
+            try:
+                rel = src.relative_to(repo)
+            except ValueError:
+                rel = Path("ioc") / src.name
         dst = wt / rel
         dst.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(src, dst)
@@ -138,14 +146,14 @@ def _github_base() -> str | None:
     return _github_base_url_cache
 
 
-def ioc_file_url(filename: str) -> str | None:
+def ioc_file_url(filename: str, archive_dir: str | Path) -> str | None:
     """Return the GitHub raw URL for a committed IoC file, or None if unavailable."""
     if not GIT_ARCHIVE_BRANCH:
         return None
     base = _github_base()
     if not base:
         return None
-    return f"{base}/raw/{GIT_ARCHIVE_BRANCH}/ioc/{filename}"
+    return f"{base}/raw/{GIT_ARCHIVE_BRANCH}/{archive_dir}/{filename}"
 
 
 def _push() -> None:

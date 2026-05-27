@@ -29,6 +29,14 @@ from src.utils.logging import log
 _TW = timezone(timedelta(hours=8))
 
 
+def _archive_dir(source: str, date_str: str | None) -> str:
+    if date_str and len(date_str) >= 7 and date_str[4] == "-":
+        month = date_str[:7]
+    else:
+        month = datetime.now(_TW).strftime("%Y-%m")
+    return f"{source}/{month}"
+
+
 def _item_months(items: list[IntelItem]) -> set[str]:
     months = set()
     for item in items:
@@ -57,7 +65,8 @@ def stage_fetch(
         raise ValueError(f"Unknown source: {source}")
     if save:
         path = save_items(items, source, tag=since_date)
-        commit_files([path], f"data({source}): fetch {since_date or 'latest'}, {len(items)} items")
+        commit_files([path], f"data({source}): fetch {since_date or 'latest'}, {len(items)} items",
+                     archive_dir=_archive_dir(source, since_date))
     return items
 
 
@@ -95,7 +104,8 @@ def stage_analyze(
 
     if save and pairs:
         path = save_analysis(pairs, source, tag=tag)
-        commit_files([path], f"data({source}): analysis {tag or 'latest'}, {len(pairs)} pairs")
+        commit_files([path], f"data({source}): analysis {tag or 'latest'}, {len(pairs)} pairs",
+                     archive_dir=_archive_dir(source, tag))
     return pairs
 
 
@@ -117,8 +127,11 @@ def stage_write_sheet(
         if not dry_run:
             ioc_path: Path | None = write_ioc_txt(intel.intel_id, intel.ioc_ips, intel.ioc_hashes, intel.ioc_domains)
             if ioc_path:
-                commit_files([ioc_path], f"data({intel.source.lower()}): IoC for {intel.intel_id}")
-                ioc_url = ioc_file_url(ioc_path.name) or ""
+                src_lower = intel.source.lower()
+                month = (intel.publish_date or "")[:7] or datetime.now(_TW).strftime("%Y-%m")
+                adir = f"{src_lower}/{month}"
+                commit_files([ioc_path], f"data({src_lower}): IoC for {intel.intel_id}", archive_dir=adir)
+                ioc_url = ioc_file_url(ioc_path.name, adir) or ""
 
         cve_list = intel.cve_ids if intel.cve_ids else [""]
         for idx, cve_id in enumerate(cve_list):
