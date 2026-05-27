@@ -14,7 +14,7 @@ uv run pytest tests/ -v
 # Run a single test file
 uv run pytest tests/test_cisa_kev_fetcher.py -v
 
-# Dry-run without writing to Sheet or sending alerts
+# Dry-run without writing to Sheet
 uv run python main.py --source cisa_kev --dry-run
 uv run python main.py --source twcert --dry-run
 
@@ -26,29 +26,34 @@ uv run python main.py --source twcert --fetch-only --since 2026-05-01
 # Limit items for quick testing (stops pagination early for TWCERT)
 uv run python main.py --source twcert --fetch-only --limit 3
 
+# Stage 1+2: fetch + analyze, save both JSONs automatically (default)
+uv run python main.py --source twcert --analyze-only
+
 # Stage 2: analyze from a saved fetch JSON
 uv run python main.py --source twcert --load-data src/data/twcert_<ts>.json --analyze-only --dry-run
 
 # Stage 3: write Sheet from a saved analysis JSON
-uv run python main.py --source twcert --load-analysis src/data/analysis_twcert_<ts>.json --write-only --dry-run
+uv run python main.py --source twcert --load-analysis src/data/analysis_twcert_<ts>.json --dry-run
 
-# Stage 4: send Mattermost from a saved sheet payload JSON
-uv run python main.py --source twcert --load-sheet src/data/sheet_twcert_<ts>.json --dry-run
+# Disable auto-save (e.g. quick test)
+uv run python main.py --source cisa_kev --dry-run --no-save-data
 
-# List locally saved intermediate files (prefix filters: twcert, analysis_twcert, sheet_twcert, etc.)
+# List locally saved intermediate files (prefix filters: twcert, analysis_twcert, etc.)
 uv run python main.py --list-data
 uv run python main.py --list-data --source analysis_twcert
 ```
 
 ## Architecture
 
-The pipeline is split into 4 independently runnable stages, each persisting a JSON handoff to `src/data/`:
+The pipeline runs 3 stages:
 
 ```
-Stage 1 Fetch → Stage 2 Analyze → Stage 3 Write Sheet → Stage 4 Notify
-      ↓               ↓                   ↓
-{source}_*.json  analysis_{source}_*.json  sheet_{source}_*.json
+Stage 1 Fetch → Stage 2 Analyze → Stage 3 Write Sheet
+      ↓               ↓
+{source}_*.json  analysis_{source}_*.json
 ```
+
+Intel rows are written to a per-month worksheet (tab named `YYYY-MM` matching each item's `publish_date`). Tabs are auto-created on first use; dedup is scoped per month tab.
 
 **Two independent sources**, both producing `IntelItem` objects. Both default to today if `--since` is omitted:
 - `src/fetchers/twcert.py` — REST API client that logs in to the TWCERT enterprise portal and extracts structured threat intel. Parses base64-embedded xlsx attachments in `infoFile` to extract IP/hash/domain IoCs. Raises `TwcertLoginError` on auth failure, which triggers an ops alert. Default: today TW+8.
@@ -59,9 +64,8 @@ Stage 1 Fetch → Stage 2 Analyze → Stage 3 Write Sheet → Stage 4 Notify
 **Multi-CVE fan-out** (`main.py:stage_write_sheet`): If an `IntelItem` has multiple CVE IDs, it creates one `SheetRow` per CVE with a numeric suffix on the `intel_id` (e.g., `TWCERT-123-1`, `TWCERT-123-2`).
 
 **Sinks** (write-side):
-- `src/sinks/sheets.py` — Google Sheets via `gspread`; reads column B to deduplicate before writing. Also loads asset/unit/rules context from the same spreadsheet.
-- `src/sinks/drive.py` — Uploads IoC `.txt` files to a configured Google Drive folder.
-- `src/sinks/mattermost.py` — Sends Mattermost webhook alerts for High/Critical items.
+- `src/sinks/sheets.py` — Google Sheets via `gspread`; per-month worksheet auto-creation and dedup. Loads asset context from the external sheet (`ASSETS_SHEET_ID`). 單位清單 and 風險規章 are no longer used.
+- `src/sinks/drive.py` — Uploads IoC `.txt` files to a configured Google Drive folder (only when `GOOGLE_DRIVE_IOC_FOLDER_ID` is set).
 
 **Fixture mode**: `USE_FIXTURE_DATA=true` (default) makes all Sheet reads load from `tests/fixtures/` instead of Google Sheets, so development works without credentials.
 
@@ -69,7 +73,7 @@ Stage 1 Fetch → Stage 2 Analyze → Stage 3 Write Sheet → Stage 4 Notify
 
 - `IntelItem` — raw fetched intel; serialisable via `to_dict`/`from_dict`. Persisted by Stage 1.
 - `AnalysisResult` — Gemini output fields; serialisable via `to_dict`/`from_dict`. Persisted by Stage 2 (inside `analysis_*.json`).
-- `SheetRow` — 21-column (A–U) Google Sheet row; built by `SheetRow.from_intel_and_analysis(...)`. Column U holds `impact_level` (TWCERT severity pre-assessment).
+- `SheetRow` — 21-column (A–U) Google Sheet row; built by `SheetRow.from_intel_and_analysis(...)`. Column T holds `impact_level` (TWCERT 影響等級); column U holds `reference_urls`.
 
 ## Configuration (`src/config.py`)
 

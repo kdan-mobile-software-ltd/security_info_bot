@@ -12,3 +12,4 @@ service_account.json
 ioc_*.txt
 .playwright-mcp
 .claude/settings.local.json
+secrets/
