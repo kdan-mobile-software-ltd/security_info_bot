@@ -66,8 +66,8 @@ class SheetRow:
     completion_date: str = ""  # Q
     handler: str = ""  # R
     notification_time: str = ""  # S
-    reference_urls: str = ""  # T
-    impact_level: str = ""  # U
+    impact_level: str = ""  # T
+    reference_urls: str = ""  # U
 
     def to_row_list(self) -> list[str]:
         return [
@@ -90,8 +90,8 @@ class SheetRow:
             self.completion_date,
             self.handler,
             self.notification_time,
-            self.reference_urls,
             self.impact_level,
+            self.reference_urls,
         ]
 
     @staticmethod
@@ -102,7 +102,7 @@ class SheetRow:
         intel_id_suffix: str = "",
         ioc_drive_link: str = "",
     ) -> SheetRow:
-        now = datetime.now().strftime("%Y-%m-%d %H:%M")
+        now = datetime.now().strftime("%Y-%m-%d")
         row_intel_id = intel.intel_id
         if intel_id_suffix:
             row_intel_id = f"{intel.intel_id}-{intel_id_suffix}"
