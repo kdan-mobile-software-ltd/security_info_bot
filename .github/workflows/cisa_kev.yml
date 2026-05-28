@@ -3,6 +3,11 @@ on:
   schedule:
     - cron: '0 1 * * *'  # 09:00 TW+8
   workflow_dispatch:
+    inputs:
+      since:
+        description: 'Fetch start date (YYYY-MM-DD, UTC). Defaults to today.'
+        required: false
+        default: ''
 
 jobs:
   analyze:
@@ -27,4 +32,7 @@ jobs:
           GIT_ARCHIVE_BRANCH:    ${{ secrets.GIT_ARCHIVE_BRANCH || 'data' }}
           GIT_ARCHIVE_AUTO_PUSH: 'true'
           USE_FIXTURE_DATA:      'false'
-        run: uv run python main.py --source cisa_kev --since $(date -u +%Y-%m-%d)
+        run: |
+          SINCE="${{ inputs.since || '' }}"
+          [ -z "$SINCE" ] && SINCE=$(date -u +%Y-%m-%d)
+          uv run python main.py --source cisa_kev --since "$SINCE"
