@@ -34,8 +34,6 @@ def send_ops_alert(title: str, detail: str) -> None:
     log.error("[OPS] %s — %s", title, detail)
 ```
 
-**Mattermost integration has been removed.** `send_ops_alert` now only writes to the log at `ERROR` level. It is kept as a named function (rather than inlined `log.error` calls) so call sites remain semantically distinct from routine errors, and can be upgraded to a new notification channel in future without touching callers.
-
 Call sites:
 - `src/fetchers/twcert.py` — login failure, fetch exception.
 - `src/analyzer/gemini.py` — quota exhausted after final retry.

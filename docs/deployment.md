@@ -1,5 +1,7 @@
 # Deployment
 
+> **首次部署？** 請先看 [deployment-guide.md](deployment-guide.md)（SA 建立、API 啟用、Sheet 分享、GitHub Secrets 設定）。本文件記錄 CI 內部行為，假設所有憑證已就位。
+
 ## GitHub Actions workflows
 
 Two independent workflows under `.github/workflows/`:

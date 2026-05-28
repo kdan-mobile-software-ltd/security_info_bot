@@ -52,6 +52,7 @@ uv run ruff format --check .
 - [Data Models](docs/data-models.md) — `IntelItem` / `AnalysisResult` / `SheetRow` / Gemini schema / Sheet columns A–U
 - [Configuration](docs/configuration.md) — env var reference, SA credential resolution, fixture mode files
 - [Archive Branch](docs/archive-branch.md) — git worktree mechanics, `{source}/{YYYY-MM}/` layout, IoC URL backfill
+- [Deployment Guide](docs/deployment-guide.md) — 首次部署操作指引：GCP SA、Sheets 分享、Gemini Key、TWCERT、GitHub Secrets
 - [Deployment](docs/deployment.md) — CI workflows, daily schedule, GitHub Secrets, permissions, self-hosted runner
 - [Error Handling](docs/error-handling.md) — `TwcertLoginError` / `GeminiQuotaExhausted`, retry/backoff, `send_ops_alert` (log-only)
 - [Original Design Proposal (zh-TW, historical)](docs/spec/資安情資_AI_自動化分析計劃.md)
