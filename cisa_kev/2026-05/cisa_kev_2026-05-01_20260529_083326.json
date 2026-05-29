@@ -1,0 +1,407 @@
+{
+  "source": "cisa_kev",
+  "fetched_at": "2026-05-29T08:33:26.742114",
+  "count": 20,
+  "items": [
+    {
+      "intel_id": "CVE-2026-48027",
+      "source": "CISA_KEV",
+      "publish_date": "2026-05-27",
+      "title": "[CISA KEV] Nx Nx Console - Nx Console Embedded Malicious Code Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-48027"
+      ],
+      "raw_content": "CVE: CVE-2026-48027\n廠商: Nx\n產品: Nx Console\n漏洞名稱: Nx Console Embedded Malicious Code Vulnerability\n說明: Nx Console contains an embedded malicious code vulnerability that allowed a malicious version of Nx Console to be published. The compromised extension fetched an obfuscated payload that could harvested credentials from multiple sources on disk and in memory.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-06-10\n已知勒索軟體利用: Known\n",
+      "reference_urls": [
+        "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://github.com/nrwl/nx-console/security/advisories/GHSA-c9j4-9m59-847w ; https://nvd.nist.gov/vuln/detail/CVE-2026-48027",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-48027"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-45321",
+      "source": "CISA_KEV",
+      "publish_date": "2026-05-27",
+      "title": "[CISA KEV] TanStack TanStack - TanStack Unspecified Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-45321"
+      ],
+      "raw_content": "CVE: CVE-2026-45321\n廠商: TanStack\n產品: TanStack\n漏洞名稱: TanStack Unspecified Vulnerability\n說明: TanStack contains an unspecified vulnerability that allowed malicious versions of the product to be published to the npm registry to publish credential-stealing malware under a trusted identity.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-06-10\n已知勒索軟體利用: Known\n",
+      "reference_urls": [
+        "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://github.com/TanStack/router/security/advisories/GHSA-g7cv-rxg3-hmpx ; https://nvd.nist.gov/vuln/detail/CVE-2026-45321",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-45321"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-8398",
+      "source": "CISA_KEV",
+      "publish_date": "2026-05-27",
+      "title": "[CISA KEV] Daemon Daemon Tools Lite - Daemon Tools Lite Embedded Malicious Code Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-8398"
+      ],
+      "raw_content": "CVE: CVE-2026-8398\n廠商: Daemon\n產品: Daemon Tools Lite\n漏洞名稱: Daemon Tools Lite Embedded Malicious Code Vulnerability\n說明: Daemon Tools contains an unspecified vulnerability that has a high impact on confidentiality, integrity, and availability.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-05-30\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://blog.daemon-tools.cc/post/security-incident ; https://nvd.nist.gov/vuln/detail/CVE-2026-8398",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-8398"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-48172",
+      "source": "CISA_KEV",
+      "publish_date": "2026-05-26",
+      "title": "[CISA KEV] LiteSpeed cPanel Plugin - LiteSpeed cPanel Plugin Privilege Escalation Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-48172"
+      ],
+      "raw_content": "CVE: CVE-2026-48172\n廠商: LiteSpeed\n產品: cPanel Plugin\n漏洞名稱: LiteSpeed cPanel Plugin Privilege Escalation Vulnerability\n說明: LiteSpeed cPanel Plugin contains privilege escalation vulnerability that is exposed via the user-end cPanel plugin, which can be abused by any cPanel user account to execute arbitrary scripts with root privileges.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-05-29\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/ ; https://nvd.nist.gov/vuln/detail/CVE-2026-48172",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-48172"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-9082",
+      "source": "CISA_KEV",
+      "publish_date": "2026-05-22",
+      "title": "[CISA KEV] Drupal Core - Drupal Core SQL Injection Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-9082"
+      ],
+      "raw_content": "CVE: CVE-2026-9082\n廠商: Drupal\n產品: Core\n漏洞名稱: Drupal Core SQL Injection Vulnerability\n說明: Drupal Core contains a SQL injection vulnerability that could allow for privilege escalation and remote code execution via specially crafted requests sent with the database abstraction API.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-05-27\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://www.drupal.org/sa-core-2026-004 ; https://nvd.nist.gov/vuln/detail/CVE-2026-9082",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-9082"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2025-34291",
+      "source": "CISA_KEV",
+      "publish_date": "2026-05-21",
+      "title": "[CISA KEV] Langflow Langflow - Langflow Origin Validation Error Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2025-34291"
+      ],
+      "raw_content": "CVE: CVE-2025-34291\n廠商: Langflow\n產品: Langflow\n漏洞名稱: Langflow Origin Validation Error Vulnerability\n說明: Langflow contains an origin validation error vulnerability in which an overly permissive CORS configuration combined with a refresh token cookie configured as SameSite=None allows a malicious webpage to perform cross-origin requests that include credentials and successfully call the refresh endpoint. This could allow the attacker to execute arbitrary code and achieve full system compromise via obtained tokens that permit access to authenticated endpoints.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-06-04\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://github.com/langflow-ai/langflow ; https://github.com/langflow-ai/langflow/releases/tag/v1.9.3; https://github.com/langflow-ai/langflow/issues/11465#event-25774545848 ; https://nvd.nist.gov/vuln/detail/CVE-2025-34291",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-34291"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-34926",
+      "source": "CISA_KEV",
+      "publish_date": "2026-05-21",
+      "title": "[CISA KEV] Trend Micro Apex One - Trend Micro Apex One (On-Premise) Directory Traversal Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-34926"
+      ],
+      "raw_content": "CVE: CVE-2026-34926\n廠商: Trend Micro\n產品: Apex One\n漏洞名稱: Trend Micro Apex One (On-Premise) Directory Traversal Vulnerability\n說明: Trend Micro Apex One (on-premise) contains a directory traversal vulnerability that could allow a pre-authenticated local attacker to modify a key table on the server to inject malicious code to deploy to agents on affected installations.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-06-04\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://success.trendmicro.com/en-US/solution/KA-0023430 ; https://nvd.nist.gov/vuln/detail/CVE-2026-34926",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-34926"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2008-4250",
+      "source": "CISA_KEV",
+      "publish_date": "2026-05-20",
+      "title": "[CISA KEV] Microsoft Windows - Microsoft Windows Buffer Overflow Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2008-4250"
+      ],
+      "raw_content": "CVE: CVE-2008-4250\n廠商: Microsoft\n產品: Windows\n漏洞名稱: Microsoft Windows Buffer Overflow Vulnerability\n說明: Microsoft Windows contains a buffer overflow vulnerability in the Windows Server Service that allows remote attackers to execute arbitrary code via a crafted RPC request that triggers an overflow during path canonicalization.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-06-03\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://learn.microsoft.com/en-us/security-updates/securitybulletins/2008/ms08-067 ; https://nvd.nist.gov/vuln/detail/CVE-2008-4250",
+        "https://nvd.nist.gov/vuln/detail/CVE-2008-4250"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2009-1537",
+      "source": "CISA_KEV",
+      "publish_date": "2026-05-20",
+      "title": "[CISA KEV] Microsoft DirectX - Microsoft DirectX NULL Byte Overwrite Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2009-1537"
+      ],
+      "raw_content": "CVE: CVE-2009-1537\n廠商: Microsoft\n產品: DirectX\n漏洞名稱: Microsoft DirectX NULL Byte Overwrite Vulnerability\n說明: Microsoft DirectX contains a NULL byte overwrite vulnerability in the QuickTime Movie Parser Filter in quartz.dll in DirectShow which could allow remote attackers to execute arbitrary code via a crafted QuickTime media file.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-06-03\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://learn.microsoft.com/en-us/security-updates/securitybulletins/2009/ms09-028 ; https://nvd.nist.gov/vuln/detail/CVE-2009-1537",
+        "https://nvd.nist.gov/vuln/detail/CVE-2009-1537"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2009-3459",
+      "source": "CISA_KEV",
+      "publish_date": "2026-05-20",
+      "title": "[CISA KEV] Adobe Acrobat and Reader - Adobe Acrobat and Reader Heap-Based Buffer Overflow Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2009-3459"
+      ],
+      "raw_content": "CVE: CVE-2009-3459\n廠商: Adobe\n產品: Acrobat and Reader\n漏洞名稱: Adobe Acrobat and Reader Heap-Based Buffer Overflow Vulnerability\n說明: Adobe Acrobat and Reader contain a heap-based buffer overflow vulnerability which could allow remote attackers to execute arbitrary code via a crafted PDF file that triggers memory corruption.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-06-03\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://www.cisa.gov/news-events/alerts/2009/10/13/adobe-reader-and-acrobat-vulnerabilities ; https://web.archive.org/web/20120324170253/http://www.adobe.com/support/security/bulletins/apsb09-15.html#:~:text=CVE%2D2009%2D3459).-,NOTE%3A,-There%20are%20reports ; https://nvd.nist.gov/vuln/detail/CVE-2009-3459",
+        "https://nvd.nist.gov/vuln/detail/CVE-2009-3459"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2010-0249",
+      "source": "CISA_KEV",
+      "publish_date": "2026-05-20",
+      "title": "[CISA KEV] Microsoft Internet Explorer - Microsoft Internet Explorer Use-After-Free Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2010-0249"
+      ],
+      "raw_content": "CVE: CVE-2010-0249\n廠商: Microsoft\n產品: Internet Explorer\n漏洞名稱: Microsoft Internet Explorer Use-After-Free Vulnerability\n說明: Microsoft Internet Explorer contains an use-after-free vulnerability that could allow remote attackers to execute arbitrary code by accessing a pointer associated with a deleted object. The impacted product could be end-of-life (EoL) and/or end-of-service (EoS). Users should discontinue product utilization.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-06-03\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://learn.microsoft.com/en-us/security-updates/SecurityAdvisories/2010/979352 ; https://nvd.nist.gov/vuln/detail/CVE-2010-0249",
+        "https://nvd.nist.gov/vuln/detail/CVE-2010-0249"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2010-0806",
+      "source": "CISA_KEV",
+      "publish_date": "2026-05-20",
+      "title": "[CISA KEV] Microsoft Internet Explorer - Microsoft Internet Explorer Use-After-Free Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2010-0806"
+      ],
+      "raw_content": "CVE: CVE-2010-0806\n廠商: Microsoft\n產品: Internet Explorer\n漏洞名稱: Microsoft Internet Explorer Use-After-Free Vulnerability\n說明: Microsoft Internet Explorer contains an use-after-free vulnerability that could allow remote attackers to execute arbitrary code via vectors involving access to an invalid pointer after the deletion of an object. The impacted product could be end-of-life (EoL) and/or end-of-service (EoS). Users should discontinue product utilization.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-06-03\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://learn.microsoft.com/en-us/security-updates/securityadvisories/2010/981374 ; https://nvd.nist.gov/vuln/detail/CVE-2010-0806",
+        "https://nvd.nist.gov/vuln/detail/CVE-2010-0806"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-41091",
+      "source": "CISA_KEV",
+      "publish_date": "2026-05-20",
+      "title": "[CISA KEV] Microsoft Defender - Microsoft Defender Link Following Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-41091"
+      ],
+      "raw_content": "CVE: CVE-2026-41091\n廠商: Microsoft\n產品: Defender\n漏洞名稱: Microsoft Defender Link Following Vulnerability\n說明: Microsoft Defender contains a link following vulnerability that allows an authorized attacker to elevate privileges locally.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-06-03\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-41091 ; https://nvd.nist.gov/vuln/detail/CVE-2026-41091",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-41091"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-45498",
+      "source": "CISA_KEV",
+      "publish_date": "2026-05-20",
+      "title": "[CISA KEV] Microsoft Defender - Microsoft Defender Denial of Service Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-45498"
+      ],
+      "raw_content": "CVE: CVE-2026-45498\n廠商: Microsoft\n產品: Defender\n漏洞名稱: Microsoft Defender Denial of Service Vulnerability\n說明: Microsoft Defender contains an unspecified vulnerability that allows for denial of service.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-06-03\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-45498 ; https://nvd.nist.gov/vuln/detail/CVE-2026-45498",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-45498"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-42897",
+      "source": "CISA_KEV",
+      "publish_date": "2026-05-15",
+      "title": "[CISA KEV] Microsoft Microsoft - Microsoft Exchange Server Cross-Site Scripting Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-42897"
+      ],
+      "raw_content": "CVE: CVE-2026-42897\n廠商: Microsoft\n產品: Microsoft\n漏洞名稱: Microsoft Exchange Server Cross-Site Scripting Vulnerability\n說明: Microsoft Exchange Server contains a cross-site scripting vulnerability during web page generation in Outlook Web Access and when certain interaction conditions are met, arbitrary JavaScript can be executed in the browser context.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-05-29\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-42897 ; https://learn.microsoft.com/en-us/exchange/plan-and-deploy/post-installation-tasks/security-best-practices/exchange-emergency-mitigation-service ; https://nvd.nist.gov/vuln/detail/CVE-2026-42897",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-42897"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-20182",
+      "source": "CISA_KEV",
+      "publish_date": "2026-05-14",
+      "title": "[CISA KEV] Cisco Catalyst SD-WAN - Cisco Catalyst SD-WAN Controller Authentication Bypass Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-20182"
+      ],
+      "raw_content": "CVE: CVE-2026-20182\n廠商: Cisco\n產品: Catalyst SD-WAN\n漏洞名稱: Cisco Catalyst SD-WAN Controller Authentication Bypass Vulnerability\n說明: Cisco Catalyst SD-WAN Controller & Manager contain an authentication bypass vulnerability that allows an unauthenticated, remote attacker to bypass authentication and obtain administrative privileges on an affected system.\nCISA 要求措施: Please adhere to CISA’s guidelines to assess exposure and mitigate risks associated with Cisco SD-WAN devices as outlined in CISA’s Emergency Directive 26-03 (URL listed below in Notes) and CISA’s Hunt & Hardening Guidance for Cisco SD-WAN Devices (URL listed below in Notes). Adhere to the applicable BOD 22-01 guidance for cloud services or discontinue use of the product if mitigations are not available.\n修補截止日: 2026-05-17\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "CISA Mitigation Instructions: https://www.cisa.gov/news-events/directives/ed-26-03-mitigate-vulnerabilities-cisco-sd-wan-systems ; https://www.cisa.gov/news-events/directives/supplemental-direction-ed-26-03-hunt-and-hardening-guidance-cisco-sd-wan-systems ; https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-rpa2-v69WY2SW ; https://nvd.nist.gov/vuln/detail/CVE-2026-20182",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-20182"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-42208",
+      "source": "CISA_KEV",
+      "publish_date": "2026-05-08",
+      "title": "[CISA KEV] BerriAI LiteLLM - BerriAI LiteLLM SQL Injection Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-42208"
+      ],
+      "raw_content": "CVE: CVE-2026-42208\n廠商: BerriAI\n產品: LiteLLM\n漏洞名稱: BerriAI LiteLLM SQL Injection Vulnerability\n說明: BerriAI LiteLLM contains a SQL injection vulnerability that allows an attacker to read data from the proxy's database and potentially modify it, leading to unauthorized access to the proxy and the credentials it manages.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-05-11\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://github.com/BerriAI/litellm/security/advisories/GHSA-r75f-5x8p-qvmc ; https://nvd.nist.gov/vuln/detail/CVE-2026-42208",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-42208"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-6973",
+      "source": "CISA_KEV",
+      "publish_date": "2026-05-07",
+      "title": "[CISA KEV] Ivanti Endpoint Manager Mobile (EPMM) - Ivanti Endpoint Manager Mobile (EPMM) Improper Input Validation Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-6973"
+      ],
+      "raw_content": "CVE: CVE-2026-6973\n廠商: Ivanti\n產品: Endpoint Manager Mobile (EPMM)\n漏洞名稱: Ivanti Endpoint Manager Mobile (EPMM) Improper Input Validation Vulnerability\n說明: Ivanti Endpoint Manager Mobile (EPMM) contains an improper input validation vulnerability that allows a remotely authenticated user with administrative access to achieve remote code execution.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-05-10\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://hub.ivanti.com/s/article/May-2026-Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM-Multiple-CVEs?language=en_US ; https://nvd.nist.gov/vuln/detail/CVE-2026-6973",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-6973"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-0300",
+      "source": "CISA_KEV",
+      "publish_date": "2026-05-06",
+      "title": "[CISA KEV] Palo Alto Networks PAN-OS - Palo Alto Networks PAN-OS Out-of-bounds Write Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-0300"
+      ],
+      "raw_content": "CVE: CVE-2026-0300\n廠商: Palo Alto Networks\n產品: PAN-OS\n漏洞名稱: Palo Alto Networks PAN-OS Out-of-bounds Write Vulnerability\n說明: Palo Alto Networks PAN-OS contains an out-of-bounds write vulnerability in the User-ID Authentication Portal (aka Captive Portal) service that can allow an unauthenticated attacker to execute arbitrary code with root privileges on the PA-Series and VM-Series firewalls by sending specially crafted packets.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable. Until the vendor releases an official fix, the following workaround should be implemented:  - Restrict User-ID Authentication Portal access to only trusted zones.  - Disable User-ID Authentication Portal if not required. 5/13/2026: Palo Alto has released a variety of patches. If these are relevant to your environment, please apply the designated patch.\n修補截止日: 2026-05-09\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://security.paloaltonetworks.com/CVE-2026-0300 ; https://nvd.nist.gov/vuln/detail/CVE-2026-0300",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-0300"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-31431",
+      "source": "CISA_KEV",
+      "publish_date": "2026-05-01",
+      "title": "[CISA KEV] Linux Kernel - Linux Kernel Incorrect Resource Transfer Between Spheres Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-31431"
+      ],
+      "raw_content": "CVE: CVE-2026-31431\n廠商: Linux\n產品: Kernel\n漏洞名稱: Linux Kernel Incorrect Resource Transfer Between Spheres Vulnerability\n說明: Linux Kernel contains an incorrect resource transfer between spheres vulnerability that could allow for privilege escalation.\nCISA 要求措施: \"Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-05-15\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://lore.kernel.org/linux-cve-announce/2026042214-CVE-2026-31431-3d65@gregkh/; https://xint.io/blog/copy-fail-linux-distributions#the-fix-6 ; https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/about/ ; https://nvd.nist.gov/vuln/detail/CVE-2026-31431",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-31431"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    }
+  ]
+}
