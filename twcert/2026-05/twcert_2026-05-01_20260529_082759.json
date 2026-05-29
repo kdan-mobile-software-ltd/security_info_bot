@@ -1,0 +1,664 @@
+{
+  "source": "twcert",
+  "fetched_at": "2026-05-29T08:27:59.781729",
+  "count": 20,
+  "items": [
+    {
+      "intel_id": "TWCERT-TWISAC-202605-0029",
+      "source": "TWCERT",
+      "publish_date": "2026-05-28 14:06",
+      "title": "[TLP CLEAR] Microsoft 旗下SharePoint Server 存在重大資安漏洞(CVE-2026-45659)",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-45659"
+      ],
+      "raw_content": "Microsoft SharePoint Server 是一款企業級協作平台，提供文件管理與團隊協作等功能，是企業資訊整合的核心平台。近期微軟發布重大資安公告(CVE-2026-45659，CVSS：8.8)，此漏洞為不受信任資料反序列化漏洞，允許經身分驗證的攻擊者可透過網路執行程式碼。\n\n影響平台：Microsoft SharePoint Enterprise Server 2016 16.0.5552.1002(不含)之前版本、\nMicrosoft SharePoint Server 2019 16.0.10417.20128(不含)之前版本、\nMicrosoft SharePoint Server Subscription Edition 16.0.19725.20280(不含)之前版本\n\n建議措施：根據官方網站釋出的解決方式進行修補：\nhttps://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45659\n\n參考資訊：1. https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45659\n2. https://nvd.nist.gov/vuln/detail/CVE-2026-45659\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45659",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-45659"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    },
+    {
+      "intel_id": "TWCERT-TWISAC-202605-0028",
+      "source": "TWCERT",
+      "publish_date": "2026-05-25 16:56",
+      "title": "[TLP CLEAR] CISA新增10個已知遭駭客利用之漏洞至KEV目錄(2026/05/18-2026/05/24)",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2008-4250",
+        "CVE-2009-1537",
+        "CVE-2009-3459",
+        "CVE-2010-0249",
+        "CVE-2010-0806",
+        "CVE-2026-41091",
+        "CVE-2026-45498",
+        "CVE-2025-34291",
+        "CVE-2026-34926",
+        "CVE-2026-9082"
+      ],
+      "raw_content": "【CVE-2008-4250】Microsoft Windows Buffer Overflow Vulnerability (CVSS v3.1: 9.8)\n【是否遭勒索軟體利用:未知】\nMicrosoft Windows的Windows Server Service中存在緩衝區溢位漏洞，遠端攻擊者可透過特製的RPC請求，在路徑正規化過程中觸發緩衝區溢位，進而執行任意程式碼。\n\n【CVE-2009-1537】Microsoft DirectX NULL Byte Overwrite Vulnerability (CVSS v3.1: 8.8)\n【是否遭勒索軟體利用:未知】\nMicrosoft DirectX 中的 DirectShow 元件 quartz.dll 內的 QuickTime Movie Parser Filter 存在NULL 位元組覆寫漏洞。遠端攻擊者可透過特製的QuickTime媒體檔案觸發此漏洞，進而執行任意程式碼。\n\n【CVE-2009-3459】Adobe Acrobat and Reader Heap-Based Buffer Overflow Vulnerability (CVSS v3.1: 8.8)\n【是否遭勒索軟體利用:未知】\nAdobe Acrobat and Reader 存在堆積型緩衝區溢位漏洞。遠端攻擊者可透過特製的PDF檔案觸發記憶體損毀，進而執行任意程式碼。\n\n【CVE-2010-0249】Microsoft Internet Explorer Use-After-Free Vulnerability (CVSS v3.1: 8.8)\n【是否遭勒索軟體利用:未知】\nMicrosoft Internet Explorer存在使用釋放後記憶體漏洞。遠端攻擊者可透過存取與已刪除物件相關聯的指標，進而執行任意程式碼。\n\n【CVE-2010-0806】Microsoft Internet Explorer Use-After-Free Vulnerability (CVSS v3.1: 8.8)\n【是否遭勒索軟體利用:未知】\nMicrosoft Internet Explorer 存在使用釋放後記憶體漏洞。遠端攻擊者可透過在物件刪除後存取無效指標的方式利用此漏洞，進而執行任意程式碼。\n\n【CVE-2026-41091】Microsoft Defender Link Following Vulnerability (CVSS v3.1: 7.8)\n【是否遭勒索軟體利用:未知】\nMicrosoft Defender 存在連結追蹤漏洞，允許已授權的攻擊者在本機提升權限。\n\n【CVE-2026-45498】Microsoft Defender Denial of Service Vulnerability (CVSS v3.1: 4.0)\n【是否遭勒索軟體利用:未知】\nMicrosoft Defender 存在未明確說明的漏洞，可能導致服務阻斷。\n\n【CVE-2025-34291】Langflow Origin Validation Error Vulnerability (CVSS v3.1: 8.8)\n【是否遭勒索軟體利用:未知】\nLangflow存在來源驗證錯誤漏洞。由於其CORS設定過於寬鬆，並且refresh token的cookie設定為SameSite=None，攻擊者可能藉此存取需要身份驗證的端點，進而執行任意程式碼，最終取得系統完整控制權。\n\n【CVE-2026-34926】Trend Micro Apex One (On-Premise) Directory Traversal Vulnerability (CVSS v3.1: 6.7)\n【是否遭勒索軟體利用:未知】\nTrend Micro Apex One (on-premise) 存在目錄遍歷漏洞，可能允許經預先驗證的本地攻擊者修改伺服器上的關鍵資料表，進而注入惡意程式碼並下發至受管端點設備。\n\n【CVE-2026-9082】Drupal Core SQL Injection Vulnerability (CVSS v3.1: 9.8)\n【是否遭勒索軟體利用:未知】\nDrupal Core 存在SQL注入漏洞。攻擊者可透過資料庫抽象 API 發送特製請求，藉此實現權限提升及遠端程式碼執行。\n\n影響平台：【CVE-2008-4250】\n請參考官方所列的影響版本 \nhttps://learn.microsoft.com/en-us/security-updates/securitybulletins/2008/ms08-067\n\n【CVE-2009-1537】\n請參考官方所列的影響版本\nhttps://learn.microsoft.com/en-us/security-updates/securitybulletins/2009/ms09-028\n\n【CVE-2009-3459】\n請參考官方所列的影響版本\nhttps://helpx.adobe.com/security/security-bulletin.html\n\n【CVE-2010-0249】\n請參考官方所列的影響版本\nhttps://learn.microsoft.com/en-us/security-updates/securitybulletins/2010/ms10-002\n\n【CVE-2010-0806】\n請參考官方所列的影響版本\nhttps://learn.microsoft.com/en-us/security-updates/securitybulletins/2010/ms10-018\n\n【CVE-2026-41091】\n請參考官方所列的影響版本\nhttps://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-41091\n\n【CVE-2026-45498】\n請參考官方所列的影響版本\nhttps://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45498\n\n【CVE-2025-34291】\nLangflow 1.6.9(含)之前的版本\n\n【CVE-2026-34926】\n請參考官方所列的影響版本\nhttps://success.trendmicro.com/en-US/solution/KA-0023430\n\n【CVE-2026-9082】\n請參考官方所列的影響版本\nhttps://www.drupal.org/sa-core-2026-004\n\n建議措施：【CVE-2008-4250】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://learn.microsoft.com/en-us/security-updates/securitybulletins/2008/ms08-067\n\n【CVE-2009-1537】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://learn.microsoft.com/en-us/security-updates/securitybulletins/2009/ms09-028\n\n【CVE-2009-3459】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://helpx.adobe.com/security/security-bulletin.html\n\n【CVE-2010-0249】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://learn.microsoft.com/en-us/security-updates/securitybulletins/2010/ms10-002\n\n【CVE-2010-0806】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://learn.microsoft.com/en-us/security-updates/securitybulletins/2010/ms10-018\n\n【CVE-2026-41091】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-41091\n\n【CVE-2026-45498】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45498\n\n【CVE-2025-34291】\n對應產品升級至以下版本(或更高)\nLangflow 1.7.0\n\n【CVE-2026-34926】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://success.trendmicro.com/en-US/solution/KA-0023430\n\n【CVE-2026-9082】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://www.drupal.org/sa-core-2026-004\n\n\n參考資訊：【CVE-2008-4250】\n1.https://nvd.nist.gov/vuln/detail/cve-2008-4250\n2.https://learn.microsoft.com/en-us/security-updates/securitybulletins/2008/ms08-067\n\n【CVE-2009-1537】\n1.https://nvd.nist.gov/vuln/detail/cve-2009-1537\n2.https://learn.microsoft.com/en-us/security-updates/securitybulletins/2009/ms09-028\n\n【CVE-2009-3459】\n1.https://nvd.nist.gov/vuln/detail/cve-2009-3459\n2.https://helpx.adobe.com/security/security-bulletin.html\n\n【CVE-2010-0249】\n1.https://nvd.nist.gov/vuln/detail/cve-2010-0249\n2.https://learn.microsoft.com/en-us/security-updates/securitybulletins/2010/ms10-002\n\n【CVE-2010-0806】\n1.https://nvd.nist.gov/vuln/detail/cve-2010-0806\n2.https://learn.microsoft.com/en-us/security-updates/securitybulletins/2010/ms10-018\n\n【CVE-2026-41091】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-41091\n2.https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-41091\n\n【CVE-2026-45498】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-45498\n2.https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45498\n\n【CVE-2025-34291】\n1.https://nvd.nist.gov/vuln/detail/cve-2025-34291\n2.https://github.com/langflow-ai/langflow\n\n【CVE-2026-34926】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-34926\n2.https://success.trendmicro.com/en-US/solution/KA-0023430\n\n【CVE-2026-9082】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-9082\n2.https://www.drupal.org/sa-core-2026-004\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://nvd.nist.gov/vuln/detail/cve-2008-4250",
+        "https://learn.microsoft.com/en-us/security-updates/securitybulletins/2008/ms08-067",
+        "https://nvd.nist.gov/vuln/detail/cve-2009-1537",
+        "https://learn.microsoft.com/en-us/security-updates/securitybulletins/2009/ms09-028",
+        "https://nvd.nist.gov/vuln/detail/cve-2009-3459",
+        "https://helpx.adobe.com/security/security-bulletin.html",
+        "https://nvd.nist.gov/vuln/detail/cve-2010-0249",
+        "https://learn.microsoft.com/en-us/security-updates/securitybulletins/2010/ms10-002",
+        "https://nvd.nist.gov/vuln/detail/cve-2010-0806",
+        "https://learn.microsoft.com/en-us/security-updates/securitybulletins/2010/ms10-018",
+        "https://nvd.nist.gov/vuln/detail/cve-2026-41091",
+        "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-41091",
+        "https://nvd.nist.gov/vuln/detail/cve-2026-45498",
+        "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45498",
+        "https://nvd.nist.gov/vuln/detail/cve-2025-34291",
+        "https://github.com/langflow-ai/langflow",
+        "https://nvd.nist.gov/vuln/detail/cve-2026-34926",
+        "https://success.trendmicro.com/en-US/solution/KA-0023430",
+        "https://nvd.nist.gov/vuln/detail/cve-2026-9082",
+        "https://www.drupal.org/sa-core-2026-004"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    },
+    {
+      "intel_id": "TWCERT-TWISAC-202605-0027",
+      "source": "TWCERT",
+      "publish_date": "2026-05-22 10:08",
+      "title": "[TLP CLEAR] 以Chromium為基礎之瀏覽器存在79個高風險安全漏洞，請儘速確認並進行修補",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-8509",
+        "CVE-2026-8587"
+      ],
+      "raw_content": "研究人員發現Google Chrome、Microsoft Edge、Vivaldi及Brave等以Chromium為基礎之瀏覽器存在79個高風險安全漏洞(CVE-2026-8509至CVE-2026-8587)，類型包含使用釋放後記憶體(Use After Free)與堆積型緩衝區溢位(Heap-based Buffer Overflow)等，最嚴重可使未經身分鑑別之遠端攻擊者誘使使用者開啟特製HTML頁面，進而逃脫瀏覽器沙盒環境。請儘速確認並進行修補。\n\n影響平台：Google Chrome 148.0.7778.167(不含)以前版本、\nMicrosoft Edge 148.0.3967.70(不含)以前版本、\nVivaldi 7.9.3970.67(不含)以前版本、\nBrave 1.90.122(不含)以前版本\n\n建議措施：1.請更新Google Chrome瀏覽器至148.0.7778.167(含)以後版本\nhttps://support.google.com/chrome/answer/95414?hl=zh-Hant\n2.請更新Microsoft Edge瀏覽器至148.0.3967.70(含)以後版本\nhttps://support.microsoft.com/zh-tw/topic/microsoft-edge-%E6%9B%B4%E6%96%B0%E8%A8%AD%E5%AE%9A-af8aaca2-1b69-4870-94fe-18822dbb7ef1\n3.請更新Vivaldi瀏覽器至7.9.3970.67(含)以後版本\nhttps://help.vivaldi.com/desktop/install-update/update-vivaldi/\n4.請更新Brave瀏覽器至1.90.122(含)以後版本\nhttps://community.brave.com/t/how-to-update-brave/384780\n\n參考資訊：1.https://support.google.com/chrome/answer/95414?hl=zh-Hant\n2.https://support.microsoft.com/zh-tw/topic/microsoft-edge-%E6%9B%B4%E6%96%B0%E8%A8%AD%E5%AE%9A-af8aaca2-1b69-4870-94fe-18822dbb7ef1\n3.https://help.vivaldi.com/desktop/install-update/update-vivaldi/\n4.https://community.brave.com/t/how-to-update-brave/384780\n5.https://chromereleases.googleblog.com/2026/05/stable-channel-update-for-desktop_12.html\n6.https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-8509\n7.https://vivaldi.com/blog/desktop/minor-update-nine-7-10/\n8.https://brave.com/latest/\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://support.google.com/chrome/answer/95414?hl=zh-Hant",
+        "https://support.microsoft.com/zh-tw/topic/microsoft-edge-%E6%9B%B4%E6%96%B0%E8%A8%AD%E5%AE%9A-af8aaca2-1b69-4870-94fe-18822dbb7ef1",
+        "https://help.vivaldi.com/desktop/install-update/update-vivaldi/",
+        "https://community.brave.com/t/how-to-update-brave/384780",
+        "https://chromereleases.googleblog.com/2026/05/stable-channel-update-for-desktop_12.html",
+        "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-8509",
+        "https://vivaldi.com/blog/desktop/minor-update-nine-7-10/",
+        "https://brave.com/latest/"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    },
+    {
+      "intel_id": "TWCERT-TWISAC-202605-0026",
+      "source": "TWCERT",
+      "publish_date": "2026-05-22 10:05",
+      "title": "[TLP CLEAR] Cisco Secure Workload 存在重大資安漏洞(CVE-2026-20223)",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-20223"
+      ],
+      "raw_content": "Cisco Secure Workload 存在未經授權的API存取漏洞(CVE-2026-20223，CVSS：10.0)，可能允許未經身分驗證的遠端攻擊者，以Site Admin的權限存取網站資源。\n\n影響平台：Cisco Secure Workload 3.9(含)以前版本、\nCisco Secure Workload 3.10.8.3(不含)以前版本、\nCisco Secure Workload 4.0.3.17(不含)以前版本\n\n建議措施：請更新至以下版本：\nCisco Secure Workload 3.10.8.3(含)之後版本、\nCisco Secure Workload 4.0.3.17(含)之後版本\n\n參考資訊：1. https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-csw-pnbsa-g8WEnuy\n2. https://nvd.nist.gov/vuln/detail/CVE-2026-20223\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-csw-pnbsa-g8WEnuy",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-20223"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    },
+    {
+      "intel_id": "TWCERT-TWISAC-202605-0025",
+      "source": "TWCERT",
+      "publish_date": "2026-05-18 17:26",
+      "title": "[TLP AMBER] TWCERT-IoC 觀測IoC分享_0518",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [],
+      "raw_content": "TWCERT/CC匯整TWCERT-IoC 觀測(至05/18)受駭偵測指標(IoC)情資(詳如附件)，可做為貴單位強化資安防護之參考。\n\nTWCERT-IoC : 聯盟會員分享或接收之外部情資與Virus Check分析可疑檔案，可能包含近期攻擊事件所發現之惡意網域、惡意 IP Address、及惡意程式(MD5、SHA-1及SHA-256)等資訊。\n\n*如貴單位有發現可疑的攻擊/探嗅活動(log)、攻擊資訊(如IoC, IoA)或惡意程式樣本，歡迎提供給TWCERT/CC，我們將去識別化後通報給相關CERT或資安單位，以達到資安聯防的效果。\n*若貴公司因服務之必要無法將有風險之IP列入黑名單, 為避免影響正常服務, 可將該IP列為觀察名單，監控與此IP連線的設備與流量等防護措施, 以降低資安風險。\n\n影響平台：無\n\n建議措施：請參考附件之名單做相關防範措施。\n\n參考資訊：無\n\nTWCERT 影響等級：第 2 級",
+      "reference_urls": [],
+      "attachment_urls": [
+        "(TLP AMBER) TWCERT-IoC 觀測IoC分享_0518.xlsx"
+      ],
+      "ioc_ips": [
+        "174.138.22.165",
+        "172.94.18.103",
+        "142.202.191.180",
+        "173.232.146.55",
+        "64.190.113.161",
+        "161.35.73.220",
+        "61.216.92.127",
+        "213.209.159.254",
+        "198.98.53.163",
+        "198.98.61.155",
+        "66.163.113.238",
+        "134.209.18.126",
+        "106.242.210.130",
+        "45.94.43.41",
+        "210.209.89.162",
+        "89.35.178.105",
+        "103.224.81.162",
+        "103.231.15.77",
+        "103.59.144.183",
+        "103.79.77.178",
+        "103.79.77.200",
+        "103.79.78.37",
+        "103.79.78.48",
+        "103.79.79.55",
+        "104.168.236.46",
+        "104.248.49.97",
+        "104.248.78.27",
+        "107.148.131.210",
+        "107.173.83.123",
+        "27.154.13.71",
+        "202.79.168.155",
+        "43.134.38.133",
+        "154.193.247.35",
+        "156.254.21.227",
+        "137.220.153.10"
+      ],
+      "ioc_hashes": [
+        "84c88c3462ce8586c3123bbf0eb330e7ede6cc334ca29eccfd593ac54a612f89",
+        "3a72f79d41ba263be001547f2fc8b439d86cfb19",
+        "688c93ab6567b6f5817281d43f30c2c46408c90d",
+        "cd596e4161a3055b141d26b0d6bb255b3cd7e63a",
+        "e17373d3f844171d27b9f9ea2564ad1b87e3d701",
+        "d905d1c80b38baf4076db200efd9a7ec0db57ed7",
+        "52ce2524e5b90c8fc78c2b686028eeeb87349694",
+        "569e882172cb4887de9bcef54183d59161775503",
+        "f0a9020bf50a3104e5d6cdb014a021ba8a648bdc",
+        "9909dc41843ade58c3dd3010bca136216cb713fd",
+        "3a5005793a1089656d885a51258aa1b79fb1c168",
+        "eb43789220085cb8bef5fa736112626e856d775e",
+        "029cdee856d5ee8a915db70c45923f3450dd622f",
+        "afde7e557e21ee0c85613d6a9b85f760920fd135",
+        "d6f688726227b0ea0bbf4ab6bb6a93b5c28a631a",
+        "76d3b2da8307b035d672c6bbf8b849bcff2b1b21",
+        "2f85e5ac298bd2ba5ff0b524633155c6d623ee35",
+        "43bd3a1367ac93e3480f99cb94c9615e636e3670",
+        "6fb1ca09b7ab9026611277b17167a330e25157c1",
+        "bf299481cb50afd172da785be9969458825925cdfc01125bb8df0fceb6b750ad",
+        "7962a5ee5f758c36b5b9095f26681d64c068c06a8a0a67e47a7bc8e2da5769a8"
+      ],
+      "ioc_domains": [
+        "sfrclak.com",
+        "callnrwise.com",
+        "hostlan.ddns.net",
+        "system.wsf",
+        "cdn.office365-update.com",
+        "line-go.hl.cn",
+        "912025521.exe",
+        "ddos.dnsnb8.net",
+        "routerex.exe",
+        "csolauncher.exe",
+        "hd2-sneaky-stuff-injector.exe",
+        "limev2-free_v1.5.9.zip",
+        "123.exe",
+        "spr.exe",
+        "fling-autoupdatingv.zip",
+        "fling-autoupdatingv.exe",
+        "wqerveybrstyhcerveantbe.com",
+        "supnewdmn.com",
+        "6dbe0a0f8a0b76db.com",
+        "check.dnsmaps.com",
+        "check.office365-update.com",
+        "dns.dnserver.life",
+        "dns.dnsmap.icu",
+        "group-ib.icu",
+        "kaspersky.icu",
+        "microsi0ft.com",
+        "nslookup.dnserver.life",
+        "router.dnserver.life",
+        "time.microsofttrends.com",
+        "ww12.dnserver.life",
+        "zimbra.life",
+        "zimbra-beta.info",
+        "svchost.ahk",
+        "dreff-nsdns.beer",
+        "zgoccv0u.r0z.exe",
+        "v2-api.mooo.com"
+      ],
+      "impact_level": "2"
+    },
+    {
+      "intel_id": "TWCERT-TWISAC-202605-0024",
+      "source": "TWCERT",
+      "publish_date": "2026-05-18 17:24",
+      "title": "[TLP CLEAR] CISA新增2個已知遭駭客利用之漏洞至KEV目錄(2026/05/11-2026/05/17)",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-20182",
+        "CVE-2026-42897"
+      ],
+      "raw_content": "【CVE-2026-20182】Cisco Catalyst SD-WAN Controller Authentication Bypass Vulnerability (CVSS v3.1: 10.0)\n【是否遭勒索軟體利用:未知】\nCisco Catalyst SD-WAN Controller & Manager 存在身份驗證繞過漏洞，未經驗證的遠端攻擊者可藉此繞過身份驗證，並在受影響的系統上取得管理員權限。\n\n【CVE-2026-42897】Microsoft Exchange Server Cross-Site Scripting Vulnerability (CVSS v3.1: 8.1)\n【是否遭勒索軟體利用:未知】\nMicrosoft Exchange Server 在 Outlook Web Access 產生網頁時存在跨網站指令碼漏洞；在特定互動條件下，攻擊者可在瀏覽器環境中執行任意 JavaScript 程式碼。\n\n\n影響平台：【CVE-2026-20182】\n請參考官方所列的影響版本 \nhttps://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-rpa2-v69WY2SW\n\n【CVE-2026-42897】\n請參考官方所列的影響版本\nhttps://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-42897\n\n\n建議措施：【CVE-2026-20182】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-rpa2-v69WY2SW\n\n【CVE-2026-42897】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-42897\n\n\n參考資訊：【CVE-2026-20182】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-20182\n2.https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-rpa2-v69WY2SW\n\n【CVE-2026-42897】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-42897\n2.https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-42897\n\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://nvd.nist.gov/vuln/detail/cve-2026-20182",
+        "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-rpa2-v69WY2SW",
+        "https://nvd.nist.gov/vuln/detail/cve-2026-42897",
+        "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-42897"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    },
+    {
+      "intel_id": "TWCERT-TWISAC-202605-0023",
+      "source": "TWCERT",
+      "publish_date": "2026-05-15 16:53",
+      "title": "[TLP CLEAR] Cisco Catalyst SD-WAN 存在重大資安漏洞(CVE-2026-20182)",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-20182"
+      ],
+      "raw_content": "Cisco Catalyst SD-WAN 是 Cisco 以雲端為中心的軟體定義廣域網路架構，提供集中管理、安全加密及應用效能優化，確保多雲環境的可靠連線，近日Cisco發布重大資安公告。\n\n【CVE-2026-20182，CVSS：10.0】\n此漏洞存在於Cisco Catalyst SD-WAN Controller (formerly vSmart) 與 Catalyst SD-WAN Manager (formerly vManage)，允許遠端攻擊者發送特製請求繞過身分驗證，取得內部高權限帳號 (non-root)。攻擊者後續可利用高權限帳號存取 NETCONF，修改 SD-WAN 網路架構配置，建立惡意網路節點並深入攻擊企業/組織網路。\n\n註：Cisco Catalyst SD-WAN Controller (formerly vSmart) 與 Cisco Catalyst SD-WAN Manager (formerly vManage) 已被發現積極利用於攻擊活動，請儘速採取應變措施。\n\n影響平台：Cisco Catalyst SD-WAN On-Prem Deployment\nCisco SD-WAN Cloud-Pro\nCisco SD-WAN Cloud (Cisco Managed)\nCisco SD-WAN for Government (FedRAMP)\n\n建議措施：根據官方網站釋出的解決方式進行修補：\nhttps://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-rpa2-v69WY2SW\n\n參考資訊：1.https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-rpa2-v69WY2SW\n2.https://nvd.nist.gov/vuln/detail/CVE-2026-20182\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-rpa2-v69WY2SW",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-20182"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    },
+    {
+      "intel_id": "TWCERT-TWISAC-202605-0020",
+      "source": "TWCERT",
+      "publish_date": "2026-05-14 14:56",
+      "title": "[TLP CLEAR] Fortinet旗下FortiSandbox、FortiSandbox Cloud 和 FortiSandbox PaaS存在重大資安漏洞(CVE-2026-26083)",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-26083"
+      ],
+      "raw_content": "Fortinet旗下FortiSandbox、FortiSandbox Cloud 和 FortiSandbox PaaS的網頁介面存在缺少授權漏洞(CVE-2026-26083，CVSS：9.8)，可能允許未經身分驗證的攻擊者，透過HTTP請求執行未經授權的程式碼或命令。\n\n影響平台：FortiSandbox 5.0.0至5.0.1版本、\nFortiSandbox 4.4.0至4.4.8版本、\nFortiSandbox Cloud 24 所有版本、\nFortiSandbox Cloud 23 所有版本、\nFortiSandbox Cloud 5.0.2至5.0.5版本、\nFortiSandbox PaaS 23.4 所有版本、 \nFortiSandbox PaaS 23.3 所有版本、 \nFortiSandbox PaaS 23.1 所有版本、 \nFortiSandbox PaaS 22.2 所有版本、 \nFortiSandbox PaaS 22.1 所有版本、 \nFortiSandbox PaaS 21.4 所有版本、 \nFortiSandbox PaaS 21.3 所有版本、 \nFortiSandbox PaaS 5.0.0至5.0.1版本、\nFortiSandbox PaaS 4.4.5至4.4.8版本\n\n建議措施：請更新至以下版本：\nFortiSandbox 5.0.2(含)之後版本、\nFortiSandbox 4.4.9(含)之後版本、\nFortiSandbox Cloud 5.0.6(含)之後版本、\nFortiSandbox PaaS 5.0.2(含)之後版本、\nFortiSandbox PaaS 4.4.9(含)之後版本\n\n參考資訊：1. https://fortiguard.fortinet.com/psirt/FG-IR-26-136\n2. https://nvd.nist.gov/vuln/detail/CVE-2026-26083\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://fortiguard.fortinet.com/psirt/FG-IR-26-136",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-26083"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    },
+    {
+      "intel_id": "TWCERT-TWISAC-202605-0019",
+      "source": "TWCERT",
+      "publish_date": "2026-05-14 14:53",
+      "title": "[TLP CLEAR] Fortinet旗下FortiAuthenticator 存在重大資安漏洞(CVE-2026-44277)",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-44277"
+      ],
+      "raw_content": "Fortinet旗下FortiAuthenticator產品存在不當存取控制漏洞(CVE-2026-44277，CVSS：9.8)，未經身分驗證的攻擊者可能透過特製的請求，執行未經授權的程式碼或命令。\n\n影響平台：FortiAuthenticator 8.0.0版本、\nFortiAuthenticator 8.0.2版本、\nFortiAuthenticator 6.6.0至6.6.8版本、\nFortiAuthenticator 6.5.0至6.5.6版本\n\n建議措施：請更新至以下版本：\nFortiAuthenticator 8.0.3(含)之後版本、\nFortiAuthenticator 6.6.9(含)之後版本、\nFortiAuthenticator 6.5.7(含)之後版本\n\n參考資訊：1. https://fortiguard.fortinet.com/psirt/FG-IR-26-128\n2. https://nvd.nist.gov/vuln/detail/CVE-2026-44277\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://fortiguard.fortinet.com/psirt/FG-IR-26-128",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-44277"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    },
+    {
+      "intel_id": "TWCERT-TWISAC-202605-0018",
+      "source": "TWCERT",
+      "publish_date": "2026-05-14 14:52",
+      "title": "[TLP CLEAR] Ivanti旗下Xtraction存在高風險資安漏洞(CVE-2026-8043)",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-8043"
+      ],
+      "raw_content": "Ivanti旗下的Xtraction是一套IT報表與資料視覺化平台，可將不同IT系統的資料整合至同一儀表板，方便即時查看與分析。近期Ivanti發布重大資安漏洞公告(CVE-2026-8043，CVSS：9.6)，此漏洞允許經身分驗證的攻擊者讀取敏感檔案，並將任意HTML檔案寫入網站目錄。\n\n影響平台：Ivanti Xtraction 2026.1(含)以前版本\n\n建議措施：請更新至Ivanti Xtraction 2026.2(含)之後版本\n\n參考資訊：1. https://hub.ivanti.com/s/article/Security-Advisory---Ivanti-Xtraction-CVE-2026-8043?language=en_US\n2. https://nvd.nist.gov/vuln/detail/CVE-2026-8043\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://hub.ivanti.com/s/article/Security-Advisory---Ivanti-Xtraction-CVE-2026-8043?language=en_US",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-8043"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    },
+    {
+      "intel_id": "TWCERT-TWISAC-202605-0017",
+      "source": "TWCERT",
+      "publish_date": "2026-05-14 14:49",
+      "title": "[TLP CLEAR] Ivanti旗下Endpoint Manager存在高風險資安漏洞(CVE-2026-8111)",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-8111"
+      ],
+      "raw_content": "Ivanti旗下的Endpoint Manager(EPM)是一款專門針對裝置管理的系統，提供管理和保護Windows、macOS和Linux裝置。近期Ivanti發布重大資安漏洞公告(CVE-2026-8111，CVSS：8.8)，此為SQL注入漏洞，允許經身分驗證的遠端攻擊者實現遠端程式碼執行。\n\n影響平台：Ivanti Endpoint Manager 2024 SU6(不含)以前版本\n\n建議措施：請更新至Ivanti Endpoint Manager 2024 SU6 (含)之後版本\n\n參考資訊：1. https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Endpoint-Manager-EPM-May-2026?language=en_US\n2. https://nvd.nist.gov/vuln/detail/CVE-2026-8111\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Endpoint-Manager-EPM-May-2026?language=en_US",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-8111"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    },
+    {
+      "intel_id": "TWCERT-TWISAC-202605-0016",
+      "source": "TWCERT",
+      "publish_date": "2026-05-14 14:47",
+      "title": "[TLP CLEAR] SAP針對旗下多款產品發布重大資安公告",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-34260",
+        "CVE-2026-34263"
+      ],
+      "raw_content": "【CVE-2026-34260，CVSS：9.6】\nSAP S/4HANA (SAP Enterprise Search for ABAP) 存在SQL注入漏洞，允許經過身分驗證的攻擊者，透過user-controlled注入惡意SQL語法，並在未經適當驗證或過濾的情況下傳至底層資料庫，導致攻擊者可能取得未經授權的敏感資料庫存取權限，影響應用程式的機密性與可用性。\n\n【CVE-2026-34263，CVSS：9.6】\nSAP Commerce cloud允許未經驗證的攻擊者執行惡意組態上傳與程式碼注入，導致任意伺服器端程式碼執行，可能影響應用程式的機密性、完整性與可用性。\n\n影響平台：【CVE-2026-34260】\nSAP S/4HANA (SAP Enterprise Search for ABAP)\nVersion(s) - SAP_BASIS 751, SAP_BASIS 752, SAP_BASIS 753, SAP_BASIS 754, SAP_BASIS 755, SAP_BASIS 756, SAP_BASIS 757, SAP_BASIS 758, SAP_BASIS 816\n\n【CVE-2026-34263】\nSAP Commerce cloud\nVersion(s) - HY_COM 2205, COM_CLOUD 2211, 2211-JDK21\n\n建議措施：根據官方網站釋出的解決方式進行修補：https://support.sap.com/en/my-support/knowledge-base/security-notes-news/may-2026.html\n\n參考資訊：1. https://support.sap.com/en/my-support/knowledge-base/security-notes-news/may-2026.html\n2. https://www.cve.org/CVERecord?id=CVE-2026-34260\n3. https://www.cve.org/CVERecord?id=CVE-2026-34263\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/may-2026.html",
+        "https://www.cve.org/CVERecord?id=CVE-2026-34260",
+        "https://www.cve.org/CVERecord?id=CVE-2026-34263"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    },
+    {
+      "intel_id": "TWCERT-TWISAC-202605-0014",
+      "source": "TWCERT",
+      "publish_date": "2026-05-14 14:45",
+      "title": "[TLP CLEAR] CISA新增3個已知遭駭客利用之漏洞至KEV目錄(2026/05/04-2026/05/10)",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-0300",
+        "CVE-2026-6973",
+        "CVE-2026-42208"
+      ],
+      "raw_content": "【CVE-2026-0300】Palo Alto Networks PAN-OS Out-of-bounds Write Vulnerability (CVSS v3.1: 9.8)\n【是否遭勒索軟體利用:未知】\nPalo Alto Networks 的 PAN-OS 在 User-ID Authentication Portal 服務中存在越界寫入漏洞。未經驗證的攻擊者可透過傳送特製封包，在 PA-Series 與 VM-Series 防火牆上以 root 權限執行任意程式碼。\n\n【CVE-2026-6973】Ivanti Endpoint Manager Mobile (EPMM) Improper Input Validation Vulnerability (CVSS v3.1: 7.2)\n【是否遭勒索軟體利用:未知】\nIvanti Endpoint Manager Mobile（EPMM）存在不當輸入驗證漏洞，具管理員權限的遠端已驗證使用者可利用此漏洞達成遠端程式碼執行。\n\n【CVE-2026-42208】BerriAI LiteLLM SQL Injection Vulnerability (CVSS v3.1: 9.8)\n【是否遭勒索軟體利用:未知】\nBerriAI LiteLLM 存在 SQL 注入漏洞，攻擊者可利用此漏洞從代理伺服器的資料庫讀取資料，並可能進行竄改，導致未經授權存取該代理伺服器及其所管理的憑證。\n\n\n影響平台：【CVE-2026-0300】\n請參考官方所列的影響版本 \nhttps://security.paloaltonetworks.com/CVE-2026-0300\n\n【CVE-2026-6973】\n請參考官方所列的影響版本\nhttps://hub.ivanti.com/s/article/May-2026-Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM-Multiple-CVEs\n\n【CVE-2026-42208】\n請參考官方所列的影響版本\nhttps://github.com/BerriAI/litellm/security/advisories/GHSA-r75f-5x8p-qvmc\n\n\n建議措施：【CVE-2026-0300】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://security.paloaltonetworks.com/CVE-2026-0300\n\n【CVE-2026-6973】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://hub.ivanti.com/s/article/May-2026-Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM-Multiple-CVEs\n\n【CVE-2026-42208】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://github.com/BerriAI/litellm/security/advisories/GHSA-r75f-5x8p-qvmc\n\n\n參考資訊：【CVE-2026-0300】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-0300\n2.https://security.paloaltonetworks.com/CVE-2026-0300\n\n【CVE-2026-6973】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-6973\n2.https://hub.ivanti.com/s/article/May-2026-Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM-Multiple-CVEs\n\n【CVE-2026-42208】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-42208\n2.https://github.com/BerriAI/litellm/security/advisories/GHSA-r75f-5x8p-qvmc\n\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://nvd.nist.gov/vuln/detail/cve-2026-0300",
+        "https://security.paloaltonetworks.com/CVE-2026-0300",
+        "https://nvd.nist.gov/vuln/detail/cve-2026-6973",
+        "https://hub.ivanti.com/s/article/May-2026-Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM-Multiple-CVEs",
+        "https://nvd.nist.gov/vuln/detail/cve-2026-42208",
+        "https://github.com/BerriAI/litellm/security/advisories/GHSA-r75f-5x8p-qvmc"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    },
+    {
+      "intel_id": "TWCERT-TWISAC-202605-0010",
+      "source": "TWCERT",
+      "publish_date": "2026-05-08 16:59",
+      "title": "[TLP CLEAR] Ivanti旗下Endpoint Manager Mobile (EPMM)存在2個重大資安漏洞",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-5786",
+        "CVE-2026-5787"
+      ],
+      "raw_content": "Ivanti Endpoint Manager Mobile (EPMM)是一款移動設備管理解決方案，能集中管理iOS、Android、macOS和Windows設備，近日Ivanti發布重大資安漏洞公告。\n\n【CVE-2026-5786，CVSS：8.8】\n此為存取控制不當漏洞，允許經身分驗證的遠端攻擊者獲取管理存取權限。\n\n【CVE-2026-5787，CVSS：8.9】\n此為憑證驗證不當，允許未經身分驗證的遠端攻擊者可冒充已註冊的Sentry主機並取得有效的CA簽章用戶端憑證。\n\n影響平台：Ivanti Endpoint Manager Mobile 12.8.0.0(含)及更早版本\n\n建議措施：根據官方網站釋出的解決方式進行修補：\nhttps://hub.ivanti.com/s/article/May-2026-Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM-Multiple-CVEs?language=en_US\n\n參考資訊：1. https://hub.ivanti.com/s/article/May-2026-Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM-Multiple-CVEs?language=en_US\n2. https://nvd.nist.gov/vuln/detail/CVE-2026-5786\n3. https://nvd.nist.gov/vuln/detail/CVE-2026-5787\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://hub.ivanti.com/s/article/May-2026-Security-Advisory-Ivanti-Endpoint-Manager-Mobile-EPMM-Multiple-CVEs?language=en_US",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-5786",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-5787"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    },
+    {
+      "intel_id": "TWCERT-TWISAC-202605-0006",
+      "source": "TWCERT",
+      "publish_date": "2026-05-06 14:16",
+      "title": "[TLP CLEAR] Palo Alto Networks PAN-OS存在重大資安漏洞(CVE-2026-0300)",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-0300"
+      ],
+      "raw_content": "Palo Alto Networks 的防火牆作業系統 PAN-OS的User-ID驗證入口網站服務存在緩衝區溢位漏洞(CVE-2026-0300，CVSS ：9.3)，此漏洞允許未經身分驗證的攻擊者透過發送特製的資料，在PA系列和VM系統防火牆上，以root權限執行任意程式碼。\n\n影響平台：PAN-OS 12.1.4-h5(不含)以前版本、\nPAN-OS 12.1.7(不含)以前版本、\nPAN-OS 11.2.4-h17(不含)以前版本、\nPAN-OS 11.2.7-h13(不含)以前版本、\nPAN-OS 11.2.10-h6(不含)以前版本、\nPAN-OS 11.2.12(不含)以前版本、\nPAN-OS 11.1.4-h33(不含)以前版本、\nPAN-OS 11.1.6-h32(不含)以前版本、\nPAN-OS 11.1.7-h6(不含)以前版本、\nPAN-OS 11.1.10-h25(不含)以前版本、\nPAN-OS 11.1.13-h5(不含)以前版本、\nPAN-OS 11.1.15(不含)以前版本、\nPAN-OS 10.2.7-h34(不含)以前版本、\nPAN-OS 10.2.10-h36(不含)以前版本、\nPAN-OS 10.2.13-h21(不含)以前版本、\nPAN-OS 10.2.16-h7(不含)以前版本、\nPAN-OS 10.2.18-h6(不含)以前版本、\n\n建議措施：根據官方網站釋出的解決方式進行修補：\nhttps://security.paloaltonetworks.com/CVE-2026-0300\n\n參考資訊：1. https://security.paloaltonetworks.com/CVE-2026-0300\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://security.paloaltonetworks.com/CVE-2026-0300"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    },
+    {
+      "intel_id": "TWCERT-TWISAC-202605-0005",
+      "source": "TWCERT",
+      "publish_date": "2026-05-06 14:14",
+      "title": "[TLP CLEAR] 以Chromium為基礎之瀏覽器存在30個高風險安全漏洞，請儘速確認並進行修補",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-7333",
+        "CVE-2026-7361",
+        "CVE-2026-7363",
+        "CVE-2026-7335"
+      ],
+      "raw_content": "研究人員發現Google Chrome、Microsoft Edge、Vivaldi及Brave等以Chromium為基礎之瀏覽器存在30個高風險安全漏洞(CVE-2026-7333至CVE-2026-7361與CVE-2026-7363)，類型包含使用釋放後記憶體(Use After Free)與堆積型緩衝區溢位(Heap-based Buffer Overflow)，最嚴重可使未經身分鑑別之遠端攻擊者誘使使用者開啟特製HTML頁面，進而於瀏覽器沙盒環境內執行任意程式碼。請儘速確認並進行修補。\n\n影響平台：Google Chrome 147.0.7727.137(不含)以前版本、\nMicrosoft Edge 147.0.3912.98(不含)以前版本、\nVivaldi 7.9.3970.60(不含)以前版本、\nBrave 1.89.145(不含)以前版本\n\n建議措施：1.請更新Google Chrome瀏覽器至147.0.7727.137(含)以後版本\nhttps://support.google.com/chrome/answer/95414?hl=zh-Hant\n2.請更新Microsoft Edge瀏覽器至147.0.3912.98(含)以後版本\nhttps://support.microsoft.com/zh-tw/topic/microsoft-edge-%E6%9B%B4%E6%96%B0%E8%A8%AD%E5%AE%9A-af8aaca2-1b69-4870-94fe-18822dbb7ef1\n3. 請更新Vivaldi瀏覽器至7.9.3970.60(含)以後版本\nhttps://help.vivaldi.com/desktop/install-update/update-vivaldi/\n4.請更新Brave瀏覽器至1.89.145(含)以後版本\nhttps://community.brave.com/t/how-to-update-brave/384780\n\n參考資訊：1.https://support.google.com/chrome/answer/95414?hl=zh-Hant\n2.https://support.microsoft.com/zh-tw/topic/microsoft-edge-%E6%9B%B4%E6%96%B0%E8%A8%AD%E5%AE%9A-af8aaca2-1b69-4870-94fe-18822dbb7ef1\n3.https://help.vivaldi.com/desktop/install-update/update-vivaldi/\n4.https://community.brave.com/t/how-to-update-brave/384780\n5.https://chromereleases.googleblog.com/2026/04/stable-channel-update-for-desktop_28.html\n6.https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-7335\n7.https://vivaldi.com/blog/desktop/minor-update-eight-7-9/\n8.https://brave.com/latest/\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://support.google.com/chrome/answer/95414?hl=zh-Hant",
+        "https://support.microsoft.com/zh-tw/topic/microsoft-edge-%E6%9B%B4%E6%96%B0%E8%A8%AD%E5%AE%9A-af8aaca2-1b69-4870-94fe-18822dbb7ef1",
+        "https://help.vivaldi.com/desktop/install-update/update-vivaldi/",
+        "https://community.brave.com/t/how-to-update-brave/384780",
+        "https://chromereleases.googleblog.com/2026/04/stable-channel-update-for-desktop_28.html",
+        "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-7335",
+        "https://vivaldi.com/blog/desktop/minor-update-eight-7-9/",
+        "https://brave.com/latest/"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    },
+    {
+      "intel_id": "TWCERT-TWISAC-202605-0004",
+      "source": "TWCERT",
+      "publish_date": "2026-05-06 14:12",
+      "title": "[TLP CLEAR]  Apache ActiveMQ存在高風險安全漏洞(CVE-2026-40466與CVE-2026-41044)，請儘速確認並進行修補",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-40466",
+        "CVE-2026-41044"
+      ],
+      "raw_content": "研究人員發現Apache ActiveMQ存在2個高風險安全漏洞(CVE-2026-40466與CVE-2026-41044)，類型包含不當輸入驗證(Improper Input Validation)與程式碼注入(Code Injection)，已通過身分鑑別之遠端攻擊者可利用此漏洞，使ActiveMQ載入惡意設定檔，進而執行任意程式碼，請儘速確認並進行修補。\n\n影響平台：Apache ActiveMQ Broker 5.19.6(不含)以前版本、\nApache ActiveMQ Broker 6.0.0至6.2.5(不含)版本、\nApache ActiveMQ All 5.19.6(不含)以前版本、\nApache ActiveMQ All 6.0.0至6.2.5(不含)版本、\nApache ActiveMQ 5.19.6(不含)以前版本、\nApache ActiveMQ 6.0.0至6.2.5(不含)版本\n\n建議措施：官方已針對漏洞釋出修復更新，請參考官方說明進行更新，網址如下：\nhttps://activemq.apache.org/security-advisories.data/CVE-2026-40466-announcement.txt\nhttps://activemq.apache.org/security-advisories.data/CVE-2026-41044-announcement.txt\n\n參考資訊：1.https://activemq.apache.org/security-advisories.data/CVE-2026-40466-announcement.txt\n2. https://activemq.apache.org/security-advisories.data/CVE-2026-41044-announcement.txt\n3.https://nvd.nist.gov/vuln/detail/CVE-2026-40466\n4.https://nvd.nist.gov/vuln/detail/CVE-2026-41044\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://activemq.apache.org/security-advisories.data/CVE-2026-40466-announcement.txt",
+        "https://activemq.apache.org/security-advisories.data/CVE-2026-41044-announcement.txt",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-40466",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-41044"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    },
+    {
+      "intel_id": "TWCERT-TWISAC-202605-0003",
+      "source": "TWCERT",
+      "publish_date": "2026-05-06 14:09",
+      "title": "[TLP AMBER] TWCERT-IoC 觀測IoC分享_0504",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [],
+      "raw_content": "TWCERT/CC匯整TWCERT-IoC 觀測(至05/04)受駭偵測指標(IoC)情資(詳如附件)，可做為貴單位強化資安防護之參考。\n\nTWCERT-IoC : 聯盟會員分享或接收之外部情資與Virus Check分析可疑檔案，可能包含近期攻擊事件所發現之惡意網域、惡意 IP Address、及惡意程式(MD5、SHA-1及SHA-256)等資訊。\n\n*如貴單位有發現可疑的攻擊/探嗅活動(log)、攻擊資訊(如IoC, IoA)或惡意程式樣本，歡迎提供給TWCERT/CC，我們將去識別化後通報給相關CERT或資安單位，以達到資安聯防的效果。\n*若貴公司因服務之必要無法將有風險之IP列入黑名單, 為避免影響正常服務, 可將該IP列為觀察名單，監控與此IP連線的設備與流量等防護措施, 以降低資安風險。\n\n影響平台：無\n\n建議措施：請參考附件之名單做相關防範措施。\n\n參考資訊：無\n\nTWCERT 影響等級：第 2 級",
+      "reference_urls": [],
+      "attachment_urls": [
+        "(TLP AMBER) TWCERT-IoC 觀測IoC分享_0504.xlsx"
+      ],
+      "ioc_ips": [
+        "174.138.22.165",
+        "206.123.137.67",
+        "173.232.146.55",
+        "172.94.18.103",
+        "61.216.92.127",
+        "45.113.226.187",
+        "142.202.191.180",
+        "64.190.113.161",
+        "193.233.19.233",
+        "198.98.61.155",
+        "198.98.53.163",
+        "185.220.101.21",
+        "91.107.247.163",
+        "45.86.230.112"
+      ],
+      "ioc_hashes": [
+        "a80d91ccf3c712cfe89bd5ae7f141f2029e36e7141bf4b95c639c41111517c48",
+        "0364dade9dc061cbb3afc878aa5305e03989c8f1de00ace7fd169a8114dd1c5d",
+        "ec1da2944e656f4820932087475e50568e3699d011fc0b815fca5d78f2573977",
+        "ed855fdabf796af2c7b71d9dd74fa8802c3433295b41d7d720ef964ddb3ce002",
+        "8cfbf7b3a5d1c932a0c7afd2a1184642d7100bcc2ef3503c6c2d3c728609f691",
+        "04916c79d65ac04e84d0009caef4c337add2480af7ecac74c70ee5531be7c2e2",
+        "70afc7aa89f7b602c7979a819c4ca0c6b578fc044abd3924afe092c1630e3a98",
+        "8bc3b47c191b6173bf3ec4479edc5b6cd5d345553da3e9c4f45aed0dcc11e375",
+        "20ed05c492ba0b0b457a60be205a886b555d945fe702752a161a9104404d3cb9",
+        "4e60d206b20bc23fc1f8e841337eaaf70fd89e967912b91ae0837242a7ef6341",
+        "4f692a83b7a61f7215d0cf6597d5819ecc9f90046a9b8c0e3eee8889e2c79c6a",
+        "5e8ad983129f6771d186f60379dca30d208374cac45bac75d5459aaf0fabc8ad",
+        "d6acbd0cf0c99c76c3f09f68792eabb843fd539ae42573ecdfeda63fa695dcd2",
+        "3ddfcc93aefab5a671edb4c643a810b7a2a7b35629c27f3f68849cf390a26025",
+        "c3910810dc87e1a5993d4e4234fd3f94fa7ecf66735fd0396be73b2379aafabd",
+        "3abe9aa1b6a9f2f779f875773e077e0129e770e98fcbee60c0137f656f4fe82e",
+        "ece54f2a68530222604014dd5b23520bb1729efe7ea15a822c1ea16556ed8257",
+        "ab79d9ef9fddb880bbfc5e2587566884da9510988005f2737493cfc25437b8ba",
+        "c03e9aade86079a2d4007b58e3b419dfe821bf64366fd3a9c3d04dd63b5e7779",
+        "eb2a4c6e88adc5b56dcb6a39bf749564d5b72fbb5ba2dc3c603ba183a99bccb4",
+        "fc9da1e9c12930f1c324b4dee5918033a644d090a96f69ff3669711d4219158b",
+        "e3df11e259647e00de5f6119fce20c07f551b4bb5b3c4da3fb07956c0c3d69ff",
+        "f88532089976d65463869a1ab5e8f050d8f3ee49501a5fa7883f80ac86b20a84",
+        "992c951f4af57ca7cd8396f5ed69c2199fd6fd4ae5e93726da3e198e78bec0a5",
+        "025fc0976c548fb5a880c83ea3eb21a5f23c5d53c4e51e862bb893c11adf712a",
+        "22b38dad7da097ea03aa28d0614164cd25fafeb1383dbc15047e34c8050f6f67",
+        "2ed9494e9b7b68415b4eb151c922c82c0191294d0aa443dd2cb5133e6bfe3d5d",
+        "3ab9575225e00a83a4ac2b534da5a710bdcf6eb72884944c437b5fbe5c5c9235",
+        "48d9b2ce4fcd6854a3164ce395d7140014e0b58b77680623f3e4ca22d3a6e7fd",
+        "62c2c24937d67fdeb43f2c9690ab10e8bb90713af46945048db9a94a465ffcb8",
+        "860a6177b055a2f5aa61470d17ec3c69da24f1cdf0a782237055cba431158923",
+        "87d25d0e5880b3b5cd30106853cbfc6ef1ad38966b30d9bd5b99df46098e546c",
+        "8c87134c1b45e990e9568f0a3899b0076f94be16d3c40fa824ac1e6c6ee892db",
+        "91415e0b9fe4e7cbe43ec0558a7adf89423de30d22b00b985c2e4b97e75076b1",
+        "994d6d1edb57f945f4284cc0163ec998861c7496d85f6d45c08657c9727186e3",
+        "9f61ff4deb8afced8b1ecdc8787a134c63bde632b18293fbfc94a91749e3e454",
+        "a7a19cab7aab606f833fa8225bc94ec9570a6666660b02cc41a63fe39ea8b0ad",
+        "b67958afc982cafbe1c3f114b444d7f4c91a88a3e7a86f89ab8795ac2110d1e6",
+        "c46b5a18ab3fb5fd1c5c8288a41c75bf0170c10b5e829af89370a12c86dd10f8",
+        "c7f7b5a6e7d93221344e6368c7ab4abf93e162f7567e1a7bcb8786cb8a183a73",
+        "ec368ae0b4369b6ef0da244774995c819c63cffb7fd2132379963b9c1640ccd2",
+        "efaf8e7422ffd09c7f03f1a5b4e5c2cc32b05334c18d1ccb9673667f8f43108f",
+        "f736be55193c77af346dbe905e25f6a1dee3ec1aedca8989ad2088e4f6576b12",
+        "fc75ed2159e0c8274076e46a37671cfb8d677af9f586224da1713df89490a958",
+        "cc14df781475ef0f3f2c441d03a622ea67cd86967526f8758ead6f45174db78e",
+        "078163d5c16f64caa5a14784323fd51451b8c831c73396b967b4e35e6879937b",
+        "fe1033335a045c696c900d435119d210361966e2fb5cd1ba3382608cfa2c8e68",
+        "5dc607c8990841139768884b1b43e1403496d5a458788a1937be139594f01dca",
+        "788ba200f776a188c248d6c2029f00b5d34be45d4444f7cb89ffe838c39b8b19",
+        "1eece1e1ba4b96e6c784729f0608ad2939cfb67bc4236dfababbe1d09268960c"
+      ],
+      "ioc_domains": [
+        "vbc.exe",
+        "vbcscompiler.exe",
+        "csc.exe",
+        "java.exe",
+        "javacpl.exe",
+        "javafxpackager.exe",
+        "javaw.exe",
+        "javaws.exe",
+        "jvisualvm.exe",
+        "nbexec64.exe",
+        "unpack200.exe",
+        "last-version.install-2026.com",
+        "oakenfjrod.ru",
+        "cahayailmukreatif.web.id",
+        "mactest-6b2ab-default-rtdb.firebaseio.com",
+        "transitopalermo.com",
+        "vatrobran.hr",
+        "wallpapermacos.com",
+        "wallspaceapp.com",
+        "welcome.supp0v3.com",
+        "cosmosmusic.com",
+        "editor.gleeze.com",
+        "linekt.com",
+        "lsmartv.com",
+        "jariosos.com",
+        "hayesmed.com",
+        "regancontrols.com",
+        "salinasrent.com",
+        "justtalken.com",
+        "mebeliotmasiv.com",
+        "euclidrent.com",
+        "o-parana.com",
+        "palshona.com",
+        "aurineuroth.com",
+        "gentlemen.bmp"
+      ],
+      "impact_level": "2"
+    },
+    {
+      "intel_id": "TWCERT-TWISAC-202605-0002",
+      "source": "TWCERT",
+      "publish_date": "2026-05-06 14:07",
+      "title": "[TLP CLEAR] CISA新增4個已知遭駭客利用之漏洞至KEV目錄(2026/04/27-2026/05/03)",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2024-1708",
+        "CVE-2026-32202",
+        "CVE-2026-41940",
+        "CVE-2026-31431"
+      ],
+      "raw_content": "【CVE-2024-1708】ConnectWise ScreenConnect Path Traversal Vulnerability (CVSS v3.1: 8.4)\n【是否遭勒索軟體利用:未知】\nConnectWise ScreenConnect 存在路徑遍歷漏洞，可能允許攻擊者執行遠端程式碼，或直接影響機密資料與關鍵系統。\n\n【CVE-2026-32202】Microsoft Windows Protection Mechanism Failure Vulnerability (CVSS v3.1: 4.3)\n【是否遭勒索軟體利用:未知】\nMicrosoft Windows Shell 存在保護機制失效漏洞，允許未經授權的攻擊者透過網路進行偽裝攻擊。\n\n【CVE-2026-41940】WebPros cPanel & WHM and WP2 (WordPress Squared) Missing Authentication for Critical Function Vulnerability (CVSS v3.1: 9.8)\n【是否遭勒索軟體利用:未知】\nWebPros 的 cPanel 與 WHM（WebHost Manager）以及 WP2（WordPress Squared）在登入流程中存在身分驗證繞過漏洞，允許未經驗證的遠端攻擊者存取控制面板。\n\n【CVE-2026-31431】Linux Kernel Incorrect Resource Transfer Between Spheres Vulnerability (CVSS v3.1: 7.8)\n【是否遭勒索軟體利用:未知】\nLinux Kernel 存在Incorrect Resource Transfer Between Spheres漏洞，可能導致權限提升。\n\n\n影響平台：【CVE-2024-1708】\n請參考官方所列的影響版本 \nhttps://www.connectwise.com/company/trust/security-bulletins/connectwise-screenconnect-23.9.8\n\n【CVE-2026-32202】\n請參考官方所列的影響版本\nhttps://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-32202\n\n【CVE-2026-41940】\n請參考官方所列的影響版本\nhttps://support.cpanel.net/hc/en-us/articles/40073787579671-cPanel-WHM-Security-Update-04-28-2026\n\n【CVE-2026-31431】\n請參考官方所列的影響版本\nhttps://lore.kernel.org/linux-cve-announce/2026042214-CVE-2026-31431-3d65@gregkh/\n\n\n建議措施：【CVE-2024-1708】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://www.connectwise.com/company/trust/security-bulletins/connectwise-screenconnect-23.9.8\n\n【CVE-2026-32202】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-32202\n\n【CVE-2026-41940】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://support.cpanel.net/hc/en-us/articles/40073787579671-cPanel-WHM-Security-Update-04-28-2026\n\n【CVE-2026-31431】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://lore.kernel.org/linux-cve-announce/2026042214-CVE-2026-31431-3d65@gregkh/\n\n\n參考資訊：【CVE-2024-1708】\n1.https://nvd.nist.gov/vuln/detail/cve-2024-1708\n2.https://www.connectwise.com/company/trust/security-bulletins/connectwise-screenconnect-23.9.8\n\n【CVE-2026-32202】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-32202\n2.https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-32202\n\n【CVE-2026-41940】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-41940\n2.https://support.cpanel.net/hc/en-us/articles/40073787579671-cPanel-WHM-Security-Update-04-28-2026\n\n【CVE-2026-31431】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-31431\n2.https://lore.kernel.org/linux-cve-announce/2026042214-CVE-2026-31431-3d65@gregkh/\n\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://nvd.nist.gov/vuln/detail/cve-2024-1708",
+        "https://www.connectwise.com/company/trust/security-bulletins/connectwise-screenconnect-23.9.8",
+        "https://nvd.nist.gov/vuln/detail/cve-2026-32202",
+        "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-32202",
+        "https://nvd.nist.gov/vuln/detail/cve-2026-41940",
+        "https://support.cpanel.net/hc/en-us/articles/40073787579671-cPanel-WHM-Security-Update-04-28-2026",
+        "https://nvd.nist.gov/vuln/detail/cve-2026-31431",
+        "https://lore.kernel.org/linux-cve-announce/2026042214-CVE-2026-31431-3d65@gregkh/"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    },
+    {
+      "intel_id": "TWCERT-TWISAC-202605-0001",
+      "source": "TWCERT",
+      "publish_date": "2026-05-05 09:40",
+      "title": "[TLP CLEAR] 旭聯科技｜CTMS培訓大師 - SQL Injection",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-7489"
+      ],
+      "raw_content": "【旭聯科技｜CTMS培訓大師 - SQL Injection】(CVE-2026-7489，CVSS：8.8)\n已通過身分鑑別之遠端攻擊者可注入任意SQL指令讀取、修改及刪除資料庫內容。\n\n影響平台：CTMS培訓大師 所有版本\n\n建議措施：廠商應已提供修補程式。若尚未取得，請主動聯繫廠商。\n\n參考資訊：1. https://www.twcert.org.tw/tw/cp-132-10894-1ac1f-1.html\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://www.twcert.org.tw/tw/cp-132-10894-1ac1f-1.html"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    }
+  ]
+}
