@@ -7,6 +7,7 @@ from datetime import datetime, timedelta, timezone
 
 import gspread
 from google.oauth2.service_account import Credentials
+from pydantic import BaseModel, ConfigDict, Field
 
 from src.config import (
     ASSETS_SHEET_ID,
@@ -19,6 +20,20 @@ from src.config import (
 )
 from src.models import SheetRow
 from src.utils.logging import log
+
+
+class AssetRecord(BaseModel):
+    model_config = ConfigDict(populate_by_name=True)
+
+    name: str = Field("", alias="資產名稱")
+    category: str = Field("", alias="資產類別")
+    confidentiality: str = Field("", alias="機密等級")
+    description: str = Field("", alias="資產描述")
+    process: str = Field("", alias="業務流程/營運系統")
+    department: str = Field("", alias="部門")
+    user: str = Field("", alias="使用者(User)")
+    owner: str = Field("", alias="擁有人(Owner)")
+
 
 _TW = timezone(timedelta(hours=8))
 
@@ -289,15 +304,15 @@ def load_assets_context() -> str:
 
     lines = []
     for r in records:
-        name = r.get("資產名稱", "")
-        if not name:
+        asset = AssetRecord.model_validate(r)
+        if not asset.name:
             continue
         lines.append(
-            f"- {name}（{r.get('資產類別', '')}, {r.get('機密等級', '')}）"
-            f"— {r.get('資產描述', '')}；"
-            f"流程：{r.get('業務流程/營運系統', '')}；"
-            f"部門：{r.get('部門', '')}；"
-            f"User：{r.get('使用者(User)', '')}；"
-            f"Owner：{r.get('擁有人(Owner)', '')}"
+            f"- {asset.name}（{asset.category}, {asset.confidentiality}）"
+            f"— {asset.description}；"
+            f"流程：{asset.process}；"
+            f"部門：{asset.department}；"
+            f"User：{asset.user}；"
+            f"Owner：{asset.owner}"
         )
     return "\n".join(lines)

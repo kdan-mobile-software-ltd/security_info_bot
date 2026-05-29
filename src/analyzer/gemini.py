@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import json
 import time
 
 from google import genai
@@ -20,31 +19,6 @@ def _get_client() -> genai.Client:
     if _client is None:
         _client = genai.Client(api_key=GEMINI_API_KEY)
     return _client
-
-
-ANALYSIS_SCHEMA = types.Schema(
-    type=types.Type.OBJECT,
-    required=[
-        "risk_level",
-        "summary",
-        "recommendation",
-        "company_relevance",
-        "affected_assets",
-        "responsible_unit",
-    ],
-    properties={
-        "risk_level": types.Schema(
-            type=types.Type.STRING, enum=["Critical", "High", "Medium", "Low", "無"]
-        ),
-        "summary": types.Schema(type=types.Type.STRING),
-        "recommendation": types.Schema(type=types.Type.STRING),
-        "company_relevance": types.Schema(type=types.Type.STRING, enum=["H", "M", "L", "無"]),
-        "affected_assets": types.Schema(
-            type=types.Type.ARRAY, items=types.Schema(type=types.Type.STRING)
-        ),
-        "responsible_unit": types.Schema(type=types.Type.STRING),
-    },
-)
 
 
 def analyze_intel(
@@ -72,21 +46,12 @@ def analyze_intel(
                 config=types.GenerateContentConfig(
                     system_instruction=SYSTEM_PROMPT,
                     response_mime_type="application/json",
-                    response_schema=ANALYSIS_SCHEMA,
+                    response_schema=AnalysisResult,
                     temperature=0.2,
                 ),
             )
 
-            result = json.loads(response.text)
-
-            return AnalysisResult(
-                risk_level=result["risk_level"],
-                summary=result["summary"],
-                recommendation=result["recommendation"],
-                company_relevance=result["company_relevance"],
-                affected_assets=result.get("affected_assets", []),
-                responsible_unit=result.get("responsible_unit", ""),
-            )
+            return AnalysisResult.model_validate_json(response.text)
 
         except Exception as e:
             error_str = str(e)

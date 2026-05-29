@@ -1,52 +1,51 @@
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass, field
 from datetime import datetime
+from typing import Literal
+
+from pydantic import BaseModel, Field
 
 
-@dataclass
-class IntelItem:
+class IntelItem(BaseModel):
     intel_id: str
-    source: str  # "TWCERT" or "CISA_KEV"
+    source: str
     publish_date: str
     title: str
-    intel_type: str  # e.g. "101-漏洞訊息", "IoC"
-    cve_ids: list[str] = field(default_factory=list)
+    intel_type: str
+    cve_ids: list[str] = Field(default_factory=list)
     raw_content: str = ""
-    reference_urls: list[str] = field(default_factory=list)
-    attachment_urls: list[str] = field(default_factory=list)
-    ioc_ips: list[str] = field(default_factory=list)
-    ioc_hashes: list[str] = field(default_factory=list)
-    ioc_domains: list[str] = field(default_factory=list)
-    impact_level: str = ""  # "1" / "2" / ""
+    reference_urls: list[str] = Field(default_factory=list)
+    attachment_urls: list[str] = Field(default_factory=list)
+    ioc_ips: list[str] = Field(default_factory=list)
+    ioc_hashes: list[str] = Field(default_factory=list)
+    ioc_domains: list[str] = Field(default_factory=list)
+    impact_level: str = ""
 
     def to_dict(self) -> dict:
-        return asdict(self)
+        return self.model_dump()
 
     @classmethod
     def from_dict(cls, data: dict) -> IntelItem:
-        return cls(**data)
+        return cls.model_validate(data)
 
 
-@dataclass
-class AnalysisResult:
-    risk_level: str  # Critical / High / Medium / Low / 無
+class AnalysisResult(BaseModel):
+    risk_level: Literal["Critical", "High", "Medium", "Low", "無"]
     summary: str
     recommendation: str
-    company_relevance: str  # H / M / L / 無
-    affected_assets: list[str] = field(default_factory=list)
+    company_relevance: Literal["H", "M", "L", "無"]
+    affected_assets: list[str] = Field(default_factory=list)
     responsible_unit: str = ""
 
     def to_dict(self) -> dict:
-        return asdict(self)
+        return self.model_dump()
 
     @classmethod
     def from_dict(cls, data: dict) -> AnalysisResult:
-        return cls(**data)
+        return cls.model_validate(data)
 
 
-@dataclass
-class SheetRow:
+class SheetRow(BaseModel):
     record_date: str  # A
     intel_id: str  # B
     source: str  # C

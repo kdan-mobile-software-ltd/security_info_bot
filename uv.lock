@@ -928,6 +928,7 @@ dependencies = [
     { name = "google-genai" },
     { name = "gspread" },
     { name = "openpyxl" },
+    { name = "pydantic" },
     { name = "python-dotenv" },
     { name = "requests" },
 ]
@@ -946,6 +947,7 @@ requires-dist = [
     { name = "google-genai", specifier = ">=1.0.0" },
     { name = "gspread", specifier = ">=6.0.0" },
     { name = "openpyxl", specifier = ">=3.1.0" },
+    { name = "pydantic", specifier = ">=2.0" },
     { name = "python-dotenv", specifier = ">=1.0.0" },
     { name = "requests", specifier = ">=2.31.0" },
 ]
