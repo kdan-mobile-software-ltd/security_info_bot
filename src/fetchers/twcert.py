@@ -34,6 +34,29 @@ _IMPACT_MAP = {
 }
 
 
+def _parse_json(resp: requests.Response, context: str) -> dict:
+    """Parse JSON from a response, logging rich diagnostics on failure."""
+    try:
+        return resp.json()
+    except ValueError as e:  # JSONDecodeError subclasses ValueError
+        body = (resp.text or "").strip()
+        snippet = body[:500]
+        log.error(
+            "%s: non-JSON response (status=%s, content-type=%s, len=%d): %s",
+            context,
+            resp.status_code,
+            resp.headers.get("Content-Type", ""),
+            len(body),
+            snippet or "<empty body>",
+        )
+        raise RuntimeError(
+            f"{context}: server returned non-JSON "
+            f"(status={resp.status_code}, "
+            f"content-type={resp.headers.get('Content-Type', '')}): "
+            f"{snippet or '<empty body>'}"
+        ) from e
+
+
 def _login(session: requests.Session) -> None:
     log.info("Logging in to TW-ISAC portal")
     resp = session.post(
@@ -46,7 +69,7 @@ def _login(session: requests.Session) -> None:
         timeout=30,
     )
     resp.raise_for_status()
-    data = resp.json()
+    data = _parse_json(resp, "TWCERT login")
     code = data.get("returnCode", "")
     if code != "00":
         msg = data.get("returnMesg", "Unknown error")
@@ -75,7 +98,7 @@ def _fetch_list_page(
         timeout=30,
     )
     resp.raise_for_status()
-    data = resp.json()
+    data = _parse_json(resp, "TWCERT list query")
     if data.get("returnCode") != "00":
         raise RuntimeError(f"List query failed: {data.get('returnMesg')}")
     return data["restData"]
@@ -159,7 +182,7 @@ def _fetch_detail(session: requests.Session, info_id: str) -> dict:
         timeout=30,
     )
     resp.raise_for_status()
-    data = resp.json()
+    data = _parse_json(resp, f"TWCERT detail query {info_id}")
     if data.get("returnCode") != "00":
         raise RuntimeError(f"Detail query failed for {info_id}: {data.get('returnMesg')}")
     return data["restData"]["infoDetail"]
