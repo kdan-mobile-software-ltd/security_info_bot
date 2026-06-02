@@ -1,0 +1,27 @@
+{
+  "source": "cisa_kev",
+  "fetched_at": "2026-06-02T12:53:03.272471",
+  "count": 1,
+  "items": [
+    {
+      "intel_id": "CVE-2024-21182",
+      "source": "CISA_KEV",
+      "publish_date": "2026-06-01",
+      "title": "[CISA KEV] Oracle WebLogic Server - Oracle WebLogic Server Unspecified Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2024-21182"
+      ],
+      "raw_content": "CVE: CVE-2024-21182\n廠商: Oracle\n產品: WebLogic Server\n漏洞名稱: Oracle WebLogic Server Unspecified Vulnerability\n說明: Oracle WebLogic contains an unspecified vulnerability that could allow an unauthenticated attacker with network access via T3, IIOP to compromise Oracle WebLogic Server. Successful attacks of this vulnerability can result in unauthorized access to critical data or complete access to all Oracle WebLogic Server accessible data.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-06-04\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://www.oracle.com/security-alerts/cpujul2024.html ; https://nvd.nist.gov/vuln/detail/CVE-2024-21182",
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-21182"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    }
+  ]
+}
