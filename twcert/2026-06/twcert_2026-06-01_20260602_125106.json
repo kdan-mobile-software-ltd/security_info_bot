@@ -1,0 +1,169 @@
+{
+  "source": "twcert",
+  "fetched_at": "2026-06-02T12:51:06.112711",
+  "count": 5,
+  "items": [
+    {
+      "intel_id": "TWCERT-TWISAC-202606-0007",
+      "source": "TWCERT",
+      "publish_date": "2026-06-02 15:46",
+      "title": "[TLP CLEAR] 英特內｜DreamMaker - Arbitrary File Upload",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-10071"
+      ],
+      "raw_content": "【英特內｜DreamMaker - Arbitrary File Upload】(CVE-2026-10071，CVSS：9.8)\n未經身分鑑別之遠端攻擊者可上傳並執行網頁後門程式，進而於伺服器端執行任意程式碼。\n\n影響平台：DreamMaker Java Composer 2.2(含)以前版本\n\n建議措施：更新至Java Composer 2.3(含)以後版本\n\n參考資訊：1. https://www.twcert.org.tw/tw/cp-132-10943-8fb00-1.html\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://www.twcert.org.tw/tw/cp-132-10943-8fb00-1.html"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    },
+    {
+      "intel_id": "TWCERT-TWISAC-202606-0006",
+      "source": "TWCERT",
+      "publish_date": "2026-06-02 15:44",
+      "title": "[TLP CLEAR] Ivanti Neurons for ITSM存在高風險資安漏洞(CVE-2026-9614)",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-9614"
+      ],
+      "raw_content": "ITSM是Ivanti旗下一款可靠且強大IT服務管理的解決方案，可協助組織提升服務效率，確保IT營運合規及安全。近日針對 Ivanti Neurons for ITSM發布重大資安公告(CVE-2026-9614，CVSS：8.8)，此漏洞可允許經身分驗證的遠端攻擊者取得系統管理存取權限。\n\n影響平台：Ivanti Neurons for ITSM (On-Premises) 2025.4(含)之前版本、\nIvanti Neurons for ITSM (Cloud) 2026.1(含)之前版本\n\n建議措施：根據官方網站釋出的解決方式進行修補：\nhttps://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Neurons-for-ITSM-CVE-2026-9614?language=en_US\n\n參考資訊：1. https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Neurons-for-ITSM-CVE-2026-9614?language=en_US\n2. https://nvd.nist.gov/vuln/detail/CVE-2026-9614\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Neurons-for-ITSM-CVE-2026-9614?language=en_US",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-9614"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    },
+    {
+      "intel_id": "TWCERT-TWISAC-202606-0005",
+      "source": "TWCERT",
+      "publish_date": "2026-06-02 15:43",
+      "title": "[TLP CLEAR] Palo Alto Networks PAN-OS存在重大資安漏洞(CVE-2026-0257)",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-0257"
+      ],
+      "raw_content": "Palo Alto Networks 防火牆作業系統 PAN-OS的GlobalProtect入口網站和通道設備存在身分驗證繞過漏洞，攻擊者可利用該漏洞繞過安全限制並建立未經授權的VPN連線。\n\n影響平台：PAN-OS 12.1.4-h6(不含)以前版本、\nPAN-OS 12.1.7(不含)以前版本、\nPAN-OS 11.2.4-h17(不含)以前版本、\nPAN-OS 11.2.7-h14(不含)以前版本、\nPAN-OS 11.2.10-h7(不含)以前版本、\nPAN-OS 11.2.12(不含)以前版本、\nPAN-OS 11.1.4-h33(不含)以前版本、\nPAN-OS 11.1.6-h32(不含)以前版本、\nPAN-OS 11.1.7-h6(不含)以前版本、\nPAN-OS 11.1.10-h25(不含)以前版本、\nPAN-OS 11.1.13-h5(不含)以前版本、\nPAN-OS 11.1.15(不含)以前版本、\nPAN-OS 10.2.7-h34(不含)以前版本、\nPAN-OS 10.2.10-h36(不含)以前版本、\nPAN-OS 10.2.13-h21(不含)以前版本、\nPAN-OS 10.2.16-h7(不含)以前版本、\nPAN-OS 10.2.18-h6(不含)以前版本、\nPrisma Access 11.2.7-h13(不含)以前版本、\nPrisma Access 10.2.10-h36(不含)以前版本\n\n建議措施：根據官方網站釋出的解決方式進行修補：\nhttps://security.paloaltonetworks.com/CVE-2026-0257\n\n參考資訊：1. https://security.paloaltonetworks.com/CVE-2026-0257\n2. https://nvd.nist.gov/vuln/detail/cve-2026-0257\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://security.paloaltonetworks.com/CVE-2026-0257",
+        "https://nvd.nist.gov/vuln/detail/cve-2026-0257"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    },
+    {
+      "intel_id": "TWCERT-TWISAC-202606-0004",
+      "source": "TWCERT",
+      "publish_date": "2026-06-02 15:40",
+      "title": "[TLP AMBER] TWCERT-IoC 觀測IoC分享_0601",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [],
+      "raw_content": "TWCERT/CC匯整TWCERT-IoC 觀測(至06/01)受駭偵測指標(IoC)情資(詳如附件)，可做為貴單位強化資安防護之參考。\n\nTWCERT-IoC : 聯盟會員分享或接收之外部情資與Virus Check分析可疑檔案，可能包含近期攻擊事件所發現之惡意網域、惡意 IP Address、及惡意程式(MD5、SHA-1及SHA-256)等資訊。\n\n*如貴單位有發現可疑的攻擊/探嗅活動(log)、攻擊資訊(如IoC, IoA)或惡意程式樣本，歡迎提供給TWCERT/CC，我們將去識別化後通報給相關CERT或資安單位，以達到資安聯防的效果。\n*若貴公司因服務之必要無法將有風險之IP列入黑名單, 為避免影響正常服務, 可將該IP列為觀察名單，監控與此IP連線的設備與流量等防護措施, 以降低資安風險。\n\n影響平台：無\n\n建議措施：請參考附件之名單做相關防範措施。\n\n參考資訊：無\n\nTWCERT 影響等級：第 2 級",
+      "reference_urls": [],
+      "attachment_urls": [
+        "(TLP AMBER) TWCERT-IoC 觀測IoC分享_0601.xlsx"
+      ],
+      "ioc_ips": [
+        "61.216.92.127",
+        "174.138.22.165",
+        "45.94.43.41",
+        "172.94.18.103",
+        "173.232.146.55",
+        "66.163.113.238",
+        "172.111.233.80",
+        "213.209.159.254",
+        "216.126.237.71",
+        "45.221.118.180",
+        "223.254.129.212",
+        "66.154.110.34",
+        "168.144.36.228",
+        "54.153.56.183",
+        "160.16.200.77"
+      ],
+      "ioc_hashes": [
+        "f297e54ce1fe9328b946b7a065f6029204f9ca26d1f9aad68592fa471c85747b",
+        "3ea7493a445e08baecc2f22f4753cf3b54f101aa3c3bdcf21c0ac503b874b1e1",
+        "ca9ff203b413c43d8cef8e53ee8b52ebc29c57b94722e180e23e6768161a0035",
+        "e6839c80a905b5be9c3dc67847ea3ddd724bc47e6fd672b4f870f24c93603c09",
+        "e7a52e380d840c8f6a6727a03514585c9e437598f8f94fb187ad51c3957562ec"
+      ],
+      "ioc_domains": [
+        "zn.uatqvra8t5x30uat.com",
+        "ifinchina.com",
+        "goldenold.ru.com",
+        "yetibundel.shop",
+        "zainabuwpretty.click",
+        "elenameetvp.ru.com",
+        "saigeheyzl.ru.com",
+        "www.rxjapan.jp",
+        "1gvp63.exe",
+        "client_msvc_patched_001.exe",
+        "local72.mlcrosoft.my",
+        "mlcrosoft.asia",
+        "fyduoyu.mlcrosoft.asia",
+        "tl3.mlcrosoft.asia",
+        "hc12.mlcrosoft.asia",
+        "zhjze2.mlcrosoft.win",
+        "www.linerm.com",
+        "www.lineoe.com",
+        "www.line-tww.com",
+        "www.linecl.com",
+        "gffdsene-gsreshdg2.25.exe",
+        "kffw.dll",
+        "devel.asurans.com",
+        "linesdk.com",
+        "linecbc.com",
+        "linecbf.com",
+        "linecbg.com",
+        "app-line.me",
+        "line-me.me",
+        "line-hk.com.cn",
+        "node201.latitudeprevalent.cfd"
+      ],
+      "impact_level": "2"
+    },
+    {
+      "intel_id": "TWCERT-TWISAC-202606-0003",
+      "source": "TWCERT",
+      "publish_date": "2026-06-02 15:38",
+      "title": "[TLP CLEAR] CISA新增5個已知遭駭客利用之漏洞至KEV目錄(2026/05/25-2026/05/31)",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-48172",
+        "CVE-2026-48027",
+        "CVE-2026-45321",
+        "CVE-2026-8398",
+        "CVE-2026-0257"
+      ],
+      "raw_content": "【CVE-2026-48172】LiteSpeed cPanel Plugin Privilege Escalation Vulnerability (CVSS v3.1: 9.8)\n【是否遭勒索軟體利用:未知】\nLiteSpeed cPanel Plugin 存在權限提升漏洞。該漏洞可經由使用者端的 cPanel 外掛程式觸發，任何 cPanel 使用者帳號都可能濫用此漏洞，以 root權限執行任意指令碼。\n\n【CVE-2026-48027】Nx Console Embedded Malicious Code Vulnerability (CVSS v3.1: 9.8)\n【是否遭勒索軟體利用:已知】\nNx Console 存在嵌入式惡意程式碼漏洞。攻擊者藉此發布惡意版本的 Nx Console。受影響的擴充套件會下載經過混淆處理的惡意載荷，可從磁碟與記憶體中的多個來源竊取憑證。\n\n【CVE-2026-45321】TanStack Unspecified Vulnerability (CVSS v3.1: 9.6)\n【是否遭勒索軟體利用:已知】\nTanStack 存在未具體說明的漏洞，使攻擊者得以將惡意版本的套件發布至 npm Registry，並利用受信任的身分發布竊取憑證的惡意軟體。\n\n【CVE-2026-8398】Daemon Tools Lite Embedded Malicious Code Vulnerability (CVSS v3.1: 9.8)\n【是否遭勒索軟體利用:未知】\nDaemon Tools 存在未具體說明的漏洞，對機密性、完整性及可用性造成高度影響。\n\n【CVE-2026-0257】Palo Alto Networks PAN-OS Authentication Bypass Vulnerability (CVSS v3.1: 9.1)\n【是否遭勒索軟體利用:未知】\nPalo Alto Networks PAN-OS 存在身分驗證繞過漏洞，攻擊者可藉此繞過安全限制並建立未經授權的 VPN 連線。\n\n\n影響平台：【CVE-2026-48172】\n請參考官方所列的影響版本 \nhttps://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/\n\n【CVE-2026-48027】\n請參考官方所列的影響版本\nhttps://nx.dev/blog/nx-console-v18-95-0-postmortem#indicators-of-compromise\n\n【CVE-2026-45321】\n請參考官方所列的影響版本\nhttps://github.com/TanStack/router/security/advisories/GHSA-g7cv-rxg3-hmpx\n\n【CVE-2026-8398】\n請參考官方所列的影響版本\nhttps://blog.daemon-tools.cc/post/security-incident\n\n【CVE-2026-0257】\n請參考官方所列的影響版本\nhttps://security.paloaltonetworks.com/CVE-2026-0257\n\n\n建議措施：【CVE-2026-48172】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/\n\n【CVE-2026-48027】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://nx.dev/blog/nx-console-v18-95-0-postmortem#indicators-of-compromise\n\n【CVE-2026-45321】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://github.com/TanStack/router/security/advisories/GHSA-g7cv-rxg3-hmpx\n\n【CVE-2026-8398】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://blog.daemon-tools.cc/post/security-incident\n\n【CVE-2026-0257】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://security.paloaltonetworks.com/CVE-2026-0257\n\n\n參考資訊：【CVE-2026-48172】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-48172\n2.https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/\n\n【CVE-2026-48027】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-48027\n2.https://nx.dev/blog/nx-console-v18-95-0-postmortem#indicators-of-compromise\n\n【CVE-2026-45321】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-45321\n2.https://github.com/TanStack/router/security/advisories/GHSA-g7cv-rxg3-hmpx\n\n【CVE-2026-8398】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-8398\n2.https://blog.daemon-tools.cc/post/security-incident\n\n【CVE-2026-0257】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-0257\n2.https://security.paloaltonetworks.com/CVE-2026-0257\n\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://nvd.nist.gov/vuln/detail/cve-2026-48172",
+        "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/",
+        "https://nvd.nist.gov/vuln/detail/cve-2026-48027",
+        "https://nx.dev/blog/nx-console-v18-95-0-postmortem#indicators-of-compromise",
+        "https://nvd.nist.gov/vuln/detail/cve-2026-45321",
+        "https://github.com/TanStack/router/security/advisories/GHSA-g7cv-rxg3-hmpx",
+        "https://nvd.nist.gov/vuln/detail/cve-2026-8398",
+        "https://blog.daemon-tools.cc/post/security-incident",
+        "https://nvd.nist.gov/vuln/detail/cve-2026-0257",
+        "https://security.paloaltonetworks.com/CVE-2026-0257"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    }
+  ]
+}
