@@ -1,0 +1,71 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-06-03T06:17:55.397423",
+  "count": 2,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2022-0492",
+        "source": "CISA_KEV",
+        "publish_date": "2026-06-02",
+        "title": "[CISA KEV] Linux Kernel - Linux Kernel Improper Authentication Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2022-0492"
+        ],
+        "raw_content": "CVE: CVE-2022-0492\n廠商: Linux\n產品: Kernel\n漏洞名稱: Linux Kernel Improper Authentication Vulnerability\n說明: Linux Kernel contains an improper authentication vulnerability which could allow for privilege escalation via the cgroups v1 release_agent feature.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-06-05\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "This vulnerability affects a common open-source component, third-party library, or a protocol used by different products. Please check with specific vendors for information on patching status. For more information, please see: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=24f6008564183aa120d07c03d9289519c2fe02af ; https://www.kernel.org/ ; https://nvd.nist.gov/vuln/detail/CVE-2022-0492",
+          "https://nvd.nist.gov/vuln/detail/CVE-2022-0492"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "Low",
+        "summary": "Linux Kernel 存在身分驗證不當漏洞（CVE-2022-0492），攻擊者可利用 cgroups v1 release_agent 功能進行權限提升。此漏洞雖已被列入 CISA KEV，但因屬 2022 年之舊漏洞且已有成熟補丁，在未明確使用受影響舊版本的情況下，整體風險較低。",
+        "recommendation": "建議檢查公司「資訊軟體-伺服器軟體-Linux ubuntu」及相關 Linux 虛擬主機的核心版本。若仍在使用受影響之舊版核心（Linux Kernel 5.17 以前版本），請儘速升級至最新安全版本，或採取停用 cgroups v1 相關緩解措施。",
+        "company_relevance": "H",
+        "affected_assets": [
+          "資訊軟體-伺服器軟體-Linux ubuntu"
+        ],
+        "responsible_unit": "RR40"
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2025-48595",
+        "source": "CISA_KEV",
+        "publish_date": "2026-06-02",
+        "title": "[CISA KEV] Android Framework - Android Framework Integer Overflow Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2025-48595"
+        ],
+        "raw_content": "CVE: CVE-2025-48595\n廠商: Android\n產品: Framework\n漏洞名稱: Android Framework Integer Overflow Vulnerability\n說明: Android Framework contains an integer overflow vulnerability that allows for code execution that could allow for local privilege escalation.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-06-05\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://source.android.com/docs/security/bulletin/2026/2026-06-01 ; https://nvd.nist.gov/vuln/detail/CVE-2025-48595",
+          "https://nvd.nist.gov/vuln/detail/CVE-2025-48595"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "Critical",
+        "summary": "Android Framework 存在整數溢位漏洞（CVE-2025-48595），已被證實遭到野外攻擊利用。攻擊者可利用此漏洞執行任意程式碼並提升本地權限，對受影響的行動裝置造成嚴重威脅。",
+        "recommendation": "1. 盤點公司內所有 Android 測試行動裝置。\n2. 儘速將 Android 系統更新至 2026 年 6 月（或更新）的安全性修補程式版本。\n3. 針對無法再取得官方安全更新的舊款 Android 裝置，應限制其網路存取權限或停止使用，以降低安全風險。",
+        "company_relevance": "H",
+        "affected_assets": [
+          "資訊設備-行動裝置"
+        ],
+        "responsible_unit": "各部門"
+      }
+    }
+  ]
+}
