@@ -1,0 +1,37 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-06-04T06:08:35.458784",
+  "count": 1,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2026-45247",
+        "source": "CISA_KEV",
+        "publish_date": "2026-06-03",
+        "title": "[CISA KEV] Mirasvit Mirasvit Full Page Cache Warmer - Mirasvit Full Page Cache Warmer Deserialization of Untrusted Data Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-45247"
+        ],
+        "raw_content": "CVE: CVE-2026-45247\n廠商: Mirasvit\n產品: Mirasvit Full Page Cache Warmer\n漏洞名稱: Mirasvit Full Page Cache Warmer Deserialization of Untrusted Data Vulnerability\n說明: Mirasvit Full Page Cache Warmer contains a deserialization of untrusted data vulnerability that could allow unauthenticated attackers to achieve remote code execution by supplying a crafted serialized PHP object in the CacheWarmer cookie.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-06-06\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://mirasvit.com/package/changelog/?package=mirasvit/module-cache-warmer ; https://nvd.nist.gov/vuln/detail/CVE-2026-45247",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-45247"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Mirasvit Full Page Cache Warmer 存在反序列化漏洞（CVE-2026-45247），未經授權的攻擊者可透過在 CacheWarmer Cookie 中傳送惡意的 PHP 序列化對象來執行遠端程式碼（RCE）。此漏洞已被 CISA 列入已知遭利用漏洞清單（KEV），但由於公司並未部署此產品，因此無直接影響。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
