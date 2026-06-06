@@ -1,0 +1,37 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-06-06T05:05:54.405848",
+  "count": 1,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2026-28318",
+        "source": "CISA_KEV",
+        "publish_date": "2026-06-05",
+        "title": "[CISA KEV] SolarWinds Serv-U - SolarWinds Serv-U Uncontrolled Resource Consumption Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-28318"
+        ],
+        "raw_content": "CVE: CVE-2026-28318\n廠商: SolarWinds\n產品: Serv-U\n漏洞名稱: SolarWinds Serv-U Uncontrolled Resource Consumption Vulnerability\n說明: SolarWinds Serv-U contains an uncontrolled resource consumption vulnerability that allows specially crafted POST requests using the Content-Encoding: deflate header to crash the Serv-U service without authentication.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-06-19\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://www.solarwinds.com/trust-center/security-advisories/cve-2026-28318 ; https://documentation.solarwinds.com/en/success_center/servu/content/release_notes/servu_15-5-4-hotfix-1_release_notes.htm#link7 ; https://nvd.nist.gov/vuln/detail/CVE-2026-28318",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-28318"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "SolarWinds Serv-U 存在未受控制的資源消耗漏洞（CVE-2026-28318），攻擊者可透過特製的 POST 請求導致服務崩潰。此漏洞已被 CISA 列入已知遭利用漏洞清單（KEV），但由於本公司並未部署該產品，因此不受此漏洞影響。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
