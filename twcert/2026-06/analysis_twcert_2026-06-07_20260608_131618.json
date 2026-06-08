@@ -1,0 +1,52 @@
+{
+  "source": "twcert",
+  "analyzed_at": "2026-06-08T13:16:18.891280",
+  "count": 1,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202606-0014",
+        "source": "TWCERT",
+        "publish_date": "2026-06-08 15:40",
+        "title": "[TLP CLEAR] CISA新增5個已知遭駭客利用之漏洞至KEV目錄(2026/06/01-2026/06/07)",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2024-21182",
+          "CVE-2022-0492",
+          "CVE-2025-48595",
+          "CVE-2026-45247",
+          "CVE-2026-28318"
+        ],
+        "raw_content": "【CVE-2024-21182】Oracle WebLogic Server Unspecified Vulnerability (CVSS v3.1: 7.5)\n【是否遭勒索軟體利用:未知】\nOracle WebLogic存在未具體說明的漏洞。透過T3或IIOP協定進行連線的未經驗證攻擊者，可能利用此漏洞入侵Oracle WebLogic Server。若此漏洞遭成功利用，可能導致關鍵資料遭未經授權存取，或使攻擊者取得Oracle WebLogic Server可存取之所有資料的完整存取權限。\n\n【CVE-2022-0492】Linux Kernel Improper Authentication Vulnerability (CVSS v3.1: 7.8)\n【是否遭勒索軟體利用:未知】\nLinux Kernel存在不當驗證漏洞，攻擊者可能透過cgroups v1的release_agent功能進行權限提升。\n\n【CVE-2025-48595】Android Framework Integer Overflow Vulnerability (CVSS v3.1: 8.4)\n【是否遭勒索軟體利用:未知】\nAndroid Framework存在整數溢位漏洞，可能導致任意程式碼執行，進而造成本機權限提升。\n\n【CVE-2026-45247】Mirasvit Full Page Cache Warmer Deserialization of Untrusted Data Vulnerability (CVSS v3.1: 9.8)\n【是否遭勒索軟體利用:未知】\nMirasvit Full Page Cache Warmer存在反序列化不受信任資料漏洞，未經驗證的攻擊者可透過在CacheWarmer Cookie中提供特製的PHP物件，達成遠端程式碼執行。\n\n【CVE-2026-28318】SolarWinds Serv-U Uncontrolled Resource Consumption Vulnerability (CVSS v3.1: 7.5)\n【是否遭勒索軟體利用:未知】\nSolarWinds Serv-U存在未受控制的資源消耗漏洞，攻擊者無需通過驗證，即可透過使用Content-Encoding: deflate標頭的特製POST請求，導致Serv-U服務崩潰。\n\n\n影響平台：【CVE-2024-21182】\n請參考官方所列的影響版本 \nhttps://www.oracle.com/security-alerts/cpujul2024.html\n\n【CVE-2022-0492】\n請參考官方所列的影響版本\nhttps://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=24f6008564183aa120d07c03d9289519c2fe02af\n\n【CVE-2025-48595】\n請參考官方所列的影響版本\nhttps://source.android.com/docs/security/bulletin/2026/2026-06-01\n\n【CVE-2026-45247】\n請參考官方所列的影響版本\nhttps://mirasvit.com/package/changelog/?package=mirasvit/module-cache-warmer\n\n【CVE-2026-28318】\n請參考官方所列的影響版本\nhttps://www.solarwinds.com/trust-center/security-advisories/cve-2026-28318\n\n\n建議措施：【CVE-2024-21182】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://www.oracle.com/security-alerts/cpujul2024.html\n\n【CVE-2022-0492】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=24f6008564183aa120d07c03d9289519c2fe02af\n\n【CVE-2025-48595】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://source.android.com/docs/security/bulletin/2026/2026-06-01\n\n【CVE-2026-45247】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://mirasvit.com/package/changelog/?package=mirasvit/module-cache-warmer\n\n【CVE-2026-28318】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://www.solarwinds.com/trust-center/security-advisories/cve-2026-28318\n\n\n參考資訊：【CVE-2024-21182】\n1.https://nvd.nist.gov/vuln/detail/cve-2024-21182\n2.https://www.oracle.com/security-alerts/cpujul2024.html\n\n【CVE-2022-0492】\n1.https://nvd.nist.gov/vuln/detail/cve-2022-0492\n2.https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=24f6008564183aa120d07c03d9289519c2fe02af\n\n【CVE-2025-48595】\n1.https://nvd.nist.gov/vuln/detail/cve-2025-48595\n2.https://source.android.com/docs/security/bulletin/2026/2026-06-01\n\n【CVE-2026-45247】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-45247\n2.https://mirasvit.com/package/changelog/?package=mirasvit/module-cache-warmer\n\n【CVE-2026-28318】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-28318\n2.https://www.solarwinds.com/trust-center/security-advisories/cve-2026-28318\n\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://nvd.nist.gov/vuln/detail/cve-2024-21182",
+          "https://www.oracle.com/security-alerts/cpujul2024.html",
+          "https://nvd.nist.gov/vuln/detail/cve-2022-0492",
+          "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=24f6008564183aa120d07c03d9289519c2fe02af",
+          "https://nvd.nist.gov/vuln/detail/cve-2025-48595",
+          "https://source.android.com/docs/security/bulletin/2026/2026-06-01",
+          "https://nvd.nist.gov/vuln/detail/cve-2026-45247",
+          "https://mirasvit.com/package/changelog/?package=mirasvit/module-cache-warmer",
+          "https://nvd.nist.gov/vuln/detail/cve-2026-28318",
+          "https://www.solarwinds.com/trust-center/security-advisories/cve-2026-28318"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "High",
+        "summary": "CISA新增5個已知遭駭客利用之漏洞，其中Linux Kernel不當驗證漏洞（CVE-2022-0492）與Android Framework整數溢位漏洞（CVE-2025-48595）直接影響公司內部的Linux Ubuntu伺服器與測試用行動裝置。攻擊者可利用此類漏洞進行權限提升或執行任意程式碼，具備高風險性。",
+        "recommendation": "1. 針對「資訊軟體-伺服器軟體-Linux ubuntu」，請確認並更新Linux Kernel至已修補CVE-2022-0492之安全版本。\n2. 針對「資訊設備-行動裝置」，請檢查所有Android測試手機與平板，並將系統更新至2026年6月（或更新）之安全更新修補程式，以防範CVE-2025-48595漏洞。",
+        "company_relevance": "H",
+        "affected_assets": [
+          "資訊軟體-伺服器軟體-Linux ubuntu",
+          "資訊設備-行動裝置"
+        ],
+        "responsible_unit": "RR40"
+      }
+    }
+  ]
+}
