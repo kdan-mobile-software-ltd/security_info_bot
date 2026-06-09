@@ -158,13 +158,43 @@ GitHub Actions 預設只有讀取權限；archive branch 需要 push 能力。
 
 ---
 
-## 8. 首次驗證
+## 8. 手動觸發 Workflow
 
-建議先用 **CISA KEV workflow** 驗證（無需 TWCERT 帳號）：
+兩個 workflow 都支援 `workflow_dispatch` 手動觸發，可在 Actions 頁面任意指定日期重跑。以下以 **CISA KEV 情資分析** 為例；TWCERT 步驟相同。
 
-1. **Actions 頁面** → 選擇「CISA KEV 情資分析」→ **Run workflow**
-2. `since` 欄位可填入近幾天的日期（如 `2026-05-20`）確保有資料可抓，或留空使用今天
-3. 等待 workflow 完成（約 1–2 分鐘）
+### 8-1. 進入 Actions 頁面
+
+1. 開啟 GitHub repo → 頂部選單點擊 **Actions**
+2. 左側清單選擇要執行的 workflow：
+   - **CISA KEV 情資分析**（`cisa_kev.yml`）
+   - **TWCERT 情資分析**（`twcert.yml`）
+
+### 8-2. 開啟 Run workflow 面板
+
+頁面中間會出現藍色橫幅：
+
+> This workflow has a `workflow_dispatch` event trigger.
+
+點擊右側的 **Run workflow ▾** 按鈕，展開輸入面板。
+
+![Run workflow 面板](images/manual-trigger-run-workflow.png)
+
+### 8-3. 填寫參數並執行
+
+面板中有兩個欄位：
+
+| 欄位 | 說明 | 範例 |
+|:--|:--|:--|
+| **Use workflow from** | 執行所在分支，保持預設 `Branch: main` 即可 | `main` |
+| **Fetch start date (YYYY-MM-DD, UTC). Defaults to yesterday.** | 資料抓取起始日（UTC）。留空則抓昨天的資料 | `2026-05-20` |
+
+> **提示**：首次驗證建議填入 `2026-05-20`（或近幾天的日期），確保資料庫中有可抓的項目。
+
+填完後點擊面板底部的綠色 **Run workflow** 按鈕。
+
+### 8-4. 等待完成並確認
+
+頁面刷新後可看到新的 workflow run 出現在清單頂部（狀態為黃色轉圈）。點擊進入可即時查看 log。整個 pipeline 約需 **1–3 分鐘**。
 
 ### 確認指標
 
