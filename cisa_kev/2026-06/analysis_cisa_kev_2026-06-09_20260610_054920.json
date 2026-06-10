@@ -1,0 +1,100 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-06-10T05:49:20.837647",
+  "count": 3,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2026-11645",
+        "source": "CISA_KEV",
+        "publish_date": "2026-06-09",
+        "title": "[CISA KEV] Google Chromium V8 - Google Chromium V8 Out-of-Bounds Read and Write Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-11645"
+        ],
+        "raw_content": "CVE: CVE-2026-11645\n廠商: Google\n產品: Chromium V8\n漏洞名稱: Google Chromium V8 Out-of-Bounds Read and Write Vulnerability\n說明: Google Chromium V8 out-of-bounds read and write vulnerability that could allow a remote attacker to execute arbitrary code inside a sandbox via a crafted HTML page. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-06-23\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://chromereleases.googleblog.com/2026/06/stable-channel-update-for-desktop_0153744567.html ; https://issues.chromium.org/issues/506689381 ; https://nvd.nist.gov/vuln/detail/CVE-2026-11645",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-11645"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "Critical",
+        "summary": "Google Chromium V8 引擎存在越界讀寫漏洞（CVE-2026-11645），遠端攻擊者可透過誘導使用者訪問惡意網頁，在沙箱內執行任意程式碼。此漏洞已被收錄於 CISA KEV 漏洞名單中，證實已有在野利用，將直接威脅公司員工日常使用的 Chrome、Edge 等瀏覽器安全。",
+        "recommendation": "1. 針對「資訊設備-桌上型電腦/筆記型電腦」與「資訊設備-行動裝置」，全面檢查並更新 Google Chrome、Microsoft Edge 等基於 Chromium 核心的瀏覽器至最新安全版本。\n2. 建議透過端點管理工具或 AD 群組原則強制啟用瀏覽器自動更新機制。\n3. 宣導員工避免點擊來源不明的網頁連結，以降低受駭風險。",
+        "company_relevance": "H",
+        "affected_assets": [
+          "資訊設備-桌上型電腦/筆記型電腦",
+          "資訊設備-行動裝置"
+        ],
+        "responsible_unit": "RR40"
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-7473",
+        "source": "CISA_KEV",
+        "publish_date": "2026-06-09",
+        "title": "[CISA KEV] Arista Extensible Operating System - Arista Extensible Operating System Incomplete Comparison with Missing Factors Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-7473"
+        ],
+        "raw_content": "CVE: CVE-2026-7473\n廠商: Arista\n產品: Extensible Operating System\n漏洞名稱: Arista Extensible Operating System Incomplete Comparison with Missing Factors Vulnerability\n說明: Arista Extensible Operating System (EOS) contains an incomplete comparison with missing factors vulnerability when the switch incorrectly decapsulate and forwards other unexpected tunneled packet with a destination IP matching its configured decapsulation IP.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-06-23\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://www.arista.com/en/support/advisories-notices/security-advisory/24005-security-advisory-0137 ; https://nvd.nist.gov/vuln/detail/CVE-2026-7473",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-7473"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Arista Extensible Operating System (EOS) 存在安全漏洞 (CVE-2026-7473)，當交換器處理特定隧道封包時，可能錯誤地進行解封裝與轉發。此漏洞已被 CISA 列入已知利用漏洞清單，可能導致網路流量異常或安全邊界失效。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-20245",
+        "source": "CISA_KEV",
+        "publish_date": "2026-06-09",
+        "title": "[CISA KEV] Cisco Catalyst SD-WAN Manager - Cisco Catalyst SD-WAN Manager Improper Encoding or Escaping of Output Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-20245"
+        ],
+        "raw_content": "CVE: CVE-2026-20245\n廠商: Cisco\n產品: Catalyst SD-WAN Manager\n漏洞名稱: Cisco Catalyst SD-WAN Manager Improper Encoding or Escaping of Output Vulnerability\n說明: Cisco Catalyst SD-WAN Manager formerly SD-WAN vManage contains an improper encoding or escaping of output vulnerability. This vulnerability could allow an authenticated, local attacker to execute arbitrary commands as root by supplying a crafted file to the affected system.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-06-23\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-privesc-4uxFrdzx ; https://nvd.nist.gov/vuln/detail/CVE-2026-20245",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-20245"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Cisco Catalyst SD-WAN Manager 存在編碼與轉義不當漏洞（CVE-2026-20245），已被收錄於 CISA KEV 漏洞名單。本地具備權限的攻擊者可透過上傳特製檔案，以 root 權限執行任意指令。由於此漏洞已被實際利用，若企業內部部署該產品，將面臨極高的本地提權與系統控制風險。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
