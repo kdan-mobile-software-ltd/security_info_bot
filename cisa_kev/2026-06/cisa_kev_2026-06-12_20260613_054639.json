@@ -1,0 +1,27 @@
+{
+  "source": "cisa_kev",
+  "fetched_at": "2026-06-13T05:46:39.228109",
+  "count": 1,
+  "items": [
+    {
+      "intel_id": "CVE-2026-35273",
+      "source": "CISA_KEV",
+      "publish_date": "2026-06-12",
+      "title": "[CISA KEV] Oracle  PeopleSoft Enterprise PeopleTools - Oracle PeopleSoft Enterprise PeopleTools Missing Authentication for Critical Function Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-35273"
+      ],
+      "raw_content": "CVE: CVE-2026-35273\n廠商: Oracle\n產品:  PeopleSoft Enterprise PeopleTools\n漏洞名稱: Oracle PeopleSoft Enterprise PeopleTools Missing Authentication for Critical Function Vulnerability\n說明: Oracle PeopleSoft Enterprise PeopleTools contains a missing authentication for critical function vulnerability which could allow an unauthenticated attacker to obtain takeover of PeopleSoft Enterprise PeopleTools.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-06-15\n已知勒索軟體利用: Known\n",
+      "reference_urls": [
+        "https://www.oracle.com/security-alerts/alert-cve-2026-35273.html ; https://support.oracle.com/signin/ ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-35273",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-35273"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    }
+  ]
+}
