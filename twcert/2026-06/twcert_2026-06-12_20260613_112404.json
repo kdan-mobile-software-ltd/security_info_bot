@@ -1,0 +1,114 @@
+{
+  "source": "twcert",
+  "fetched_at": "2026-06-13T11:24:04.821402",
+  "count": 5,
+  "items": [
+    {
+      "intel_id": "TWCERT-TWISAC-202606-0020",
+      "source": "TWCERT",
+      "publish_date": "2026-06-12 11:26",
+      "title": "[TLP CLEAR] SAP針對旗下多款產品發布重大資安公告",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-40128",
+        "CVE-2026-27671",
+        "CVE-2026-44748"
+      ],
+      "raw_content": "【CVE-2026-40128，CVSS：9.0】\nSAP NetWeaver Application Server Java (Web Container)允許未經身分驗證的攻擊者，透過精心設計HTTP登入請求進而觸發路徑遍歷行為。\n\n【CVE-2026-27671，CVSS：9.8】\n由於SAP NetWeaver AS ABAP and ABAP Platform 所使用的RFC協定驗證不足，未經身分驗證的攻擊者可透過精心設計的RFC請求，利用記憶體的邏輯錯誤進而損壞。\n\n【CVE-2026-44748，CVSS：9.9】\nSAP NetWeaver AS ABAP and ABAP Platform允許具有普通權限且經身分驗證的攻擊者取得有效簽署訊息後，對簽署文件內容進行竄改後提交給驗證者。\n\n影響平台：【CVE-2026-40128】\nSAP NetWeaver Application Server Java (Web Container)\nVersion(s) - ENGINEAPI 7.50\n\n【CVE-2026-27671】\nSAP NetWeaver AS ABAP and ABAP Platform\nVersion(s) - KRNL64NUC 7.22, 7.22EXT, KRNL64UC 7.22, 722EXT, 7.53, KERNEL 7.22, 7.53, 7.54, 7.77, 7.89, 7.93, 9.16, 9.18, 91.9\n\n【CVE-2026-44748】\nSAP NetWeaver AS ABAP and ABAP Platform\nVersion(s) - SAP_BASIS 702, SAP_BASIS 731, SAP_BASIS 740, SAP_BASIS 750, SAP_BASIS 751, SAP_BASIS 752, SAP_BASIS 753, SAP_BASIS 754, SAP_BASIS 755, SAP_BASIS 756, SAP_BASIS 757, SAP_BASIS 758, SAP_BASIS 816, SAP_BASIS 918, SAP_BASIS 919\n\n建議措施：根據官方網站釋出的解決方式進行修補：https://support.sap.com/en/my-support/knowledge-base/security-notes-news/june-2026.html\n\n參考資訊：1. https://support.sap.com/en/my-support/knowledge-base/security-notes-news/june-2026.html\n2. https://www.cve.org/CVERecord?id=CVE-2026-40128\n3. https://www.cve.org/CVERecord?id=CVE-2026-27671\n4. https://www.cve.org/CVERecord?id=CVE-2026-44748\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/june-2026.html",
+        "https://www.cve.org/CVERecord?id=CVE-2026-40128",
+        "https://www.cve.org/CVERecord?id=CVE-2026-27671",
+        "https://www.cve.org/CVERecord?id=CVE-2026-44748"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    },
+    {
+      "intel_id": "TWCERT-TWISAC-202606-0019",
+      "source": "TWCERT",
+      "publish_date": "2026-06-12 11:23",
+      "title": "[TLP CLEAR] Fortinet旗下FortiSandbox、FortiSandbox Cloud 和 FortiSandbox PaaS存在重大資安漏洞(CVE-2026-25089)",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-25089",
+        "CVE-2026-26089"
+      ],
+      "raw_content": "Fortinet旗下FortiSandbox、FortiSandbox Cloud 和 FortiSandbox PaaS的網頁介面存在缺少授權漏洞(CVE-2026-26089，CVSS：9.8)，可能允許未經身分驗證的攻擊者，透過HTTP請求執行未經授權的程式碼或命令。\n\n影響平台：FortiSandbox 5.0.0至5.0.5版本、\nFortiSandbox 4.4.0至4.4.8版本、\nFortiSandbox Cloud 5.0.4至5.0.5版本、\nFortiSandbox PaaS 5.0.4至5.0.5版本\n\n建議措施：請更新至以下版本：\nFortiSandbox 5.0.6(含)之後版本、\nFortiSandbox 4.4.9(含)之後版本、\nFortiSandbox Cloud 5.0.6(含)之後版本、\nFortiSandbox PaaS 5.0.6(含)之後版本\n\n參考資訊：1. https://fortiguard.fortinet.com/psirt/FG-IR-26-141\n2. https://nvd.nist.gov/vuln/detail/CVE-2026-25089\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://fortiguard.fortinet.com/psirt/FG-IR-26-141",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-25089"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    },
+    {
+      "intel_id": "TWCERT-TWISAC-202606-0018",
+      "source": "TWCERT",
+      "publish_date": "2026-06-12 11:20",
+      "title": "[TLP CLEAR] Veeam旗下Veeam Backup & Replication備份軟體存在重大資安漏洞(CVE-2026-44963)",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-44963"
+      ],
+      "raw_content": "Veeam Backup & Replication是Veeam核心備份軟體，近日Veeam發布重大資安漏洞公告，此漏洞(CVE-2026-44963，CVSS 4.x：9.4)允許經身分驗證的網域使用者，在備份伺服器上執行遠端程式碼(RCE)。\n\n影響平台：Veeam Backup & Replication 12.3.2.4465(含)之前12版本\n\n建議措施：更新 Veeam Backup & Replication 至12.3.2.4854(含)之後版本\n\n參考資訊：1. https://www.veeam.com/kb4869\n2. https://nvd.nist.gov/vuln/detail/CVE-2026-44963\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://www.veeam.com/kb4869",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-44963"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    },
+    {
+      "intel_id": "TWCERT-TWISAC-202606-0017",
+      "source": "TWCERT",
+      "publish_date": "2026-06-12 11:17",
+      "title": "[TLP CLEAR] Oracle PeopleSoft PeopleTools 存在重大資安漏洞(CVE-2026-35273) ",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-35273"
+      ],
+      "raw_content": "近日Oracle針對 PeopleSoft PeopleTools發布重大資安公告(CVE-2026-35273，CVSS：9.8)，該漏洞允許未經身分驗證的遠端攻擊者可遠端程式碼執行。\n\n影響平台：PeopleSoft Enterprise PeopleTools 8.61、8.62版本\n\n建議措施：根據官方網站釋出的解決方式進行修補：\nhttps://www.oracle.com/security-alerts/alert-cve-2026-35273.html\n\n參考資訊：1. https://www.oracle.com/security-alerts/alert-cve-2026-35273.html\n2. https://www.cve.org/CVERecord?id=CVE-2026-35273\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://www.oracle.com/security-alerts/alert-cve-2026-35273.html",
+        "https://www.cve.org/CVERecord?id=CVE-2026-35273"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    },
+    {
+      "intel_id": "TWCERT-TWISAC-202606-0016",
+      "source": "TWCERT",
+      "publish_date": "2026-06-12 11:12",
+      "title": "[TLP CLEAR] Ivanti旗下Sentry存在2個重大資安漏洞",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-10520",
+        "CVE-2026-10523"
+      ],
+      "raw_content": "近日Ivanti針對旗下Sentry發布重大資安漏洞公告\n\n【CVE-2026-10520，CVSS：10.0】\n此漏洞為作業系統命令注入漏洞，允許未經身分驗證的遠端使用者以root權限執行遠端程式碼。\n\n【CVE-2026-10523，CVSS：9.9】\n此漏洞為身分驗證繞過漏洞，允許未經身分驗證的遠端攻擊者建立任意管理員帳號，並完全取得管理員權限。\n\n影響平台：Ivanti Sentry 10.5.1(含)以前版本、\nIvanti Sentry 10.6.1(含)以前版本、\nIvanti Sentry 10.7.0(含)以前版本\n\n建議措施：請更新至以下版本：\nIvanti Sentry 10.5.2(含)之後版本、\nIvanti Sentry 10.6.2(含)之後版本、\nIvanti Sentry 10.7.1(含)之後版本\n\n參考資訊：1. https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US\n2. https://nvd.nist.gov/vuln/detail/CVE-2026-10520\n3. https://nvd.nist.gov/vuln/detail/CVE-2026-10523\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-10520",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-10523"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    }
+  ]
+}
