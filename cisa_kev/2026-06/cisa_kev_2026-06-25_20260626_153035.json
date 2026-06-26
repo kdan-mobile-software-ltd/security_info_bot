@@ -1,0 +1,47 @@
+{
+  "source": "cisa_kev",
+  "fetched_at": "2026-06-26T15:30:35.952588",
+  "count": 2,
+  "items": [
+    {
+      "intel_id": "CVE-2026-12569",
+      "source": "CISA_KEV",
+      "publish_date": "2026-06-25",
+      "title": "[CISA KEV] PTC Windchill and FlexPLM - PTC Windchill and FlexPLM Improper Input Validation Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-12569"
+      ],
+      "raw_content": "CVE: CVE-2026-12569\n廠商: PTC\n產品: Windchill and FlexPLM\n漏洞名稱: PTC Windchill and FlexPLM Improper Input Validation Vulnerability\n說明: PTC Windchill and FlexPLM contains an improper input validation vulnerability allowing an unauthenticated, remote attacker to execute arbitrary code by sending a malicious request to the network.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-06-28\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://www.ptc.com/en/support/article/CS473270 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-12569",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-12569"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-20230",
+      "source": "CISA_KEV",
+      "publish_date": "2026-06-25",
+      "title": "[CISA KEV] Cisco Unified Communications Manager - Cisco Unified Communications Manager Server-Side Request Forgery (SSRF) Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-20230"
+      ],
+      "raw_content": "CVE: CVE-2026-20230\n廠商: Cisco\n產品: Unified Communications Manager\n漏洞名稱: Cisco Unified Communications Manager Server-Side Request Forgery (SSRF) Vulnerability\n說明: Cisco Unified Communications Manager (Unified CM) and Cisco Unified Communications Manager Session Management Edition (Unified CM SME) contain a server-side request forgery (SSRF) Vulnerability that could allow an unauthenticated, remote attacker to write files to the underlying operating system that could be used later to elevate to root.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-06-28\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://www.cisco.com/c/en/us/support/docs/csa/cisco-sa-cucm-ssrf-cXPnHcW.html ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-20230",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-20230"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    }
+  ]
+}
