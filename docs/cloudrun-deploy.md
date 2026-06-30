@@ -6,6 +6,7 @@
 
 ```bash
 export PROJECT_ID=kdan-it-playground
+export PROJECT_NUMBER=962438265955
 export REGION=asia-east1
 export REPO=security-info-bot
 export IMAGE=$REGION-docker.pkg.dev/$PROJECT_ID/$REPO/intel:latest
@@ -45,6 +46,7 @@ docker push "$IMAGE"
 
 ```bash
 printf %s "$GEMINI_API_KEY" | gcloud secrets create GEMINI_API_KEY --data-file=- --project "$PROJECT_ID"
+# macOS: base64 -i service_account.json ; Linux: base64 -w0 service_account.json
 base64 -i service_account.json | gcloud secrets create GOOGLE_SA_JSON_B64 --data-file=- --project "$PROJECT_ID"
 printf %s "$TWCERT_ACCOUNT"  | gcloud secrets create TWCERT_ACCOUNT  --data-file=- --project "$PROJECT_ID"
 printf %s "$TWCERT_PASSWORD" | gcloud secrets create TWCERT_PASSWORD --data-file=- --project "$PROJECT_ID"
@@ -122,7 +124,7 @@ for JOB in intel-cisa intel-twcert; do
   gcloud scheduler jobs create http "$JOB-daily" \
     --location "$REGION" --project "$PROJECT_ID" \
     --schedule="0 9 * * *" --time-zone="Asia/Taipei" \
-    --uri="https://$REGION-run.googleapis.com/apis/run.googleapis.com/v1/namespaces/$PROJECT_ID/jobs/$JOB:run" \
+    --uri="https://$REGION-run.googleapis.com/apis/run.googleapis.com/v1/namespaces/$PROJECT_NUMBER/jobs/$JOB:run" \
     --http-method=POST \
     --oauth-service-account-email="$TRIGGER_SA"
 done
