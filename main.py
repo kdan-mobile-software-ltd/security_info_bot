@@ -6,6 +6,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from src.analyzer.gemini import analyze_intel
+from src.config import USE_FIXTURE_DATA
 from src.fetchers.cisa_kev import fetch_cisa_kev
 from src.fetchers.storage import (
     list_saved_files,
@@ -16,12 +17,18 @@ from src.fetchers.storage import (
 )
 from src.fetchers.twcert import fetch_twcert
 from src.models import AnalysisResult, IntelItem, SheetRow
+from src.notifiers.email import send_internal_announcement, send_risk_digest
 from src.parsers.ioc_xlsx import write_ioc_txt
 from src.sinks.git_archive import commit_files, ioc_file_url
 from src.sinks.sheets import (
     append_rows,
     get_existing_intel_ids,
+    get_month_rows,
+    get_rows_for_publishing,
     load_assets_context,
+    mark_published,
+    month_tab_url,
+    select_relevant,
 )
 from src.utils.errors import GeminiQuotaExhausted, TwcertLoginError
 from src.utils.logging import log
@@ -176,6 +183,33 @@ def stage_write_sheet(
     return len(all_rows)
 
 
+def stage_notify_risk(month: str | None = None, dry_run: bool = False) -> int:
+    month = month or datetime.now(_TW).strftime("%Y-%m")
+    records = get_month_rows(month)
+    relevant = select_relevant(records)
+    if not relevant:
+        log.info("No company-relevant intel for %s, skipping risk digest", month)
+        return 0
+    sheet_url = month_tab_url(month)
+    ok = send_risk_digest(month, relevant, sheet_url, dry_run=dry_run)
+    log.info("Risk digest for %s: %d items, sent=%s", month, len(relevant), ok)
+    return len(relevant) if ok else 0
+
+
+def stage_publish_internal(dry_run: bool = False) -> int:
+    targets = get_rows_for_publishing()
+    if not targets:
+        log.info("No approved intel to publish")
+        return 0
+    records = [t["record"] for t in targets]
+    ok = send_internal_announcement(records, dry_run=dry_run)
+    if ok and not dry_run and not USE_FIXTURE_DATA:
+        ts = datetime.now(_TW).strftime("%Y-%m-%d %H:%M:%S")
+        mark_published(targets, ts)
+    log.info("Internal publish: %d approved items, sent=%s", len(targets), ok)
+    return len(targets) if ok else 0
+
+
 def run(
     source: str,
     dry_run: bool = False,
@@ -303,6 +337,23 @@ def main() -> None:
         action="store_true",
         help="列出已儲存的本機資料檔案",
     )
+    parser.add_argument(
+        "--notify-risk",
+        action="store_true",
+        help="寄送當月風險小組月會彙整信（Stage 4a）",
+    )
+    parser.add_argument(
+        "--publish-internal",
+        action="store_true",
+        help="掃描 Sheet 已核可情資並發佈給 RD 主管（Stage 4b）",
+    )
+    parser.add_argument(
+        "--month",
+        type=str,
+        default=None,
+        metavar="YYYY-MM",
+        help="--notify-risk 的目標月份，預設當月",
+    )
 
     args = parser.parse_args()
 
@@ -310,23 +361,29 @@ def main() -> None:
         cmd_list_data(args.source)
         return
 
-    if not args.source:
-        parser.error("--source is required")
-    if args.source not in ("twcert", "cisa_kev"):
-        parser.error(f"--source must be 'twcert' or 'cisa_kev' (got '{args.source}')")
+    if not (args.notify_risk or args.publish_internal):
+        if not args.source:
+            parser.error("--source is required")
+        if args.source not in ("twcert", "cisa_kev"):
+            parser.error(f"--source must be 'twcert' or 'cisa_kev' (got '{args.source}')")
 
     try:
-        run(
-            source=args.source,
-            dry_run=args.dry_run,
-            since_date=args.since,
-            save_data=args.save_data,
-            load_data=args.load_data,
-            fetch_only=args.fetch_only,
-            analyze_only=args.analyze_only,
-            load_analysis_path=args.load_analysis,
-            limit=args.limit,
-        )
+        if args.publish_internal:
+            stage_publish_internal(dry_run=args.dry_run)
+        elif args.notify_risk:
+            stage_notify_risk(month=args.month, dry_run=args.dry_run)
+        else:
+            run(
+                source=args.source,
+                dry_run=args.dry_run,
+                since_date=args.since,
+                save_data=args.save_data,
+                load_data=args.load_data,
+                fetch_only=args.fetch_only,
+                analyze_only=args.analyze_only,
+                load_analysis_path=args.load_analysis,
+                limit=args.limit,
+            )
     except TwcertLoginError:
         log.error("TWCERT login failed, ops alert already sent")
         sys.exit(1)
