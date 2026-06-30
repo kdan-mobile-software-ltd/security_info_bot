@@ -274,6 +274,49 @@ def get_existing_intel_ids(dates: Iterable[str]) -> set[str]:
     return all_ids
 
 
+def get_month_rows(month: str) -> list[dict]:
+    ss = _get_spreadsheet()
+    try:
+        ws = ss.worksheet(month)
+    except gspread.exceptions.WorksheetNotFound:
+        return []
+    return ws.get_all_records()
+
+
+def month_tab_url(month: str) -> str:
+    base = f"https://docs.google.com/spreadsheets/d/{GOOGLE_SHEET_ID}/edit"
+    ss = _get_spreadsheet()
+    try:
+        ws = ss.worksheet(month)
+    except gspread.exceptions.WorksheetNotFound:
+        return base
+    return f"{base}#gid={ws.id}"
+
+
+def get_rows_for_publishing() -> list[dict]:
+    ss = _get_spreadsheet()
+    targets: list[dict] = []
+    for ws in ss.worksheets():
+        title = ws.title
+        if not (len(title) == 7 and title[4] == "-"):
+            continue
+        records = ws.get_all_records()
+        for i, rec in select_publishable(records):
+            targets.append({"tab": title, "row_number": i + 2, "record": rec})
+    return targets
+
+
+def mark_published(targets: list[dict], ts: str) -> None:
+    by_tab: dict[str, list[int]] = defaultdict(list)
+    for t in targets:
+        by_tab[t["tab"]].append(t["row_number"])
+    ss = _get_spreadsheet()
+    for tab, row_numbers in by_tab.items():
+        ws = ss.worksheet(tab)
+        ws.batch_update([{"range": f"S{rn}", "values": [[ts]]} for rn in row_numbers])
+        log.info("Marked %d rows published in %s", len(row_numbers), tab)
+
+
 def append_rows(rows: list[SheetRow]) -> int:
     if not rows:
         return 0
