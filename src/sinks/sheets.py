@@ -125,7 +125,7 @@ _COL_WIDTHS = [
 _DROPDOWN_COLS: list[tuple[int, list[str]]] = [
     (8, ["Critical", "High", "Medium", "Low", "無"]),  # I 風險等級
     (10, ["H", "M", "L", "無"]),  # K 公司相關性
-    (13, ["待處理", "處理中", "已完成", "不適用"]),  # N 狀態
+    (13, ["待處理", "處理中", "核可發佈", "已完成", "不適用"]),  # N 狀態
     (17, ["無"]),  # R 處理人員
 ]
 
@@ -316,3 +316,17 @@ def load_assets_context() -> str:
             f"Owner：{asset.owner}"
         )
     return "\n".join(lines)
+
+
+def select_relevant(records: list[dict]) -> list[dict]:
+    return [r for r in records if str(r.get("公司相關性", "")).strip() not in ("", "無")]
+
+
+def select_publishable(records: list[dict]) -> list[tuple[int, dict]]:
+    picked: list[tuple[int, dict]] = []
+    for i, r in enumerate(records):
+        approved = str(r.get("狀態", "")).strip() == "核可發佈"
+        unsent = not str(r.get("通知時間", "")).strip()
+        if approved and unsent:
+            picked.append((i, r))
+    return picked
