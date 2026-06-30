@@ -56,3 +56,4 @@ uv run ruff format --check .
 - [Deployment](docs/deployment.md) — CI workflows, daily schedule, GitHub Secrets, permissions, self-hosted runner
 - [Error Handling](docs/error-handling.md) — `TwcertLoginError` / `GeminiQuotaExhausted`, retry/backoff, `send_ops_alert` (log-only)
 - [Original Design Proposal (zh-TW, historical)](docs/spec/資安情資_AI_自動化分析計劃.md)
+- [Cloud Run Deploy](docs/cloudrun-deploy.md) — 在 kdan-it-playground 以 Cloud Run Jobs + Cloud Scheduler 部署(取代 GitHub Actions 排程)
