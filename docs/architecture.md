@@ -26,6 +26,9 @@ Automated threat-intel pipeline that fetches from two sources daily, runs Gemini
 │   │   └── git_archive.py           # worktree commit + IoC URL derivation
 │   ├── parsers/
 │   │   └── ioc_xlsx.py              # base64 xlsx → (ips, hashes, domains) + write_ioc_txt()
+│   ├── notifiers/
+│   │   ├── email.py                 # SMTP sender (STARTTLS) — send_risk_digest / send_internal_announcement
+│   │   └── templates.py             # Jinja2 HTML renderers — render_risk_digest / render_internal_cards
 │   └── utils/
 │       ├── logging.py               # structured log singleton
 │       └── errors.py                # TwcertLoginError / GeminiQuotaExhausted / send_ops_alert
@@ -56,9 +59,23 @@ Stage 1 Fetch  →  Stage 2 Analyze  →  Stage 3 Write Sheet
       ↓                  ↓
 {source}/{YYYY-MM}/      {source}/{YYYY-MM}/          git archive branch (data)
   {source}_*.json          analysis_{source}_*.json     + IoC URL → Sheet col H
+
+                                              ↓ (decoupled, Cloud Run Jobs)
+                                    Stage 4a --notify-risk  (monthly)
+                                      Reads Sheet rows where company_relevance ≠ 無
+                                      → renders risk-team digest HTML
+                                      → sends via SMTP to RISK_TEAM_EMAILS
+
+                                    Stage 4b --publish-internal  (on-demand / scheduled)
+                                      Scans Sheet rows where 狀態 = 核可發佈 & 通知時間 空
+                                      → renders internal announcement HTML cards
+                                      → emails INTERNAL_ANNOUNCE_EMAILS (RD managers)
+                                      → stamps S「通知時間」on each sent row
 ```
 
-Stages are independently re-runnable via `--fetch-only`, `--analyze-only`, `--load-data`, and `--load-analysis` CLI flags. Each stage saves its output to `src/data/` locally and commits it to the archive branch (when `GIT_ARCHIVE_BRANCH` is set).
+Stages 1–3 are independently re-runnable via `--fetch-only`, `--analyze-only`, `--load-data`, and `--load-analysis` CLI flags. Each stage saves its output to `src/data/` locally and commits it to the archive branch (when `GIT_ARCHIVE_BRANCH` is set).
+
+Stages 4a and 4b are **decoupled from the daily fetch pipeline** and run as **Cloud Run Jobs** triggered by Cloud Scheduler. See [cloudrun-deploy.md](cloudrun-deploy.md) §10 for deployment details. Both stages support `--dry-run` (no email sent, HTML previewed to `src/data/`) and operate independently of each other.
 
 ## Subsystems
 
@@ -87,6 +104,17 @@ Stages are independently re-runnable via `--fetch-only`, `--analyze-only`, `--lo
 ### `src/parsers/ioc_xlsx.py`
 
 Parses xlsx attachments embedded in TWCERT detail responses (`infoFile`) as base64 data URIs. `parse_xlsx_iocs` returns `(ips, hashes, domains)` tuples. `write_ioc_txt` writes a structured plain-text file to `/tmp/ioc_{intel_id}.txt`.
+
+### `src/notifiers/`
+
+| File | Role |
+|:--|:--|
+| `email.py` | SMTP sender over STARTTLS. `send_risk_digest(month, records, sheet_url, dry_run)` sends the monthly risk-team digest; `send_internal_announcement(records, dry_run)` emails RD managers for Stage 4b. In dry-run mode no email is sent; rendered HTML is written to `src/data/`. On send failure, calls `send_ops_alert` and re-raises (Stage 4b does **not** stamp 通知時間 unless the send succeeded). |
+| `templates.py` | Jinja2 HTML renderers. `render_risk_digest(month, records, sheet_url)` produces the monthly digest table; `render_internal_cards(records)` produces summary cards for `核可發佈` items. |
+
+**Sheet column notes for Stage 4b:**
+- Column N「狀態」dropdown now includes the value `核可發佈` (in addition to `待審查`, `已關閉`, etc.). Stage 4b's `select_publishable` query filters on this value combined with a blank column S.
+- Column S「通知時間」is stamped with the send timestamp after a successful `send_internal_announcement` call. Its presence (non-blank) doubles as the idempotency guard — already-notified rows are excluded from future runs.
 
 ### `src/utils/`
 

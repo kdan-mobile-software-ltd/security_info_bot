@@ -19,6 +19,25 @@ All settings are env vars loaded at startup via `python-dotenv` (`src/config.py`
 | `GIT_ARCHIVE_AUTO_PUSH` | Push archive branch after each commit | `false` | No (set `true` in CI) |
 | `USE_FIXTURE_DATA` | Load assets/CISA KEV from `tests/fixtures/` | `true` | No |
 
+## Email publishing env vars (Stage 4a / 4b)
+
+Stage 4a (`--notify-risk`, monthly risk-team digest) and Stage 4b (`--publish-internal`, internal RD-manager announcements) are delivered via SMTP. The following env vars configure the transport and recipient lists.
+
+| Variable | Purpose | Default | Required when |
+|:--|:--|:--|:--|
+| `SMTP_HOST` | SMTP server hostname | `smtp.gmail.com` | Stage 4a/4b (email) |
+| `SMTP_PORT` | SMTP port (STARTTLS) | `587` | Stage 4a/4b (email) |
+| `SMTP_USER` | SMTP authentication username | — | Stage 4a/4b (email) |
+| `SMTP_PASSWORD` | SMTP authentication password / app password | — | Stage 4a/4b (email) |
+| `EMAIL_FROM` | `From:` header (display name + address) | — | Stage 4a/4b (email) |
+| `RISK_TEAM_EMAILS` | Comma-separated recipient list for the monthly risk-team digest | — | Stage 4a (`--notify-risk`) |
+| `INTERNAL_ANNOUNCE_EMAILS` | Comma-separated recipient list for internal RD-manager announcements | — | Stage 4b (`--publish-internal`) |
+
+Notes:
+- The default transport is SMTP with STARTTLS (`smtp.gmail.com:587`). Use a Google Workspace app password or a third-party relay as needed.
+- `RISK_TEAM_EMAILS` and `INTERNAL_ANNOUNCE_EMAILS` accept multiple addresses separated by commas (no spaces required).
+- In **fixture mode** (`USE_FIXTURE_DATA=true`), email is **not sent**. Instead, the rendered HTML is written to `src/data/email_preview_<stage>_<ts>.html` for local review.
+
 ## Google Service Account credential resolution
 
 `src/config.py:get_service_account_path()` resolves credentials in this order:
