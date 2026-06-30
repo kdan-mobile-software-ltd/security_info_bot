@@ -106,7 +106,7 @@ exec uv run python main.py --source "$SOURCE" --since "$SINCE" "$@"
 - **兩個 Scheduler**（asia-east1）,各自 `POST` Cloud Run Admin API 觸發對應 Job:
   - URI:`https://asia-east1-run.googleapis.com/apis/run.googleapis.com/v1/namespaces/kdan-it-playground/jobs/<JOB>:run`
   - 認證:`--oauth-service-account-email`（觸發用 SA,需 `roles/run.invoker`）
-  - cron:採 `--time-zone=Asia/Taipei`、`17 9,13,17,21 * * *`(等同現有 09:17/13:17/17:17/21:17 TW+8)。
+  - cron:採 `--time-zone=Asia/Taipei`、`0 9 * * *`(每天 1 次,09:00 TW+8)。
 - `--since` 由 entrypoint 自動計算（昨天）;手動執行可用 `gcloud run jobs execute ... --update-env-vars SINCE=YYYY-MM-DD` 覆寫。
 
 ## 8. Secrets 與 IAM
@@ -163,5 +163,5 @@ exec uv run python main.py --source "$SOURCE" --since "$SINCE" "$@"
 
 - **PAT 生命週期**:fine-grained PAT 有最長到期日;到期需更新 Secret。可改用 GitHub App token,但較複雜,先用 PAT。
 - **映像含 `.git`**:略增映像大小;可接受。若日後嫌大,改 build 時 shallow clone(需 build 認證)。
-- **排程頻率**:沿用現有 4 次/天;若想改成 1 次/天在 Scheduler cron 調整即可。
+- **排程頻率**:每天 1 次(09:00 TW+8);要調整改 Scheduler cron 即可。
 - **映像更新流程**:目前為手動 build/push;未來可加一個「push 到 main 自動 build」的 CI(本案不含)。
