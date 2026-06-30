@@ -51,17 +51,19 @@ base64 -i service_account.json | gcloud secrets create GOOGLE_SA_JSON_B64 --data
 printf %s "$TWCERT_ACCOUNT"  | gcloud secrets create TWCERT_ACCOUNT  --data-file=- --project "$PROJECT_ID"
 printf %s "$TWCERT_PASSWORD" | gcloud secrets create TWCERT_PASSWORD --data-file=- --project "$PROJECT_ID"
 printf %s "$GITHUB_PAT"      | gcloud secrets create GITHUB_PAT      --data-file=- --project "$PROJECT_ID"
+printf %s "$SMTP_PASSWORD"   | gcloud secrets create SMTP_PASSWORD   --data-file=- --project "$PROJECT_ID"
 ```
 
 - `GEMINI_API_KEY`:AI Studio 免費 key。
 - `GOOGLE_SA_JSON_B64`:Service Account JSON 的 base64。
 - `GITHUB_PAT`:fine-grained PAT,限 repo `kdan-mobile-software-ltd/security_info_bot`,**Contents: Read and write**(用於 push `data` 分支)。
+- `SMTP_PASSWORD`:寄件帳號的 App Password(email 發佈層用)。
 
 ## 5. Runtime SA + 授權讀取 secrets
 
 ```bash
 gcloud iam service-accounts create intel-bot --project "$PROJECT_ID"
-for S in GEMINI_API_KEY GOOGLE_SA_JSON_B64 TWCERT_ACCOUNT TWCERT_PASSWORD GITHUB_PAT; do
+for S in GEMINI_API_KEY GOOGLE_SA_JSON_B64 TWCERT_ACCOUNT TWCERT_PASSWORD GITHUB_PAT SMTP_PASSWORD; do
   gcloud secrets add-iam-policy-binding "$S" \
     --member="serviceAccount:$RUNTIME_SA" \
     --role=roles/secretmanager.secretAccessor --project "$PROJECT_ID"
@@ -137,6 +139,64 @@ docker build -t "$IMAGE" . && docker push "$IMAGE"
 gcloud run jobs update intel-cisa   --image "$IMAGE" --region "$REGION" --project "$PROJECT_ID"
 gcloud run jobs update intel-twcert --image "$IMAGE" --region "$REGION" --project "$PROJECT_ID"
 ```
+
+## 10. Email 發佈層 Jobs(月信 / 內部發佈)
+
+email 兩個模式(`--notify-risk`、`--publish-internal`)已在同一映像內,但**不能用預設 entrypoint**(`docker-entrypoint.sh` 固定跑 `--source ... --since ...` 的擷取流程,且強制 `INTEL_SOURCE`);因此這兩個 Job 用 `--command/--args` 覆寫 entrypoint,直接跑 `uv run python main.py <mode>`。前置:完成 §4 的 `SMTP_PASSWORD` secret 與 §5 的授權。
+
+共用 email env(把 `<...>` 換成實際值;收件人逗號分隔):
+
+```bash
+EMAIL_ENV="GOOGLE_SHEET_ID=<SHEET_ID>,USE_FIXTURE_DATA=false,SMTP_HOST=smtp.gmail.com,SMTP_PORT=587,SMTP_USER=<secbot@example.com>,EMAIL_FROM=<secbot@example.com>"
+```
+
+風險小組月信(`--notify-risk`):
+
+```bash
+gcloud run jobs create intel-notify-risk \
+  --image "$IMAGE" --region "$REGION" --project "$PROJECT_ID" \
+  --service-account "$RUNTIME_SA" \
+  --max-retries 1 --task-timeout 600 --memory 512Mi \
+  --command uv --args run,python,main.py,--notify-risk \
+  --set-env-vars "$EMAIL_ENV,RISK_TEAM_EMAILS=<a@co,b@co>" \
+  --set-secrets "GOOGLE_SA_JSON_B64=GOOGLE_SA_JSON_B64:latest,SMTP_PASSWORD=SMTP_PASSWORD:latest"
+```
+
+內部發佈(`--publish-internal`):
+
+```bash
+gcloud run jobs create intel-publish-internal \
+  --image "$IMAGE" --region "$REGION" --project "$PROJECT_ID" \
+  --service-account "$RUNTIME_SA" \
+  --max-retries 1 --task-timeout 600 --memory 512Mi \
+  --command uv --args run,python,main.py,--publish-internal \
+  --set-env-vars "$EMAIL_ENV,INTERNAL_ANNOUNCE_EMAILS=<rd-managers@co>" \
+  --set-secrets "GOOGLE_SA_JSON_B64=GOOGLE_SA_JSON_B64:latest,SMTP_PASSWORD=SMTP_PASSWORD:latest"
+```
+
+排程(run.invoker + Scheduler;月信每月 1 號 09:00、內部發佈平日每天 10:00 TW+8):
+
+```bash
+for JOB in intel-notify-risk intel-publish-internal; do
+  gcloud run jobs add-iam-policy-binding "$JOB" \
+    --member="serviceAccount:$TRIGGER_SA" --role=roles/run.invoker \
+    --region "$REGION" --project "$PROJECT_ID"
+done
+
+gcloud scheduler jobs create http intel-notify-risk-monthly \
+  --location "$REGION" --project "$PROJECT_ID" \
+  --schedule="0 9 1 * *" --time-zone="Asia/Taipei" \
+  --uri="https://$REGION-run.googleapis.com/apis/run.googleapis.com/v1/namespaces/$PROJECT_NUMBER/jobs/intel-notify-risk:run" \
+  --http-method=POST --oauth-service-account-email="$TRIGGER_SA"
+
+gcloud scheduler jobs create http intel-publish-internal-daily \
+  --location "$REGION" --project "$PROJECT_ID" \
+  --schedule="0 10 * * 1-5" --time-zone="Asia/Taipei" \
+  --uri="https://$REGION-run.googleapis.com/apis/run.googleapis.com/v1/namespaces/$PROJECT_NUMBER/jobs/intel-publish-internal:run" \
+  --http-method=POST --oauth-service-account-email="$TRIGGER_SA"
+```
+
+> notify-risk / publish-internal 不需 Gemini 或 GitHub PAT(只讀寫 Sheet + 寄信)。月信預設當月;要指定月份,執行時覆寫 args:`--args run,python,main.py,--notify-risk,--month,<YYYY-MM>`。
 
 ## 注意事項
 
