@@ -9,6 +9,8 @@ COPY . /app
 
 RUN uv sync --frozen --no-dev
 
+ENV UV_NO_SYNC=1
+
 RUN git remote set-url origin https://github.com/kdan-mobile-software-ltd/security_info_bot.git \
     && git config --global --add safe.directory /app \
     && git config --global credential.helper \

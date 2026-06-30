@@ -144,3 +144,5 @@ gcloud run jobs update intel-twcert --image "$IMAGE" --region "$REGION" --projec
 - `GITHUB_PAT` 有到期日,到期需 `gcloud secrets versions add GITHUB_PAT --data-file=-` 更新。
 - 私有 repo 的 IoC raw 連結需登入才開得了(與原 GitHub Actions 行為相同)。
 - `/tmp` 是記憶體 tmpfs;量大時調高 `--memory`。
+- 容器預設 `--since` 為「昨天」(twcert 以 TW+8、cisa_kev 以 UTC 計);與本機手動 `uv run python main.py`(預設今天)不同,月度去重會吸收一天的重疊。
+- 排程由原 GitHub Actions 的 4 次/天改為每天 1 次(`0 9 * * *` TW+8);CISA KEV 的更新偵測頻率因此降低,屬刻意取捨。

@@ -6,3 +6,4 @@ src/data/
 .ruff_cache/
 .env
 docs/superpowers/
+.superpowers/
