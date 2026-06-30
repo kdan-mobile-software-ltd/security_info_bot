@@ -24,10 +24,10 @@ def test_select_relevant_excludes_none_and_blank():
 
 def test_select_publishable_only_approved_and_unsent():
     records = [
-        _rec("a", status="核可發佈", notified=""),        # selected
+        _rec("a", status="核可發佈", notified=""),  # selected
         _rec("b", status="核可發佈", notified="2026-06-30"),  # already sent
-        _rec("c", status="待處理", notified=""),           # not approved
-        _rec("d", status="核可發佈", notified=""),         # selected
+        _rec("c", status="待處理", notified=""),  # not approved
+        _rec("d", status="核可發佈", notified=""),  # selected
     ]
     picked = select_publishable(records)
     assert [(i, r["情資ID"]) for i, r in picked] == [(0, "a"), (3, "d")]

@@ -147,8 +147,10 @@ email 兩個模式(`--notify-risk`、`--publish-internal`)已在同一映像內,
 共用 email env(把 `<...>` 換成實際值;收件人逗號分隔):
 
 ```bash
-EMAIL_ENV="GOOGLE_SHEET_ID=<SHEET_ID>,USE_FIXTURE_DATA=false,SMTP_HOST=smtp.gmail.com,SMTP_PORT=587,SMTP_USER=<secbot@example.com>,EMAIL_FROM=<secbot@example.com>"
+EMAIL_ENV="GOOGLE_SHEET_ID=<SHEET_ID>|USE_FIXTURE_DATA=false|SMTP_HOST=smtp.gmail.com|SMTP_PORT=587|SMTP_USER=<secbot@example.com>|EMAIL_FROM=<secbot@example.com>"
 ```
+
+> `^|^` 前綴告訴 gcloud 使用 `|` 作為 key=value 對的分隔符,這樣收件人清單內的逗號才不會被誤解析。
 
 風險小組月信(`--notify-risk`):
 
@@ -158,7 +160,7 @@ gcloud run jobs create intel-notify-risk \
   --service-account "$RUNTIME_SA" \
   --max-retries 1 --task-timeout 600 --memory 512Mi \
   --command uv --args run,python,main.py,--notify-risk \
-  --set-env-vars "$EMAIL_ENV,RISK_TEAM_EMAILS=<a@co,b@co>" \
+  --set-env-vars "^|^$EMAIL_ENV|RISK_TEAM_EMAILS=a@co,b@co" \
   --set-secrets "GOOGLE_SA_JSON_B64=GOOGLE_SA_JSON_B64:latest,SMTP_PASSWORD=SMTP_PASSWORD:latest"
 ```
 
@@ -170,7 +172,7 @@ gcloud run jobs create intel-publish-internal \
   --service-account "$RUNTIME_SA" \
   --max-retries 1 --task-timeout 600 --memory 512Mi \
   --command uv --args run,python,main.py,--publish-internal \
-  --set-env-vars "$EMAIL_ENV,INTERNAL_ANNOUNCE_EMAILS=<rd-managers@co>" \
+  --set-env-vars "^|^$EMAIL_ENV|INTERNAL_ANNOUNCE_EMAILS=rd-a@co,rd-b@co" \
   --set-secrets "GOOGLE_SA_JSON_B64=GOOGLE_SA_JSON_B64:latest,SMTP_PASSWORD=SMTP_PASSWORD:latest"
 ```
 

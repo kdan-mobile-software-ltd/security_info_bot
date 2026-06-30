@@ -3,6 +3,7 @@ from __future__ import annotations
 import smtplib
 from datetime import datetime, timedelta, timezone
 from email.mime.text import MIMEText
+from email.utils import formatdate, make_msgid
 from pathlib import Path
 
 from src.config import (
@@ -40,6 +41,8 @@ def _smtp_send(subject: str, html: str, recipients: list[str]) -> bool:
     msg["Subject"] = subject
     msg["From"] = EMAIL_FROM
     msg["To"] = ", ".join(recipients)
+    msg["Date"] = formatdate(localtime=True)
+    msg["Message-ID"] = make_msgid()
     try:
         with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=30) as server:
             server.starttls()
