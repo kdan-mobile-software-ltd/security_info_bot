@@ -24,6 +24,20 @@ GIT_ARCHIVE_AUTO_PUSH = os.environ.get("GIT_ARCHIVE_AUTO_PUSH", "false").lower()
 USE_FIXTURE_DATA = os.environ.get("USE_FIXTURE_DATA", "true").lower() == "true"
 FIXTURE_DIR = Path(__file__).parent.parent / "tests" / "fixtures"
 
+SMTP_HOST = os.environ.get("SMTP_HOST", "smtp.gmail.com")
+SMTP_PORT = int(os.environ.get("SMTP_PORT") or "587")
+SMTP_USER = os.environ.get("SMTP_USER", "")
+SMTP_PASSWORD = os.environ.get("SMTP_PASSWORD", "")
+EMAIL_FROM = os.environ.get("EMAIL_FROM", "") or SMTP_USER
+
+
+def parse_emails(raw: str | None) -> list[str]:
+    return [e.strip() for e in (raw or "").split(",") if e.strip()]
+
+
+RISK_TEAM_EMAILS = parse_emails(os.environ.get("RISK_TEAM_EMAILS", ""))
+INTERNAL_ANNOUNCE_EMAILS = parse_emails(os.environ.get("INTERNAL_ANNOUNCE_EMAILS", ""))
+
 SCOPES = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive",
