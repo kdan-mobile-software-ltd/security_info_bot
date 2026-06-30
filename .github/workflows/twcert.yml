@@ -1,7 +1,5 @@
 name: TWCERT 情資分析
 on:
-  schedule:
-    - cron: '17 1,5,9,13 * * *'  # 09:00 TW+8
   workflow_dispatch:
     inputs:
       since:
