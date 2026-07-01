@@ -1,0 +1,708 @@
+{
+  "source": "twcert",
+  "analyzed_at": "2026-07-01T10:18:43.865369",
+  "count": 19,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202606-0038",
+        "source": "TWCERT",
+        "publish_date": "2026-06-22 17:34",
+        "title": "[TLP CLEAR] Cisco 旗下身分識別服務存在重大資安漏洞(CVE-2026-20181)",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-20181"
+        ],
+        "raw_content": "Cisco 旗下身分識別服務引擎(Identity Services Engine，ISE)是一款基於身分的安全管理平台，可從網路、使用者設備收集資訊，並在網路基礎設施中實施策略和制定監管決策。近日Cisco發布重大資安漏洞公告(CVE-2026-20181，CVSS：9.1)，此漏洞可能允許經過身分驗證的遠端攻擊者，在受影響設備的底層作業系統上執行任意命令。\n\n備註：若利用此漏洞，攻擊者必須擁有有效的管理員憑證。\n\n影響平台：Cisco ISE 和 Cisco ISE-PIC 3.3 (含)之前版本、\nCisco ISE 和 Cisco ISE-PIC 3.4 版本、\nCisco ISE 和 Cisco ISE-PIC 3.5 版本\n\n建議措施：請更新至以下版本：\nCisco ISE 和 Cisco ISE-PIC 3.3 Patch 11、\nCisco ISE 和 Cisco ISE-PIC 3.4 Patch 6、\nCisco ISE 和 Cisco ISE-PIC 3.5 Patch 4\n\n參考資訊：1. https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ise-multi-G5WP8vv\n2. https://nvd.nist.gov/vuln/detail/CVE-2026-20181\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ise-multi-G5WP8vv",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-20181"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Cisco 旗下身分識別服務引擎 (ISE) 存在重大安全漏洞 (CVE-2026-20181)，具備管理員憑證的遠端攻擊者可藉此在底層作業系統執行任意命令。由於本公司資產清冊中並未部署 Cisco ISE 相關系統，因此評估此漏洞對本公司無直接影響。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202606-0036",
+        "source": "TWCERT",
+        "publish_date": "2026-06-18 17:50",
+        "title": "[TLP CLEAR] Fortinet 防火牆等設備遭受憑證竊取攻擊，請儘速確認並修補",
+        "intel_type": "102-資安事件",
+        "cve_ids": [],
+        "raw_content": "研究人員發現有攻擊者針對Fortinet防火牆與VPN裝置等設備進行大規模憑證竊取攻擊，且疑似掌握相關設備之帳密資料，進而大規模破解相關設備防護措施。\n請運用下列查詢工具確認自身設備是否已遭揭露，並請盡速採取改善措施。\n工具連結：https://www.hudsonrock.com/fortinet\n\n\n影響平台：無\n\n建議措施：1.隱藏管理介面：盡速確認設備管理介面是否暴露於網際網路，並將管理介面從公開網際網路移除，僅允許受信任的IP或透過跳板機/VPN方式存取。\n2.全面重置設備密碼：立即更換所有Fortinet設備管理介面與VPN之管理者密碼。\n3.啟用多因子驗證機制（MFA）：建議在所有遠端存取與管理員帳戶啟用多因素認證。\n4.強制升級雜湊演算法：升級 FortiOS 後，要求所有管理員至少登入一次防火牆，系統會自動將密碼加密方式升級為更難被破解的 PBKDF2 演算法。\n\n\n參考資訊：無\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "研究人員發現攻擊者正針對 Fortinet 防火牆與 VPN 設備進行大規模憑證竊取攻擊，並疑似已掌握相關設備之帳密資料以進行破解。此威脅可能導致企業網路邊界防護失守，造成未授權存取。因公司目前並未使用 Fortinet 相關設備，故無直接安全風險。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202606-0028",
+        "source": "TWCERT",
+        "publish_date": "2026-06-18 13:56",
+        "title": "[TLP CLEAR] Oracle針對旗下多款產品發布重大資安公告",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [],
+        "raw_content": "Oracle近期釋出 115年 6月關鍵安全性修補程式更新公告，包含多個重大安全漏洞，請儘速確認並進行修補。(詳見附件說明)\n\n影響平台：詳見附件\n\n建議措施：根據官方網站釋出的解決方式進行修補：https://www.oracle.com/security-alerts/cspujun2026.html\n\n參考資訊：1. https://www.oracle.com/security-alerts/cspujun2026.html\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://www.oracle.com/security-alerts/cspujun2026.html"
+        ],
+        "attachment_urls": [
+          "TWCERT-TWISAC-202606-0028.pdf"
+        ],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Oracle 針對旗下多款產品發布 2026 年 6 月關鍵安全性更新，修補多個重大安全漏洞。經評估，本公司目前並未部署或使用 Oracle 相關軟體與系統，因此無直接安全風險。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202606-0025",
+        "source": "TWCERT",
+        "publish_date": "2026-06-15 17:30",
+        "title": "[TLP CLEAR] 基點資訊｜CelloOS - Improper Access Control",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-12059"
+        ],
+        "raw_content": "【基點資訊｜CelloOS - Improper Access Control】(CVE-2026-12059，CVSS：8.8)\n基點資訊開發之CelloOS之SSH服務存在Improper Access Control漏洞，已通過身分鑑別之遠端攻擊者可繞過原本的指令限制機制，進而執行未被授權的作業系統指令。\n\n影響平台：CelloOS 4.8.0 Build 20260316(不含)以前版本\n\n建議措施：原廠已於2026/3/18進行線上修補。若因離線、隔離或其他原因無法接收線上修補的系統，應手動更新至2026/3/18當日或之後發布的已修補版本。\n\n參考資訊：1. https://www.twcert.org.tw/tw/cp-132-10966-3258e-1.html\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://www.twcert.org.tw/tw/cp-132-10966-3258e-1.html"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "基點資訊開發之 CelloOS 系統其 SSH 服務存在存取控制不當漏洞（CVE-2026-12059）。已通過身分鑑別的遠端攻擊者可繞過指令限制，進而執行未授權的作業系統指令。由於公司並未部署此系統，此漏洞對公司無直接影響。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202606-0026",
+        "source": "TWCERT",
+        "publish_date": "2026-06-15 17:27",
+        "title": "[TLP CLEAR] IEI 威強電工業電腦｜iRM-IEI Remote Management  - Hardcoded Credentials",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-11849"
+        ],
+        "raw_content": "【IEI 威強電工業電腦｜iRM-IEI Remote Management  - Hardcoded Credentials】(CVE-2026-11849，CVSS：9.8)\n未經身分鑑別之遠端攻擊者可利用hard-coded之帳號通行碼取得資料庫最高權限。\n\n影響平台：iRM-TSi410X v1.4.19(不含)以前版本\n\n建議措施：更新至 iRM TSi410X v1.4.19(含)以後版本\n\n參考資訊：1. https://www.twcert.org.tw/tw/cp-132-10971-ac61f-1.html\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://www.twcert.org.tw/tw/cp-132-10971-ac61f-1.html"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "本情資指出 IEI 威強電工業電腦的遠端管理系統 iRM-IEI Remote Management 存在寫死憑證漏洞（CVE-2026-11849）。未經身分鑑別的遠端攻擊者可利用此漏洞直接取得資料庫最高權限，對受影響設備造成嚴重威脅。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202606-0027",
+        "source": "TWCERT",
+        "publish_date": "2026-06-15 17:26",
+        "title": "[TLP AMBER] TWCERT-IoC 觀測IoC分享_0615",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [],
+        "raw_content": "TWCERT/CC匯整TWCERT-IoC 觀測(至06/15)受駭偵測指標(IoC)情資(詳如附件)，可做為貴單位強化資安防護之參考。\n\nTWCERT-IoC : 聯盟會員分享或接收之外部情資與Virus Check分析可疑檔案，可能包含近期攻擊事件所發現之惡意網域、惡意 IP Address、及惡意程式(MD5、SHA-1及SHA-256)等資訊。\n\n*如貴單位有發現可疑的攻擊/探嗅活動(log)、攻擊資訊(如IoC, IoA)或惡意程式樣本，歡迎提供給TWCERT/CC，我們將去識別化後通報給相關CERT或資安單位，以達到資安聯防的效果。\n*若貴公司因服務之必要無法將有風險之IP列入黑名單, 為避免影響正常服務, 可將該IP列為觀察名單，監控與此IP連線的設備與流量等防護措施, 以降低資安風險。\n\n影響平台：無\n\n建議措施：請參考附件之名單做相關防範措施。\n\n參考資訊：無\n\nTWCERT 影響等級：第 2 級",
+        "reference_urls": [],
+        "attachment_urls": [
+          "(TLP AMBER) TWCERT-IoC 觀測IoC分享_0615.xlsx"
+        ],
+        "ioc_ips": [
+          "172.94.18.103",
+          "174.138.22.165",
+          "198.98.61.155",
+          "173.232.146.55",
+          "178.128.223.195",
+          "170.130.55.45",
+          "139.59.23.248",
+          "45.221.118.180",
+          "185.220.101.21",
+          "124.156.129.151",
+          "43.160.202.246",
+          "211.72.60.20"
+        ],
+        "ioc_hashes": [
+          "2e6b992d1af4ce38ad63befcadc360cbc1ae65a04bf9e59ec0d62be9ba1e3a2a",
+          "a5d79b26eb91e7f50fbbbad1b0cb9a891a7d0f5ebda8cf453fdfc27ab3caff08",
+          "171c3c3469c60506af5755725a7ff671e1682905c08275da5a88fd1d1ce6dc2f",
+          "60860bf628a60ae69fbe727577ce3671cee260afbf379043c3a2aadc630bd861",
+          "42ee99c4ea303dcffe042cfece74990012ba201269d83cc2c3956d01a1fe5ebd",
+          "6199bf3fbcecbe049b2193c1804ed87802571098be46fbe046ce3aa23a36063c",
+          "efeb16580697d4ea93537d34b4dab853ad3c2b756822fc5da87e82a7b7febf49",
+          "fa233b7bd1a1a710ad63fa8fa44218b0ad47510a2dfd819200dd16bb70d8dc68",
+          "6c011974721708fdf4eaee28afd5fc636090770826207b1166e566d6031a4c40"
+        ],
+        "ioc_domains": [
+          "vector.exe",
+          "q8dikm.exe",
+          "c.hcgos.com",
+          "backup.epac.to",
+          "core.exe",
+          "line-tww.com",
+          "linecbs.com",
+          "linecba.com",
+          "note1ggbbhggdwa1.blob.core.windows.net",
+          "ws.ztts88.cyou",
+          "nwphotoblog.com"
+        ],
+        "impact_level": "2"
+      },
+      "analysis": {
+        "risk_level": "Low",
+        "summary": "此情資為 TWCERT/CC 彙整之惡意偵測指標（IoC），包含近期觀測到之惡意網域、IP 位址及惡意程式雜湊值。此為一般性威脅情資分享，並未針對特定系統或軟體漏洞進行揭露。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202606-0024",
+        "source": "TWCERT",
+        "publish_date": "2026-06-15 17:22",
+        "title": "[TLP CLEAR] CISA新增7個已知遭駭客利用之漏洞至KEV目錄(2026/06/08-2026/06/14)",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-42271",
+          "CVE-2026-50751",
+          "CVE-2026-11645",
+          "CVE-2026-7473",
+          "CVE-2026-20245",
+          "CVE-2026-10520",
+          "CVE-2026-35273",
+          "CVE-2026-10523"
+        ],
+        "raw_content": "【CVE-2026-42271】BerriAI LiteLLM Command Injection Vulnerability (CVSS v3.1: 8.8)\n【是否遭勒索軟體利用:未知】\nBerriAI LiteLLM 存在指令注入漏洞，可能導致任何已通過驗證的使用者（包括僅持有低權限內部使用者金鑰的使用者）在主機上執行任意指令。\n\n【CVE-2026-50751】Check Point Security Gateway Improper Authentication Vulnerability (CVSS v3.1: 9.3)\n【是否遭勒索軟體利用:已知】\nCheck Point Security Gateway 在 IKEv1 金鑰交換機制中存在不當驗證漏洞，可能導致未經驗證的遠端攻擊者繞過身分驗證機制，並在未持有有效使用者密碼的情況下建立遠端存取 VPN 連線。\n\n【CVE-2026-11645】Google Chromium V8 Out-of-Bounds Read and Write Vulnerability (CVSS v3.1: 8.8)\n【是否遭勒索軟體利用:未知】\nGoogle Chromium V8 存在越界讀取與寫入漏洞，遠端攻擊者可透過特製的 HTML 頁面，在沙箱內執行任意程式碼。此漏洞可能影響多款採用 Chromium 核心的網頁瀏覽器，包括但不限於 Google Chrome、Microsoft Edge 與 Opera。\n\n【CVE-2026-7473】Arista Extensible Operating System Incomplete Comparison with Missing Factors Vulnerability (CVSS v3.1: 5.8)\n【是否遭勒索軟體利用:未知】\nArista Extensible Operating System 存在Incomplete Comparison with Missing Factors漏洞。當交換器收到目的 IP 位址與其設定之解封裝 IP 相符的非預期通道封包時，可能錯誤地執行解封裝並予以轉送，進而導致未預期的流量處理行為。\n\n【CVE-2026-20245】Cisco Catalyst SD-WAN Manager Improper Encoding or Escaping of Output Vulnerability (CVSS v3.1: 7.8)\n【是否遭勒索軟體利用:未知】\nCisco Catalyst SD-WAN Manager存在Improper Encoding or Escaping of Output漏洞。此漏洞可能使已通過驗證的本機攻擊者，透過向受影響系統提供特製檔案，以 root 權限執行任意指令。\n\n【CVE-2026-10520】Ivanti Sentry OS Command Injection Vulnerability (CVSS v3.1: 10.0)\n【是否遭勒索軟體利用:未知】\nIvanti Sentry存在作業系統指令注入漏洞，可能使未經驗證的遠端使用者以 root 權限執行遠端程式碼。當 Sentry 設備處於未受管狀態，且其端點可從外部網路存取時，攻擊者可成功利用此漏洞。若搭配 EPMM 使用 mTLS，或透過 Neurons for MDM 限制 HTTPS 存取，即可使外部攻擊者無法存取相關介面。\n\n【CVE-2026-35273】Oracle PeopleSoft Enterprise PeopleTools Missing Authentication for Critical Function Vulnerability (CVSS v3.1: 9.8)\n【是否遭勒索軟體利用:已知】\nOracle PeopleSoft Enterprise PeopleTools 存在關鍵功能缺乏身分鑑別漏洞。未經驗證的攻擊者可利用此漏洞取得 PeopleSoft Enterprise PeopleTools 的控制權。\n\n\n影響平台：【CVE-2026-42271】\n請參考官方所列的影響版本 \nhttps://github.com/BerriAI/litellm/security/advisories/GHSA-v4p8-mg3p-g94g\n\n【CVE-2026-50751】\n請參考官方所列的影響版本\nhttps://support.checkpoint.com/results/sk/sk185033\n\n【CVE-2026-11645】\n請參考官方所列的影響版本\nhttps://chromereleases.googleblog.com/2026/06/stable-channel-update-for-desktop_0153744567.html\n\n【CVE-2026-7473】\n請參考官方所列的影響版本\nhttps://www.arista.com/en/support/advisories-notices/security-advisory/24005-security-advisory-0137\n\n【CVE-2026-20245】\n請參考官方所列的影響版本\nhttps://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-privesc-4uxFrdzx\n\n【CVE-2026-10520】\n請參考官方所列的影響版本\nhttps://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523\n\n【CVE-2026-35273】\n請參考官方所列的影響版本\nhttps://www.oracle.com/security-alerts/alert-cve-2026-35273.html\n\n\n建議措施：【CVE-2026-42271】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://github.com/BerriAI/litellm/security/advisories/GHSA-v4p8-mg3p-g94g\n\n【CVE-2026-50751】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://support.checkpoint.com/results/sk/sk185033\n\n【CVE-2026-11645】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://chromereleases.googleblog.com/2026/06/stable-channel-update-for-desktop_0153744567.html\n\n【CVE-2026-7473】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://www.arista.com/en/support/advisories-notices/security-advisory/24005-security-advisory-0137\n\n【CVE-2026-20245】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-privesc-4uxFrdzx\n\n【CVE-2026-10520】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523\n\n【CVE-2026-35273】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://www.oracle.com/security-alerts/alert-cve-2026-35273.html\n\n\n參考資訊：【CVE-2026-42271】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-42271\n2.https://github.com/BerriAI/litellm/security/advisories/GHSA-v4p8-mg3p-g94g\n\n【CVE-2026-50751】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-50751\n2.https://support.checkpoint.com/results/sk/sk185033\n\n【CVE-2026-11645】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-11645\n2.https://chromereleases.googleblog.com/2026/06/stable-channel-update-for-desktop_0153744567.html\n\n【CVE-2026-7473】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-7473\n2.https://www.arista.com/en/support/advisories-notices/security-advisory/24005-security-advisory-0137\n\n【CVE-2026-20245】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-20245\n2.https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-privesc-4uxFrdzx\n\n【CVE-2026-10520】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-10520\n2.https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523\n\n【CVE-2026-35273】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-35273\n2.https://www.oracle.com/security-alerts/alert-cve-2026-35273.html\n\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://nvd.nist.gov/vuln/detail/cve-2026-42271",
+          "https://github.com/BerriAI/litellm/security/advisories/GHSA-v4p8-mg3p-g94g",
+          "https://nvd.nist.gov/vuln/detail/cve-2026-50751",
+          "https://support.checkpoint.com/results/sk/sk185033",
+          "https://nvd.nist.gov/vuln/detail/cve-2026-11645",
+          "https://chromereleases.googleblog.com/2026/06/stable-channel-update-for-desktop_0153744567.html",
+          "https://nvd.nist.gov/vuln/detail/cve-2026-7473",
+          "https://www.arista.com/en/support/advisories-notices/security-advisory/24005-security-advisory-0137",
+          "https://nvd.nist.gov/vuln/detail/cve-2026-20245",
+          "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-privesc-4uxFrdzx",
+          "https://nvd.nist.gov/vuln/detail/cve-2026-10520",
+          "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523",
+          "https://nvd.nist.gov/vuln/detail/cve-2026-35273",
+          "https://www.oracle.com/security-alerts/alert-cve-2026-35273.html"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "High",
+        "summary": "CISA KEV 新增 7 個遭利用漏洞，其中 Google Chromium V8 存在越界讀寫漏洞（CVE-2026-11645），可使攻擊者透過特製網頁在沙箱內執行任意程式碼，影響 Chrome 與 Edge 等瀏覽器。",
+        "recommendation": "請資訊部門（RR40）督促全體同仁將個人工作電腦上的 Google Chrome、Microsoft Edge 等瀏覽器更新至最新安全版本。其餘 Check Point、Ivanti、Cisco、Arista、Oracle 及 BerriAI 相關漏洞，經盤點公司無對應資產，無需處置。",
+        "company_relevance": "M",
+        "affected_assets": [
+          "資訊設備-桌上型電腦/筆記型電腦"
+        ],
+        "responsible_unit": "RR40"
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202606-0023",
+        "source": "TWCERT",
+        "publish_date": "2026-06-15 17:08",
+        "title": "[TLP CLEAR] Check Point 旗下 Security Gateways 與 Spark Firewalls 存在重大資安漏洞(CVE-2026-50751)",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-50751"
+        ],
+        "raw_content": "Check Point 針對旗下產品 Security Gateways 與 Spark Firewalls 發布重大資安漏洞公告 (CVE-2026-50751，CVSS：9.3)。此漏洞允許未經身分驗證的遠端攻擊者利用 IKEv1金鑰交換協議驗證邏輯缺陷，繞過使用者身分驗證，在無需有效密碼的情況下建立遠端存取 VPN 連線，進而存取內部資源或提升權限。\n\n備註：目前Check Point已觀察到有攻擊者利用此漏洞，建議儘速採取暫時緩解措施，以防止針對此漏洞可能的攻擊發生。\n\n影響平台：Security Gateways R82.10 Jumbo Hotfix Take 19 (含)之前版本、\nSecurity Gateways R82 Jumbo Hotfix Take 103 (含)之前版本、\nSecurity Gateways R81.20 Jumbo Hotfix Take 141 (含)之前版本、\nSecurity Gateways R81.10 (EOS),R81 (EOS),R80.40 (EOS)、\nSpark Firewalls R80.20.X (EOS), R81.10.X, R82.00.X\n\n建議措施：根據官方網站釋出的解決方式進行修補：https://support.checkpoint.com/results/sk/sk185033\n\n參考資訊：1. https://support.checkpoint.com/results/sk/sk185033\n2. https://nvd.nist.gov/vuln/detail/CVE-2026-50751\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://support.checkpoint.com/results/sk/sk185033",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-50751"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Check Point 旗下 Security Gateways 與 Spark Firewalls 存在重大安全漏洞（CVE-2026-50751），攻擊者可利用 IKEv1 協議缺陷繞過身分驗證並建立 VPN 連線。目前已有在野攻擊活動，但由於公司並未採用該品牌之防火牆設備，因此不受此漏洞影響。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202606-0020",
+        "source": "TWCERT",
+        "publish_date": "2026-06-12 11:26",
+        "title": "[TLP CLEAR] SAP針對旗下多款產品發布重大資安公告",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-40128",
+          "CVE-2026-27671",
+          "CVE-2026-44748"
+        ],
+        "raw_content": "【CVE-2026-40128，CVSS：9.0】\nSAP NetWeaver Application Server Java (Web Container)允許未經身分驗證的攻擊者，透過精心設計HTTP登入請求進而觸發路徑遍歷行為。\n\n【CVE-2026-27671，CVSS：9.8】\n由於SAP NetWeaver AS ABAP and ABAP Platform 所使用的RFC協定驗證不足，未經身分驗證的攻擊者可透過精心設計的RFC請求，利用記憶體的邏輯錯誤進而損壞。\n\n【CVE-2026-44748，CVSS：9.9】\nSAP NetWeaver AS ABAP and ABAP Platform允許具有普通權限且經身分驗證的攻擊者取得有效簽署訊息後，對簽署文件內容進行竄改後提交給驗證者。\n\n影響平台：【CVE-2026-40128】\nSAP NetWeaver Application Server Java (Web Container)\nVersion(s) - ENGINEAPI 7.50\n\n【CVE-2026-27671】\nSAP NetWeaver AS ABAP and ABAP Platform\nVersion(s) - KRNL64NUC 7.22, 7.22EXT, KRNL64UC 7.22, 722EXT, 7.53, KERNEL 7.22, 7.53, 7.54, 7.77, 7.89, 7.93, 9.16, 9.18, 91.9\n\n【CVE-2026-44748】\nSAP NetWeaver AS ABAP and ABAP Platform\nVersion(s) - SAP_BASIS 702, SAP_BASIS 731, SAP_BASIS 740, SAP_BASIS 750, SAP_BASIS 751, SAP_BASIS 752, SAP_BASIS 753, SAP_BASIS 754, SAP_BASIS 755, SAP_BASIS 756, SAP_BASIS 757, SAP_BASIS 758, SAP_BASIS 816, SAP_BASIS 918, SAP_BASIS 919\n\n建議措施：根據官方網站釋出的解決方式進行修補：https://support.sap.com/en/my-support/knowledge-base/security-notes-news/june-2026.html\n\n參考資訊：1. https://support.sap.com/en/my-support/knowledge-base/security-notes-news/june-2026.html\n2. https://www.cve.org/CVERecord?id=CVE-2026-40128\n3. https://www.cve.org/CVERecord?id=CVE-2026-27671\n4. https://www.cve.org/CVERecord?id=CVE-2026-44748\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/june-2026.html",
+          "https://www.cve.org/CVERecord?id=CVE-2026-40128",
+          "https://www.cve.org/CVERecord?id=CVE-2026-27671",
+          "https://www.cve.org/CVERecord?id=CVE-2026-44748"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "SAP 針對旗下 NetWeaver Application Server Java 及 AS ABAP 等多款產品發布重大資安公告，修補包含路徑遍歷、記憶體損壞及簽署文件竄改等高危漏洞。這些漏洞的 CVSS 評分高達 9.0 至 9.9，成功利用可能導致系統遭未授權存取或資料竄改。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202606-0019",
+        "source": "TWCERT",
+        "publish_date": "2026-06-12 11:23",
+        "title": "[TLP CLEAR] Fortinet旗下FortiSandbox、FortiSandbox Cloud 和 FortiSandbox PaaS存在重大資安漏洞(CVE-2026-25089)",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-25089",
+          "CVE-2026-26089"
+        ],
+        "raw_content": "Fortinet旗下FortiSandbox、FortiSandbox Cloud 和 FortiSandbox PaaS的網頁介面存在缺少授權漏洞(CVE-2026-26089，CVSS：9.8)，可能允許未經身分驗證的攻擊者，透過HTTP請求執行未經授權的程式碼或命令。\n\n影響平台：FortiSandbox 5.0.0至5.0.5版本、\nFortiSandbox 4.4.0至4.4.8版本、\nFortiSandbox Cloud 5.0.4至5.0.5版本、\nFortiSandbox PaaS 5.0.4至5.0.5版本\n\n建議措施：請更新至以下版本：\nFortiSandbox 5.0.6(含)之後版本、\nFortiSandbox 4.4.9(含)之後版本、\nFortiSandbox Cloud 5.0.6(含)之後版本、\nFortiSandbox PaaS 5.0.6(含)之後版本\n\n參考資訊：1. https://fortiguard.fortinet.com/psirt/FG-IR-26-141\n2. https://nvd.nist.gov/vuln/detail/CVE-2026-25089\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://fortiguard.fortinet.com/psirt/FG-IR-26-141",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-25089"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Fortinet 旗下的 FortiSandbox 相關產品存在高危險性的缺少授權漏洞（CVE-2026-26089），CVSS 評分高達 9.8。遠端攻擊者可藉由發送惡意 HTTP 請求，在未經身分驗證的情況下執行任意程式碼或命令。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202606-0018",
+        "source": "TWCERT",
+        "publish_date": "2026-06-12 11:20",
+        "title": "[TLP CLEAR] Veeam旗下Veeam Backup & Replication備份軟體存在重大資安漏洞(CVE-2026-44963)",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-44963"
+        ],
+        "raw_content": "Veeam Backup & Replication是Veeam核心備份軟體，近日Veeam發布重大資安漏洞公告，此漏洞(CVE-2026-44963，CVSS 4.x：9.4)允許經身分驗證的網域使用者，在備份伺服器上執行遠端程式碼(RCE)。\n\n影響平台：Veeam Backup & Replication 12.3.2.4465(含)之前12版本\n\n建議措施：更新 Veeam Backup & Replication 至12.3.2.4854(含)之後版本\n\n參考資訊：1. https://www.veeam.com/kb4869\n2. https://nvd.nist.gov/vuln/detail/CVE-2026-44963\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://www.veeam.com/kb4869",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-44963"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "此情資指出 Veeam Backup & Replication 備份軟體存在遠端程式碼執行（RCE）重大漏洞（CVE-2026-44963），允許經身分驗證的網域使用者在備份伺服器上執行任意程式。由於本公司資產清冊中並無使用 Veeam 相關備份軟體，因此此漏洞對本公司無直接影響。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202606-0017",
+        "source": "TWCERT",
+        "publish_date": "2026-06-12 11:17",
+        "title": "[TLP CLEAR] Oracle PeopleSoft PeopleTools 存在重大資安漏洞(CVE-2026-35273) ",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-35273"
+        ],
+        "raw_content": "近日Oracle針對 PeopleSoft PeopleTools發布重大資安公告(CVE-2026-35273，CVSS：9.8)，該漏洞允許未經身分驗證的遠端攻擊者可遠端程式碼執行。\n\n影響平台：PeopleSoft Enterprise PeopleTools 8.61、8.62版本\n\n建議措施：根據官方網站釋出的解決方式進行修補：\nhttps://www.oracle.com/security-alerts/alert-cve-2026-35273.html\n\n參考資訊：1. https://www.oracle.com/security-alerts/alert-cve-2026-35273.html\n2. https://www.cve.org/CVERecord?id=CVE-2026-35273\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://www.oracle.com/security-alerts/alert-cve-2026-35273.html",
+          "https://www.cve.org/CVERecord?id=CVE-2026-35273"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Oracle PeopleSoft PeopleTools 存在一個 CVSS 評分高達 9.8 的重大安全漏洞（CVE-2026-35273）。該漏洞允許未經身分驗證的遠端攻擊者在無需權限的情況下，遠端執行任意程式碼。經比對，本公司並未部署或使用此受影響之系統。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202606-0016",
+        "source": "TWCERT",
+        "publish_date": "2026-06-12 11:12",
+        "title": "[TLP CLEAR] Ivanti旗下Sentry存在2個重大資安漏洞",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-10520",
+          "CVE-2026-10523"
+        ],
+        "raw_content": "近日Ivanti針對旗下Sentry發布重大資安漏洞公告\n\n【CVE-2026-10520，CVSS：10.0】\n此漏洞為作業系統命令注入漏洞，允許未經身分驗證的遠端使用者以root權限執行遠端程式碼。\n\n【CVE-2026-10523，CVSS：9.9】\n此漏洞為身分驗證繞過漏洞，允許未經身分驗證的遠端攻擊者建立任意管理員帳號，並完全取得管理員權限。\n\n影響平台：Ivanti Sentry 10.5.1(含)以前版本、\nIvanti Sentry 10.6.1(含)以前版本、\nIvanti Sentry 10.7.0(含)以前版本\n\n建議措施：請更新至以下版本：\nIvanti Sentry 10.5.2(含)之後版本、\nIvanti Sentry 10.6.2(含)之後版本、\nIvanti Sentry 10.7.1(含)之後版本\n\n參考資訊：1. https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US\n2. https://nvd.nist.gov/vuln/detail/CVE-2026-10520\n3. https://nvd.nist.gov/vuln/detail/CVE-2026-10523\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-10520",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-10523"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Ivanti Sentry 存在兩個重大安全漏洞（CVE-2026-10520 與 CVE-2026-10523），分別可導致未授權的遠端程式碼執行（RCE）與身分驗證繞過。攻擊者可藉此取得系統 root 權限或建立管理員帳號，對企業網路安全造成極大威脅。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202606-0014",
+        "source": "TWCERT",
+        "publish_date": "2026-06-08 15:40",
+        "title": "[TLP CLEAR] CISA新增5個已知遭駭客利用之漏洞至KEV目錄(2026/06/01-2026/06/07)",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2024-21182",
+          "CVE-2022-0492",
+          "CVE-2025-48595",
+          "CVE-2026-45247",
+          "CVE-2026-28318"
+        ],
+        "raw_content": "【CVE-2024-21182】Oracle WebLogic Server Unspecified Vulnerability (CVSS v3.1: 7.5)\n【是否遭勒索軟體利用:未知】\nOracle WebLogic存在未具體說明的漏洞。透過T3或IIOP協定進行連線的未經驗證攻擊者，可能利用此漏洞入侵Oracle WebLogic Server。若此漏洞遭成功利用，可能導致關鍵資料遭未經授權存取，或使攻擊者取得Oracle WebLogic Server可存取之所有資料的完整存取權限。\n\n【CVE-2022-0492】Linux Kernel Improper Authentication Vulnerability (CVSS v3.1: 7.8)\n【是否遭勒索軟體利用:未知】\nLinux Kernel存在不當驗證漏洞，攻擊者可能透過cgroups v1的release_agent功能進行權限提升。\n\n【CVE-2025-48595】Android Framework Integer Overflow Vulnerability (CVSS v3.1: 8.4)\n【是否遭勒索軟體利用:未知】\nAndroid Framework存在整數溢位漏洞，可能導致任意程式碼執行，進而造成本機權限提升。\n\n【CVE-2026-45247】Mirasvit Full Page Cache Warmer Deserialization of Untrusted Data Vulnerability (CVSS v3.1: 9.8)\n【是否遭勒索軟體利用:未知】\nMirasvit Full Page Cache Warmer存在反序列化不受信任資料漏洞，未經驗證的攻擊者可透過在CacheWarmer Cookie中提供特製的PHP物件，達成遠端程式碼執行。\n\n【CVE-2026-28318】SolarWinds Serv-U Uncontrolled Resource Consumption Vulnerability (CVSS v3.1: 7.5)\n【是否遭勒索軟體利用:未知】\nSolarWinds Serv-U存在未受控制的資源消耗漏洞，攻擊者無需通過驗證，即可透過使用Content-Encoding: deflate標頭的特製POST請求，導致Serv-U服務崩潰。\n\n\n影響平台：【CVE-2024-21182】\n請參考官方所列的影響版本 \nhttps://www.oracle.com/security-alerts/cpujul2024.html\n\n【CVE-2022-0492】\n請參考官方所列的影響版本\nhttps://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=24f6008564183aa120d07c03d9289519c2fe02af\n\n【CVE-2025-48595】\n請參考官方所列的影響版本\nhttps://source.android.com/docs/security/bulletin/2026/2026-06-01\n\n【CVE-2026-45247】\n請參考官方所列的影響版本\nhttps://mirasvit.com/package/changelog/?package=mirasvit/module-cache-warmer\n\n【CVE-2026-28318】\n請參考官方所列的影響版本\nhttps://www.solarwinds.com/trust-center/security-advisories/cve-2026-28318\n\n\n建議措施：【CVE-2024-21182】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://www.oracle.com/security-alerts/cpujul2024.html\n\n【CVE-2022-0492】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=24f6008564183aa120d07c03d9289519c2fe02af\n\n【CVE-2025-48595】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://source.android.com/docs/security/bulletin/2026/2026-06-01\n\n【CVE-2026-45247】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://mirasvit.com/package/changelog/?package=mirasvit/module-cache-warmer\n\n【CVE-2026-28318】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://www.solarwinds.com/trust-center/security-advisories/cve-2026-28318\n\n\n參考資訊：【CVE-2024-21182】\n1.https://nvd.nist.gov/vuln/detail/cve-2024-21182\n2.https://www.oracle.com/security-alerts/cpujul2024.html\n\n【CVE-2022-0492】\n1.https://nvd.nist.gov/vuln/detail/cve-2022-0492\n2.https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=24f6008564183aa120d07c03d9289519c2fe02af\n\n【CVE-2025-48595】\n1.https://nvd.nist.gov/vuln/detail/cve-2025-48595\n2.https://source.android.com/docs/security/bulletin/2026/2026-06-01\n\n【CVE-2026-45247】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-45247\n2.https://mirasvit.com/package/changelog/?package=mirasvit/module-cache-warmer\n\n【CVE-2026-28318】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-28318\n2.https://www.solarwinds.com/trust-center/security-advisories/cve-2026-28318\n\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://nvd.nist.gov/vuln/detail/cve-2024-21182",
+          "https://www.oracle.com/security-alerts/cpujul2024.html",
+          "https://nvd.nist.gov/vuln/detail/cve-2022-0492",
+          "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=24f6008564183aa120d07c03d9289519c2fe02af",
+          "https://nvd.nist.gov/vuln/detail/cve-2025-48595",
+          "https://source.android.com/docs/security/bulletin/2026/2026-06-01",
+          "https://nvd.nist.gov/vuln/detail/cve-2026-45247",
+          "https://mirasvit.com/package/changelog/?package=mirasvit/module-cache-warmer",
+          "https://nvd.nist.gov/vuln/detail/cve-2026-28318",
+          "https://www.solarwinds.com/trust-center/security-advisories/cve-2026-28318"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "Low",
+        "summary": "CISA新增5個已知遭駭客利用之漏洞，經評估僅Linux Kernel不當驗證漏洞（CVE-2022-0492）與公司資產「Linux ubuntu」相關。其餘Oracle WebLogic、Android Framework、Mirasvit及SolarWinds等漏洞，公司均無相關資產。",
+        "recommendation": "針對Linux Kernel漏洞（CVE-2022-0492），請RR40確認Linux Ubuntu伺服器已套用包含commit 24f6008564183aa120d07c03d9289519c2fe02af修正之核心版本，或執行系統更新（如 apt-get update && apt-get upgrade）以升級至安全的核心版本。",
+        "company_relevance": "H",
+        "affected_assets": [
+          "資訊軟體-伺服器軟體-Linux ubuntu"
+        ],
+        "responsible_unit": "RR40"
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202606-0007",
+        "source": "TWCERT",
+        "publish_date": "2026-06-02 15:46",
+        "title": "[TLP CLEAR] 英特內｜DreamMaker - Arbitrary File Upload",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-10071"
+        ],
+        "raw_content": "【英特內｜DreamMaker - Arbitrary File Upload】(CVE-2026-10071，CVSS：9.8)\n未經身分鑑別之遠端攻擊者可上傳並執行網頁後門程式，進而於伺服器端執行任意程式碼。\n\n影響平台：DreamMaker Java Composer 2.2(含)以前版本\n\n建議措施：更新至Java Composer 2.3(含)以後版本\n\n參考資訊：1. https://www.twcert.org.tw/tw/cp-132-10943-8fb00-1.html\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://www.twcert.org.tw/tw/cp-132-10943-8fb00-1.html"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "英特內 DreamMaker Java Composer 存在任意檔案上傳漏洞（CVE-2026-10071），CVSS 評分高達 9.8。未經身分鑑別的遠端攻擊者可利用此漏洞上傳並執行網頁後門，進而於伺服器端執行任意程式碼。經比對，本公司並未使用該系統，無直接安全風險。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202606-0006",
+        "source": "TWCERT",
+        "publish_date": "2026-06-02 15:44",
+        "title": "[TLP CLEAR] Ivanti Neurons for ITSM存在高風險資安漏洞(CVE-2026-9614)",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-9614"
+        ],
+        "raw_content": "ITSM是Ivanti旗下一款可靠且強大IT服務管理的解決方案，可協助組織提升服務效率，確保IT營運合規及安全。近日針對 Ivanti Neurons for ITSM發布重大資安公告(CVE-2026-9614，CVSS：8.8)，此漏洞可允許經身分驗證的遠端攻擊者取得系統管理存取權限。\n\n影響平台：Ivanti Neurons for ITSM (On-Premises) 2025.4(含)之前版本、\nIvanti Neurons for ITSM (Cloud) 2026.1(含)之前版本\n\n建議措施：根據官方網站釋出的解決方式進行修補：\nhttps://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Neurons-for-ITSM-CVE-2026-9614?language=en_US\n\n參考資訊：1. https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Neurons-for-ITSM-CVE-2026-9614?language=en_US\n2. https://nvd.nist.gov/vuln/detail/CVE-2026-9614\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Neurons-for-ITSM-CVE-2026-9614?language=en_US",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-9614"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Ivanti Neurons for ITSM 存在高風險安全漏洞（CVE-2026-9614），經身分驗證的遠端攻擊者可藉此取得系統管理存取權限。此漏洞影響該系統之 On-Premises 及 Cloud 多個版本。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202606-0005",
+        "source": "TWCERT",
+        "publish_date": "2026-06-02 15:43",
+        "title": "[TLP CLEAR] Palo Alto Networks PAN-OS存在重大資安漏洞(CVE-2026-0257)",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-0257"
+        ],
+        "raw_content": "Palo Alto Networks 防火牆作業系統 PAN-OS的GlobalProtect入口網站和通道設備存在身分驗證繞過漏洞，攻擊者可利用該漏洞繞過安全限制並建立未經授權的VPN連線。\n\n影響平台：PAN-OS 12.1.4-h6(不含)以前版本、\nPAN-OS 12.1.7(不含)以前版本、\nPAN-OS 11.2.4-h17(不含)以前版本、\nPAN-OS 11.2.7-h14(不含)以前版本、\nPAN-OS 11.2.10-h7(不含)以前版本、\nPAN-OS 11.2.12(不含)以前版本、\nPAN-OS 11.1.4-h33(不含)以前版本、\nPAN-OS 11.1.6-h32(不含)以前版本、\nPAN-OS 11.1.7-h6(不含)以前版本、\nPAN-OS 11.1.10-h25(不含)以前版本、\nPAN-OS 11.1.13-h5(不含)以前版本、\nPAN-OS 11.1.15(不含)以前版本、\nPAN-OS 10.2.7-h34(不含)以前版本、\nPAN-OS 10.2.10-h36(不含)以前版本、\nPAN-OS 10.2.13-h21(不含)以前版本、\nPAN-OS 10.2.16-h7(不含)以前版本、\nPAN-OS 10.2.18-h6(不含)以前版本、\nPrisma Access 11.2.7-h13(不含)以前版本、\nPrisma Access 10.2.10-h36(不含)以前版本\n\n建議措施：根據官方網站釋出的解決方式進行修補：\nhttps://security.paloaltonetworks.com/CVE-2026-0257\n\n參考資訊：1. https://security.paloaltonetworks.com/CVE-2026-0257\n2. https://nvd.nist.gov/vuln/detail/cve-2026-0257\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://security.paloaltonetworks.com/CVE-2026-0257",
+          "https://nvd.nist.gov/vuln/detail/cve-2026-0257"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Palo Alto Networks PAN-OS 的 GlobalProtect 入口網站和通道設備存在身分驗證繞過漏洞（CVE-2026-0257）。攻擊者可利用此漏洞繞過安全限制，並建立未經授權的 VPN 連線。由於公司並未使用該品牌之防火牆設備，此漏洞對公司無直接影響。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202606-0004",
+        "source": "TWCERT",
+        "publish_date": "2026-06-02 15:40",
+        "title": "[TLP AMBER] TWCERT-IoC 觀測IoC分享_0601",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [],
+        "raw_content": "TWCERT/CC匯整TWCERT-IoC 觀測(至06/01)受駭偵測指標(IoC)情資(詳如附件)，可做為貴單位強化資安防護之參考。\n\nTWCERT-IoC : 聯盟會員分享或接收之外部情資與Virus Check分析可疑檔案，可能包含近期攻擊事件所發現之惡意網域、惡意 IP Address、及惡意程式(MD5、SHA-1及SHA-256)等資訊。\n\n*如貴單位有發現可疑的攻擊/探嗅活動(log)、攻擊資訊(如IoC, IoA)或惡意程式樣本，歡迎提供給TWCERT/CC，我們將去識別化後通報給相關CERT或資安單位，以達到資安聯防的效果。\n*若貴公司因服務之必要無法將有風險之IP列入黑名單, 為避免影響正常服務, 可將該IP列為觀察名單，監控與此IP連線的設備與流量等防護措施, 以降低資安風險。\n\n影響平台：無\n\n建議措施：請參考附件之名單做相關防範措施。\n\n參考資訊：無\n\nTWCERT 影響等級：第 2 級",
+        "reference_urls": [],
+        "attachment_urls": [
+          "(TLP AMBER) TWCERT-IoC 觀測IoC分享_0601.xlsx"
+        ],
+        "ioc_ips": [
+          "61.216.92.127",
+          "174.138.22.165",
+          "45.94.43.41",
+          "172.94.18.103",
+          "173.232.146.55",
+          "66.163.113.238",
+          "172.111.233.80",
+          "213.209.159.254",
+          "216.126.237.71",
+          "45.221.118.180",
+          "223.254.129.212",
+          "66.154.110.34",
+          "168.144.36.228",
+          "54.153.56.183",
+          "160.16.200.77"
+        ],
+        "ioc_hashes": [
+          "f297e54ce1fe9328b946b7a065f6029204f9ca26d1f9aad68592fa471c85747b",
+          "3ea7493a445e08baecc2f22f4753cf3b54f101aa3c3bdcf21c0ac503b874b1e1",
+          "ca9ff203b413c43d8cef8e53ee8b52ebc29c57b94722e180e23e6768161a0035",
+          "e6839c80a905b5be9c3dc67847ea3ddd724bc47e6fd672b4f870f24c93603c09",
+          "e7a52e380d840c8f6a6727a03514585c9e437598f8f94fb187ad51c3957562ec"
+        ],
+        "ioc_domains": [
+          "zn.uatqvra8t5x30uat.com",
+          "ifinchina.com",
+          "goldenold.ru.com",
+          "yetibundel.shop",
+          "zainabuwpretty.click",
+          "elenameetvp.ru.com",
+          "saigeheyzl.ru.com",
+          "www.rxjapan.jp",
+          "1gvp63.exe",
+          "client_msvc_patched_001.exe",
+          "local72.mlcrosoft.my",
+          "mlcrosoft.asia",
+          "fyduoyu.mlcrosoft.asia",
+          "tl3.mlcrosoft.asia",
+          "hc12.mlcrosoft.asia",
+          "zhjze2.mlcrosoft.win",
+          "www.linerm.com",
+          "www.lineoe.com",
+          "www.line-tww.com",
+          "www.linecl.com",
+          "gffdsene-gsreshdg2.25.exe",
+          "kffw.dll",
+          "devel.asurans.com",
+          "linesdk.com",
+          "linecbc.com",
+          "linecbf.com",
+          "linecbg.com",
+          "app-line.me",
+          "line-me.me",
+          "line-hk.com.cn",
+          "node201.latitudeprevalent.cfd"
+        ],
+        "impact_level": "2"
+      },
+      "analysis": {
+        "risk_level": "Low",
+        "summary": "本情資為 TWCERT/CC 彙整之惡意偵測指標（IoC）分享，包含近期觀測到之惡意網域、IP 位址及惡意程式雜湊值。此情資屬通用威脅情資廣播，並非針對特定系統或軟體之安全漏洞。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202606-0003",
+        "source": "TWCERT",
+        "publish_date": "2026-06-02 15:38",
+        "title": "[TLP CLEAR] CISA新增5個已知遭駭客利用之漏洞至KEV目錄(2026/05/25-2026/05/31)",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-48172",
+          "CVE-2026-48027",
+          "CVE-2026-45321",
+          "CVE-2026-8398",
+          "CVE-2026-0257"
+        ],
+        "raw_content": "【CVE-2026-48172】LiteSpeed cPanel Plugin Privilege Escalation Vulnerability (CVSS v3.1: 9.8)\n【是否遭勒索軟體利用:未知】\nLiteSpeed cPanel Plugin 存在權限提升漏洞。該漏洞可經由使用者端的 cPanel 外掛程式觸發，任何 cPanel 使用者帳號都可能濫用此漏洞，以 root權限執行任意指令碼。\n\n【CVE-2026-48027】Nx Console Embedded Malicious Code Vulnerability (CVSS v3.1: 9.8)\n【是否遭勒索軟體利用:已知】\nNx Console 存在嵌入式惡意程式碼漏洞。攻擊者藉此發布惡意版本的 Nx Console。受影響的擴充套件會下載經過混淆處理的惡意載荷，可從磁碟與記憶體中的多個來源竊取憑證。\n\n【CVE-2026-45321】TanStack Unspecified Vulnerability (CVSS v3.1: 9.6)\n【是否遭勒索軟體利用:已知】\nTanStack 存在未具體說明的漏洞，使攻擊者得以將惡意版本的套件發布至 npm Registry，並利用受信任的身分發布竊取憑證的惡意軟體。\n\n【CVE-2026-8398】Daemon Tools Lite Embedded Malicious Code Vulnerability (CVSS v3.1: 9.8)\n【是否遭勒索軟體利用:未知】\nDaemon Tools 存在未具體說明的漏洞，對機密性、完整性及可用性造成高度影響。\n\n【CVE-2026-0257】Palo Alto Networks PAN-OS Authentication Bypass Vulnerability (CVSS v3.1: 9.1)\n【是否遭勒索軟體利用:未知】\nPalo Alto Networks PAN-OS 存在身分驗證繞過漏洞，攻擊者可藉此繞過安全限制並建立未經授權的 VPN 連線。\n\n\n影響平台：【CVE-2026-48172】\n請參考官方所列的影響版本 \nhttps://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/\n\n【CVE-2026-48027】\n請參考官方所列的影響版本\nhttps://nx.dev/blog/nx-console-v18-95-0-postmortem#indicators-of-compromise\n\n【CVE-2026-45321】\n請參考官方所列的影響版本\nhttps://github.com/TanStack/router/security/advisories/GHSA-g7cv-rxg3-hmpx\n\n【CVE-2026-8398】\n請參考官方所列的影響版本\nhttps://blog.daemon-tools.cc/post/security-incident\n\n【CVE-2026-0257】\n請參考官方所列的影響版本\nhttps://security.paloaltonetworks.com/CVE-2026-0257\n\n\n建議措施：【CVE-2026-48172】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/\n\n【CVE-2026-48027】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://nx.dev/blog/nx-console-v18-95-0-postmortem#indicators-of-compromise\n\n【CVE-2026-45321】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://github.com/TanStack/router/security/advisories/GHSA-g7cv-rxg3-hmpx\n\n【CVE-2026-8398】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://blog.daemon-tools.cc/post/security-incident\n\n【CVE-2026-0257】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://security.paloaltonetworks.com/CVE-2026-0257\n\n\n參考資訊：【CVE-2026-48172】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-48172\n2.https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/\n\n【CVE-2026-48027】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-48027\n2.https://nx.dev/blog/nx-console-v18-95-0-postmortem#indicators-of-compromise\n\n【CVE-2026-45321】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-45321\n2.https://github.com/TanStack/router/security/advisories/GHSA-g7cv-rxg3-hmpx\n\n【CVE-2026-8398】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-8398\n2.https://blog.daemon-tools.cc/post/security-incident\n\n【CVE-2026-0257】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-0257\n2.https://security.paloaltonetworks.com/CVE-2026-0257\n\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://nvd.nist.gov/vuln/detail/cve-2026-48172",
+          "https://blog.litespeedtech.com/2026/05/21/security-update-for-litespeed-cpanel-plugin/",
+          "https://nvd.nist.gov/vuln/detail/cve-2026-48027",
+          "https://nx.dev/blog/nx-console-v18-95-0-postmortem#indicators-of-compromise",
+          "https://nvd.nist.gov/vuln/detail/cve-2026-45321",
+          "https://github.com/TanStack/router/security/advisories/GHSA-g7cv-rxg3-hmpx",
+          "https://nvd.nist.gov/vuln/detail/cve-2026-8398",
+          "https://blog.daemon-tools.cc/post/security-incident",
+          "https://nvd.nist.gov/vuln/detail/cve-2026-0257",
+          "https://security.paloaltonetworks.com/CVE-2026-0257"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "High",
+        "summary": "CISA新增5個已知遭利用漏洞，其中包含TanStack與Nx Console等開發元件之惡意代碼植入與憑證竊取漏洞。由於公司資產包含產品程式碼與npm平台，可能因相依套件引入而面臨供應鏈攻擊風險。",
+        "recommendation": "1. 開發團隊應盤點『產品程式碼』與『npm』平台中是否使用 TanStack 相關套件或 Nx Console 擴充套件。\n2. 若有使用，請參考官方安全公告（如 GHSA-g7cv-rxg3-hmpx）更新至安全版本，並清除惡意快取。\n3. 檢查並輪替開發環境中可能已外洩的憑證與 API 金鑰。",
+        "company_relevance": "M",
+        "affected_assets": [
+          "產品程式碼",
+          "npm"
+        ],
+        "responsible_unit": "KC00"
+      }
+    }
+  ]
+}
