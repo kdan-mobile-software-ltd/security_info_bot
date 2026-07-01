@@ -338,17 +338,6 @@ def append_monthly(pairs: list[tuple[IntelItem, AnalysisResult]]) -> int:
 
 
 # ── MONTHLY reads ─────────────────────────────────────────────────────────────
-def get_month_ids(month: str) -> set[str]:
-    """情資編號 already present in a monthly tab (dedup key = column A)."""
-    ss = _get_spreadsheet()
-    try:
-        ws = ss.worksheet(month)
-    except gspread.exceptions.WorksheetNotFound:
-        return set()
-    col_a = ws.col_values(1)
-    return {v.strip() for v in col_a[1:] if v.strip()}
-
-
 def get_month_rows(month: str) -> list[dict]:
     ss = _get_spreadsheet()
     try:

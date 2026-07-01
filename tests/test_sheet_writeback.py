@@ -1,11 +1,22 @@
 from src.models import AnalysisResult, IntelItem
 from src.sinks.sheets import (
+    _resolve_month_tab,
     build_monthly_row,
     build_pool_backfill,
     build_pool_raw_row,
     filter_monthly_pairs,
     relevance_label,
 )
+
+
+def test_resolve_month_tab_uses_slash():
+    assert _resolve_month_tab("2026-06-15") == "2026/06"
+    assert _resolve_month_tab("2026-01-01T00:00:00") == "2026/01"
+
+
+def test_resolve_month_tab_blank_falls_back_to_current_month():
+    tab = _resolve_month_tab("")
+    assert len(tab) == 7 and tab[4] == "/" and tab[:4].isdigit() and tab[5:].isdigit()
 
 
 def _intel(rid="TWISAC-202601-0001", title="Apache RCE 漏洞", date="2026-01-15"):
