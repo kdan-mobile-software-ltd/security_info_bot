@@ -36,11 +36,13 @@ gcloud artifacts repositories create "$REPO" \
 
 ```bash
 gcloud auth configure-docker "$REGION-docker.pkg.dev"
-docker build -t "$IMAGE" .
+docker build --platform linux/amd64 -t "$IMAGE" .
 docker push "$IMAGE"
 ```
 
-> 用 Cloud Build(`gcloud builds submit --tag $IMAGE`)亦可,但需新增 `.gcloudignore` 並確保**不要**排除 `.git`,否則映像內無 git 歷史、歸檔會失敗。
+> ⚠️ **必加 `--platform linux/amd64`**:Cloud Run 只跑 amd64,若在 Apple Silicon(arm64)build 而未指定平台,容器會以「Application failed to start / exec format error」啟動失敗。
+>
+> 用 Cloud Build(`gcloud builds submit --tag $IMAGE`)亦可(原生 amd64,免平台旗標),但需新增 `.gcloudignore` 並確保**不要**排除 `.git`,否則映像內無 git 歷史、歸檔會失敗。
 
 ## 4. Secrets(Secret Manager)
 
