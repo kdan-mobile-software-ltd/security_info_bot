@@ -275,6 +275,26 @@ def get_existing_intel_ids() -> set[str]:
     return {v.strip() for v in col_b[1:] if v.strip()}
 
 
+def _pool_analyzed_ids_from_values(values: list[list[str]]) -> set[str]:
+    """情資編號 whose pool row already has analysis (建議措施 = col E, idx4, non-blank)."""
+    ids: set[str] = set()
+    for raw in values[1:]:  # skip header
+        intel_id = raw[1].strip() if len(raw) > 1 else ""  # col B (情資編號)
+        recommendation = raw[4].strip() if len(raw) > 4 else ""  # col E (建議措施)
+        if intel_id and recommendation:
+            ids.add(intel_id)
+    return ids
+
+
+def get_pool_analyzed_ids() -> set[str]:
+    """情資編號 in the pool that already carry a Gemini analysis (建議措施 filled).
+
+    Items appended to the pool but not yet analysed (e.g. a prior run failed after
+    the raw append) are absent here, so the pipeline re-analyses them next run.
+    """
+    return _pool_analyzed_ids_from_values(_get_pool_ws().get_all_values())
+
+
 def append_pool_raw(items: list[IntelItem]) -> list[IntelItem]:
     """Append raw rows for items not already in the pool; return the appended items."""
     if not items:

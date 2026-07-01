@@ -1,9 +1,23 @@
 from src.sinks.sheets import (
     MONTHLY_HEADERS,
+    POOL_HEADERS,
     _month_rows_from_values,
+    _pool_analyzed_ids_from_values,
     select_publishable,
     select_relevant,
 )
+
+
+def test_pool_analyzed_ids_only_rows_with_recommendation():
+    """A pool row counts as analysed only when 建議措施 (col E) is non-blank, so
+    appended-but-unanalysed rows are re-analysed next run."""
+    values = [
+        POOL_HEADERS,
+        ["2026-06-01", "CVE-1", "2026-06-01", "t1", "升級", "高相關", "資產", "組"],  # analysed
+        ["2026-06-01", "CVE-2", "2026-06-01", "t2", "", "", "", ""],  # raw-only (orphan)
+        ["2026-06-01", "", "", "", "", "", "", ""],  # blank
+    ]
+    assert _pool_analyzed_ids_from_values(values) == {"CVE-1"}
 
 
 def _rec(rid, relevance="高相關", status="待處理", notified=""):

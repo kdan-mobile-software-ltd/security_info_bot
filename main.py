@@ -24,6 +24,7 @@ from src.sinks.sheets import (
     append_pool_raw,
     backfill_pool_analysis,
     get_month_rows,
+    get_pool_analyzed_ids,
     get_rows_for_publishing,
     load_assets_context,
     mark_published,
@@ -248,14 +249,22 @@ def run(
         log.info("Fetch-only mode: %d items saved, skipping analysis", len(items))
         return
 
-    # --- Stage 1.5: Append raw rows to POOL, dedup by 情資編號 → new items ---
-    new_items = stage_append_pool_raw(items, dry_run=dry_run)
-    if not new_items:
-        log.info("No new intel items (all already in pool)")
+    # --- Stage 1.5: Append raw rows to POOL (dedup by 情資編號) ---
+    stage_append_pool_raw(items, dry_run=dry_run)
+
+    # Analyse fetched items that lack a pool analysis: new ones AND any that were
+    # appended by an earlier run whose analysis failed (self-healing on re-run).
+    if dry_run:
+        to_analyze = items
+    else:
+        analyzed_ids = get_pool_analyzed_ids()
+        to_analyze = [item for item in items if item.intel_id not in analyzed_ids]
+    if not to_analyze:
+        log.info("No items need analysis (all fetched items already analysed in pool)")
         return
 
     # --- Stage 2: Analyze ---
-    pairs = stage_analyze(new_items, source, save=save_data, tag=since_date, limit=limit)
+    pairs = stage_analyze(to_analyze, source, save=save_data, tag=since_date, limit=limit)
     if not pairs:
         return
 
