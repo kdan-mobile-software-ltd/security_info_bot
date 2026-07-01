@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import json
 from collections import defaultdict
-from collections.abc import Iterable
 from datetime import datetime, timedelta, timezone
 
 import google.auth
@@ -15,11 +14,12 @@ from src.config import (
     ASSETS_WORKSHEET,
     FIXTURE_DIR,
     GOOGLE_SHEET_ID,
+    POOL_WORKSHEET,
     SCOPES,
     USE_FIXTURE_DATA,
     get_service_account_path,
 )
-from src.models import SheetRow
+from src.models import AnalysisResult, IntelItem
 from src.utils.logging import log
 
 
@@ -38,29 +38,58 @@ class AssetRecord(BaseModel):
 
 _TW = timezone(timedelta(hours=8))
 
-INTEL_HEADERS = [
-    "紀錄日期",
-    "情資ID",
-    "來源",
-    "發布日期",
-    "標題",
-    "情資類型",
-    "CVE ID",
-    "建議措施",
-    "風險等級",
-    "摘要",
-    "公司相關性",
-    "受影響資產",
-    "負責單位",
-    "狀態",
-    "追蹤連結",
-    "備注",
-    "完成日期",
-    "處理人員",
-    "通知時間",
-    "TWCERT 影響等級",
-    "參考網址",
+# ── Schema constants ──────────────────────────────────────────────────────────
+# POOL tab (8 columns A–H). The pool is maintained by the user and must already
+# exist; the bot never writes these headers. Kept here as position documentation.
+POOL_HEADERS = [
+    "記錄日期",  # A idx0 — record date (append)
+    "情資編號",  # B idx1 — intel_id (dedup key, append)
+    "情資發布日期",  # C idx2 — publish_date (append)
+    "情資內容",  # D idx3 — title (append)
+    "建議措施",  # E idx4 — recommendation (backfill)
+    "公司風險相關性 (H/M/L)",  # F idx5 — relevance label (backfill)
+    "內部受影響資產",  # G idx6 — affected assets (backfill)
+    "處置措施負責單位",  # H idx7 — responsible unit (backfill)
 ]
+
+# MONTHLY tab (10 columns A–J). Bot writes these single-line headers when it
+# creates a new monthly tab. Reads are always position-based (see _MONTHLY_KEY_POS).
+MONTHLY_HEADERS = [
+    "情資編號",  # A idx0
+    "情資發布日期",  # B idx1
+    "情資內容",  # C idx2
+    "建議措施",  # D idx3
+    "風險相關性 (H/M/L)",  # E idx4
+    "內部受影響資產",  # F idx5
+    "處置措施負責單位",  # G idx6
+    "追蹤表單連結",  # H idx7 (human-filled)
+    "狀態",  # I idx8
+    "通知時間",  # J idx9
+]
+
+# Fixed ASCII-safe dict keys exposed by position-based monthly reads → column idx.
+# 追蹤表單連結 (idx7) is intentionally not exposed (human-filled tracking link).
+_MONTHLY_KEY_POS: dict[str, int] = {
+    "情資編號": 0,
+    "情資發布日期": 1,
+    "情資內容": 2,
+    "建議措施": 3,
+    "相關性": 4,
+    "受影響資產": 5,
+    "負責單位": 6,
+    "狀態": 8,
+    "通知時間": 9,
+}
+
+# Ordered list of the exposed monthly dict keys (source of truth for templates).
+MONTHLY_KEYS = list(_MONTHLY_KEY_POS.keys())
+
+# Chinese relevance labels written to POOL/MONTHLY (bot never writes absolute risk
+# levels like Critical/High). "重大相關" is a manual risk-team escalation option.
+_RELEVANCE_LABELS = {"H": "高相關", "M": "中相關", "L": "低相關", "無": "無"}
+
+_STATUS_VALUES = ["待處理", "處理中", "核可發佈", "已完成", "不適用"]
+_STATUS_COL = 8  # column I (idx8)
 
 _gc: gspread.Client | None = None
 _spreadsheet: gspread.Spreadsheet | None = None
@@ -96,45 +125,65 @@ def _get_assets_spreadsheet() -> gspread.Spreadsheet:
     return _assets_spreadsheet
 
 
-def _resolve_date_tab(publish_date: str) -> str:
+# ── Relevance label ───────────────────────────────────────────────────────────
+def relevance_label(relevance: str) -> str:
+    """Map Gemini's H/M/L/無 to the Chinese label used in the Sheet.
+
+    Unmapped values pass through unchanged (e.g. a manual "重大相關").
+    """
+    return _RELEVANCE_LABELS.get(relevance, relevance)
+
+
+# ── Value builders (pure, unit-tested) ────────────────────────────────────────
+def build_pool_raw_row(item: IntelItem, record_date: str) -> list[str]:
+    """POOL append row (A–H); analysis columns E–H left blank until backfill."""
+    return [record_date, item.intel_id, item.publish_date, item.title, "", "", "", ""]
+
+
+def build_pool_backfill(analysis: AnalysisResult) -> list[str]:
+    """POOL backfill values for range E:H."""
+    return [
+        analysis.recommendation,
+        relevance_label(analysis.company_relevance),
+        ", ".join(analysis.affected_assets),
+        analysis.responsible_unit,
+    ]
+
+
+def build_monthly_row(item: IntelItem, analysis: AnalysisResult) -> list[str]:
+    """MONTHLY append row (A–J)."""
+    return [
+        item.intel_id,
+        item.publish_date,
+        item.title,
+        analysis.recommendation,
+        relevance_label(analysis.company_relevance),
+        ", ".join(analysis.affected_assets),
+        analysis.responsible_unit,
+        "",  # 追蹤表單連結 (human-filled)
+        "待處理",  # 狀態
+        "",  # 通知時間
+    ]
+
+
+def filter_monthly_pairs(
+    pairs: list[tuple[IntelItem, AnalysisResult]],
+) -> list[tuple[IntelItem, AnalysisResult]]:
+    """Only intel with company_relevance != '無' goes to a monthly tab."""
+    return [(item, analysis) for item, analysis in pairs if analysis.company_relevance != "無"]
+
+
+# ── Tab helpers ───────────────────────────────────────────────────────────────
+def _resolve_month_tab(publish_date: str) -> str:
+    """`YYYY/MM` (slash) tab name from publish_date; current TW+8 month if absent."""
     date_part = (publish_date or "")[:10].strip()
     if len(date_part) >= 7 and date_part[4] == "-":
-        return date_part[:7]  # YYYY-MM
-    return datetime.now(_TW).strftime("%Y-%m")
+        return f"{date_part[:4]}/{date_part[5:7]}"
+    return datetime.now(_TW).strftime("%Y/%m")
 
 
-_COL_WIDTHS = [
-    100,  # A 紀錄日期
-    160,  # B 情資ID
-    80,  # C 來源
-    100,  # D 發布日期
-    280,  # E 標題
-    100,  # F 情資類型
-    130,  # G CVE ID
-    280,  # H 建議措施
-    80,  # I 風險等級
-    280,  # J 摘要
-    100,  # K 公司相關性
-    180,  # L 受影響資產
-    80,  # M 負責單位
-    80,  # N 狀態
-    140,  # O 追蹤連結
-    180,  # P 備注
-    100,  # Q 完成日期
-    80,  # R 處理人員
-    120,  # S 通知時間
-    100,  # T TWCERT 影響等級
-    180,  # U 參考網址
-]
-
-
-# (col_index 0-based, values) for dropdown validation on data rows (startRowIndex=1)
-_DROPDOWN_COLS: list[tuple[int, list[str]]] = [
-    (8, ["Critical", "High", "Medium", "Low", "無"]),  # I 風險等級
-    (10, ["H", "M", "L", "無"]),  # K 公司相關性
-    (13, ["待處理", "處理中", "核可發佈", "已完成", "不適用"]),  # N 狀態
-    (17, ["無"]),  # R 處理人員
-]
+def _is_month_tab(title: str) -> bool:
+    return len(title) == 7 and title[4] == "/" and title[:4].isdigit() and title[5:].isdigit()
 
 
 def _dropdown_request(sid: int, col: int, values: list[str]) -> dict:
@@ -158,127 +207,146 @@ def _dropdown_request(sid: int, col: int, values: list[str]) -> dict:
     }
 
 
-def _format_worksheet(ws: gspread.Worksheet) -> None:
-    sid = ws._properties["sheetId"]
-    requests = (
-        [
-            {
-                "updateSheetProperties": {
-                    "properties": {
-                        "sheetId": sid,
-                        "gridProperties": {"frozenRowCount": 1, "frozenColumnCount": 4},
-                    },
-                    "fields": "gridProperties(frozenRowCount,frozenColumnCount)",
-                }
-            },
-            {
-                "setBasicFilter": {
-                    "filter": {"range": {"sheetId": sid, "startRowIndex": 0, "endColumnIndex": 21}}
-                }
-            },
-            {
-                "repeatCell": {
-                    "range": {
-                        "sheetId": sid,
-                        "startRowIndex": 0,
-                        "endRowIndex": 1,
-                        "endColumnIndex": 21,
-                    },
-                    "cell": {
-                        "userEnteredFormat": {
-                            "textFormat": {"bold": True},
-                            "backgroundColor": {"red": 0.82, "green": 0.88, "blue": 0.95},
-                        }
-                    },
-                    "fields": "userEnteredFormat(textFormat,backgroundColor)",
-                }
-            },
-            {
-                "repeatCell": {
-                    "range": {"sheetId": sid, "endColumnIndex": 21},
-                    "cell": {
-                        "userEnteredFormat": {"wrapStrategy": "WRAP", "verticalAlignment": "TOP"}
-                    },
-                    "fields": "userEnteredFormat(wrapStrategy,verticalAlignment)",
-                }
-            },
-            {
-                "repeatCell": {
-                    "range": {"sheetId": sid, "startColumnIndex": 20, "endColumnIndex": 21},
-                    "cell": {"userEnteredFormat": {"wrapStrategy": "CLIP"}},
-                    "fields": "userEnteredFormat.wrapStrategy",
-                }
-            },
-        ]
-        + [
-            {
-                "updateDimensionProperties": {
-                    "range": {
-                        "sheetId": sid,
-                        "dimension": "COLUMNS",
-                        "startIndex": i,
-                        "endIndex": i + 1,
-                    },
-                    "properties": {"pixelSize": w},
-                    "fields": "pixelSize",
-                }
-            }
-            for i, w in enumerate(_COL_WIDTHS)
-        ]
-        + [_dropdown_request(sid, col, values) for col, values in _DROPDOWN_COLS]
-    )
-    ws.spreadsheet.batch_update({"requests": requests})
-
-
-def _sort_worksheets_newest_first(ss: gspread.Spreadsheet) -> None:
-    """Reorder YYYY-MM tabs descending; non-date tabs stay at the end."""
-    sheets = ss.worksheets()
-    date_tabs = sorted(
-        [s for s in sheets if len(s.title) == 7 and s.title[4] == "-"],
-        key=lambda s: s.title,
-        reverse=True,
-    )
-    other_tabs = [s for s in sheets if s not in date_tabs]
-    ordered = date_tabs + other_tabs
-    requests = [
-        {
-            "updateSheetProperties": {
-                "properties": {"sheetId": s.id, "index": i},
-                "fields": "index",
-            }
-        }
-        for i, s in enumerate(ordered)
-    ]
-    ss.batch_update({"requests": requests})
-
-
-def _get_or_create_date_worksheet(date_str: str) -> gspread.Worksheet:
-    if date_str in _ws_cache:
-        return _ws_cache[date_str]
+def _get_pool_ws() -> gspread.Worksheet:
+    key = f"__pool__::{POOL_WORKSHEET}"
+    if key in _ws_cache:
+        return _ws_cache[key]
     ss = _get_spreadsheet()
     try:
-        ws = ss.worksheet(date_str)
-    except gspread.exceptions.WorksheetNotFound:
-        ws = ss.add_worksheet(title=date_str, rows=1000, cols=21)
-        ws.append_row(INTEL_HEADERS, value_input_option="USER_ENTERED")
-        _format_worksheet(ws)
-        _sort_worksheets_newest_first(ss)
-        log.info("Created new worksheet: %s", date_str)
-    _ws_cache[date_str] = ws
+        ws = ss.worksheet(POOL_WORKSHEET)
+    except gspread.exceptions.WorksheetNotFound as e:
+        raise RuntimeError(
+            f"POOL worksheet '{POOL_WORKSHEET}' not found in spreadsheet "
+            f"{GOOGLE_SHEET_ID}. It must already exist (maintained manually); "
+            "the bot does not create or format it."
+        ) from e
+    _ws_cache[key] = ws
     return ws
 
 
-def get_existing_intel_ids(dates: Iterable[str]) -> set[str]:
+def _get_or_create_month_ws(month: str) -> gspread.Worksheet:
+    if month in _ws_cache:
+        return _ws_cache[month]
     ss = _get_spreadsheet()
-    all_ids: set[str] = set()
-    for date_str in dates:
-        try:
-            ws = ss.worksheet(date_str)
-        except gspread.exceptions.WorksheetNotFound:
+    try:
+        ws = ss.worksheet(month)
+    except gspread.exceptions.WorksheetNotFound:
+        ws = ss.add_worksheet(title=month, rows=1000, cols=len(MONTHLY_HEADERS))
+        ws.append_row(MONTHLY_HEADERS, value_input_option="USER_ENTERED")
+        sid = ws._properties["sheetId"]
+        ws.spreadsheet.batch_update(
+            {"requests": [_dropdown_request(sid, _STATUS_COL, _STATUS_VALUES)]}
+        )
+        # Deliberately no worksheet reordering — respect the user's tab order.
+        log.info("Created monthly worksheet: %s", month)
+    _ws_cache[month] = ws
+    return ws
+
+
+def _month_rows_from_values(values: list[list[str]]) -> list[dict]:
+    """Position-based dicts for every data row (index i → sheet row i+2).
+
+    Blank rows are kept (as all-empty dicts) so the list index stays aligned with
+    the physical sheet row number; callers filter by content.
+    """
+    rows: list[dict] = []
+    for raw in values[1:]:  # skip header
+        rows.append(
+            {
+                key: (raw[pos].strip() if pos < len(raw) else "")
+                for key, pos in _MONTHLY_KEY_POS.items()
+            }
+        )
+    return rows
+
+
+# ── POOL writes ───────────────────────────────────────────────────────────────
+def get_existing_intel_ids() -> set[str]:
+    """情資編號 already present in the POOL tab (dedup key = column B)."""
+    ws = _get_pool_ws()
+    col_b = ws.col_values(2)
+    return {v.strip() for v in col_b[1:] if v.strip()}
+
+
+def append_pool_raw(items: list[IntelItem]) -> list[IntelItem]:
+    """Append raw rows for items not already in the pool; return the appended items."""
+    if not items:
+        return []
+    ws = _get_pool_ws()
+    seen = get_existing_intel_ids()
+    record_date = datetime.now(_TW).strftime("%Y-%m-%d")
+    new_items: list[IntelItem] = []
+    values: list[list[str]] = []
+    for item in items:
+        if item.intel_id in seen:
             continue
-        col_b = ws.col_values(2)
-        all_ids.update(col_b[1:])  # skip header
-    return all_ids
+        seen.add(item.intel_id)
+        new_items.append(item)
+        values.append(build_pool_raw_row(item, record_date))
+    if values:
+        ws.append_rows(values, value_input_option="USER_ENTERED")
+        log.info("Pool: appended %d raw rows", len(values))
+    return new_items
+
+
+def backfill_pool_analysis(pairs: list[tuple[IntelItem, AnalysisResult]]) -> int:
+    """Fill pool columns E–H for each intel_id, located by reading pool column B."""
+    if not pairs:
+        return 0
+    ws = _get_pool_ws()
+    col_b = ws.col_values(2)
+    row_by_id = {v.strip(): i + 1 for i, v in enumerate(col_b) if v.strip()}
+    updates: list[dict] = []
+    for item, analysis in pairs:
+        row = row_by_id.get(item.intel_id)
+        if row is None:
+            log.warning("Pool backfill: %s not found in pool, skipping", item.intel_id)
+            continue
+        updates.append({"range": f"E{row}:H{row}", "values": [build_pool_backfill(analysis)]})
+    if updates:
+        ws.batch_update(updates, value_input_option="USER_ENTERED")
+        log.info("Pool: backfilled %d rows", len(updates))
+    return len(updates)
+
+
+# ── MONTHLY writes ────────────────────────────────────────────────────────────
+def append_monthly(pairs: list[tuple[IntelItem, AnalysisResult]]) -> int:
+    """Append relevance≠無 intel to its `YYYY/MM` tab (creating it if missing)."""
+    relevant = filter_monthly_pairs(pairs)
+    if not relevant:
+        return 0
+    by_month: dict[str, list[tuple[IntelItem, AnalysisResult]]] = defaultdict(list)
+    for item, analysis in relevant:
+        by_month[_resolve_month_tab(item.publish_date)].append((item, analysis))
+
+    total = 0
+    for month, month_pairs in sorted(by_month.items()):
+        ws = _get_or_create_month_ws(month)
+        col_a = ws.col_values(1)
+        existing = {v.strip() for v in col_a[1:] if v.strip()}
+        values: list[list[str]] = []
+        for item, analysis in month_pairs:
+            if item.intel_id in existing:
+                continue
+            existing.add(item.intel_id)
+            values.append(build_monthly_row(item, analysis))
+        if values:
+            ws.append_rows(values, value_input_option="USER_ENTERED")
+            log.info("Monthly %s: appended %d rows", month, len(values))
+            total += len(values)
+    return total
+
+
+# ── MONTHLY reads ─────────────────────────────────────────────────────────────
+def get_month_ids(month: str) -> set[str]:
+    """情資編號 already present in a monthly tab (dedup key = column A)."""
+    ss = _get_spreadsheet()
+    try:
+        ws = ss.worksheet(month)
+    except gspread.exceptions.WorksheetNotFound:
+        return set()
+    col_a = ws.col_values(1)
+    return {v.strip() for v in col_a[1:] if v.strip()}
 
 
 def get_month_rows(month: str) -> list[dict]:
@@ -287,7 +355,7 @@ def get_month_rows(month: str) -> list[dict]:
         ws = ss.worksheet(month)
     except gspread.exceptions.WorksheetNotFound:
         return []
-    return ws.get_all_records()
+    return _month_rows_from_values(ws.get_all_values())
 
 
 def month_tab_url(month: str) -> str:
@@ -304,12 +372,11 @@ def get_rows_for_publishing() -> list[dict]:
     ss = _get_spreadsheet()
     targets: list[dict] = []
     for ws in ss.worksheets():
-        title = ws.title
-        if not (len(title) == 7 and title[4] == "-"):
+        if not _is_month_tab(ws.title):
             continue
-        records = ws.get_all_records()
+        records = _month_rows_from_values(ws.get_all_values())
         for i, rec in select_publishable(records):
-            targets.append({"tab": title, "row_number": i + 2, "record": rec})
+            targets.append({"tab": ws.title, "row_number": i + 2, "record": rec})
     return targets
 
 
@@ -320,29 +387,27 @@ def mark_published(targets: list[dict], ts: str) -> None:
     ss = _get_spreadsheet()
     for tab, row_numbers in by_tab.items():
         ws = ss.worksheet(tab)
-        ws.batch_update([{"range": f"S{rn}", "values": [[ts]]} for rn in row_numbers])
+        # column J (idx9) = 通知時間
+        ws.batch_update([{"range": f"J{rn}", "values": [[ts]]} for rn in row_numbers])
         log.info("Marked %d rows published in %s", len(row_numbers), tab)
 
 
-def append_rows(rows: list[SheetRow]) -> int:
-    if not rows:
-        return 0
-
-    by_date: dict[str, list[SheetRow]] = defaultdict(list)
-    for row in rows:
-        by_date[_resolve_date_tab(row.publish_date)].append(row)
-
-    total = 0
-    for date_str, date_rows in sorted(by_date.items()):
-        ws = _get_or_create_date_worksheet(date_str)
-        values = [r.to_row_list() for r in date_rows]
-        ws.append_rows(values, value_input_option="USER_ENTERED")
-        log.info("Appended %d rows to worksheet %s", len(values), date_str)
-        total += len(values)
-
-    return total
+# ── Selectors (operate on position-based dicts) ───────────────────────────────
+def select_relevant(records: list[dict]) -> list[dict]:
+    return [r for r in records if str(r.get("相關性", "")).strip() not in ("", "無")]
 
 
+def select_publishable(records: list[dict]) -> list[tuple[int, dict]]:
+    picked: list[tuple[int, dict]] = []
+    for i, r in enumerate(records):
+        approved = str(r.get("狀態", "")).strip() == "核可發佈"
+        unsent = not str(r.get("通知時間", "")).strip()
+        if approved and unsent:
+            picked.append((i, r))
+    return picked
+
+
+# ── Assets context ────────────────────────────────────────────────────────────
 def load_assets_context() -> str:
     if USE_FIXTURE_DATA:
         path = FIXTURE_DIR / "sample_assets.json"
@@ -366,17 +431,3 @@ def load_assets_context() -> str:
             f"Owner：{asset.owner}"
         )
     return "\n".join(lines)
-
-
-def select_relevant(records: list[dict]) -> list[dict]:
-    return [r for r in records if str(r.get("公司相關性", "")).strip() not in ("", "無")]
-
-
-def select_publishable(records: list[dict]) -> list[tuple[int, dict]]:
-    picked: list[tuple[int, dict]] = []
-    for i, r in enumerate(records):
-        approved = str(r.get("狀態", "")).strip() == "核可發佈"
-        unsent = not str(r.get("通知時間", "")).strip()
-        if approved and unsent:
-            picked.append((i, r))
-    return picked

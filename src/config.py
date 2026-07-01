@@ -15,6 +15,7 @@ GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.5-flash")
 
 GOOGLE_SHEET_ID = os.environ.get("GOOGLE_SHEET_ID", "")
+POOL_WORKSHEET = os.environ.get("POOL_WORKSHEET", "2026_威脅情資表")
 ASSETS_SHEET_ID = os.environ.get("ASSETS_SHEET_ID", "")
 ASSETS_WORKSHEET = os.environ.get("ASSETS_WORKSHEET", "工作表1")
 

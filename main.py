@@ -3,7 +3,6 @@ from __future__ import annotations
 import argparse
 import sys
 from datetime import datetime, timedelta, timezone
-from pathlib import Path
 
 from src.analyzer.gemini import analyze_intel
 from src.config import USE_FIXTURE_DATA
@@ -16,18 +15,19 @@ from src.fetchers.storage import (
     save_items,
 )
 from src.fetchers.twcert import fetch_twcert
-from src.models import AnalysisResult, IntelItem, SheetRow
+from src.models import AnalysisResult, IntelItem
 from src.notifiers.email import send_internal_announcement, send_risk_digest
-from src.parsers.ioc_xlsx import write_ioc_txt
-from src.sinks.git_archive import commit_files, ioc_file_url
+from src.sinks.git_archive import commit_files
 from src.sinks.sheets import (
-    append_rows,
-    get_existing_intel_ids,
+    append_monthly,
+    append_pool_raw,
+    backfill_pool_analysis,
     get_month_rows,
     get_rows_for_publishing,
     load_assets_context,
     mark_published,
     month_tab_url,
+    relevance_label,
     select_relevant,
 )
 from src.utils.errors import GeminiQuotaExhausted, TwcertLoginError
@@ -42,17 +42,6 @@ def _archive_dir(source: str, date_str: str | None) -> str:
     else:
         month = datetime.now(_TW).strftime("%Y-%m")
     return f"{source}/{month}"
-
-
-def _item_months(items: list[IntelItem]) -> set[str]:
-    months = set()
-    for item in items:
-        d = (item.publish_date or "")[:10].strip()
-        if len(d) >= 7 and d[4] == "-":
-            months.add(d[:7])
-        else:
-            months.add(datetime.now(_TW).strftime("%Y-%m"))
-    return months
 
 
 def stage_fetch(
@@ -80,34 +69,40 @@ def stage_fetch(
     return items
 
 
+def stage_append_pool_raw(items: list[IntelItem], dry_run: bool = False) -> list[IntelItem]:
+    """Append raw rows to the POOL tab; return the newly-appended (new) items."""
+    if dry_run:
+        log.info("[DRY RUN] Pool append skipped; treating all %d items as new", len(items))
+        return items
+    new_items = append_pool_raw(items)
+    log.info(
+        "Pool: %d new items appended (skipped %d duplicates)",
+        len(new_items),
+        len(items) - len(new_items),
+    )
+    return new_items
+
+
 def stage_analyze(
     items: list[IntelItem],
     source: str,
     save: bool = False,
     tag: str | None = None,
-    dry_run: bool = False,
     limit: int | None = None,
 ) -> list[tuple[IntelItem, AnalysisResult]]:
-    existing_ids = set() if dry_run else get_existing_intel_ids(_item_months(items))
-    new_items = [item for item in items if item.intel_id not in existing_ids]
-    if not new_items:
-        log.info("No new intel items to analyze (all %d already exist)", len(items))
+    if limit is not None:
+        items = items[:limit]
+        log.info("Limiting analysis to %d items", len(items))
+    if not items:
+        log.info("No items to analyze")
         return []
 
-    if limit is not None:
-        new_items = new_items[:limit]
-        log.info("Limiting analysis to %d items", len(new_items))
-
-    log.info(
-        "Analyzing %d new items (skipped %d duplicates)",
-        len(new_items),
-        len(items) - len(new_items),
-    )
+    log.info("Analyzing %d items", len(items))
 
     assets_ctx = load_assets_context()
 
     pairs: list[tuple[IntelItem, AnalysisResult]] = []
-    for item in new_items:
+    for item in items:
         try:
             analysis = analyze_intel(item, assets_ctx)
         except GeminiQuotaExhausted:
@@ -137,54 +132,34 @@ def stage_write_sheet(
     pairs: list[tuple[IntelItem, AnalysisResult]],
     dry_run: bool = False,
 ) -> int:
-    intel_items = [intel for intel, _ in pairs]
-    existing_ids = set() if dry_run else get_existing_intel_ids(_item_months(intel_items))
-    filtered = [
-        (intel, analysis) for intel, analysis in pairs if intel.intel_id not in existing_ids
-    ]
-    if not filtered:
-        log.info("No new items to write to Sheet (all already exist)")
+    """Backfill the POOL analysis columns and append relevant items to monthly tabs."""
+    if not pairs:
+        log.info("No analyzed pairs to write")
         return 0
 
-    all_rows: list[SheetRow] = []
-
-    for intel, analysis in filtered:
-        ioc_url = ""
-        if not dry_run:
-            ioc_path: Path | None = write_ioc_txt(
-                intel.intel_id, intel.ioc_ips, intel.ioc_hashes, intel.ioc_domains
-            )
-            if ioc_path:
-                src_lower = intel.source.lower()
-                month = (intel.publish_date or "")[:7] or datetime.now(_TW).strftime("%Y-%m")
-                adir = f"{src_lower}/{month}"
-                commit_files(
-                    [ioc_path], f"data({src_lower}): IoC for {intel.intel_id}", archive_dir=adir
-                )
-                ioc_url = ioc_file_url(ioc_path.name, adir) or ""
-
-        row = SheetRow.from_intel_and_analysis(
-            intel=intel,
-            analysis=analysis,
-            ioc_url=ioc_url,
-        )
-        all_rows.append(row)
-
     if dry_run:
-        log.info("[DRY RUN] Would write %d rows to Sheet", len(all_rows))
-        for row in all_rows:
+        log.info(
+            "[DRY RUN] Would backfill %d pool rows and append relevant items to monthly tabs",
+            len(pairs),
+        )
+        for intel, analysis in pairs:
             log.info(
-                "  %s | %s | %s | %s", row.intel_id, row.cve_id, row.risk_level, row.title[:50]
+                "  %s | %s | %s | %s",
+                intel.intel_id,
+                analysis.risk_level,
+                relevance_label(analysis.company_relevance),
+                intel.title[:50],
             )
-    else:
-        count = append_rows(all_rows)
-        log.info("Wrote %d rows to Sheet.", count)
+        return len(pairs)
 
-    return len(all_rows)
+    n_backfill = backfill_pool_analysis(pairs)
+    n_monthly = append_monthly(pairs)
+    log.info("Pool backfilled: %d rows; Monthly appended: %d rows", n_backfill, n_monthly)
+    return n_backfill
 
 
 def stage_notify_risk(month: str | None = None, dry_run: bool = False) -> int:
-    month = month or datetime.now(_TW).strftime("%Y-%m")
+    month = month or datetime.now(_TW).strftime("%Y/%m")
     records = get_month_rows(month)
     relevant = select_relevant(records)
     if not relevant:
@@ -249,10 +224,14 @@ def run(
         log.info("Fetch-only mode: %d items saved, skipping analysis", len(items))
         return
 
+    # --- Stage 1.5: Append raw rows to POOL, dedup by 情資編號 → new items ---
+    new_items = stage_append_pool_raw(items, dry_run=dry_run)
+    if not new_items:
+        log.info("No new intel items (all already in pool)")
+        return
+
     # --- Stage 2: Analyze ---
-    pairs = stage_analyze(
-        items, source, save=save_data, tag=since_date, dry_run=dry_run, limit=limit
-    )
+    pairs = stage_analyze(new_items, source, save=save_data, tag=since_date, limit=limit)
     if not pairs:
         return
 
@@ -260,7 +239,7 @@ def run(
         log.info("Analyze-only mode: %d pairs saved, skipping Sheet write", len(pairs))
         return
 
-    # --- Stage 3: Write Sheet ---
+    # --- Stage 3: Backfill POOL analysis + append relevant items to monthly tabs ---
     stage_write_sheet(pairs, dry_run=dry_run)
     log.info("=== %s 情資分析完成 ===", source.upper())
 
@@ -351,8 +330,8 @@ def main() -> None:
         "--month",
         type=str,
         default=None,
-        metavar="YYYY-MM",
-        help="--notify-risk 的目標月份，預設當月",
+        metavar="YYYY/MM",
+        help="--notify-risk 的目標月份（斜線格式），預設當月",
     )
 
     args = parser.parse_args()
