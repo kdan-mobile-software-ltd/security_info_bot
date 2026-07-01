@@ -140,23 +140,30 @@ def build_pool_raw_row(item: IntelItem, record_date: str) -> list[str]:
     return [record_date, item.intel_id, item.publish_date, item.title, "", "", "", ""]
 
 
-def build_pool_backfill(analysis: AnalysisResult) -> list[str]:
+def _recommendation_with_ioc(recommendation: str, ioc_url: str) -> str:
+    """Append the archived IoC list URL to the recommendation text, if any."""
+    if ioc_url:
+        return f"{recommendation}\n\nIoC 清單：{ioc_url}"
+    return recommendation
+
+
+def build_pool_backfill(analysis: AnalysisResult, ioc_url: str = "") -> list[str]:
     """POOL backfill values for range E:H."""
     return [
-        analysis.recommendation,
+        _recommendation_with_ioc(analysis.recommendation, ioc_url),
         relevance_label(analysis.company_relevance),
         ", ".join(analysis.affected_assets),
         analysis.responsible_unit,
     ]
 
 
-def build_monthly_row(item: IntelItem, analysis: AnalysisResult) -> list[str]:
+def build_monthly_row(item: IntelItem, analysis: AnalysisResult, ioc_url: str = "") -> list[str]:
     """MONTHLY append row (A–J)."""
     return [
         item.intel_id,
         item.publish_date,
         item.title,
-        analysis.recommendation,
+        _recommendation_with_ioc(analysis.recommendation, ioc_url),
         relevance_label(analysis.company_relevance),
         ", ".join(analysis.affected_assets),
         analysis.responsible_unit,
@@ -289,10 +296,14 @@ def append_pool_raw(items: list[IntelItem]) -> list[IntelItem]:
     return new_items
 
 
-def backfill_pool_analysis(pairs: list[tuple[IntelItem, AnalysisResult]]) -> int:
+def backfill_pool_analysis(
+    pairs: list[tuple[IntelItem, AnalysisResult]],
+    ioc_urls: dict[str, str] | None = None,
+) -> int:
     """Fill pool columns E–H for each intel_id, located by reading pool column B."""
     if not pairs:
         return 0
+    ioc_urls = ioc_urls or {}
     ws = _get_pool_ws()
     col_b = ws.col_values(2)
     row_by_id = {v.strip(): i + 1 for i, v in enumerate(col_b) if v.strip()}
@@ -302,7 +313,8 @@ def backfill_pool_analysis(pairs: list[tuple[IntelItem, AnalysisResult]]) -> int
         if row is None:
             log.warning("Pool backfill: %s not found in pool, skipping", item.intel_id)
             continue
-        updates.append({"range": f"E{row}:H{row}", "values": [build_pool_backfill(analysis)]})
+        values = build_pool_backfill(analysis, ioc_urls.get(item.intel_id, ""))
+        updates.append({"range": f"E{row}:H{row}", "values": [values]})
     if updates:
         ws.batch_update(updates, value_input_option="USER_ENTERED")
         log.info("Pool: backfilled %d rows", len(updates))
@@ -310,11 +322,15 @@ def backfill_pool_analysis(pairs: list[tuple[IntelItem, AnalysisResult]]) -> int
 
 
 # ── MONTHLY writes ────────────────────────────────────────────────────────────
-def append_monthly(pairs: list[tuple[IntelItem, AnalysisResult]]) -> int:
+def append_monthly(
+    pairs: list[tuple[IntelItem, AnalysisResult]],
+    ioc_urls: dict[str, str] | None = None,
+) -> int:
     """Append relevance≠無 intel to its `YYYY/MM` tab (creating it if missing)."""
     relevant = filter_monthly_pairs(pairs)
     if not relevant:
         return 0
+    ioc_urls = ioc_urls or {}
     by_month: dict[str, list[tuple[IntelItem, AnalysisResult]]] = defaultdict(list)
     for item, analysis in relevant:
         by_month[_resolve_month_tab(item.publish_date)].append((item, analysis))
@@ -329,7 +345,7 @@ def append_monthly(pairs: list[tuple[IntelItem, AnalysisResult]]) -> int:
             if item.intel_id in existing:
                 continue
             existing.add(item.intel_id)
-            values.append(build_monthly_row(item, analysis))
+            values.append(build_monthly_row(item, analysis, ioc_urls.get(item.intel_id, "")))
         if values:
             ws.append_rows(values, value_input_option="USER_ENTERED")
             log.info("Monthly %s: appended %d rows", month, len(values))

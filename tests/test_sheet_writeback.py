@@ -85,6 +85,23 @@ def test_build_monthly_row_shape_status_and_labels():
     assert len(row) == 10  # A–J
 
 
+def test_build_pool_backfill_appends_ioc_url():
+    row = build_pool_backfill(_analysis(reco="升級"), ioc_url="https://x/ioc_TEST.txt")
+    assert row[0].startswith("升級")
+    assert "IoC 清單：https://x/ioc_TEST.txt" in row[0]
+
+
+def test_build_monthly_row_appends_ioc_url():
+    row = build_monthly_row(_intel(), _analysis(), ioc_url="https://x/ioc_TEST.txt")
+    assert "升級版本" in row[3]
+    assert "IoC 清單：https://x/ioc_TEST.txt" in row[3]
+
+
+def test_builders_no_ioc_url_leave_recommendation_unchanged():
+    assert build_pool_backfill(_analysis(reco="只有建議"))[0] == "只有建議"
+    assert build_monthly_row(_intel(), _analysis(reco="只有建議"))[3] == "只有建議"
+
+
 def test_filter_monthly_pairs_excludes_none_relevance():
     pairs = [
         (_intel("a"), _analysis(relevance="H")),

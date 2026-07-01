@@ -17,7 +17,8 @@ from src.fetchers.storage import (
 from src.fetchers.twcert import fetch_twcert
 from src.models import AnalysisResult, IntelItem
 from src.notifiers.email import send_internal_announcement, send_risk_digest
-from src.sinks.git_archive import commit_files
+from src.parsers.ioc_xlsx import write_ioc_txt
+from src.sinks.git_archive import commit_files, ioc_file_url
 from src.sinks.sheets import (
     append_monthly,
     append_pool_raw,
@@ -128,6 +129,28 @@ def stage_analyze(
     return pairs
 
 
+def _archive_iocs(pairs: list[tuple[IntelItem, AnalysisResult]]) -> dict[str, str]:
+    """Write each item's IoC list to a .txt, commit it to the archive branch, and
+    return {intel_id: raw-URL} so the URL can be surfaced in the 建議措施 column.
+
+    No-ops (empty dict) when GIT_ARCHIVE_BRANCH is unset (commit_files/ioc_file_url
+    short-circuit) or an item has no IoCs.
+    """
+    urls: dict[str, str] = {}
+    for intel, _ in pairs:
+        ioc_path = write_ioc_txt(intel.intel_id, intel.ioc_ips, intel.ioc_hashes, intel.ioc_domains)
+        if not ioc_path:
+            continue
+        src_lower = intel.source.lower()
+        month = (intel.publish_date or "")[:7] or datetime.now(_TW).strftime("%Y-%m")
+        adir = f"{src_lower}/{month}"
+        commit_files([ioc_path], f"data({src_lower}): IoC for {intel.intel_id}", archive_dir=adir)
+        url = ioc_file_url(ioc_path.name, adir)
+        if url:
+            urls[intel.intel_id] = url
+    return urls
+
+
 def stage_write_sheet(
     pairs: list[tuple[IntelItem, AnalysisResult]],
     dry_run: bool = False,
@@ -152,8 +175,9 @@ def stage_write_sheet(
             )
         return len(pairs)
 
-    n_backfill = backfill_pool_analysis(pairs)
-    n_monthly = append_monthly(pairs)
+    ioc_urls = _archive_iocs(pairs)
+    n_backfill = backfill_pool_analysis(pairs, ioc_urls)
+    n_monthly = append_monthly(pairs, ioc_urls)
     log.info("Pool backfilled: %d rows; Monthly appended: %d rows", n_backfill, n_monthly)
     return n_backfill
 
