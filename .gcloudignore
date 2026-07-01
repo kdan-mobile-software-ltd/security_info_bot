@@ -1,0 +1,12 @@
+# Cloud Build upload filter. MUST NOT exclude .git — the image COPYs the repo
+# (incl. git history) so the archive-branch push + IoC-URL derivation work.
+# Mirrors .dockerignore (which also keeps .git).
+.venv/
+src/data/
+**/__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.env
+docs/superpowers/
+.superpowers/

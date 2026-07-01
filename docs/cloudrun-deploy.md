@@ -42,7 +42,7 @@ docker push "$IMAGE"
 
 > ⚠️ **必加 `--platform linux/amd64`**:Cloud Run 只跑 amd64,若在 Apple Silicon(arm64)build 而未指定平台,容器會以「Application failed to start / exec format error」啟動失敗。
 >
-> 用 Cloud Build(`gcloud builds submit --tag $IMAGE`)亦可(原生 amd64,免平台旗標),但需新增 `.gcloudignore` 並確保**不要**排除 `.git`,否則映像內無 git 歷史、歸檔會失敗。
+> **本機無 `docker buildx` 時,改用 Cloud Build(推薦)**:`gcloud builds submit --tag "$IMAGE" --project "$PROJECT_ID" .` —— 在 Google amd64 機器原生 build,免平台問題。本 repo 已附 `.gcloudignore`(保留 `.git`,故映像含 git 歷史、歸檔可運作);需先啟用 `cloudbuild.googleapis.com`。
 
 ## 4. Secrets(Secret Manager)
 
