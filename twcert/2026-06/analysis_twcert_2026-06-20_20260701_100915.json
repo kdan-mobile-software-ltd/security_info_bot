@@ -1,0 +1,148 @@
+{
+  "source": "twcert",
+  "analyzed_at": "2026-07-01T10:09:15.319130",
+  "count": 3,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202606-0058",
+        "source": "TWCERT",
+        "publish_date": "2026-06-29 13:43",
+        "title": "[TLP AMBER] TWCERT-IoC 觀測IoC分享_0629",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [],
+        "raw_content": "TWCERT/CC匯整TWCERT-IoC 觀測(至06/29)受駭偵測指標(IoC)情資(詳如附件)，可做為貴單位強化資安防護之參考。\n\nTWCERT-IoC : 聯盟會員分享或接收之外部情資與Virus Check分析可疑檔案，可能包含近期攻擊事件所發現之惡意網域、惡意 IP Address、及惡意程式(MD5、SHA-1及SHA-256)等資訊。\n\n*如貴單位有發現可疑的攻擊/探嗅活動(log)、攻擊資訊(如IoC, IoA)或惡意程式樣本，歡迎提供給TWCERT/CC，我們將去識別化後通報給相關CERT或資安單位，以達到資安聯防的效果。\n*若貴公司因服務之必要無法將有風險之IP列入黑名單, 為避免影響正常服務, 可將該IP列為觀察名單，監控與此IP連線的設備與流量等防護措施, 以降低資安風險。\n\n影響平台：無\n\n建議措施：請參考附件之名單做相關防範措施。\n\n參考資訊：無\n\nTWCERT 影響等級：第 2 級",
+        "reference_urls": [],
+        "attachment_urls": [
+          "(TLP AMBER) TWCERT-IoC 觀測IoC分享_0629.xlsx"
+        ],
+        "ioc_ips": [
+          "174.138.22.165",
+          "198.98.61.155",
+          "172.94.18.103",
+          "173.232.146.55",
+          "173.44.141.221",
+          "170.130.55.45",
+          "104.243.248.63",
+          "45.221.118.180",
+          "144.208.126.50",
+          "173.232.146.62",
+          "209.38.132.165",
+          "95.133.228.65",
+          "95.133.228.252",
+          "95.133.229.61",
+          "95.133.228.222",
+          "165.22.225.218"
+        ],
+        "ioc_hashes": [],
+        "ioc_domains": [
+          "line-go.hl.cn",
+          "yu3dc.com",
+          "ns.trendupdate.net",
+          "vs.awscloudfont.com",
+          "linebs.com"
+        ],
+        "impact_level": "2"
+      },
+      "analysis": {
+        "risk_level": "Low",
+        "summary": "本情資為 TWCERT/CC 分享之受駭偵測指標（IoC），包含惡意網域、惡意 IP 及惡意程式 Hash 等資訊。此情資旨在提供資安聯防與監控參考，並未指出特定受影響之系統或軟體漏洞。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202606-0057",
+        "source": "TWCERT",
+        "publish_date": "2026-06-29 13:41",
+        "title": "[TLP CLEAR] CISA新增6個已知遭駭客利用之漏洞至KEV目錄(2026/06/22-2026/06/28)",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2025-67038",
+          "CVE-2026-34910",
+          "CVE-2026-34909",
+          "CVE-2026-34908",
+          "CVE-2026-12569",
+          "CVE-2026-20230"
+        ],
+        "raw_content": "【CVE-2025-67038】Lantronix EDS5000 Code Injection Vulnerability (CVSS v3.1: 9.8)\n【是否遭勒索軟體利用:未知】\nLantronix EDS5000 存在程式碼注入漏洞，攻擊者可利用此漏洞將任意作業系統指令注入至 username 參數並以 root 權限執行。\n\n【CVE-2026-34910】Ubiquiti UniFi OS Improper Input Validation Vulnerability (CVSS v3.1: 10.0)\n【是否遭勒索軟體利用:未知】\nUbiquiti UniFi OS 存在不當輸入驗證漏洞，具備網路存取權限的惡意攻擊者可利用此漏洞執行指令注入攻擊。\n\n【CVE-2026-34909】Ubiquiti UniFi OS Path Traversal Vulnerability (CVSS v3.1: 10.0)\n【是否遭勒索軟體利用:未知】\nUbiquiti UniFi OS 存在路徑遍歷漏洞，具備網路存取權限的惡意攻擊者可利用此漏洞存取底層系統上的檔案，並可能藉由操控或利用這些檔案，進一步取得底層系統帳戶的存取權限。\n\n【CVE-2026-34908】Ubiquiti UniFi OS Improper Access Control Vulnerability (CVSS v3.1: 10.0)\n【是否遭勒索軟體利用:未知】\nUbiquiti UniFi OS 存在不當存取控制漏洞，具備網路存取權限的惡意攻擊者可利用此漏洞對系統進行未經授權的變更。\n\n【CVE-2026-12569】PTC Windchill and FlexPLM Improper Input Validation Vulnerability (CVSS v3.1: 9.8)\n【是否遭勒索軟體利用:未知】\nPTC Windchill 與 FlexPLM 存在不當輸入驗證漏洞，未經驗證的遠端攻擊者可透過向網路發送惡意請求來執行任意程式碼。\n\n【CVE-2026-20230】Cisco Unified Communications Manager Server-Side Request Forgery (SSRF) Vulnerability (CVSS v3.1: 8.6)\n【是否遭勒索軟體利用:未知】\nCisco Unified Communications Manager（Unified CM） 與 Cisco Unified Communications Manager Session Management Edition（Unified CM SME） 存在伺服器端請求偽造漏洞，未經驗證的遠端攻擊者可利用此漏洞將檔案寫入底層作業系統，並於後續利用這些檔案進一步提升權限至 root。\n\n影響平台：【CVE-2025-67038】\n請參考官方所列的影響版本 \nhttps://www.lantronix.com/technical-support/security-updates/vulnerability-disclosure-policy/vulnerability-library/cve-2025-67038-eds-5000-eds-3000/?_gl=1*11k48gn*_up*MQ..*_ga*NzY1MzgwNjcxLjE3ODI2OTc0Nzg.*_ga_M2G6RLT5L3*czE3ODI2OTc0NzckbzEkZzEkdDE3ODI2OTc1NTckajYwJGwwJGgw\n\n【CVE-2026-34910】\n請參考官方所列的影響版本\nhttps://community.ui.com/releases/Security-Advisory-Bulletin-064-064/84811c09-4cf4-42ab-bd61-cc994445963b\n\n【CVE-2026-34909】\n請參考官方所列的影響版本\nhttps://community.ui.com/releases/Security-Advisory-Bulletin-064-064/84811c09-4cf4-42ab-bd61-cc994445963b\n\n【CVE-2026-34908】\n請參考官方所列的影響版本\nhttps://community.ui.com/releases/Security-Advisory-Bulletin-064-064/84811c09-4cf4-42ab-bd61-cc994445963b\n\n【CVE-2026-12569】\n請參考官方所列的影響版本\nhttps://www.ptc.com/en/support/article/CS473270\n\n【CVE-2026-20230】\n請參考官方所列的影響版本\nhttps://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-cucm-ssrf-cXPnHcW\n\n建議措施：【CVE-2025-67038】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://www.lantronix.com/technical-support/security-updates/vulnerability-disclosure-policy/vulnerability-library/cve-2025-67038-eds-5000-eds-3000/?_gl=1*11k48gn*_up*MQ..*_ga*NzY1MzgwNjcxLjE3ODI2OTc0Nzg.*_ga_M2G6RLT5L3*czE3ODI2OTc0NzckbzEkZzEkdDE3ODI2OTc1NTckajYwJGwwJGgw\n\n【CVE-2026-34910】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://community.ui.com/releases/Security-Advisory-Bulletin-064-064/84811c09-4cf4-42ab-bd61-cc994445963b\n\n【CVE-2026-34909】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://community.ui.com/releases/Security-Advisory-Bulletin-064-064/84811c09-4cf4-42ab-bd61-cc994445963b\n\n【CVE-2026-34908】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://community.ui.com/releases/Security-Advisory-Bulletin-064-064/84811c09-4cf4-42ab-bd61-cc994445963b\n\n【CVE-2026-12569】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://www.ptc.com/en/support/article/CS473270\n\n【CVE-2026-20230】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-cucm-ssrf-cXPnHcW\n\n參考資訊：【CVE-2025-67038】\n1.https://nvd.nist.gov/vuln/detail/cve-2025-67038\n2.https://www.lantronix.com/technical-support/security-updates/vulnerability-disclosure-policy/vulnerability-library/cve-2025-67038-eds-5000-eds-3000/?_gl=1*11k48gn*_up*MQ..*_ga*NzY1MzgwNjcxLjE3ODI2OTc0Nzg.*_ga_M2G6RLT5L3*czE3ODI2OTc0NzckbzEkZzEkdDE3ODI2OTc1NTckajYwJGwwJGgw\n\n【CVE-2026-34910】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-34910\n2.https://community.ui.com/releases/Security-Advisory-Bulletin-064-064/84811c09-4cf4-42ab-bd61-cc994445963b\n\n【CVE-2026-34909】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-34909\n2.https://community.ui.com/releases/Security-Advisory-Bulletin-064-064/84811c09-4cf4-42ab-bd61-cc994445963b\n\n【CVE-2026-34908】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-34908\n2.https://community.ui.com/releases/Security-Advisory-Bulletin-064-064/84811c09-4cf4-42ab-bd61-cc994445963b\n\n【CVE-2026-12569】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-12569\n2.https://www.ptc.com/en/support/article/CS473270\n\n【CVE-2026-20230】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-20230\n2.https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-cucm-ssrf-cXPnHcW\n\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://nvd.nist.gov/vuln/detail/cve-2025-67038",
+          "https://www.lantronix.com/technical-support/security-updates/vulnerability-disclosure-policy/vulnerability-library/cve-2025-67038-eds-5000-eds-3000/?_gl=1*11k48gn*_up*MQ..*_ga*NzY1MzgwNjcxLjE3ODI2OTc0Nzg.*_ga_M2G6RLT5L3*czE3ODI2OTc0NzckbzEkZzEkdDE3ODI2OTc1NTckajYwJGwwJGgw",
+          "https://nvd.nist.gov/vuln/detail/cve-2026-34910",
+          "https://community.ui.com/releases/Security-Advisory-Bulletin-064-064/84811c09-4cf4-42ab-bd61-cc994445963b",
+          "https://nvd.nist.gov/vuln/detail/cve-2026-34909",
+          "https://community.ui.com/releases/Security-Advisory-Bulletin-064-064/84811c09-4cf4-42ab-bd61-cc994445963b",
+          "https://nvd.nist.gov/vuln/detail/cve-2026-34908",
+          "https://community.ui.com/releases/Security-Advisory-Bulletin-064-064/84811c09-4cf4-42ab-bd61-cc994445963b",
+          "https://nvd.nist.gov/vuln/detail/cve-2026-12569",
+          "https://www.ptc.com/en/support/article/CS473270",
+          "https://nvd.nist.gov/vuln/detail/cve-2026-20230",
+          "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-cucm-ssrf-cXPnHcW"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "Critical",
+        "summary": "CISA 將 6 個已遭活躍利用的漏洞加入 KEV 目錄，其中包含 Ubiquiti UniFi OS 的多個 CVSS 10.0 高危漏洞（CVE-2026-34910、CVE-2026-34909、CVE-2026-34908）。由於公司資產清冊中包含「Unifi AP Controller主機(UDM)-unifi SE」等 UniFi 設備，面臨極高的遠端指令注入與未授權變更風險。",
+        "recommendation": "1. 立即針對「Unifi AP Controller主機(UDM)-unifi SE」及相關 UniFi 設備進行盤點，並依據官方安全公告（Security Advisory Bulletin 064-064）將 UniFi OS 升級至已修復之安全版本。\n2. 在完成升級前，應嚴格限制 UniFi 管理介面的網路存取來源，避免其暴露於公開網路。\n3. 經盤點，公司無使用 Lantronix、PTC Windchill 及 Cisco Unified CM 相關受影響資產，該部分無需處置。",
+        "company_relevance": "H",
+        "affected_assets": [
+          "Unifi AP Controller主機(UDM)-unifi SE",
+          "Unifi AP Controller主機",
+          "資訊設備-無線AP UniFi 7 Pro",
+          "資訊設備-無線AP UniFi 7 Pro MAX",
+          "資訊設備-無線AP UniFi 6 Pro (含POE供應器)",
+          "資訊設備-無線AP UniFi AC-Lite"
+        ],
+        "responsible_unit": "RR40"
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202606-0039",
+        "source": "TWCERT",
+        "publish_date": "2026-06-23 16:26",
+        "title": "[TLP CLEAR] CISA新增4個已知遭駭客利用之漏洞至KEV目錄(2026/06/15-2026/06/21)",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-54420",
+          "CVE-2026-20262",
+          "CVE-2026-48907",
+          "CVE-2026-20253"
+        ],
+        "raw_content": "【CVE-2026-54420】LiteSpeed cPanel Plugin UNIX Symbolic Link (Symlink) Following Vulnerability (CVSS v3.1: 8.5)\n【是否遭勒索軟體利用:未知】\nLiteSpeed cPanel 外掛程式存在 UNIX 符號連結追蹤漏洞。在執行 CloudLinux/CageFS 的共享主機伺服器上，具 FTP 或 Web Shell 存取權限的使用者可能利用此漏洞進行未經授權操作。\n\n【CVE-2026-20262】Cisco Catalyst SD-WAN Manager Directory or Path Traversal Vulnerability (CVSS v3.1: 6.5)\n【是否遭勒索軟體利用:未知】\nCisco Catalyst SD-WAN Manager 存在目錄或路徑遍歷漏洞。經身分驗證的遠端攻擊者可能利用此漏洞，在受影響系統的檔案系統中建立檔案或覆寫任意檔案。\n\n【CVE-2026-48907】Widget Factory Joomla Content Editor Improper Access Control Vulnerability (CVSS v3.1: 9.8)\n【是否遭勒索軟體利用:未知】\nWidget Factory Joomla Content Editor 存在不當存取控制漏洞，可能導致未經身份驗證的使用者透過建立新的編輯器設定檔，上傳並執行 PHP 程式碼。\n\n【CVE-2026-20253】Splunk Enterprise Missing Authentication for Critical Function Vulnerability (CVSS v3.1: 9.8)\n【是否遭勒索軟體利用:未知】\nSplunk Enterprise 存在關鍵功能缺乏身分鑑別漏洞。未經驗證的使用者可透過 PostgreSQL Sidecar 服務端點建立或截斷任意檔案。\n\n\n影響平台：【CVE-2026-54420】\n請參考官方所列的影響版本 \nhttps://blog.litespeedtech.com/2026/06/01/security-update-for-litespeed-cpanel-plugin-2/\n\n【CVE-2026-20262】\n請參考官方所列的影響版本\nhttps://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-arbfw-c2rZvQ\n\n【CVE-2026-48907】\n請參考官方所列的影響版本\nhttps://www.joomlacontenteditor.net/news/jce-security-update-and-a-free-patch-for-older-sites\n\n【CVE-2026-20253】\n請參考官方所列的影響版本\nhttps://advisory.splunk.com/advisories/SVD-2026-0603\n\n\n建議措施：【CVE-2026-54420】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://blog.litespeedtech.com/2026/06/01/security-update-for-litespeed-cpanel-plugin-2/\n\n【CVE-2026-20262】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-arbfw-c2rZvQ\n\n【CVE-2026-48907】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://www.joomlacontenteditor.net/news/jce-security-update-and-a-free-patch-for-older-sites\n\n【CVE-2026-20253】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://advisory.splunk.com/advisories/SVD-2026-0603\n\n\n參考資訊：【CVE-2026-54420】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-54420\n2.https://blog.litespeedtech.com/2026/06/01/security-update-for-litespeed-cpanel-plugin-2/\n\n【CVE-2026-20262】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-20262\n2.https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-arbfw-c2rZvQ\n\n\n【CVE-2026-48907】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-48907\n2.https://www.joomlacontenteditor.net/news/jce-security-update-and-a-free-patch-for-older-sites\n\n【CVE-2026-20253】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-20253\n2.https://advisory.splunk.com/advisories/SVD-2026-0603\n\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://nvd.nist.gov/vuln/detail/cve-2026-54420",
+          "https://blog.litespeedtech.com/2026/06/01/security-update-for-litespeed-cpanel-plugin-2/",
+          "https://nvd.nist.gov/vuln/detail/cve-2026-20262",
+          "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-arbfw-c2rZvQ",
+          "https://nvd.nist.gov/vuln/detail/cve-2026-48907",
+          "https://www.joomlacontenteditor.net/news/jce-security-update-and-a-free-patch-for-older-sites",
+          "https://nvd.nist.gov/vuln/detail/cve-2026-20253",
+          "https://advisory.splunk.com/advisories/SVD-2026-0603"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "CISA 新增 4 個已遭活躍利用的漏洞至 KEV 目錄，涉及 LiteSpeed cPanel 外掛、Cisco SD-WAN Manager、Joomla 編輯器及 Splunk Enterprise。這些漏洞最高 CVSS 評分達 9.8，可能導致遠端程式碼執行、任意檔案讀寫或權限提升。經比對公司資產清冊，本公司並未部署或使用任何受影響之系統與組件。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
