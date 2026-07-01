@@ -46,8 +46,6 @@ docker push "$IMAGE"
 
 ```bash
 printf %s "$GEMINI_API_KEY" | gcloud secrets create GEMINI_API_KEY --data-file=- --project "$PROJECT_ID"
-# macOS: base64 -i service_account.json ; Linux: base64 -w0 service_account.json
-base64 -i service_account.json | gcloud secrets create GOOGLE_SA_JSON_B64 --data-file=- --project "$PROJECT_ID"
 printf %s "$TWCERT_ACCOUNT"  | gcloud secrets create TWCERT_ACCOUNT  --data-file=- --project "$PROJECT_ID"
 printf %s "$TWCERT_PASSWORD" | gcloud secrets create TWCERT_PASSWORD --data-file=- --project "$PROJECT_ID"
 printf %s "$GITHUB_PAT"      | gcloud secrets create GITHUB_PAT      --data-file=- --project "$PROJECT_ID"
@@ -55,7 +53,6 @@ printf %s "$SMTP_PASSWORD"   | gcloud secrets create SMTP_PASSWORD   --data-file
 ```
 
 - `GEMINI_API_KEY`:AI Studio 免費 key。
-- `GOOGLE_SA_JSON_B64`:Service Account JSON 的 base64。
 - `GITHUB_PAT`:fine-grained PAT,限 repo `kdan-mobile-software-ltd/security_info_bot`,**Contents: Read and write**(用於 push `data` 分支)。
 - `SMTP_PASSWORD`:寄件帳號的 App Password(email 發佈層用)。
 
@@ -63,21 +60,21 @@ printf %s "$SMTP_PASSWORD"   | gcloud secrets create SMTP_PASSWORD   --data-file
 
 ```bash
 gcloud iam service-accounts create intel-bot --project "$PROJECT_ID"
-for S in GEMINI_API_KEY GOOGLE_SA_JSON_B64 TWCERT_ACCOUNT TWCERT_PASSWORD GITHUB_PAT SMTP_PASSWORD; do
+for S in GEMINI_API_KEY TWCERT_ACCOUNT TWCERT_PASSWORD GITHUB_PAT SMTP_PASSWORD; do
   gcloud secrets add-iam-policy-binding "$S" \
     --member="serviceAccount:$RUNTIME_SA" \
     --role=roles/secretmanager.secretAccessor --project "$PROJECT_ID"
 done
 ```
 
-> 另外把這個 SA 的 email 在目標 Google Sheet 與資產 Sheet 按「共用」加為編輯者(Sheets 認證仍走 `GOOGLE_SA_JSON_B64`,須與此 SA 對應)。
+> **Sheets 認證用 ADC**(直接用此 runtime SA `intel-bot` 身分,無需 JSON 金鑰)。把此 SA email 加進**情資 Sheet(`威脅情資管理列表`)與資產 Sheet** 的「共用」為編輯者;並確認專案已啟用 **Google Sheets API + Drive API**(`gcloud services enable sheets.googleapis.com drive.googleapis.com --project "$PROJECT_ID"`)。本機開發若要寫真 Sheet,可設 `GOOGLE_SA_JSON_FILE` 指向金鑰檔,或 `gcloud auth application-default login`。
 
 ## 6. 建立兩個 Cloud Run Jobs
 
 共用 env(把 `<...>` 換成實際 Sheet ID):
 
 ```bash
-COMMON_ENV="GEMINI_MODEL=gemini-3.5-flash,GOOGLE_SHEET_ID=<SHEET_ID>,ASSETS_SHEET_ID=<ASSETS_ID>,ASSETS_WORKSHEET=工作表1,GIT_ARCHIVE_BRANCH=data,GIT_ARCHIVE_AUTO_PUSH=true,USE_FIXTURE_DATA=false"
+COMMON_ENV="GEMINI_MODEL=gemini-3.5-flash,GOOGLE_SHEET_ID=<SHEET_ID>,POOL_WORKSHEET=2026_威脅情資表,ASSETS_SHEET_ID=<ASSETS_ID>,ASSETS_WORKSHEET=工作表1,GIT_ARCHIVE_BRANCH=data,GIT_ARCHIVE_AUTO_PUSH=true,USE_FIXTURE_DATA=false"
 ```
 
 CISA(不需 TWCERT secrets):
@@ -88,7 +85,7 @@ gcloud run jobs create intel-cisa \
   --service-account "$RUNTIME_SA" \
   --max-retries 1 --task-timeout 900 --memory 512Mi \
   --set-env-vars "INTEL_SOURCE=cisa_kev,$COMMON_ENV" \
-  --set-secrets "GEMINI_API_KEY=GEMINI_API_KEY:latest,GOOGLE_SA_JSON_B64=GOOGLE_SA_JSON_B64:latest,GITHUB_PAT=GITHUB_PAT:latest"
+  --set-secrets "GEMINI_API_KEY=GEMINI_API_KEY:latest,GITHUB_PAT=GITHUB_PAT:latest"
 ```
 
 TWCERT(加 TWCERT secrets):
@@ -99,7 +96,7 @@ gcloud run jobs create intel-twcert \
   --service-account "$RUNTIME_SA" \
   --max-retries 1 --task-timeout 900 --memory 512Mi \
   --set-env-vars "INTEL_SOURCE=twcert,$COMMON_ENV" \
-  --set-secrets "GEMINI_API_KEY=GEMINI_API_KEY:latest,GOOGLE_SA_JSON_B64=GOOGLE_SA_JSON_B64:latest,GITHUB_PAT=GITHUB_PAT:latest,TWCERT_ACCOUNT=TWCERT_ACCOUNT:latest,TWCERT_PASSWORD=TWCERT_PASSWORD:latest"
+  --set-secrets "GEMINI_API_KEY=GEMINI_API_KEY:latest,GITHUB_PAT=GITHUB_PAT:latest,TWCERT_ACCOUNT=TWCERT_ACCOUNT:latest,TWCERT_PASSWORD=TWCERT_PASSWORD:latest"
 ```
 
 ## 7. 手動驗證
@@ -161,7 +158,7 @@ gcloud run jobs create intel-notify-risk \
   --max-retries 1 --task-timeout 600 --memory 512Mi \
   --command uv --args run,python,main.py,--notify-risk \
   --set-env-vars "^|^$EMAIL_ENV|RISK_TEAM_EMAILS=a@co,b@co" \
-  --set-secrets "GOOGLE_SA_JSON_B64=GOOGLE_SA_JSON_B64:latest,SMTP_PASSWORD=SMTP_PASSWORD:latest"
+  --set-secrets "SMTP_PASSWORD=SMTP_PASSWORD:latest"
 ```
 
 內部發佈(`--publish-internal`):
@@ -173,7 +170,7 @@ gcloud run jobs create intel-publish-internal \
   --max-retries 1 --task-timeout 600 --memory 512Mi \
   --command uv --args run,python,main.py,--publish-internal \
   --set-env-vars "^|^$EMAIL_ENV|INTERNAL_ANNOUNCE_EMAILS=rd-a@co,rd-b@co" \
-  --set-secrets "GOOGLE_SA_JSON_B64=GOOGLE_SA_JSON_B64:latest,SMTP_PASSWORD=SMTP_PASSWORD:latest"
+  --set-secrets "SMTP_PASSWORD=SMTP_PASSWORD:latest"
 ```
 
 排程(run.invoker + Scheduler;月信每月 1 號 09:00、內部發佈平日每天 10:00 TW+8):
