@@ -1,0 +1,467 @@
+{
+  "source": "cisa_kev",
+  "fetched_at": "2026-07-01T12:25:07.067540",
+  "count": 23,
+  "items": [
+    {
+      "intel_id": "CVE-2026-48558",
+      "source": "CISA_KEV",
+      "publish_date": "2026-06-29",
+      "title": "[CISA KEV] SimpleHelp  SimpleHelp - SimpleHelp Authentication Bypass Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-48558"
+      ],
+      "raw_content": "CVE: CVE-2026-48558\n廠商: SimpleHelp \n產品: SimpleHelp\n漏洞名稱: SimpleHelp Authentication Bypass Vulnerability\n說明: SimpleHelp contains an authentication bypass vulnerability in the OIDC authentication flow. When OIDC authentication is configured, identity tokens submitted during login are accepted without verifying their cryptographic signature. In a vulnerable configuration, a remote, unauthenticated attacker can submit a forged token containing arbitrary identity claims to obtain a fully authenticated technician session. In some configurations, this may also allow bypass of multi-factor authentication.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-07-02\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://simple-help.com/security/simplehelp-security-update-2026-05 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-48558",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-48558"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-12569",
+      "source": "CISA_KEV",
+      "publish_date": "2026-06-25",
+      "title": "[CISA KEV] PTC Windchill and FlexPLM - PTC Windchill and FlexPLM Improper Input Validation Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-12569"
+      ],
+      "raw_content": "CVE: CVE-2026-12569\n廠商: PTC\n產品: Windchill and FlexPLM\n漏洞名稱: PTC Windchill and FlexPLM Improper Input Validation Vulnerability\n說明: PTC Windchill and FlexPLM contains an improper input validation vulnerability allowing an unauthenticated, remote attacker to execute arbitrary code by sending a malicious request to the network.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-06-28\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://www.ptc.com/en/support/article/CS473270 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-12569",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-12569"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-20230",
+      "source": "CISA_KEV",
+      "publish_date": "2026-06-25",
+      "title": "[CISA KEV] Cisco Unified Communications Manager - Cisco Unified Communications Manager Server-Side Request Forgery (SSRF) Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-20230"
+      ],
+      "raw_content": "CVE: CVE-2026-20230\n廠商: Cisco\n產品: Unified Communications Manager\n漏洞名稱: Cisco Unified Communications Manager Server-Side Request Forgery (SSRF) Vulnerability\n說明: Cisco Unified Communications Manager (Unified CM) and Cisco Unified Communications Manager Session Management Edition (Unified CM SME) contain a server-side request forgery (SSRF) Vulnerability that could allow an unauthenticated, remote attacker to write files to the underlying operating system that could be used later to elevate to root.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-06-28\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://www.cisco.com/c/en/us/support/docs/csa/cisco-sa-cucm-ssrf-cXPnHcW.html ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-20230",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-20230"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2025-67038",
+      "source": "CISA_KEV",
+      "publish_date": "2026-06-23",
+      "title": "[CISA KEV] Lantronix EDS5000 - Lantronix EDS5000 Code Injection Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2025-67038"
+      ],
+      "raw_content": "CVE: CVE-2025-67038\n廠商: Lantronix\n產品: EDS5000\n漏洞名稱: Lantronix EDS5000 Code Injection Vulnerability\n說明: Lantronix EDS5000 contains a code injection vulnerability that could allow attackers to inject arbitrary OS commands into the username parameter. Injected commands are executed with root privileges.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-06-26\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://ltrxdev.atlassian.net/wiki/spaces/LTRXTS/pages/2538438657/Latest+Firmware+for+the+EDS5000+series+EDS5008+EDS5016+EDS5032 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2025-67038",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-67038"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-34910",
+      "source": "CISA_KEV",
+      "publish_date": "2026-06-23",
+      "title": "[CISA KEV] Ubiquiti UniFi OS - Ubiquiti UniFi OS Improper Input Validation Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-34910"
+      ],
+      "raw_content": "CVE: CVE-2026-34910\n廠商: Ubiquiti\n產品: UniFi OS\n漏洞名稱: Ubiquiti UniFi OS Improper Input Validation Vulnerability\n說明: Ubiquiti UniFi OS contains an improper input validation vulnerability which could allow a malicious actor with access to the network to conduct command injection.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-06-26\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://community.ui.com/releases/Security-Advisory-Bulletin-064-064/84811c09-4cf4-42ab-bd61-cc994445963b ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-34910",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-34910"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-34909",
+      "source": "CISA_KEV",
+      "publish_date": "2026-06-23",
+      "title": "[CISA KEV] Ubiquiti UniFi OS - Ubiquiti UniFi OS Path Traversal Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-34909"
+      ],
+      "raw_content": "CVE: CVE-2026-34909\n廠商: Ubiquiti\n產品: UniFi OS\n漏洞名稱: Ubiquiti UniFi OS Path Traversal Vulnerability\n說明: Ubiquiti UniFi OS contains a path traversal vulnerability which could allow a malicious actor with access to the network to access files on the underlying system that could be manipulated to access an underlying account.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-06-26\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://community.ui.com/releases/Security-Advisory-Bulletin-064-064/84811c09-4cf4-42ab-bd61-cc994445963b ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-34909",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-34909"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-34908",
+      "source": "CISA_KEV",
+      "publish_date": "2026-06-23",
+      "title": "[CISA KEV] Ubiquiti UniFi OS - Ubiquiti UniFi OS Improper Access Control Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-34908"
+      ],
+      "raw_content": "CVE: CVE-2026-34908\n廠商: Ubiquiti\n產品: UniFi OS\n漏洞名稱: Ubiquiti UniFi OS Improper Access Control Vulnerability\n說明: Ubiquiti UniFi OS contains an improper access control vulnerability which could allow a malicious actor with access to the network to make unauthorized changes to the system.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-06-26\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://community.ui.com/releases/Security-Advisory-Bulletin-064-064/84811c09-4cf4-42ab-bd61-cc994445963b ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-34908",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-34908"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-20253",
+      "source": "CISA_KEV",
+      "publish_date": "2026-06-18",
+      "title": "[CISA KEV] Splunk Enterprise - Splunk Enterprise Missing Authentication for Critical Function Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-20253"
+      ],
+      "raw_content": "CVE: CVE-2026-20253\n廠商: Splunk\n產品: Enterprise\n漏洞名稱: Splunk Enterprise Missing Authentication for Critical Function Vulnerability\n說明: Splunk Enterprise contains a missing authentication for critical function vulnerability which could allow an unauthenticated user to create or truncate arbitrary files through a PostgreSQL sidecar service endpoint.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-06-21\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://advisory.splunk.com/advisories/SVD-2026-0603 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-20253",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-20253"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-48907",
+      "source": "CISA_KEV",
+      "publish_date": "2026-06-16",
+      "title": "[CISA KEV] Widget Factory Joomla Content Editor  - Widget Factory Joomla Content Editor Improper Access Control Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-48907"
+      ],
+      "raw_content": "CVE: CVE-2026-48907\n廠商: Widget Factory\n產品: Joomla Content Editor \n漏洞名稱: Widget Factory Joomla Content Editor Improper Access Control Vulnerability\n說明: Widget Factory Joomla Content Editor contains an improper access control vulnerability which could allow for upload and execution of PHP code via the creation of new editor profiles for unauthenticated users. \nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-06-19\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://www.joomlacontenteditor.net/news/jce-security-update-and-a-free-patch-for-older-sites ; https://www.joomlacontenteditor.net/support/changelog/editor ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-48907",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-48907"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-54420",
+      "source": "CISA_KEV",
+      "publish_date": "2026-06-15",
+      "title": "[CISA KEV] LiteSpeed cPanel Plugin - LiteSpeed cPanel Plugin UNIX Symbolic Link (Symlink) Following Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-54420"
+      ],
+      "raw_content": "CVE: CVE-2026-54420\n廠商: LiteSpeed\n產品: cPanel Plugin\n漏洞名稱: LiteSpeed cPanel Plugin UNIX Symbolic Link (Symlink) Following Vulnerability\n說明: LiteSpeed cPanel plugin contains a UNIX symbolic link (Symlink) following vulnerability that could allow a user with FTP or web shell access on a shared hosting server running CloudLinux/CageFS.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-06-18\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://blog.litespeedtech.com/2026/06/01/security-update-for-litespeed-cpanel-plugin-2/ ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-54420",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-54420"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-20262",
+      "source": "CISA_KEV",
+      "publish_date": "2026-06-15",
+      "title": "[CISA KEV] Cisco Catalyst SD-WAN Manager - Cisco Catalyst SD-WAN Manager Directory or Path Traversal Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-20262"
+      ],
+      "raw_content": "CVE: CVE-2026-20262\n廠商: Cisco\n產品: Catalyst SD-WAN Manager\n漏洞名稱: Cisco Catalyst SD-WAN Manager Directory or Path Traversal Vulnerability\n說明: Cisco Catalyst SD-WAN Manager contains a directory or path traversal vulnerability that could allow an authenticated, remote attacker to create a file or overwrite any file on the filesystem of an affected system.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-06-29\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-arbfw-c2rZvQ ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-20262",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-20262"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-35273",
+      "source": "CISA_KEV",
+      "publish_date": "2026-06-12",
+      "title": "[CISA KEV] Oracle  PeopleSoft Enterprise PeopleTools - Oracle PeopleSoft Enterprise PeopleTools Missing Authentication for Critical Function Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-35273"
+      ],
+      "raw_content": "CVE: CVE-2026-35273\n廠商: Oracle\n產品:  PeopleSoft Enterprise PeopleTools\n漏洞名稱: Oracle PeopleSoft Enterprise PeopleTools Missing Authentication for Critical Function Vulnerability\n說明: Oracle PeopleSoft Enterprise PeopleTools contains a missing authentication for critical function vulnerability which could allow an unauthenticated attacker to obtain takeover of PeopleSoft Enterprise PeopleTools.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-06-15\n已知勒索軟體利用: Known\n",
+      "reference_urls": [
+        "https://www.oracle.com/security-alerts/alert-cve-2026-35273.html ; https://support.oracle.com/signin/ ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-35273",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-35273"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-10520",
+      "source": "CISA_KEV",
+      "publish_date": "2026-06-11",
+      "title": "[CISA KEV] Ivanti Sentry - Ivanti Sentry OS Command Injection Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-10520"
+      ],
+      "raw_content": "CVE: CVE-2026-10520\n廠商: Ivanti\n產品: Sentry\n漏洞名稱: Ivanti Sentry OS Command Injection Vulnerability\n說明: Ivanti Sentry (formerly known as MobileIron Sentry) contains an OS command injection vulnerability which could allow a remote unauthenticated user to achieve root-level remote code execution. This vulnerability can be successfully exploited in cases where the Sentry appliance is in an unmanaged state with its endpoints externally reachable. The use of mTLS with EPMM or restricted HTTPS access through Neurons for MDM makes interfaces inaccessible to external actors.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-06-14\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Sentry-CVE-2026-10520-CVE-2026-10523?language=en_US ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-10520",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-10520"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-11645",
+      "source": "CISA_KEV",
+      "publish_date": "2026-06-09",
+      "title": "[CISA KEV] Google Chromium V8 - Google Chromium V8 Out-of-Bounds Read and Write Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-11645"
+      ],
+      "raw_content": "CVE: CVE-2026-11645\n廠商: Google\n產品: Chromium V8\n漏洞名稱: Google Chromium V8 Out-of-Bounds Read and Write Vulnerability\n說明: Google Chromium V8 out-of-bounds read and write vulnerability that could allow a remote attacker to execute arbitrary code inside a sandbox via a crafted HTML page. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-06-23\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://chromereleases.googleblog.com/2026/06/stable-channel-update-for-desktop_0153744567.html ; https://issues.chromium.org/issues/506689381 ; https://nvd.nist.gov/vuln/detail/CVE-2026-11645",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-11645"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-7473",
+      "source": "CISA_KEV",
+      "publish_date": "2026-06-09",
+      "title": "[CISA KEV] Arista Extensible Operating System - Arista Extensible Operating System Incomplete Comparison with Missing Factors Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-7473"
+      ],
+      "raw_content": "CVE: CVE-2026-7473\n廠商: Arista\n產品: Extensible Operating System\n漏洞名稱: Arista Extensible Operating System Incomplete Comparison with Missing Factors Vulnerability\n說明: Arista Extensible Operating System (EOS) contains an incomplete comparison with missing factors vulnerability when the switch incorrectly decapsulate and forwards other unexpected tunneled packet with a destination IP matching its configured decapsulation IP.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-06-23\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://www.arista.com/en/support/advisories-notices/security-advisory/24005-security-advisory-0137 ; https://nvd.nist.gov/vuln/detail/CVE-2026-7473",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-7473"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-20245",
+      "source": "CISA_KEV",
+      "publish_date": "2026-06-09",
+      "title": "[CISA KEV] Cisco Catalyst SD-WAN Manager - Cisco Catalyst SD-WAN Manager Improper Encoding or Escaping of Output Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-20245"
+      ],
+      "raw_content": "CVE: CVE-2026-20245\n廠商: Cisco\n產品: Catalyst SD-WAN Manager\n漏洞名稱: Cisco Catalyst SD-WAN Manager Improper Encoding or Escaping of Output Vulnerability\n說明: Cisco Catalyst SD-WAN Manager formerly SD-WAN vManage contains an improper encoding or escaping of output vulnerability. This vulnerability could allow an authenticated, local attacker to execute arbitrary commands as root by supplying a crafted file to the affected system.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-06-23\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-privesc-4uxFrdzx ; https://nvd.nist.gov/vuln/detail/CVE-2026-20245",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-20245"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-42271",
+      "source": "CISA_KEV",
+      "publish_date": "2026-06-08",
+      "title": "[CISA KEV] BerriAI LiteLLM - BerriAI LiteLLM Command Injection Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-42271"
+      ],
+      "raw_content": "CVE: CVE-2026-42271\n廠商: BerriAI\n產品: LiteLLM\n漏洞名稱: BerriAI LiteLLM Command Injection Vulnerability\n說明: BerriAI LiteLLM contains a command injection vulnerability that could allow any authenticated user, including holders of low-privilege internal-user keys, to run arbitrary commands on the host.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-06-22\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "This vulnerability affects a common open-source component, third-party library, or a protocol used by different products. Please check with specific vendors for information on patching status. For more information, please see: https://github.com/BerriAI/litellm/security/advisories/GHSA-v4p8-mg3p-g94g ; https://github.com/BerriAI/litellm/releases/tag/v1.83.7-stable ; https://nvd.nist.gov/vuln/detail/CVE-2026-42271",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-42271"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-50751",
+      "source": "CISA_KEV",
+      "publish_date": "2026-06-08",
+      "title": "[CISA KEV] Check Point Security Gateway - Check Point Security Gateway Improper Authentication Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-50751"
+      ],
+      "raw_content": "CVE: CVE-2026-50751\n廠商: Check Point\n產品: Security Gateway\n漏洞名稱: Check Point Security Gateway Improper Authentication Vulnerability\n說明: Check Point Security Gateway contains an improper authentication vulnerability in IKEv1 key exchange that could allow an unauthenticated remote attacker to bypass user authentication and establish a remote access VPN connection without a valid user password.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-06-11\n已知勒索軟體利用: Known\n",
+      "reference_urls": [
+        "https://blog.checkpoint.com/security/check-point-releases-important-hotfix-for-vulnerabilities-in-deprecated-ikev1-vpn-protocol/ ; https://support.checkpoint.com/results/sk/sk185033?_gl=1*1wqeqhc*_gcl_au*MTI1MzE5MjI2LjE3ODA5MzQ1NTM. ; https://nvd.nist.gov/vuln/detail/CVE-2026-50751",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-50751"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-28318",
+      "source": "CISA_KEV",
+      "publish_date": "2026-06-05",
+      "title": "[CISA KEV] SolarWinds Serv-U - SolarWinds Serv-U Uncontrolled Resource Consumption Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-28318"
+      ],
+      "raw_content": "CVE: CVE-2026-28318\n廠商: SolarWinds\n產品: Serv-U\n漏洞名稱: SolarWinds Serv-U Uncontrolled Resource Consumption Vulnerability\n說明: SolarWinds Serv-U contains an uncontrolled resource consumption vulnerability that allows specially crafted POST requests using the Content-Encoding: deflate header to crash the Serv-U service without authentication.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-06-19\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://www.solarwinds.com/trust-center/security-advisories/cve-2026-28318 ; https://documentation.solarwinds.com/en/success_center/servu/content/release_notes/servu_15-5-4-hotfix-1_release_notes.htm#link7 ; https://nvd.nist.gov/vuln/detail/CVE-2026-28318",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-28318"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-45247",
+      "source": "CISA_KEV",
+      "publish_date": "2026-06-03",
+      "title": "[CISA KEV] Mirasvit Mirasvit Full Page Cache Warmer - Mirasvit Full Page Cache Warmer Deserialization of Untrusted Data Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-45247"
+      ],
+      "raw_content": "CVE: CVE-2026-45247\n廠商: Mirasvit\n產品: Mirasvit Full Page Cache Warmer\n漏洞名稱: Mirasvit Full Page Cache Warmer Deserialization of Untrusted Data Vulnerability\n說明: Mirasvit Full Page Cache Warmer contains a deserialization of untrusted data vulnerability that could allow unauthenticated attackers to achieve remote code execution by supplying a crafted serialized PHP object in the CacheWarmer cookie.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-06-06\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://mirasvit.com/package/changelog/?package=mirasvit/module-cache-warmer ; https://nvd.nist.gov/vuln/detail/CVE-2026-45247",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-45247"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2022-0492",
+      "source": "CISA_KEV",
+      "publish_date": "2026-06-02",
+      "title": "[CISA KEV] Linux Kernel - Linux Kernel Improper Authentication Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2022-0492"
+      ],
+      "raw_content": "CVE: CVE-2022-0492\n廠商: Linux\n產品: Kernel\n漏洞名稱: Linux Kernel Improper Authentication Vulnerability\n說明: Linux Kernel contains an improper authentication vulnerability which could allow for privilege escalation via the cgroups v1 release_agent feature.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-06-05\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "This vulnerability affects a common open-source component, third-party library, or a protocol used by different products. Please check with specific vendors for information on patching status. For more information, please see: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=24f6008564183aa120d07c03d9289519c2fe02af ; https://www.kernel.org/ ; https://nvd.nist.gov/vuln/detail/CVE-2022-0492",
+        "https://nvd.nist.gov/vuln/detail/CVE-2022-0492"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2025-48595",
+      "source": "CISA_KEV",
+      "publish_date": "2026-06-02",
+      "title": "[CISA KEV] Android Framework - Android Framework Integer Overflow Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2025-48595"
+      ],
+      "raw_content": "CVE: CVE-2025-48595\n廠商: Android\n產品: Framework\n漏洞名稱: Android Framework Integer Overflow Vulnerability\n說明: Android Framework contains an integer overflow vulnerability that allows for code execution that could allow for local privilege escalation.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-06-05\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://source.android.com/docs/security/bulletin/2026/2026-06-01 ; https://nvd.nist.gov/vuln/detail/CVE-2025-48595",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-48595"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2024-21182",
+      "source": "CISA_KEV",
+      "publish_date": "2026-06-01",
+      "title": "[CISA KEV] Oracle WebLogic Server - Oracle WebLogic Server Unspecified Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2024-21182"
+      ],
+      "raw_content": "CVE: CVE-2024-21182\n廠商: Oracle\n產品: WebLogic Server\n漏洞名稱: Oracle WebLogic Server Unspecified Vulnerability\n說明: Oracle WebLogic contains an unspecified vulnerability that could allow an unauthenticated attacker with network access via T3, IIOP to compromise Oracle WebLogic Server. Successful attacks of this vulnerability can result in unauthorized access to critical data or complete access to all Oracle WebLogic Server accessible data.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-06-04\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://www.oracle.com/security-alerts/cpujul2024.html ; https://nvd.nist.gov/vuln/detail/CVE-2024-21182",
+        "https://nvd.nist.gov/vuln/detail/CVE-2024-21182"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    }
+  ]
+}
