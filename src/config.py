@@ -44,7 +44,13 @@ SCOPES = [
 ]
 
 
-def get_service_account_path() -> str:
+def get_service_account_path() -> str | None:
+    """Return a path to the SA JSON if configured via env, else None.
+
+    Returns None when neither GOOGLE_SA_JSON_FILE nor GOOGLE_SA_JSON_B64 is set,
+    so callers can fall back to Application Default Credentials (e.g. the
+    attached service account on Cloud Run).
+    """
     sa_b64 = os.environ.get("GOOGLE_SA_JSON_B64", "")
     sa_file = os.environ.get("GOOGLE_SA_JSON_FILE", "")
 
@@ -58,7 +64,4 @@ def get_service_account_path() -> str:
         tmp.close()
         return tmp.name
 
-    raise RuntimeError(
-        "No Google Service Account credentials found. "
-        "Set GOOGLE_SA_JSON_B64 or GOOGLE_SA_JSON_FILE."
-    )
+    return None

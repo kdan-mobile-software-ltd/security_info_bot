@@ -5,6 +5,7 @@ from collections import defaultdict
 from collections.abc import Iterable
 from datetime import datetime, timedelta, timezone
 
+import google.auth
 import gspread
 from google.oauth2.service_account import Credentials
 from pydantic import BaseModel, ConfigDict, Field
@@ -70,7 +71,13 @@ _ws_cache: dict[str, gspread.Worksheet] = {}
 def _ensure_client() -> gspread.Client:
     global _gc
     if _gc is None:
-        creds = Credentials.from_service_account_file(get_service_account_path(), scopes=SCOPES)
+        sa_path = get_service_account_path()
+        if sa_path:
+            creds = Credentials.from_service_account_file(sa_path, scopes=SCOPES)
+        else:
+            # No SA key configured → use Application Default Credentials
+            # (the attached service account on Cloud Run).
+            creds, _ = google.auth.default(scopes=SCOPES)
         _gc = gspread.authorize(creds)
     return _gc
 
