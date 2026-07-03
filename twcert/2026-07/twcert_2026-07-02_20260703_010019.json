@@ -1,0 +1,70 @@
+{
+  "source": "twcert",
+  "fetched_at": "2026-07-03T01:00:19.960393",
+  "count": 3,
+  "items": [
+    {
+      "intel_id": "TWCERT-TWISAC-202607-0003",
+      "source": "TWCERT",
+      "publish_date": "2026-07-02 15:35",
+      "title": "[TLP CLEAR] 研華科技｜Hospital Queuing Management ",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-14162"
+      ],
+      "raw_content": "【研華科技｜Hospital Queuing Management 】(CVE-2026-14162，CVSS：9.8)\n未經身分鑑別之遠端攻擊者可利用API取得機敏資訊或新增網站管理員帳號。\n\n影響平台：Hospital Queuing Management(HQM) ISO 1.2.13(不含)以前版本\n\n建議措施：請更新HQM ISO至 1.2.13(含)以後版本或更新QueueHttp.dll至1.2.12.7(含)以後版本\n\n參考資訊：1. https://www.twcert.org.tw/tw/cp-132-11011-999eb-1.html\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://www.twcert.org.tw/tw/cp-132-11011-999eb-1.html"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    },
+    {
+      "intel_id": "TWCERT-TWISAC-202607-0002",
+      "source": "TWCERT",
+      "publish_date": "2026-07-02 15:00",
+      "title": "[TLP CLEAR] Cisco Unified Communications Manager存在高風險安全漏洞(CVE-2026-20230)，請儘速確認並進行修補",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-20230"
+      ],
+      "raw_content": "研究人員發現Cisco Unified Communications Manager存在伺服器請求偽造(Server-side Request Forgery)漏洞(CVE-2026-20230)，未經身分鑑別之遠端攻擊者，可傳送特製HTTP請求，於受影響系統寫入檔案進而取得管理員權限。該漏洞已遭到駭客利用，請儘速確認並進行修補。\n\n影響平台：Cisco Unified CM/Unified CM SME 14版本、\nCisco Unified CM/Unified CM SME 15版本\n\n建議措施：官方已針對漏洞釋出修復更新，請參考官方說明進行更新，網址如下：\nhttps://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-cucm-ssrf-cXPnHcW#fs\n\n參考資訊：1.https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-cucm-ssrf-cXPnHcW\n2. https://nvd.nist.gov/vuln/detail/CVE-2026-20230\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-cucm-ssrf-cXPnHcW",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-20230"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    },
+    {
+      "intel_id": "TWCERT-TWISAC-202607-0001",
+      "source": "TWCERT",
+      "publish_date": "2026-07-02 14:57",
+      "title": "[TLP CLEAR] Apache HTTP Server存在多個高風險安全漏洞，請儘速確認並進行修補",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-23918",
+        "CVE-2026-29167",
+        "CVE-2026-44631"
+      ],
+      "raw_content": "研究人員發現Apache HTTP Server存在3個高風險安全漏洞(CVE-2026-23918、CVE-2026-29167及CVE-2026-44631)，類型包含記憶體雙重釋放(Double Free)、使用釋放後記憶體(Use After Free)及緩衝區溢位(Buffer Overflow)漏洞，其最嚴重可使已通過身分鑑別之遠端攻擊者執行任意程式碼，請儘速確認並進行修補。\n\n影響平台：【CVE-2026-23918】\nApache HTTP Server 2.4.66\n\n【CVE-2026-29167與CVE-2026-44631】\nApache HTTP Server 2.4.0到2.4.67\n\n\n建議措施：官方已針對漏洞釋出修復更新，請參考官方說明進行更新，網址如下：\nhttps://httpd.apache.org/security/vulnerabilities_24.html \n\n參考資訊：1.https://httpd.apache.org/security/vulnerabilities_24.html  \n2.https://nvd.nist.gov/vuln/detail/CVE-2026-23918\n3.https://nvd.nist.gov/vuln/detail/CVE-2026-29167\n4.https://nvd.nist.gov/vuln/detail/CVE-2026-44631\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://httpd.apache.org/security/vulnerabilities_24.html",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-23918",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-29167",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-44631"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    }
+  ]
+}
