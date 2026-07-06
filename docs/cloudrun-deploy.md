@@ -121,10 +121,13 @@ for JOB in intel-cisa intel-twcert; do
     --region "$REGION" --project "$PROJECT_ID"
 done
 
-for JOB in intel-cisa intel-twcert; do
+# cisa 09:00、twcert 09:05 —— 兩者都 push 到 data 分支,錯開 5 分鐘避免
+# 同時觸發時 twcert 的 `git rebase origin/data` 撞上 cisa 剛前進的遠端而衝突(exit 128)。
+for PAIR in "intel-cisa:0 9 * * *" "intel-twcert:5 9 * * *"; do
+  JOB="${PAIR%%:*}"; SCHED="${PAIR#*:}"
   gcloud scheduler jobs create http "$JOB-daily" \
     --location "$REGION" --project "$PROJECT_ID" \
-    --schedule="0 9 * * *" --time-zone="Asia/Taipei" \
+    --schedule="$SCHED" --time-zone="Asia/Taipei" \
     --uri="https://$REGION-run.googleapis.com/apis/run.googleapis.com/v1/namespaces/$PROJECT_NUMBER/jobs/$JOB:run" \
     --http-method=POST \
     --oauth-service-account-email="$TRIGGER_SA"
@@ -206,4 +209,5 @@ gcloud scheduler jobs create http intel-publish-internal-daily \
 - 私有 repo 的 IoC raw 連結需登入才開得了(與原 GitHub Actions 行為相同)。
 - `/tmp` 是記憶體 tmpfs;量大時調高 `--memory`。
 - 容器預設 `--since` 為「昨天」(twcert 以 TW+8、cisa_kev 以 UTC 計);與本機手動 `uv run python main.py`(預設今天)不同,月度去重會吸收一天的重疊。
-- 排程由原 GitHub Actions 的 4 次/天改為每天 1 次(`0 9 * * *` TW+8);CISA KEV 的更新偵測頻率因此降低,屬刻意取捨。
+- 排程由原 GitHub Actions 的 4 次/天改為每天 1 次(cisa `0 9 * * *`、twcert `5 9 * * *` TW+8);CISA KEV 的更新偵測頻率因此降低,屬刻意取捨。
+- 兩個 Job 都 push 到 `data` 分支,故排程**刻意錯開 5 分鐘**:同時在 09:00 觸發時,較晚 push 的 twcert 會因 `git rebase origin/data` 撞上 cisa 剛前進的遠端而以 exit 128 失敗(2026-07-02 曾發生)。若之後新增其他也寫 `data` 分支的 Job,同樣需錯開觸發時間。
