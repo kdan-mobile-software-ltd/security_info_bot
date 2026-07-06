@@ -1,0 +1,28 @@
+# This is the `data` archive branch — it only stores fetched data
+# (cisa_kev/, twcert/, ioc/). Everything below is code / build / env noise
+# that belongs on `main` and must never be committed here.
+
+# Secrets — never commit
+.env
+service_account.json
+secrets/
+
+# Python bytecode / build artifacts
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+
+# Virtualenv & tool caches (these also self-ignore, listed for safety)
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.superpowers/
+
+# Local Claude settings
+.claude/settings.local.json
+
+# Stray local test outputs that leaked into src/data/ on this branch
+/src/data/
