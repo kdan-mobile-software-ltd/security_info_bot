@@ -1,0 +1,126 @@
+{
+  "source": "twcert",
+  "analyzed_at": "2026-07-09T01:06:05.336389",
+  "count": 4,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202607-0011",
+        "source": "TWCERT",
+        "publish_date": "2026-07-08 17:01",
+        "title": "[TLP CLEAR] 請留意企業流程管理系統相關安全風險並持續關注官方更新",
+        "intel_type": "102-資安事件",
+        "cve_ids": [],
+        "raw_content": "企業流程管理（Business Process Management，BPM）系統主要用於企業內部流程自動化與電子簽核，提供表單管理、流程設計、權限控管及系統整合等功能，廣泛應用於各類行政及業務作業。\n\nTWCERT/CC 近期接獲外部情資，發現攻擊者運用企業流程管理(BPM)系統漏洞進行攻擊，可能藉此建立非法帳號、內部探測與橫向掃描、建立惡意對外連線等，進而造成單位遭受駭侵。\n\nBPM 系統廣泛應用於企業流程管理、電子表單及簽核等作業，建議使用相關系統之單位確認產品版本是否已更新至最新版，並持續關注原廠或維護廠商發布之安全公告及修補資訊，適時完成更新，以降低潛在風險。\n\n【IoC資訊】\ntaibeianmo[.]oss-cn-hongkong[.]aliyuncs[.]com\n156[.]227[.]0[.]13\n\n影響平台：企業流程管理系統\n\n建議措施：1.確認目前使用之 BPM 系統版本，並持續關注原廠或維護廠商發布之安全公告。\n2.如有新版修補程式或安全更新，請依內部變更流程評估並儘速完成更新。\n3.檢視 BPM 系統相關存取紀錄及管理者帳號活動，留意是否有異常登入或可疑操作。\n4.確認系統對外服務之存取權限及網路曝露情形，避免非必要的公開存取。\n5.若發現異常事件或疑似遭受攻擊情形，請依內部資安事件通報流程處理；如未涉及商業機密時，可分享相關情資予 TWCERT/CC，以協助資安聯防。。\n\n參考資訊：無\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "High",
+        "summary": "TWCERT 警示攻擊者正利用企業流程管理（BPM）系統漏洞進行惡意攻擊，可能導致非法帳號建立、內部橫向掃描及惡意連線。由於公司內部使用「鼎新 EasyFlow」作為流程簽核系統，面臨直接的安全風險，需儘速進行版本確認與安全防護。",
+        "recommendation": "1. 立即聯繫維護廠商（鼎新電腦），確認目前「鼎新 EasyFlow」系統版本是否存在已知安全漏洞，並依變更流程儘速套用安全修補程式。\n2. 檢視 EasyFlow 主機及相關資料庫的存取紀錄與管理者帳號活動，清查是否有異常登入或可疑操作。\n3. 於防火牆或安全設備上阻擋情資提示之 IoC（IP: 156.227.0.13, 網域: taibeianmo.oss-cn-hongkong.aliyuncs.com）。\n4. 確認 EasyFlow 系統之網路曝露情形，限制僅能透過內部網路或 VPN 存取，避免非必要的公開網際網路連線。",
+        "company_relevance": "H",
+        "affected_assets": [
+          "資訊軟體-鼎新EasyFlow",
+          "EasyFlow主機"
+        ],
+        "responsible_unit": "RR40"
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202607-0010",
+        "source": "TWCERT",
+        "publish_date": "2026-07-08 14:45",
+        "title": "[TLP CLEAR] 博格資訊管理顧問｜博格管理系統 - Exposure of Sensitive Information",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-14808"
+        ],
+        "raw_content": "【博格資訊管理顧問｜博格管理系統 - Exposure of Sensitive Information 】(CVE-2026-14808，CVSS：9.8)\n未經身分鑑別之遠端攻擊者可瀏覽特定頁面取得資料庫帳號與通行碼。\n\n影響平台：博格管理系統\n\n建議措施：聯繫廠商進行修補\n\n參考資訊：1. https://www.twcert.org.tw/tw/cp-132-11025-fa1d9-1.html\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://www.twcert.org.tw/tw/cp-132-11025-fa1d9-1.html"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "博格資訊管理顧問之博格管理系統存在敏感資訊外洩漏洞（CVE-2026-14808），未經身分鑑別之遠端攻擊者可直接瀏覽特定頁面以取得資料庫帳號與通行碼，CVSS 評分高達 9.8。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202607-0009",
+        "source": "TWCERT",
+        "publish_date": "2026-07-08 14:43",
+        "title": "[TLP CLEAR] 博格資訊管理顧問｜ERP App - Use of Hard-coded Credentials",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-14807"
+        ],
+        "raw_content": "【博格資訊管理顧問｜ERP App - Use of Hard-coded Credentials 】(CVE-2026-14807，CVSS：9.8)\n博格資訊管理顧問開發之ERP App存在 Use of Hard-coded Credentials漏洞，未經身分鑑別之遠端攻擊者可於程式碼中取得資料庫帳號與通行碼。\n\n影響平台：ERP App\n\n建議措施：聯繫廠商進行修補\n\n參考資訊：1. https://www.twcert.org.tw/tw/cp-132-11023-3abe8-1.html\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://www.twcert.org.tw/tw/cp-132-11023-3abe8-1.html"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "博格資訊管理顧問開發之 ERP App 存在硬編碼憑證漏洞（CVE-2026-14807），CVSS 風險評分高達 9.8。未經身分鑑別的遠端攻擊者可直接從程式碼中取得資料庫帳號與通行碼，進而存取敏感資料。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202607-0007",
+        "source": "TWCERT",
+        "publish_date": "2026-07-08 14:40",
+        "title": "[TLP CLEAR] CISA新增2個已知遭駭客利用之漏洞至KEV目錄(2026/06/29-2026/07/05)",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-48558",
+          "CVE-2026-45659"
+        ],
+        "raw_content": "【CVE-2026-48558】SimpleHelp Authentication Bypass Vulnerability (CVSS v3.1: 10.0)\n【是否遭勒索軟體利用:未知】\nSimpleHelp的OIDC驗證流程存在身分鑑別繞過漏洞。當系統啟用OIDC驗證時，登入過程未正確驗證身分權杖的加密簽章。遠端未經驗證的攻擊者可提交偽造權杖，藉此取得已完成身分驗證的技術人員工作階段；在部分組態下，甚至可能繞過多因子驗證。\n\n【CVE-2026-45659】Microsoft SharePoint Server Deserialization of Untrusted Data Vulnerability (CVSS v3.1: 8.8)\n【是否遭勒索軟體利用:未知】\nMicrosoft SharePoint Server 存在不受信任資料反序列化漏洞，允許經授權的攻擊者透過網路執行任意程式碼。\n\n\n影響平台：【CVE-2026-48558】\n請參考官方所列的影響版本 \nhttps://simple-help.com/security/simplehelp-security-update-2026-05\n\n【CVE-2026-45659】\n請參考官方所列的影響版本\nhttps://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45659\n\n\n建議措施：【CVE-2026-48558】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://simple-help.com/security/simplehelp-security-update-2026-05\n\n【CVE-2026-45659】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45659\n\n\n參考資訊：【CVE-2026-48558】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-48558\n2.https://simple-help.com/security/simplehelp-security-update-2026-05\n\n【CVE-2026-45659】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-45659\n2.https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45659\n\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://nvd.nist.gov/vuln/detail/cve-2026-48558",
+          "https://simple-help.com/security/simplehelp-security-update-2026-05",
+          "https://nvd.nist.gov/vuln/detail/cve-2026-45659",
+          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45659"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "CISA 將 SimpleHelp 身分鑑別繞過漏洞（CVE-2026-48558）與 Microsoft SharePoint Server 反序列化漏洞（CVE-2026-45659）列入已知遭利用漏洞目錄。前者可使攻擊者偽造權杖繞過 OIDC 驗證以取得技術人員權限，後者則允許具備權限的攻擊者遠端執行任意程式碼。此兩項漏洞皆已被證實存在野外活躍攻擊。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
