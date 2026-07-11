@@ -1,0 +1,67 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-07-11T01:00:43.506401",
+  "count": 2,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2026-56291",
+        "source": "CISA_KEV",
+        "publish_date": "2026-07-10",
+        "title": "[CISA KEV] Balbooa Forms - Balbooa Forms Unrestricted Upload of File with Dangerous Type Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-56291"
+        ],
+        "raw_content": "CVE: CVE-2026-56291\n廠商: Balbooa\n產品: Forms\n漏洞名稱: Balbooa Forms Unrestricted Upload of File with Dangerous Type Vulnerability\n說明: Balbooa Forms contains an unrestricted upload of file with dangerous type vulnerability that allows an unauthenticated arbitrary file upload which could allow uploading of executable files leading to full RCE.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-07-13\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://www.balbooa.com/joomla-forms ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-56291",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-56291"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Balbooa Forms 存在任意檔案上傳漏洞（CVE-2026-56291），未經授權的攻擊者可上傳惡意執行檔並執行任意程式碼（RCE）。此漏洞已被收錄於 CISA KEV 之中，顯示已有在野利用跡象。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-48939",
+        "source": "CISA_KEV",
+        "publish_date": "2026-07-10",
+        "title": "[CISA KEV] iCagenda iCagenda - iCagenda Unrestricted Upload of File with Dangerous Type Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-48939"
+        ],
+        "raw_content": "CVE: CVE-2026-48939\n廠商: iCagenda\n產品: iCagenda\n漏洞名稱: iCagenda Unrestricted Upload of File with Dangerous Type Vulnerability\n說明: iCagenda contains an unrestricted upload of file with dangerous type vulnerability that allows the upload of arbitrary files in the file attachment feature, ultimately resulting in PHP code upload and execution.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-07-13\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://www.icagenda.com/#download ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-48939",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-48939"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "iCagenda 存在未限制上傳危險類型檔案的漏洞（CVE-2026-48939），允許攻擊者透過附件功能上傳並執行任意 PHP 程式碼。此漏洞已被 CISA 列入已知遭利用漏洞清單（KEV），面臨極高的在野攻擊風險。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
