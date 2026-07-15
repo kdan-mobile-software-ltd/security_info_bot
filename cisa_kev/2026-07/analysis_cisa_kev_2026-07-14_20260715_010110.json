@@ -1,0 +1,130 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-07-15T01:01:10.410334",
+  "count": 4,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2026-56155",
+        "source": "CISA_KEV",
+        "publish_date": "2026-07-14",
+        "title": "[CISA KEV] Microsoft Active Directory Federation Services - Microsoft Active Directory Federation Services Insufficient Granularity of Access Control Vulnerability ",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-56155"
+        ],
+        "raw_content": "CVE: CVE-2026-56155\n廠商: Microsoft\n產品: Active Directory Federation Services\n漏洞名稱: Microsoft Active Directory Federation Services Insufficient Granularity of Access Control Vulnerability \n說明: Microsoft Active Directory Federation Services contains an insufficient granularity of access control vulnerability that allows an authorized attacker to elevate privileges locally.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-07-28\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-56155 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-56155",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-56155"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "High",
+        "summary": "Microsoft Active Directory Federation Services (AD FS) 存在存取控制權限劃分不足漏洞（CVE-2026-56155），已被 CISA 列入已知利用漏洞清單。授權的攻擊者可利用此漏洞在本地提升權限，進而威脅網域安全。",
+        "recommendation": "1. 盤點並確認「AD(Active Directory)主機」與「Windows Server 2019」是否啟用 AD FS 服務。\n2. 若有啟用，請立即至微軟官方網站（MSRC）下載並安裝對應的安全更新。\n3. 嚴格限制 AD 主機的本地存取權限，並加強監控異常的權限變更與登入事件。",
+        "company_relevance": "M",
+        "affected_assets": [
+          "AD(Active Directory)主機",
+          "資訊軟體-伺服器軟體-Windows Server 2019"
+        ],
+        "responsible_unit": "RR40"
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-56164",
+        "source": "CISA_KEV",
+        "publish_date": "2026-07-14",
+        "title": "[CISA KEV] Microsoft SharePoint Server - Microsoft SharePoint Server Missing Authentication for Critical Function Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-56164"
+        ],
+        "raw_content": "CVE: CVE-2026-56164\n廠商: Microsoft\n產品: SharePoint Server\n漏洞名稱: Microsoft SharePoint Server Missing Authentication for Critical Function Vulnerability\n說明: Microsoft SharePoint contains a missing authentication for critical function vulnerability that allows an unauthorized attacker to elevate privileges over a network.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-07-17\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-56164 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-56164",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-56164"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Microsoft SharePoint Server 存在關鍵功能缺失身份驗證漏洞（CVE-2026-56164），允許未授權的攻擊者在網路上提升權限，已被 CISA 列入已知利用漏洞清單。經評估，公司資產清冊中並無使用 Microsoft SharePoint Server，因此無直接安全風險。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-15409",
+        "source": "CISA_KEV",
+        "publish_date": "2026-07-14",
+        "title": "[CISA KEV] SonicWall SMA1000 Appliances - SonicWall SMA1000 Appliances Server-Side Request Forgery Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-15409"
+        ],
+        "raw_content": "CVE: CVE-2026-15409\n廠商: SonicWall\n產品: SMA1000 Appliances\n漏洞名稱: SonicWall SMA1000 Appliances Server-Side Request Forgery Vulnerability\n說明: SonicWall SMA1000 Appliances contain a server-side request forgery vulnerability that could allow a remote unauthenticated attacker to potentially cause the appliance to make requests to unintended location.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-07-17\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0008 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-15409",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-15409"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "SonicWall SMA1000 設備存在未授權伺服器端請求偽造（SSRF）漏洞（CVE-2026-15409），已被 CISA 列入已知利用漏洞清單。遠端攻擊者可利用此漏洞迫使受影響設備向非預期位置發送請求，進而探測內部網路或進行其他惡意操作。經盤點，本公司並未部署該品牌之相關設備。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-15410",
+        "source": "CISA_KEV",
+        "publish_date": "2026-07-14",
+        "title": "[CISA KEV] SonicWall SMA1000 Appliances - SonicWall SMA1000 Appliances Code Injection Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-15410"
+        ],
+        "raw_content": "CVE: CVE-2026-15410\n廠商: SonicWall\n產品: SMA1000 Appliances\n漏洞名稱: SonicWall SMA1000 Appliances Code Injection Vulnerability\n說明: SonicWall SMA1000 Appliances contain a code injection vulnerability which in specific conditions could potentially enable a remote authenticated attacker as administrator to execute arbitrary OS commands.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-07-17\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0008 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-15410",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-15410"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "本情資指出 SonicWall SMA1000 系列設備存在代碼注入漏洞（CVE-2026-15410），遠端具備管理員權限的攻擊者可在特定條件下執行任意作業系統指令。由於此漏洞已被收錄於 CISA KEV，建議相關用戶儘速修補。經評估，本公司並未部署此設備，故無直接影響。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
