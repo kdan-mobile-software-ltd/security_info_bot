@@ -1,0 +1,97 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-07-17T01:00:48.230131",
+  "count": 3,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2026-58644",
+        "source": "CISA_KEV",
+        "publish_date": "2026-07-16",
+        "title": "[CISA KEV] Microsoft SharePoint - Microsoft SharePoint Deserialization of Untrusted Data Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-58644"
+        ],
+        "raw_content": "CVE: CVE-2026-58644\n廠商: Microsoft\n產品: SharePoint\n漏洞名稱: Microsoft SharePoint Deserialization of Untrusted Data Vulnerability\n說明: Microsoft SharePoint contains a deserialization of untrusted data vulnerability that allows an unauthorized attacker to execute code over a network.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-07-19\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-58644 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-58644",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-58644"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Microsoft SharePoint 存在反序列化漏洞（CVE-2026-58644），允許未授權的遠端攻擊者執行任意程式碼（RCE）。此漏洞已被列入 CISA KEV，顯示已有在野利用，但由於本公司並未部署或使用 Microsoft SharePoint，因此不受此漏洞影響。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-25089",
+        "source": "CISA_KEV",
+        "publish_date": "2026-07-16",
+        "title": "[CISA KEV] Fortinet FortiSandbox - Fortinet FortiSandbox OS Command Injection Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-25089"
+        ],
+        "raw_content": "CVE: CVE-2026-25089\n廠商: Fortinet\n產品: FortiSandbox\n漏洞名稱: Fortinet FortiSandbox OS Command Injection Vulnerability\n說明: Fortinet FortiSandbox, FortiSandbox Cloud, and FortiSandbox PaaS contain an OS command injection vulnerability that allows an unauthenticated attacker to execute unauthorized commands via specifically crafted HTTP requests.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-07-19\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://fortiguard.fortinet.com/psirt/FG-IR-26-141 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-25089",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-25089"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Fortinet FortiSandbox 存在 OS 命令注入漏洞（CVE-2026-25089），允許未授權的攻擊者透過特製的 HTTP 請求執行任意系統命令。經比對公司資產清冊，本公司並未使用該受影響產品，無直接安全風險。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-39808",
+        "source": "CISA_KEV",
+        "publish_date": "2026-07-16",
+        "title": "[CISA KEV] Fortinet FortiSandbox - Fortinet FortiSandbox OS Command Injection Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-39808"
+        ],
+        "raw_content": "CVE: CVE-2026-39808\n廠商: Fortinet\n產品: FortiSandbox\n漏洞名稱: Fortinet FortiSandbox OS Command Injection Vulnerability\n說明: Fortinet FortiSandbox contains an OS command injection vulnerability that could allow an unauthenticated attacker to execute unauthorized code or commands via crafted HTTP requests.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-07-19\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://fortiguard.fortinet.com/psirt/FG-IR-26-100 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-39808",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-39808"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Fortinet FortiSandbox 存在作業系統指令注入漏洞（CVE-2026-39808），已被 CISA 列入已知利用漏洞清單（KEV）。遠端且未經授權的攻擊者可透過發送特製的 HTTP 請求，在系統上執行任意指令或代碼。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
