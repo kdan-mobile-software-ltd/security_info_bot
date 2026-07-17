@@ -35,12 +35,15 @@ gcloud artifacts repositories create "$REPO" \
 本機 Docker(可控制 build context、確保含 `.git`):
 
 ```bash
+git branch -D data 2>/dev/null   # 見下方警告:本機 data 分支會被烤進映像
 gcloud auth configure-docker "$REGION-docker.pkg.dev"
 docker build --platform linux/amd64 -t "$IMAGE" .
 docker push "$IMAGE"
 ```
 
 > ⚠️ **必加 `--platform linux/amd64`**:Cloud Run 只跑 amd64,若在 Apple Silicon(arm64)build 而未指定平台,容器會以「Application failed to start / exec format error」啟動失敗。
+>
+> ⚠️ **build 前務必刪掉本機 `data` 分支**:映像 `COPY . /app` 且刻意保留 `.git`,故本機若有 `data` 分支會**連同它當時的位置一起烤進映像**。`_ensure_worktree` 在本機分支已存在時**不會 fetch**,容器於是永遠工作在那個凍結的快照上。歸檔本身看不出異狀(append-only + push 時 rebase),但**任何需要讀回狀態的功能會直接失效**——TWCERT staleness 告警會每天判定「第一次執行」而永遠不發信。`origin/data` 保有完整歷史,本機分支沒有保留價值。詳見 `archive-branch.md`。
 >
 > **本機無 `docker buildx` 時,改用 Cloud Build(推薦)**:`gcloud builds submit --tag "$IMAGE" --project "$PROJECT_ID" .` —— 在 Google amd64 機器原生 build,免平台問題。本 repo 已附 `.gcloudignore`(保留 `.git`,故映像含 git 歷史、歸檔可運作);需先啟用 `cloudbuild.googleapis.com`。
 
@@ -90,16 +93,26 @@ gcloud run jobs create intel-cisa \
   --set-secrets "GEMINI_API_KEY=GEMINI_API_KEY:latest,GITHUB_PAT=GITHUB_PAT:latest"
 ```
 
-TWCERT(加 TWCERT secrets):
+TWCERT(加 TWCERT secrets;`SMTP_*` / `OPS_ALERT_EMAILS` 供 staleness 告警寄信):
 
 ```bash
 gcloud run jobs create intel-twcert \
   --image "$IMAGE" --region "$REGION" --project "$PROJECT_ID" \
   --service-account "$RUNTIME_SA" \
   --max-retries 1 --task-timeout 900 --memory 512Mi \
-  --set-env-vars "INTEL_SOURCE=twcert,$COMMON_ENV" \
-  --set-secrets "GEMINI_API_KEY=GEMINI_API_KEY:latest,GITHUB_PAT=GITHUB_PAT:latest,TWCERT_ACCOUNT=TWCERT_ACCOUNT:latest,TWCERT_PASSWORD=TWCERT_PASSWORD:latest"
+  --set-env-vars "INTEL_SOURCE=twcert,SMTP_USER=<寄件帳號>,OPS_ALERT_EMAILS=<收件人>,$COMMON_ENV" \
+  --set-secrets "GEMINI_API_KEY=GEMINI_API_KEY:latest,GITHUB_PAT=GITHUB_PAT:latest,TWCERT_ACCOUNT=TWCERT_ACCOUNT:latest,TWCERT_PASSWORD=TWCERT_PASSWORD:latest,SMTP_PASSWORD=SMTP_PASSWORD:latest"
 ```
+
+> ⚠️ **`SMTP_PASSWORD` 與 `OPS_ALERT_EMAILS` 缺一,staleness 告警就靜默失效**:`_smtp_send` 只會記一行 `No recipients configured` 並回傳 False,不會拋錯。此 job 是唯一會寄 ops 告警的 job,故 SMTP 設定必須掛在這裡(step 4 建立的 `SMTP_PASSWORD` secret 若只建不掛,等於沒有)。既有 job 補設定:
+>
+> ```bash
+> gcloud run jobs update intel-twcert --region "$REGION" --project "$PROJECT_ID" \
+>   --update-env-vars "SMTP_USER=<寄件帳號>,OPS_ALERT_EMAILS=<收件人>" \
+>   --update-secrets "SMTP_PASSWORD=SMTP_PASSWORD:latest"
+> ```
+>
+> 告警門檻預設連續 7 天無新情資,以 `TWCERT_STALE_DAYS` 調整(見 `configuration.md`)。實測 TWCERT 最長合法安靜期正好是 7 天,故預設值會在合法安靜期當天觸發一次;要更保守可設 `TWCERT_STALE_DAYS=9`。
 
 ## 7. 手動驗證
 

@@ -32,11 +32,26 @@ Stage 4a (`--notify-risk`, monthly risk-team digest) and Stage 4b (`--publish-in
 | `EMAIL_FROM` | `From:` header (display name + address) | — | Stage 4a/4b (email) |
 | `RISK_TEAM_EMAILS` | Comma-separated recipient list for the monthly risk-team digest | — | Stage 4a (`--notify-risk`) |
 | `INTERNAL_ANNOUNCE_EMAILS` | Comma-separated recipient list for internal RD-manager announcements | — | Stage 4b (`--publish-internal`) |
+| `OPS_ALERT_EMAILS` | Comma-separated recipient list for ops alerts (TWCERT staleness) | — | TWCERT staleness alert |
 
 Notes:
 - The default transport is SMTP with STARTTLS (`smtp.gmail.com:587`). Use a Google Workspace app password or a third-party relay as needed.
 - `RISK_TEAM_EMAILS` and `INTERNAL_ANNOUNCE_EMAILS` accept multiple addresses separated by commas (no spaces required).
 - In **fixture mode** (`USE_FIXTURE_DATA=true`), email is **not sent**. Instead, the rendered HTML is written to `src/data/email_preview_<stage>_<ts>.html` for local review.
+
+## TWCERT staleness alert
+
+TWCERT routinely publishes nothing for days (the longest observed healthy quiet stretch is 7 days), so a broken fetcher and a genuinely quiet TWCERT look identical in the logs. Stage 1 therefore records the server's reported intel total after every TWCERT fetch and alerts when it stops moving.
+
+| Variable | Purpose | Default | Required when |
+|:--|:--|:--|:--|
+| `TWCERT_STALE_DAYS` | Consecutive days with an unchanged server total before alerting | `7` | TWCERT staleness alert |
+
+- State lives on the archive branch at `twcert/_fetch_state.json` (`last_total` / `last_changed` / `alerted`); the container is stateless, so the branch is the only thing that survives between daily runs. With `GIT_ARCHIVE_BRANCH` unset the check cannot persist state and never alerts.
+- Each quiet stretch alerts **once**. The flag is only recorded after the mail is actually delivered, so a failed send retries on the next run.
+- Delivery is email via `OPS_ALERT_EMAILS`, plus the existing `[OPS]` `log.error` line. **With `OPS_ALERT_EMAILS` unset nothing is delivered** — `_smtp_send` logs `No recipients configured` and returns False. The `[OPS]` log line alone reaches no one unless a log-based alert policy exists in GCP.
+- `--dry-run` renders a preview instead of sending and never writes state.
+- The check never raises: any failure is logged as a warning and the pipeline continues.
 
 ## Google Service Account credential resolution
 

@@ -23,6 +23,16 @@ Each `commit_files` call:
 - Runs `git add -A` then `git commit` with bot identity (`GIT_AUTHOR_NAME=security-info-bot`).
 - If `GIT_ARCHIVE_AUTO_PUSH=true`, runs `git push origin {branch}` from the worktree immediately after.
 
+## ⚠️ The worktree can be stale — never read state from it
+
+`_ensure_worktree` guarantees *a* worktree, **not** a worktree of the current `origin/{branch}`. Step 1 only fetches when the local branch is **absent** (`_branch_exists` → `_fetch_remote_branch`); when a local `{branch}` already exists it is used **as-is, with no fetch**. `Dockerfile` is `COPY . /app` and both `.dockerignore` and `.gcloudignore` deliberately keep `.git`, so **a local archive branch left in the checkout you build from gets baked into the image**, and every container then works from that frozen snapshot.
+
+Writing tolerates this: the archive only appends uniquely-named files, and `_push` rebases, so a stale base still lands correctly. **Reading does not.** A stale worktree reports every newer file as absent — indistinguishable from "not written yet".
+
+Consequences:
+- `read_archive_file` therefore bypasses the worktree entirely and reads `origin/{branch}` (`git ls-remote --exit-code` → `git fetch` → `git show FETCH_HEAD:{path}`). It returns `None` only for "branch disabled / remote branch absent / file not on the branch", and **raises** when the remote is unreachable — so a caller keeping state on the branch can tell "no state yet" from "could not read state". Reporting the latter as the former silently resets any state machine (this is how the TWCERT staleness alert lost its quiet streak; see `configuration.md`).
+- **Do not leave a local `data` branch in a checkout used to build images.** `git branch -D data` before building; `origin/data` holds the full history and the branch has no local value.
+
 ## Directory layout in the archive branch
 
 ```
