@@ -142,7 +142,11 @@ def _fetch_intel_list(
     if cutoff_ms is not None:
         page_items, stop = _filter_and_check_cutoff(page_items, cutoff_ms)
         if stop:
-            log.info("All remaining items are older than %s, stopping early", since_date)
+            log.info(
+                "Reached items older than %s; no more pages to scan (kept %d)",
+                since_date,
+                len(page_items),
+            )
             return page_items[:limit] if limit is not None else page_items
 
     items = page_items
@@ -165,7 +169,11 @@ def _fetch_intel_list(
             fetched += len(raw_page)
             log.info("Fetched %d / %d items (kept %d within cutoff)", fetched, total, len(items))
             if stop:
-                log.info("All remaining items are older than %s, stopping early", since_date)
+                log.info(
+                    "Reached items older than %s; no more pages to scan (kept %d)",
+                    since_date,
+                    len(items),
+                )
                 break
         else:
             items.extend(raw_page)
