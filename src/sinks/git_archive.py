@@ -114,6 +114,69 @@ def _ensure_worktree() -> Path:
     return wt
 
 
+def read_archive_file(relpath: str) -> str | None:
+    """Return the text of relpath on the archive branch as it exists on origin.
+
+    Reads origin directly instead of the worktree: _ensure_worktree reuses a
+    pre-existing local branch *without fetching*, so a stale branch baked into a
+    container image (the Dockerfile COPYs .git) would report every file as absent.
+    Archiving tolerates that — it only appends uniquely-named files and rebases on
+    push — but a caller that reads state back cannot.
+
+    Returns None only when there is genuinely nothing to read: the archive branch
+    is disabled, the remote branch does not exist yet, or the file is not on it.
+    Raises when the remote cannot be reached, so that callers keeping state on the
+    branch can tell "no state yet" from "could not read state".
+    """
+    if not GIT_ARCHIVE_BRANCH:
+        return None
+
+    repo = _repo_root()
+    # --exit-code distinguishes "remote has no such branch" (2) from a transport
+    # failure (anything else); plain `git fetch` collapses both into non-zero.
+    ls = subprocess.run(
+        ["git", "ls-remote", "--exit-code", "--heads", "origin", GIT_ARCHIVE_BRANCH],
+        capture_output=True,
+        cwd=repo,
+    )
+    if ls.returncode == 2:
+        return None
+    if ls.returncode != 0:
+        raise RuntimeError(
+            f"git_archive: cannot reach origin to read {relpath}: "
+            f"{ls.stderr.decode(errors='replace').strip()}"
+        )
+
+    fetch = subprocess.run(
+        ["git", "fetch", "origin", GIT_ARCHIVE_BRANCH],
+        capture_output=True,
+        cwd=repo,
+    )
+    if fetch.returncode != 0:
+        raise RuntimeError(
+            f"git_archive: failed to fetch '{GIT_ARCHIVE_BRANCH}' to read {relpath}: "
+            f"{fetch.stderr.decode(errors='replace').strip()}"
+        )
+
+    # FETCH_HEAD is what we just fetched, independent of any stale local branch.
+    if (
+        subprocess.run(
+            ["git", "cat-file", "-e", f"FETCH_HEAD:{relpath}"],
+            capture_output=True,
+            cwd=repo,
+        ).returncode
+        != 0
+    ):
+        return None
+    blob = subprocess.run(
+        ["git", "show", f"FETCH_HEAD:{relpath}"],
+        capture_output=True,
+        check=True,
+        cwd=repo,
+    )
+    return blob.stdout.decode("utf-8")
+
+
 def commit_files(
     files: list[Path],
     message: str,

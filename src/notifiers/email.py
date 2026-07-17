@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import html as html_lib
 import smtplib
 from datetime import datetime, timedelta, timezone
 from email.mime.text import MIMEText
@@ -9,6 +10,7 @@ from pathlib import Path
 from src.config import (
     EMAIL_FROM,
     INTERNAL_ANNOUNCE_EMAILS,
+    OPS_ALERT_EMAILS,
     RISK_TEAM_EMAILS,
     SMTP_HOST,
     SMTP_PASSWORD,
@@ -74,3 +76,20 @@ def send_internal_announcement(records: list[dict], dry_run: bool = False) -> bo
         _preview("internal", html)
         return True
     return _smtp_send(subject, html, INTERNAL_ANNOUNCE_EMAILS)
+
+
+def send_ops_email(title: str, detail: str, dry_run: bool = False) -> bool:
+    """Send an ops alert by email, and keep emitting the existing [OPS] log line."""
+    send_ops_alert(title, detail)
+    subject = f"[資安情資][OPS] {title}"
+    body = html_lib.escape(detail).replace("\n", "<br>")
+    html = (
+        '<html><body style="font-family: sans-serif;">'
+        f"<h3>{html_lib.escape(title)}</h3>"
+        f"<p>{body}</p>"
+        "</body></html>"
+    )
+    if dry_run or USE_FIXTURE_DATA:
+        _preview("ops", html)
+        return True
+    return _smtp_send(subject, html, OPS_ALERT_EMAILS)

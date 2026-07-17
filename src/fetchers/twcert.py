@@ -131,7 +131,8 @@ def _fetch_intel_list(
     session: requests.Session,
     since_date: str | None = None,
     limit: int | None = None,
-) -> list[dict]:
+) -> tuple[list[dict], int]:
+    """Return (list entries within the cutoff, total records reported by the server)."""
     cutoff_ms = _since_to_epoch_ms(since_date) if since_date else None
 
     rest = _fetch_list_page(session, 1, PAGE_SIZE)
@@ -147,7 +148,7 @@ def _fetch_intel_list(
                 since_date,
                 len(page_items),
             )
-            return page_items[:limit] if limit is not None else page_items
+            return (page_items[:limit] if limit is not None else page_items), total
 
     items = page_items
     fetched = len(rest.get("infoList") or [])
@@ -180,7 +181,7 @@ def _fetch_intel_list(
             fetched += len(raw_page)
             log.info("Fetched %d / %d items", fetched, total)
 
-    return items[:limit] if limit is not None else items
+    return (items[:limit] if limit is not None else items), total
 
 
 def _fetch_detail(session: requests.Session, info_id: str) -> dict:
@@ -244,7 +245,10 @@ def _extract_cve_ids(text: str) -> list[str]:
     return list(dict.fromkeys(cves))
 
 
-def fetch_twcert(since_date: str | None = None, limit: int | None = None) -> list[IntelItem]:
+def fetch_twcert(
+    since_date: str | None = None, limit: int | None = None
+) -> tuple[list[IntelItem], int]:
+    """Return (fetched intel items, total records TWCERT reports on the server)."""
     if since_date is None:
         since_date = datetime.now(_TW).strftime("%Y-%m-%d")
 
@@ -259,7 +263,7 @@ def fetch_twcert(since_date: str | None = None, limit: int | None = None) -> lis
 
     try:
         _login(session)
-        list_items = _fetch_intel_list(session, since_date, limit=limit)
+        list_items, server_total = _fetch_intel_list(session, since_date, limit=limit)
     except TwcertLoginError:
         raise
     except Exception as e:
@@ -307,4 +311,4 @@ def fetch_twcert(since_date: str | None = None, limit: int | None = None) -> lis
         items.append(item)
 
     log.info("Fetched %d intel items from TWCERT", len(items))
-    return items
+    return items, server_total

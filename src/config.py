@@ -38,6 +38,9 @@ def parse_emails(raw: str | None) -> list[str]:
 
 RISK_TEAM_EMAILS = parse_emails(os.environ.get("RISK_TEAM_EMAILS", ""))
 INTERNAL_ANNOUNCE_EMAILS = parse_emails(os.environ.get("INTERNAL_ANNOUNCE_EMAILS", ""))
+OPS_ALERT_EMAILS = parse_emails(os.environ.get("OPS_ALERT_EMAILS", ""))
+
+TWCERT_STALE_DAYS = int(os.environ.get("TWCERT_STALE_DAYS") or "7")
 
 SCOPES = [
     "https://www.googleapis.com/auth/spreadsheets",

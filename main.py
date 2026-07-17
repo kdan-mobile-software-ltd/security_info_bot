@@ -16,6 +16,7 @@ from src.fetchers.storage import (
 )
 from src.fetchers.twcert import fetch_twcert
 from src.models import AnalysisResult, IntelItem
+from src.monitors.staleness import check_twcert_staleness
 from src.notifiers.email import send_internal_announcement, send_risk_digest
 from src.parsers.ioc_xlsx import write_ioc_txt
 from src.sinks.git_archive import commit_files, ioc_file_url
@@ -51,9 +52,20 @@ def stage_fetch(
     since_date: str | None = None,
     save: bool = False,
     limit: int | None = None,
+    dry_run: bool = False,
 ) -> list[IntelItem]:
     if source == "twcert":
-        items = fetch_twcert(since_date, limit=limit)
+        items, server_total = fetch_twcert(since_date, limit=limit)
+        # The run date, never since_date: server_total is global rather than
+        # date-filtered, so a backdated --since backfill would stamp the state
+        # with its window and fabricate a months-long quiet streak.
+        # dry_run (not `save`) gates the alert: `save` only controls archiving the
+        # fetched items, so deriving it from `save` would email under --dry-run.
+        check_twcert_staleness(
+            server_total,
+            datetime.now(_TW).strftime("%Y-%m-%d"),
+            dry_run=dry_run,
+        )
     elif source == "cisa_kev":
         items = fetch_cisa_kev(since_date)
         if limit is not None:
@@ -238,7 +250,11 @@ def run(
             log.info("Limiting to %d items", len(items))
     else:
         items = stage_fetch(
-            source, since_date=since_date, save=save_data or fetch_only, limit=limit
+            source,
+            since_date=since_date,
+            save=save_data or fetch_only,
+            limit=limit,
+            dry_run=dry_run,
         )
 
     if not items:
