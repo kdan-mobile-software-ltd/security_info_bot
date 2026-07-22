@@ -1,0 +1,131 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-07-22T01:01:05.597685",
+  "count": 4,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2026-60137",
+        "source": "CISA_KEV",
+        "publish_date": "2026-07-21",
+        "title": "[CISA KEV] WordPress Core - WordPress Core SQL Injection Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-60137"
+        ],
+        "raw_content": "CVE: CVE-2026-60137\n廠商: WordPress\n產品: Core\n漏洞名稱: WordPress Core SQL Injection Vulnerability\n說明: WordPress Core contains a SQL injection vulnerability when a plugin or theme passes untrusted input to the parameter. This vulnerability can be chained with CVE-2026-63030 to allow an unauthenticated attacker to gain remote code execution on default WordPress installations.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-08-04\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/ ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-60137",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-60137"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "Critical",
+        "summary": "WordPress Core 存在 SQL 注入漏洞（CVE-2026-60137），已被 CISA 列入已知被利用漏洞清單。該漏洞可與其他漏洞串聯，允許未授權的攻擊者在預設 WordPress 安裝上執行遠端程式碼（RCE），對公司現有的 WordPress 部落格平台構成嚴重威脅。",
+        "recommendation": "1. 立即將 WordPress 核心系統升級至 7.0.2 或最新安全版本。\n2. 檢查並更新所有已安裝的 WordPress 插件與主題，避免未受信任的輸入傳遞至參數。\n3. 在未完成升級前，建議於 WAF（如 AWS WAF）部署 SQL 注入防禦規則，並限制管理後台的存取來源 IP。",
+        "company_relevance": "H",
+        "affected_assets": [
+          "Wordpress"
+        ],
+        "responsible_unit": "WF20, DA20"
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-63030",
+        "source": "CISA_KEV",
+        "publish_date": "2026-07-21",
+        "title": "[CISA KEV] WordPress Core - WordPress Core Interpretation Conflict Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-63030"
+        ],
+        "raw_content": "CVE: CVE-2026-63030\n廠商: WordPress\n產品: Core\n漏洞名稱: WordPress Core Interpretation Conflict Vulnerability\n說明: WordPress Core contains an interpretation conflict vulnerability that could allow an attacker to perform SQL Injection and achieve Remote Code Execution. This vulnerability can be chained with CVE-2026-60137.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-07-24\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/ ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-63030",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-63030"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "Critical",
+        "summary": "WordPress Core 存在解析衝突漏洞（CVE-2026-63030），攻擊者可藉此進行 SQL 注入並實現遠端程式碼執行（RCE）。此漏洞已被收錄於 CISA KEV，顯示已有在野活躍攻擊，由於公司內部使用 WordPress 作為部落格平台，面臨極高安全風險。",
+        "recommendation": "1. 立即將所有 WordPress 網站升級至官方釋出的安全版本（WordPress 7.0.2 或最新版本）。2. 限制 WordPress 管理後台（wp-admin）的存取來源 IP，並啟用雙因子認證（2FA）。3. 檢查網站存取日誌，排查是否有異常的 SQL 注入或未授權的程式碼執行跡象。",
+        "company_relevance": "H",
+        "affected_assets": [
+          "Wordpress"
+        ],
+        "responsible_unit": "WF20, DA20"
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-0770",
+        "source": "CISA_KEV",
+        "publish_date": "2026-07-21",
+        "title": "[CISA KEV] Langflow Langflow - Langflow Inclusion of Functionality from Untrusted Control Sphere Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-0770"
+        ],
+        "raw_content": "CVE: CVE-2026-0770\n廠商: Langflow\n產品: Langflow\n漏洞名稱: Langflow Inclusion of Functionality from Untrusted Control Sphere Vulnerability\n說明: Langflow contains an inclusion of functionality from untrusted control sphere vulnerability that allows remote attackers to execute arbitrary code on affected installations. \nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-07-24\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://github.com/langflow-ai/langflow/releases/tag/v1.9.0 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-0770 ",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-0770"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "CISA 將 Langflow 的安全漏洞 CVE-2026-0770 列入已知遭利用漏洞清單（KEV）。該漏洞源於包含來自不受信任控制領域的功能，允許遠端攻擊者在受影響的系統上執行任意程式碼（RCE）。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2021-27137",
+        "source": "CISA_KEV",
+        "publish_date": "2026-07-21",
+        "title": "[CISA KEV] DD-WRT DD-WRT - DD-WRT Stack-Based Buffer Overflow Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2021-27137"
+        ],
+        "raw_content": "CVE: CVE-2021-27137\n廠商: DD-WRT\n產品: DD-WRT\n漏洞名稱: DD-WRT Stack-Based Buffer Overflow Vulnerability\n說明: DD-WRT contains a stack-based buffer overflow vulnerability that could allow an unauthenticated attacker to overflow an internal buffer used by UPnP and trigger a code execution vulnerability.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-07-24\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "This vulnerability affects a common open-source component, third-party library, proprietary implementation, or a protocol used by different products. Please check with specific vendors for information on patching status. For more information, please see: https://svn.dd-wrt.com/changeset/45724 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2021-27137",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-27137"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "此漏洞（CVE-2021-27137）存在於 DD-WRT 韌體的 UPnP 元件中，未經身分驗證的攻擊者可利用堆疊緩衝區溢位漏洞執行任意程式碼。該漏洞已被列入 CISA KEV 列表中，顯示已有在野利用之活躍攻擊。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
