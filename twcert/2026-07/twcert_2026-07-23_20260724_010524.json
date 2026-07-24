@@ -1,0 +1,54 @@
+{
+  "source": "twcert",
+  "fetched_at": "2026-07-24T01:05:24.282655",
+  "count": 1,
+  "items": [
+    {
+      "intel_id": "TWCERT-TWISAC-202607-0023",
+      "source": "TWCERT",
+      "publish_date": "2026-07-23 16:10",
+      "title": "[TLP CLEAR] CISA新增10個已知遭駭客利用之漏洞至KEV目錄(2026/07/13-2026/07/19)",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2008-4128",
+        "CVE-2026-56155",
+        "CVE-2026-56164",
+        "CVE-2026-15409",
+        "CVE-2026-15410",
+        "CVE-2026-46817",
+        "CVE-2023-4346",
+        "CVE-2026-58644",
+        "CVE-2026-25089",
+        "CVE-2026-39808"
+      ],
+      "raw_content": "【CVE-2008-4128】Cisco IOS Cross-Site Request Forgery Vulnerability (CVSS v3.1: 4.3)\n【是否遭勒索軟體利用:未知】\nCisco 871 Integrated Services Router 所使用的 Cisco IOS 12.4，其 HTTP Administration 元件存在多個跨網站請求偽造漏洞。遠端攻擊者可能誘使使用者發送特製請求，進而在受影響裝置上執行任意指令。\n\n【CVE-2026-56155】Microsoft Active Directory Federation Services Insufficient Granularity of Access Control Vulnerability (CVSS v3.1: 7.8)\n【是否遭勒索軟體利用:未知】\nMicrosoft Active Directory Federation Services 存在存取控制粒度不足漏洞，允許經授權的攻擊者在本機提升權限。\n\n【CVE-2026-56164】Microsoft SharePoint Server Missing Authentication for Critical Function Vulnerability (CVSS v3.1: 5.3)\n【是否遭勒索軟體利用:未知】\nMicrosoft SharePoint Server存在關鍵功能缺乏身分鑑別漏洞，允許未經授權的攻擊者透過網路提升權限。\n\n【CVE-2026-15409】SonicWall SMA1000 Appliances Server-Side Request Forgery Vulnerability (CVSS v3.1: 10.0)\n【是否遭勒索軟體利用:未知】\nSonicWall SMA1000 Appliances 存在伺服器端請求偽造漏洞，可能允許未經身分驗證的遠端攻擊者使裝置向非預期位置發送請求。\n\n【CVE-2026-15410】SonicWall SMA1000 Appliances Code Injection Vulnerability (CVSS v3.1: 7.2)\n【是否遭勒索軟體利用:未知】\nSonicWall SMA1000 Appliances 存在程式碼注入漏洞，在特定條件下，可能允許經身份驗證並具有管理員權限的遠端攻擊者執行任意作業系統指令。\n\n【CVE-2026-46817】Oracle E-Business Suite Improper Privilege Management Vulnerability (CVSS v3.1: 9.8)\n【是否遭勒索軟體利用:未知】\nOracle E-Business Suite 存在權限管理不當漏洞，允許可透過 HTTP 存取系統的未經身分驗證攻擊者入侵 Oracle Payments；成功利用此漏洞可能導致 Oracle Payments 遭到接管。\n\n【CVE-2023-4346】KNX Association KNX Protocol Connection Authorization Option 1 Overly Restrictive Account Lockout Mechanism Vulnerability (CVSS v3.1: 7.5)\n【是否遭勒索軟體利用:未知】\nKNX Association KNX Protocol Connection Authorization Option 1 存在帳戶鎖定機制不當漏洞，可能允許攻擊者清除所有未啟用額外安全性選項的裝置，並設定BCU金鑰以鎖定裝置。\n\n【CVE-2026-58644】Microsoft SharePoint Server Deserialization of Untrusted Data Vulnerability (CVSS v3.1: 9.8)\n【是否遭勒索軟體利用:未知】\nMicrosoft SharePoint Server 存在不受信任資料反序列化漏洞，可能允許未經授權的攻擊者透過網路執行程式碼。\n\n【CVE-2026-25089】Fortinet FortiSandbox OS Command Injection Vulnerability (CVSS v3.1: 9.8)\n【是否遭勒索軟體利用:未知】\nFortinet FortiSandbox、FortiSandbox Cloud 及 FortiSandbox PaaS 的 Web UI 存在作業系統指令注入漏洞，可能允許未經身分驗證的攻擊者透過特製的 HTTP 請求執行未經授權的指令。\n\n【CVE-2026-39808】Fortinet FortiSandbox OS Command Injection Vulnerability (CVSS v3.1: 9.8)\n【是否遭勒索軟體利用:未知】\nFortinet FortiSandbox 的 API 端點存在作業系統指令注入漏洞，可能允許未經身分驗證的攻擊者透過特製的 HTTP 請求執行未經授權的程式碼或指令。\n\n影響平台：【CVE-2008-4128】\nCisco 871 Integrated Services Router 所使用之 Cisco IOS 12.4，涉及 HTTP Administration 元件。\n\n【CVE-2026-56155】\n請參考官方所列的影響版本\nhttps://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-56155\n\n【CVE-2026-56164】\n請參考官方所列的影響版本\nhttps://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-56164\n\n【CVE-2026-15409】\n請參考官方所列的影響版本\nhttps://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0008\n\n【CVE-2026-15410】\n請參考官方所列的影響版本\nhttps://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0008\n\n【CVE-2026-46817】\n請參考官方所列的影響版本\nhttps://www.oracle.com/security-alerts/cspumay2026.html\n\n【CVE-2023-4346】\n請參考所列影響版本\nhttps://www.cisa.gov/news-events/ics-advisories/icsa-23-236-01\n\n【CVE-2026-58644】\n請參考官方所列的影響版本\nhttps://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-58644\n\n【CVE-2026-25089】\n請參考官方所列的影響版本\nhttps://fortiguard.fortinet.com/psirt/FG-IR-26-141\n\n【CVE-2026-39808】\n請參考官方所列的影響版本\nhttps://fortiguard.fortinet.com/psirt/FG-IR-26-100\n\n建議措施：【CVE-2008-4128】\n受影響產品可能已達生命週期終止（EoL）和／或服務終止（EoS）階段，建議使用者停止使用該產品。\nhttps://www.cisco.com/c/en/us/obsolete/ios-nx-os-software/cisco-ios-software-releases-12-4-mainline.html\n\n【CVE-2026-56155】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-56155\n\n【CVE-2026-56164】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-56164\n\n【CVE-2026-15409】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0008\n\n【CVE-2026-15410】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0008\n\n【CVE-2026-46817】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://www.oracle.com/security-alerts/cspumay2026.html\n\n【CVE-2023-4346】\n官方已針對漏洞釋出緩解措施\nhttps://www.cisa.gov/news-events/ics-advisories/icsa-23-236-01\n\n【CVE-2026-58644】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-58644\n\n【CVE-2026-25089】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://fortiguard.fortinet.com/psirt/FG-IR-26-141\n\n【CVE-2026-39808】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://fortiguard.fortinet.com/psirt/FG-IR-26-100\n\n參考資訊：【CVE-2008-4128】\n1.https://nvd.nist.gov/vuln/detail/cve-2008-4128\n2.https://www.cisco.com/c/en/us/obsolete/ios-nx-os-software/cisco-ios-software-releases-12-4-mainline.html\n\n【CVE-2026-56155】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-56155\n2.https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-56155\n\n【CVE-2026-56164】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-56164\n2.https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-56164\n\n【CVE-2026-15409】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-15409\n2.https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0008\n\n【CVE-2026-15410】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-15410\n2.https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0008\n\n【CVE-2026-46817】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-46817\n2.https://www.oracle.com/security-alerts/cspumay2026.html\n\n【CVE-2023-4346】\n1.https://nvd.nist.gov/vuln/detail/cve-2023-4346\n2.https://www.cisa.gov/news-events/ics-advisories/icsa-23-236-01\n\n【CVE-2026-58644】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-58644\n2.https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-58644\n\n【CVE-2026-25089】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-25089\n2.https://fortiguard.fortinet.com/psirt/FG-IR-26-141\n\n【CVE-2026-39808】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-39808\n2.https://fortiguard.fortinet.com/psirt/FG-IR-26-100\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://nvd.nist.gov/vuln/detail/cve-2008-4128",
+        "https://www.cisco.com/c/en/us/obsolete/ios-nx-os-software/cisco-ios-software-releases-12-4-mainline.html",
+        "https://nvd.nist.gov/vuln/detail/cve-2026-56155",
+        "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-56155",
+        "https://nvd.nist.gov/vuln/detail/cve-2026-56164",
+        "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-56164",
+        "https://nvd.nist.gov/vuln/detail/cve-2026-15409",
+        "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0008",
+        "https://nvd.nist.gov/vuln/detail/cve-2026-15410",
+        "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0008",
+        "https://nvd.nist.gov/vuln/detail/cve-2026-46817",
+        "https://www.oracle.com/security-alerts/cspumay2026.html",
+        "https://nvd.nist.gov/vuln/detail/cve-2023-4346",
+        "https://www.cisa.gov/news-events/ics-advisories/icsa-23-236-01",
+        "https://nvd.nist.gov/vuln/detail/cve-2026-58644",
+        "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-58644",
+        "https://nvd.nist.gov/vuln/detail/cve-2026-25089",
+        "https://fortiguard.fortinet.com/psirt/FG-IR-26-141",
+        "https://nvd.nist.gov/vuln/detail/cve-2026-39808",
+        "https://fortiguard.fortinet.com/psirt/FG-IR-26-100"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    }
+  ]
+}
