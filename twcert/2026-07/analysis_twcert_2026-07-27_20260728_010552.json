@@ -1,0 +1,107 @@
+{
+  "source": "twcert",
+  "analyzed_at": "2026-07-28T01:05:52.869513",
+  "count": 2,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202607-0031",
+        "source": "TWCERT",
+        "publish_date": "2026-07-27 17:41",
+        "title": "[TLP AMBER] TWCERT-IoC 觀測IoC分享_0727",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [],
+        "raw_content": "TWCERT/CC匯整TWCERT-IoC 觀測(至07/27)受駭偵測指標(IoC)情資(詳如附件)，可做為貴單位強化資安防護之參考。\n\nTWCERT-IoC : 聯盟會員分享或接收之外部情資與Virus Check分析可疑檔案，可能包含近期攻擊事件所發現之惡意網域、惡意 IP Address、及惡意程式(MD5、SHA-1及SHA-256)等資訊。\n\n*如貴單位有發現可疑的攻擊/探嗅活動(log)、攻擊資訊(如IoC, IoA)或惡意程式樣本，歡迎提供給TWCERT/CC，我們將去識別化後通報給相關CERT或資安單位，以達到資安聯防的效果。\n*若貴公司因服務之必要無法將有風險之IP列入黑名單, 為避免影響正常服務, 可將該IP列為觀察名單，監控與此IP連線的設備與流量等防護措施, 以降低資安風險。\n\n影響平台：無\n\n建議措施：請參考附件之名單做相關防範措施。\n\n參考資訊：無\n\nTWCERT 影響等級：第 2 級",
+        "reference_urls": [],
+        "attachment_urls": [
+          "(TLP AMBER) TWCERT-IoC 觀測IoC分享_0727.xlsx"
+        ],
+        "ioc_ips": [
+          "174.138.22.165",
+          "209.38.132.165",
+          "95.133.228.65",
+          "172.94.18.103",
+          "95.133.229.61",
+          "95.133.228.66",
+          "192.241.157.169",
+          "95.133.229.142",
+          "43.213.142.102",
+          "223.254.129.212",
+          "95.133.230.36"
+        ],
+        "ioc_hashes": [
+          "a62909c78aecc49f09fd059bd622aa5cc15dbca5ce43e337f69d777008eb5f58"
+        ],
+        "ioc_domains": [
+          "scan.aquasecurtiy.org",
+          "tdtqy-oyaaa-aaaae-af2dqcai.raw.icp0.io",
+          "check.git-service.com",
+          "t.m-kosche.com",
+          "git-tanstack.com",
+          "recv.hackmoltrepeat.com",
+          "audit.checkmarx.cx"
+        ],
+        "impact_level": "2"
+      },
+      "analysis": {
+        "risk_level": "Low",
+        "summary": "TWCERT/CC 分享了近期觀測到的惡意網域、惡意 IP 及惡意程式雜湊值（IoC）清單。此情資旨在協助企業強化資安防護，防範潛在的惡意連線與惡意程式威脅。",
+        "recommendation": "建議資訊部門（RR40）下載 TWCERT 提供的 IoC 清單，並將惡意 IP 與網域匯入至南辦防火牆（ShareTech UTM NU-860H）進行阻擋或設定監控告警；同時將惡意程式雜湊值導入防毒軟體（F-Secure）進行掃描過濾。若有因業務必要無法阻擋之 IP，應將其列為觀察名單並加強流量監控。",
+        "company_relevance": "L",
+        "affected_assets": [
+          "資訊設備-防火牆-UTM防火牆 ShareTech UTM NU-860H",
+          "防毒軟體 F-Secure(雲端版)"
+        ],
+        "responsible_unit": "RR40"
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202607-0030",
+        "source": "TWCERT",
+        "publish_date": "2026-07-27 17:39",
+        "title": "[TLP CLEAR] CISA新增6個已知遭駭客利用之漏洞至KEV目錄(2026/07/20-2026/07/26)",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-60137",
+          "CVE-2026-63030",
+          "CVE-2026-0770",
+          "CVE-2021-27137",
+          "CVE-2026-16232",
+          "CVE-2026-50522"
+        ],
+        "raw_content": "【CVE-2026-60137】WordPress Core SQL Injection Vulnerability (CVSS v3.1: 5.9)\n【是否遭勒索軟體利用:未知】\nWordPress Core在外掛或佈景主題將不可信任的輸入傳遞至該參數時，存在SQL注入漏洞。此漏洞可與 CVE-2026-63030 串聯利用，使未經驗證的攻擊者得以在預設的WordPress安裝環境中取得遠端程式碼執行權限。\n\n【CVE-2026-63030】WordPress Core Interpretation Conflict Vulnerability (CVSS v3.1: 9.8)\n【是否遭勒索軟體利用:未知】\nWordPress Core存在Interpretation Conflict漏洞，可能允許攻擊者執行SQL注入並實現遠端程式碼執行。此漏洞可與CVE-2026-60137串聯利用。\n\n【CVE-2026-0770】Langflow Inclusion of Functionality from Untrusted Control Sphere Vulnerability (CVSS v3.1: 9.8)\n【是否遭勒索軟體利用:未知】\nLangflow存在Inclusion of Functionality from Untrusted Control Sphere漏洞，允許遠端攻擊者在受影響的安裝環境中執行任意程式碼。\n\n【CVE-2021-27137】DD-WRT Stack-Based Buffer Overflow Vulnerability (CVSS v3.1: 8.1)\n【是否遭勒索軟體利用:未知】\nDD-WRT存在堆疊型緩衝區溢位漏洞，未經驗證的攻擊者可利用此漏洞使UPnP使用的內部緩衝區發生溢位，進而觸發程式碼執行漏洞。\n\n【CVE-2026-16232】Check Point SmartConsole Improper Authentication Vulnerability (CVSS v3.1: 9.1)\n【是否遭勒索軟體利用:未知】\nCheck Point SmartConsole存在不當驗證漏洞，未經驗證的遠端攻擊者可利用此漏洞取得應用程式的登入權杖，並藉此以完整管理員權限進行驗證。\n\n【CVE-2026-50522】Microsoft SharePoint Deserialization of Untrusted Data Vulnerability (CVSS v3.1: 9.8)\n【是否遭勒索軟體利用:未知】\nMicrosoft SharePoint存在反序列化不受信任資料漏洞，未經授權的攻擊者可能利用此漏洞透過網路執行任意程式碼。\n\n\n影響平台：【CVE-2026-60137】\n請參考官方所列的影響版本\nhttps://github.com/WordPress/wordpress-develop/security/advisories/GHSA-fpp7-x2x2-2mjf\n\n【CVE-2026-63030】\n請參考官方所列的影響版本\nhttps://github.com/WordPress/wordpress-develop/security/advisories/GHSA-ff9f-jf42-662q\n\n【CVE-2026-0770】\nLangflow 1.7.3(含)之前的版本\n\n【CVE-2021-27137】\nDD-WRT 45724之前的版本\n\n【CVE-2026-16232】\n請參考官方所列的影響版本\nhttps://support.checkpoint.com/results/sk/sk185169/\n\n【CVE-2026-50522】\n請參考官方所列的影響版本\nhttps://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-50522\n\n\n建議措施：【CVE-2026-60137】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://github.com/WordPress/wordpress-develop/security/advisories/GHSA-fpp7-x2x2-2mjf\n\n【CVE-2026-63030】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://github.com/WordPress/wordpress-develop/security/advisories/GHSA-ff9f-jf42-662q\n\n【CVE-2026-0770】\n目前官方尚未釋出對應修補程式，建議更新至其他未受影響版本\nhttps://github.com/langflow-ai/langflow\n\n【CVE-2021-27137】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://svn.dd-wrt.com/changeset/45724\n\n【CVE-2026-16232】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://support.checkpoint.com/results/sk/sk185169/\n\n【CVE-2026-50522】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-50522\n\n\n參考資訊：【CVE-2026-60137】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-60137\n2.https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-fpp7-x2x2-2mjf\n\n【CVE-2026-63030】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-63030\n2.https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-ff9f-jf42-662q\n\n【CVE-2026-0770】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-0770\n2.https://github.com/advisories/GHSA-g22f-v6f7-2hrh\n3.https://github.com/langflow-ai/langflow\n\n【CVE-2021-27137】\n1.https://nvd.nist.gov/vuln/detail/cve-2021-27137\n2.https://svn.dd-wrt.com/changeset/45724\n\n【CVE-2026-16232】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-16232\n2.https://support.checkpoint.com/results/sk/sk185169/\n\n【CVE-2026-50522】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-50522\n2.https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-50522\n\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://nvd.nist.gov/vuln/detail/cve-2026-60137",
+          "https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-fpp7-x2x2-2mjf",
+          "https://nvd.nist.gov/vuln/detail/cve-2026-63030",
+          "https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-ff9f-jf42-662q",
+          "https://nvd.nist.gov/vuln/detail/cve-2026-0770",
+          "https://github.com/advisories/GHSA-g22f-v6f7-2hrh",
+          "https://github.com/langflow-ai/langflow",
+          "https://nvd.nist.gov/vuln/detail/cve-2021-27137",
+          "https://svn.dd-wrt.com/changeset/45724",
+          "https://nvd.nist.gov/vuln/detail/cve-2026-16232",
+          "https://support.checkpoint.com/results/sk/sk185169/",
+          "https://nvd.nist.gov/vuln/detail/cve-2026-50522",
+          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-50522"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "Critical",
+        "summary": "CISA 新增 6 個已知遭利用漏洞，其中 WordPress Core 存在嚴重的 SQL 注入與解析衝突漏洞（CVE-2026-60137、CVE-2026-63030），兩者串聯利用可導致未授權的遠端程式碼執行（RCE）。由於公司資產清冊中包含多個 WordPress 部落格平台，且此漏洞已被證實於野外遭活躍利用，面臨極高安全風險。",
+        "recommendation": "1. 立即將公司內部的 WordPress 網站核心升級至官方最新安全版本。\n2. 參考官方安全公告（GHSA-fpp7-x2x2-2mjf 與 GHSA-ff9f-jf42-662q）進行修補。\n3. 在修補完成前，建議於 AWS WAF 部署防護規則，過濾並阻擋潛在的 SQL 注入與惡意請求。",
+        "company_relevance": "H",
+        "affected_assets": [
+          "Wordpress"
+        ],
+        "responsible_unit": "WF20, DA20"
+      }
+    }
+  ]
+}
