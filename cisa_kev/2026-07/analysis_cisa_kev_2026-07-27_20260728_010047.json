@@ -1,0 +1,67 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-07-28T01:00:47.277418",
+  "count": 2,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2025-68686",
+        "source": "CISA_KEV",
+        "publish_date": "2026-07-27",
+        "title": "[CISA KEV] Fortinet FortiOS - Fortinet FortiOS Exposure of Sensitive Information to an Unauthorized Actor Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2025-68686"
+        ],
+        "raw_content": "CVE: CVE-2025-68686\n廠商: Fortinet\n產品: FortiOS\n漏洞名稱: Fortinet FortiOS Exposure of Sensitive Information to an Unauthorized Actor Vulnerability\n說明: Fortinet FortiOS contains an exposure of sensitive information to an unauthorized actor vulnerability. This may allow a remote unauthenticated attacker to bypass the patch developed for the symbolic link persistency mechanism observed in some post-exploit cases, via crafted HTTP requests. An attacker would need first to have compromised the product via another vulnerability, at filesystem level.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-08-10\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://fortiguard.fortinet.com/psirt/FG-IR-25-934 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2025-68686",
+          "https://nvd.nist.gov/vuln/detail/CVE-2025-68686"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "此漏洞（CVE-2025-68686）存在於 Fortinet FortiOS 中，允許遠端未授權的攻擊者透過精心構造的 HTTP 請求，繞過針對符號連結持久性機制的修補程式，進而洩漏敏感資訊。然而，攻擊者需要先透過其他漏洞取得檔案系統層級的控制權才能進行此攻擊。目前該漏洞已被收錄於 CISA KEV 中，顯示已有在野利用跡象。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-16812",
+        "source": "CISA_KEV",
+        "publish_date": "2026-07-27",
+        "title": "[CISA KEV] Arista VeloCloud Orchestrator - Arista VeloCloud Orchestrator On-Prem OS Command Injection Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-16812"
+        ],
+        "raw_content": "CVE: CVE-2026-16812\n廠商: Arista\n產品: VeloCloud Orchestrator\n漏洞名稱: Arista VeloCloud Orchestrator On-Prem OS Command Injection Vulnerability\n說明: Arista VeloCloud Orchestrator On-Prem contains an OS command injection vulnerability that may allow a remote attacker to access privileged internal functionality and impact the VCO host. Successful exploitation may compromise the confidentiality, integrity, and availability of the orchestrator and data managed by the orchestrator.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-07-30\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://www.arista.com/en/support/advisories-notices/security-advisory/24364-security-advisory-0144 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-16812",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-16812"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "此情資指出 Arista VeloCloud Orchestrator On-Prem 存在 OS 指令注入漏洞（CVE-2026-16812），遠端攻擊者可藉此取得特權內部功能存取權限並控制主機。由於此漏洞已被收錄於 CISA KEV 且具備高危害性，建議使用該產品的組織儘速修補。然而，經評估本公司並無使用此產品，故無直接安全風險。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
