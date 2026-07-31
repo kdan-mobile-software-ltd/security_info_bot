@@ -1,0 +1,46 @@
+{
+  "source": "twcert",
+  "fetched_at": "2026-07-31T01:05:25.085812",
+  "count": 2,
+  "items": [
+    {
+      "intel_id": "TWCERT-TWISAC-202607-0042",
+      "source": "TWCERT",
+      "publish_date": "2026-07-30 14:59",
+      "title": "[TLP CLEAR] 馥鴻科技｜IP攝影機 - Hidden Functionality",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-18191"
+      ],
+      "raw_content": "【馥鴻科技｜IP攝影機 - Hidden Functionality】(CVE-2026-18191，CVSS：9.8)\n未經身分鑑別之遠端攻擊者可利用特定隱藏功能取得設備管理員帳號密碼。\n\n影響平台：VIN-DS783E-E6\n\n建議措施：聯繫廠商進行更新\n\n參考資訊：1.https://www.twcert.org.tw/tw/cp-132-11048-c8ce2-1.html\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://www.twcert.org.tw/tw/cp-132-11048-c8ce2-1.html"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    },
+    {
+      "intel_id": "TWCERT-TWISAC-202607-0041",
+      "source": "TWCERT",
+      "publish_date": "2026-07-30 14:55",
+      "title": "[TLP CLEAR] Microsoft Office SharePoint存在高風險安全漏洞(CVE-2026-50522)，請儘速確認並進行修補",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-50522"
+      ],
+      "raw_content": "研究人員發現Microsoft Office SharePoint存在不安全之反序列化(Insecure Deserialization)漏洞(CVE-2026-50522，CVSS：9.8)，未經身分鑑別之遠端攻擊者可透過對未受信任之資料進行反序列化，進而執行任意程式碼。該漏洞已遭駭客利用，請儘速確認並進行修補。\n\n影響平台：Microsoft SharePoint Server Subscription Edition 16.0.19725.20434(不含)以前版本、\nMicrosoft SharePoint Server 2019 16.0.10417.20175(不含)以前版本、\nMicrosoft SharePoint Enterprise Server 2016 16.0.5561.1001(不含)以前版本\n\n建議措施：官方已針對漏洞釋出修復更新，請參考官方說明進行更新，網址如下：\nhttps://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-50522\n\n參考資訊：1. https://nvd.nist.gov/vuln/detail/CVE-2026-50522\n2. https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-50522\n\nTWCERT 影響等級：第 1 級",
+      "reference_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-50522",
+        "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-50522"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": "1"
+    }
+  ]
+}
