@@ -1,0 +1,143 @@
+{
+  "source": "twcert",
+  "analyzed_at": "2026-08-05T01:06:09.003068",
+  "count": 4,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202608-0005",
+        "source": "TWCERT",
+        "publish_date": "2026-08-04 17:44",
+        "title": "[TLP CLEAR] WordPress存在兩項高風險安全漏洞，請儘速確認並進行修補",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-60137",
+          "CVE-2026-63030"
+        ],
+        "raw_content": "研究人員發現WordPress存在兩項高風險安全漏洞(CVE-2026-60137與CVE-2026-63030)，類型分別為SQL注入(SQL Injection)與REST API批次端點路由判讀錯誤問題。其中CVE-2026-60137已遭駭客利用，請儘速確認並進行修補。\n\nCVE-2026-60137(CVSS：9.1)：當外掛程式或佈景主題將未受信任之輸入傳入受影響功能時，可能導致SQL注入。\nCVE-2026-63030(CVSS：9.8)：未經身分鑑別之遠端攻擊者可利用REST API批次端點路由判讀錯誤問題，並結合CVE-2026-60137執行SQL注入，進而於受影響系統上執行任意程式碼。\n\n影響平台：WordPress 6.8.0至6.8.5版本、\nWordPress 6.9.0至6.9.4版本、\nWordPress 7.0.0至7.0.1版本\n\n建議措施：官方已針對漏洞釋出修復更新，請升級至以下版本，並參考官方說明進行更新：\nhttps://wordpress.org/news/2026/07/wordpress-7-0-2-release/\n\n參考資訊：1. https://nvd.nist.gov/vuln/detail/CVE-2026-60137\n2. https://nvd.nist.gov/vuln/detail/CVE-2026-63030\n3. https://wordpress.org/news/2026/07/wordpress-7-0-2-release/\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-60137",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-63030",
+          "https://wordpress.org/news/2026/07/wordpress-7-0-2-release/"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "Critical",
+        "summary": "WordPress 存在 SQL 注入與 REST API 路由判讀錯誤漏洞（CVE-2026-60137、CVE-2026-63030），其中 SQL 注入漏洞已遭在野利用。攻擊者可藉此在未經授權的情況下於受影響系統上執行任意程式碼（RCE）。由於公司使用 WordPress 作為部落格平台，面臨直接且嚴重的安全威脅。",
+        "recommendation": "1. 儘速將公司內部的 WordPress 網站升級至 7.0.2 或以上版本。\n2. 在執行升級前，請務必完整備份資料庫與網站檔案，並於測試環境驗證佈景主題與外掛相容性。\n3. 若無法立即升級，建議於 AWS WAF 設定防護規則，過濾並阻擋針對 REST API 批次端點（batch endpoints）的異常請求。",
+        "company_relevance": "H",
+        "affected_assets": [
+          "Wordpress"
+        ],
+        "responsible_unit": "WF20, DA20"
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202608-0004",
+        "source": "TWCERT",
+        "publish_date": "2026-08-04 17:43",
+        "title": "[TLP CLEAR] VMware多項產品存在3項高風險安全漏洞，請儘速確認並進行修補",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-47876",
+          "CVE-2026-59309",
+          "CVE-2026-59310"
+        ],
+        "raw_content": "研究人員發現VMware多項產品存在3項高風險安全漏洞(CVE-2026-47876、CVE-2026-59309及CVE-2026-59310)，類型分別為越界寫入(Out-of-Bounds Write)、身分鑑別繞過(Authentication Bypass)及路徑遍歷(Path Traversal)，請儘速確認並進行修補。\n\nCVE-2026-47876(CVSS：9.3)：已取得虛擬機器VMXNET3介面卡本機管理員權限之攻擊者，可於ESXi主機上執行任意程式碼。\nCVE-2026-59309(CVSS：9.8)：已取得VMware vCenter網路存取權限之遠端攻擊者，可利用此漏洞於未經授權之情況下繞過身分鑑別並存取系統。\nCVE-2026-59310(CVSS：9.8)：已取得VMware vCenter網路存取權限之遠端攻擊者，可利用此漏洞執行任意程式碼。\n\n影響平台：VMware Cloud Foundation 5.x版本至8.0 U3k(不含)版本、\nVMware Cloud Foundation與VMware vSphere Foundation 9.0.x.x版本、\nVMware Cloud Foundation與VMware vSphere Foundation 9.1.x.x版本、\nVMware vCenter 8.0、\nVMware Telco Cloud Platform 3.0版本、\nVMware Telco Cloud Platform 4.x版本、\nVMware Telco Cloud Platform 5.0.x版本、\nVMware Telco Cloud Platform 5.1.x版本、\nVMware Telco Cloud Infrastructure 3.0版本、\nVMware ESX 8.0版本\n\n建議措施：官方已針對漏洞釋出修復更新，請參考官方說明進行更新，網址如下：\nhttps://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/38017\n\n參考資訊：1.https://nvd.nist.gov/vuln/detail/CVE-2026-47876\n2.https://nvd.nist.gov/vuln/detail/CVE-2026-59309\n3.https://nvd.nist.gov/vuln/detail/CVE-2026-59310\n4.https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/38017\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-47876",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-59309",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-59310",
+          "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/38017"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "High",
+        "summary": "VMware 多項核心虛擬化產品（包括 ESXi、vCenter 等）存在越界寫入、身分鑑別繞過及路徑遍歷等高風險漏洞。攻擊者可利用這些漏洞繞過身分驗證，或在 ESXi 主機與 vCenter 伺服器上執行任意程式碼，對虛擬化基礎架構安全構成嚴重威脅。",
+        "recommendation": "1. 盤點並確認公司內部「VMWare Esxi6.5」與「DELL OEM Vmware DELL vSphere Essentials Plus Kit」之具體運作版本。\n2. 針對受影響之版本，儘速參考 Broadcom 官方安全公告（https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/38017）下載並套用對應的修補程式。\n3. 在修補完成前，應嚴格限制對 vCenter 及 ESXi 管理介面的網路存取權限，僅允許受信任的 IP 連線。",
+        "company_relevance": "H",
+        "affected_assets": [
+          "資訊軟體-虛擬平台軟體-VMWare Esxi6.5",
+          "資訊軟體-虛擬平台軟體-DELL OEM Vmware DELL vSphere Essentials Plus Kit"
+        ],
+        "responsible_unit": "RR40"
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202608-0003",
+        "source": "TWCERT",
+        "publish_date": "2026-08-04 17:41",
+        "title": "[TLP CLEAR] 盛源｜DMS+ (非行動端) - Use of Hard-coded Credentials",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-18452"
+        ],
+        "raw_content": "【盛源｜DMS+ (非行動端) - Use of Hard-coded Credentials】(CVE-2026-18452，CVSS：10.0)\n盛源開發之DMS+(非行動端)存在Use of Hard-coded Credentials漏洞，未經身分鑑別之遠端攻擊者可利用固定API KEY取得所有安裝DMS+設備之控制權。\n\n影響平台：DMS+(非行動端) 5.63(含)以前版本\n\n建議措施：請更新至5.64(含)以後版本\n\n參考資訊：1.https://www.twcert.org.tw/tw/cp-132-11072-3a4d4-1.html\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://www.twcert.org.tw/tw/cp-132-11072-3a4d4-1.html"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "Low",
+        "summary": "盛源開發之DMS+(非行動端)存在寫死憑證(Hard-coded Credentials)漏洞(CVE-2026-18452)，CVSS評分高達10.0。未經身分鑑別之遠端攻擊者可利用固定API KEY，直接取得所有安裝該DMS+設備之控制權。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202608-0001",
+        "source": "TWCERT",
+        "publish_date": "2026-08-04 17:40",
+        "title": "[TLP CLEAR] CISA新增3個已知遭駭客利用之漏洞至KEV目錄(2026/07/27-2026/08/02)",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2025-68686",
+          "CVE-2026-16812",
+          "CVE-2026-20316"
+        ],
+        "raw_content": "【CVE-2025-68686】Fortinet FortiOS Exposure of Sensitive Information to an Unauthorized Actor Vulnerability (CVSS v3.1: 5.9)\n【是否遭勒索軟體利用:未知】\nFortinet FortiOS存在Exposure of Sensitive Information to an Unauthorized Actor漏洞，可能允許未經授權的遠端攻擊者透過特製的HTTP請求繞過針對某些漏洞利用後案例中觀察到的符號連結持久化機制所開發的修補程式。攻擊者必須先透過案系統層級的其他漏洞成功入侵該產品，才能利用此漏洞。\n\n【CVE-2026-16812】Arista VeloCloud Orchestrator On-Prem OS Command Injection Vulnerability (CVSS v3.1: 10.0)\n【是否遭勒索軟體利用:未知】\nArista VeloCloud Orchestrator On-Prem 存在作業系統指令注入漏洞，可能允許遠端攻擊者存取內部特權功能，並對VCO主機造成影響。若此漏洞遭成功利用，可能會危及Orchestrator及其所管理資料的機密性、完整性與可用性。\n\n【CVE-2026-20316】Cisco Secure Firewall Management Center Use of Hard-coded Password Vulnerability (CVSS v3.1: 5.3)\n【是否遭勒索軟體利用:未知】\nCisco Secure Firewall Management Center存在使用硬編碼密碼漏洞，可能允許未經驗證的遠端攻擊者使用低權限帳號登入受影響的裝置，並存取受影響系統內的敏感資料。\n\n\n影響平台：【CVE-2025-68686】\n請參考官方所列的影響版本\nhttps://fortiguard.fortinet.com/psirt/FG-IR-25-934\n\n【CVE-2026-16812】\n請參考官方所列的影響版本\nhttps://www.arista.com/en/support/advisories-notices/security-advisory/24364-security-advisory-0144\n\n【CVE-2026-20316】\n請參考官方所列的影響版本\nhttps://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-fmc-static-cred-BET3Cjh\n\n\n建議措施：【CVE-2025-68686】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://fortiguard.fortinet.com/psirt/FG-IR-25-934\n\n【CVE-2026-16812】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://www.arista.com/en/support/advisories-notices/security-advisory/24364-security-advisory-0144\n\n【CVE-2026-20316】\n官方已針對漏洞釋出修復更新，請更新至相關版本\nhttps://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-fmc-static-cred-BET3Cjh\n\n\n參考資訊：【CVE-2025-68686】\n1.https://nvd.nist.gov/vuln/detail/cve-2025-68686\n2.https://fortiguard.fortinet.com/psirt/FG-IR-25-934\n\n【CVE-2026-16812】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-16812\n2.https://www.arista.com/en/support/advisories-notices/security-advisory/24364-security-advisory-0144\n\n【CVE-2026-20316】\n1.https://nvd.nist.gov/vuln/detail/cve-2026-20316\n2.https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-fmc-static-cred-BET3Cjh\n\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://nvd.nist.gov/vuln/detail/cve-2025-68686",
+          "https://fortiguard.fortinet.com/psirt/FG-IR-25-934",
+          "https://nvd.nist.gov/vuln/detail/cve-2026-16812",
+          "https://www.arista.com/en/support/advisories-notices/security-advisory/24364-security-advisory-0144",
+          "https://nvd.nist.gov/vuln/detail/cve-2026-20316",
+          "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-fmc-static-cred-BET3Cjh"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "CISA新增三個已遭利用的漏洞至KEV目錄，涉及Fortinet FortiOS、Arista VeloCloud Orchestrator及Cisco Secure Firewall Management Center。其中Arista漏洞（CVE-2026-16812）高達CVSS 10.0，允許遠端執行指令。由於本公司未部署上述受影響之網路與資安設備，因此無直接安全風險。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
