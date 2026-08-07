@@ -1,0 +1,167 @@
+{
+  "source": "twcert",
+  "analyzed_at": "2026-08-07T01:06:14.136391",
+  "count": 5,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202608-0013",
+        "source": "TWCERT",
+        "publish_date": "2026-08-06 16:14",
+        "title": "[TLP CLEAR] cPanel 與 WHM (WebHost Manager) 存在重大資安漏洞(CVE-2026-58048)",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-58048"
+        ],
+        "raw_content": "近日cPanel 發布重大資安公告(CVE-2026-58048，CVSS 4.x：9.4)，此漏洞存在於 cPanel 與 WHM（WebHost Manager） 管理系統中，屬於權限提升漏洞。已通過身分驗證且具有MySQL/MariaDB 資料庫存取權限的 cPanel 帳戶，可能利用此漏洞執行任意資料庫指令的完全管理權限。\n\n影響平台：cPanel 與 WHM (WebHost Manager) 所有版本\n\n建議措施：請更新至以下版本：\ncPanel/WHM 11.110.0.137版本、\ncPanel/WHM 11.118.0.71版本、\ncPanel/WHM 11.126.0.78版本、\ncPanel/WHM 11.134.0.48版本、\ncPanel/WHM 11.136.0.32版本、\ncPanel/WHM 138.1.6 ( WP2)版本\n\n參考資訊：1. https://support.cpanel.net/hc/en-us/articles/42285745783703-Security-CVE-2026-58048-Database-Privilege-Escalation\n2. https://nvd.nist.gov/vuln/detail/CVE-2026-58048\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://support.cpanel.net/hc/en-us/articles/42285745783703-Security-CVE-2026-58048-Database-Privilege-Escalation",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-58048"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "cPanel 與 WHM (WebHost Manager) 存在重大權限提升漏洞（CVE-2026-58048），CVSS 評分高達 9.4。已通過身分驗證且具有資料庫存取權限的帳戶，可利用此漏洞執行任意資料庫指令並取得完全管理權限。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202608-0012",
+        "source": "TWCERT",
+        "publish_date": "2026-08-06 16:12",
+        "title": "[TLP CLEAR] Veeam Service Provider Console 存在2個重大資安漏洞",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-58073",
+          "CVE-2026-58072"
+        ],
+        "raw_content": "備份與資料保護軟體廠商Veeam旗下遠端管理控制臺(Veeam Service Provider Console ，VSPC)是一款用於跨本地雲端應用環境的遠端監控與管理工具，日前官方提修補高風險資安漏洞(CVE-2026-58073，CVSS 4.x：9.5 和 CVE-2026-58072，CVSS 4.x：9.0)。CVE-2026-58073允許未經身分驗證的攻擊者，冒充受管代理程式並取得該憑證；CVE-2026-58072允許對管理伺服器進行任意檔案寫入，可能導致遠端程式碼執行。\n\n影響平台：Veeam Service Provider Console 9 版本、\nVeeam Service Provider Console 9.2.1.33875 \n\n建議措施：請將Veeam Service Provider Console更新至  9.3.0.35057 (含)之後版本\n\n參考資訊：1. https://www.veeam.com/kb4893\n2. https://nvd.nist.gov/vuln/detail/CVE-2026-58073\n3. https://nvd.nist.gov/vuln/detail/CVE-2026-58072\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://www.veeam.com/kb4893",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-58073",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-58072"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Veeam Service Provider Console 存在兩個重大安全漏洞（CVE-2026-58073 與 CVE-2026-58072），攻擊者可藉此冒充受管代理程式獲取憑證，或透過任意檔案寫入執行遠端程式碼。由於本公司並未部署或使用 Veeam 相關產品，因此不受此漏洞影響。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202608-0011",
+        "source": "TWCERT",
+        "publish_date": "2026-08-06 16:11",
+        "title": "[TLP CLEAR] Cisco Catalyst SD-WAN 存在4個重大資安漏洞",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-20303",
+          "CVE-2026-20304",
+          "CVE-2026-20310",
+          "CVE-2026-20312"
+        ],
+        "raw_content": "Cisco Catalyst SD-WAN 是 Cisco 以雲端為中心的軟體定義廣域網路架構，提供集中管理、安全加密及應用效能優化，確保多雲環境的可靠連線。Catalyst SD-WAN 軟體開發團隊於內部安全審查期間發現多項安全漏洞，並已完成修補。目前尚未發現有證據顯示這些漏洞遭到積極利用。為協助客戶及時部署安全更新並簡化漏洞揭露流程，Cisco 已公開相關漏洞資訊及修補建議。CVE-2026-20303(CVSS：9.9)為輸入驗證不當漏洞；CVE-2026-20304(CVSS：9.9)為存取控制不當漏洞；CVE-2026-20310(CVSS：9.9)為文件存取前連結解析不正確；CVE-2026-20312(CVSS：8.8)為以明文形式儲存敏感資訊。\n\n影響平台：Cisco Catalyst SD-WAN 20.9(含)之前版本、\nCisco Catalyst SD-WAN 20.10 版本、\nCisco Catalyst SD-WAN 20.11 版本、\nCisco Catalyst SD-WAN 20.12 版本、\nCisco Catalyst SD-WAN 20.13 版本、\nCisco Catalyst SD-WAN 20.14 版本、\nCisco Catalyst SD-WAN 20.15 版本、\nCisco Catalyst SD-WAN 20.16 版本、\nCisco Catalyst SD-WAN 20.18 版本、\nCisco Catalyst SD-WAN 26.1 版本\n\n建議措施：請更新至以下版本：\nCisco Catalyst SD-WAN 20.9.10(含)之後版本、\nCisco Catalyst SD-WAN 20.12.8.1(含)之後版本、\nCisco Catalyst SD-WAN 20.15.6(含)之後版本、\nCisco Catalyst SD-WAN 20.18.4(含)之後版本、\nCisco Catalyst SD-WAN 26.1.2(含)之後版本\n\n參考資訊：1. https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-hardening-sdwan-faLcR3K\n2. https://nvd.nist.gov/vuln/detail/CVE-2026-20303\n3. https://nvd.nist.gov/vuln/detail/CVE-2026-20304\n4. https://nvd.nist.gov/vuln/detail/CVE-2026-20310\n5. https://nvd.nist.gov/vuln/detail/CVE-2026-20312\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-hardening-sdwan-faLcR3K",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-20303",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-20304",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-20310",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-20312"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Cisco Catalyst SD-WAN 存在多個重大安全漏洞（如 CVE-2026-20303 等），涉及輸入驗證不當、存取控制不當及敏感資訊外洩，CVSS 評分最高達 9.9。目前尚未發現這些漏洞遭到積極利用的證據，Cisco 官方已釋出安全更新版本。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202608-0010",
+        "source": "TWCERT",
+        "publish_date": "2026-08-06 16:05",
+        "title": "[TLP CLEAR] Cisco旗下 IOS XE Software 存在2個重大資安漏洞",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-20267",
+          "CVE-2026-20272"
+        ],
+        "raw_content": "Cisco IOS XE 軟體開發團隊於內部安全審查期間發現多項安全漏洞，並已完成修補。目前尚未發現有證據顯示這些漏洞遭到積極利用。為協助客戶及時部署安全更新並簡化漏洞揭露流程，Cisco 已公開相關漏洞資訊及修補建議。CVE-2026-20267(CVSS：9.0)為存取控制不當漏洞；CVE-2026-20272(CVSS：9.8)為特殊元素未適當處理漏洞。\n\n影響平台：Cisco IOS XE 17.9版本、\nCisco IOS XE 17.12版本、\nCisco IOS XE 17.15版本、\nCisco IOS XE 17.18版本、\nCisco IOS XE 26.1版本\n\n建議措施：請更新至以下版本：\nCisco IOS XE 17.12.18(含)之後版本、\nCisco IOS XE 17.15.6(含)之後版本、\nCisco IOS XE 17.18.4(含)之後版本、\nCisco IOS XE 17.18.4a(含)之後版本、\nCisco IOS XE 26.1.2(含)之後版本\n\n參考資訊：1. https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-hardening-iosxe-V8NMuMZJ\n2. https://nvd.nist.gov/vuln/detail/CVE-2026-20267\n3. https://nvd.nist.gov/vuln/detail/CVE-2026-20272\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-hardening-iosxe-V8NMuMZJ",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-20267",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-20272"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Cisco 官方發布安全公告，修補 IOS XE 軟體中兩個 CVSS 評分高達 9.0 與 9.8 的重大漏洞（CVE-2026-20267 與 CVE-2026-20272），這些漏洞涉及存取控制不當與特殊元素處理不當。目前尚未發現有野外活躍攻擊，官方已釋出修補版本。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202608-0009",
+        "source": "TWCERT",
+        "publish_date": "2026-08-06 16:04",
+        "title": "[TLP CLEAR] Cisco旗下Integrated Management Controller 存在重大資安漏洞(CVE-2026-20200)",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-20200"
+        ],
+        "raw_content": "Cisco 旗下整合管理控制器( Integrated Management Controller，IMC)是一款專門為Cisco整合運算系統的伺服器設計管理工具，提供伺服器遠端監控、配置和管理功能。近日Cisco發布重大資安公告(CVE-2026-20200，CVSS：8.8)，該漏洞允許經身分驗證的遠端攻擊者可能在受影響的底層作業系統上，執行任意程式碼或命令，並將權限提升至root。\n\n影響平台：UCS C-Series M7 and M8 Rack Servers in standalone mode \n\n建議措施：根據官方網站釋出的解決方式進行修補：\nhttps://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-cimc-arg-inject-upSHdMfU\n\n參考資訊：1. https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-cimc-arg-inject-upSHdMfU\n2. https://nvd.nist.gov/vuln/detail/CVE-2026-20200\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-cimc-arg-inject-upSHdMfU",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-20200"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Cisco 整合管理控制器 (IMC) 存在安全漏洞 (CVE-2026-20200)，經身分驗證的遠端攻擊者可利用該漏洞在底層作業系統執行任意指令，並將權限提升至 root。此漏洞主要影響獨立運作模式下的 Cisco UCS C-Series M7 與 M8 機架伺服器。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
