@@ -1,0 +1,37 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-08-08T01:00:41.116286",
+  "count": 1,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2026-8037",
+        "source": "CISA_KEV",
+        "publish_date": "2026-08-07",
+        "title": "[CISA KEV] Progress LoadMaster - Progress LoadMaster Command Injection Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-8037"
+        ],
+        "raw_content": "CVE: CVE-2026-8037\n廠商: Progress\n產品: LoadMaster\n漏洞名稱: Progress LoadMaster Command Injection Vulnerability\n說明: Progress LoadMaster contains a command injection vulnerability that allows an un-authenticated attacker to execute arbitrary commands on the LoadMaster appliance by exploiting unsanitized input in multiple command endpoints.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-08-10\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://community.progress.com/s/article/LoadMaster-Critical-Security-Bulletin-June-2026-CVE-2026-8037-CVE-2026-33691 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-8037",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-8037"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "此漏洞（CVE-2026-8037）為 Progress LoadMaster 的命令注入漏洞，允許未經授權的攻擊者透過未過濾的輸入端點在設備上執行任意命令。該漏洞已被列入 CISA KEV 且面臨活躍攻擊威脅。經比對，本公司資產清冊中並無使用 Progress LoadMaster 相關產品。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
