@@ -1,0 +1,99 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-08-12T01:00:56.121684",
+  "count": 3,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2026-20349",
+        "source": "CISA_KEV",
+        "publish_date": "2026-08-11",
+        "title": "[CISA KEV] Cisco Secure Firewall Adaptive Security Appliance (ASA) and Secure Firewall Threat Defense (FTD)  - Cisco Secure Firewall Adaptive Security Appliance (ASA) and Secure Firewall Threat Defense (FTD) Heap Inspection Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-20349"
+        ],
+        "raw_content": "CVE: CVE-2026-20349\n廠商: Cisco\n產品: Secure Firewall Adaptive Security Appliance (ASA) and Secure Firewall Threat Defense (FTD) \n漏洞名稱: Cisco Secure Firewall Adaptive Security Appliance (ASA) and Secure Firewall Threat Defense (FTD) Heap Inspection Vulnerability\n說明: Cisco Secure Firewall Adaptive Security Appliance (ASA) and Secure Firewall Threat Defense (FTD) contain a heap inspection vulnerability that could allow an unauthenticated, remote attacker to cause the device to reload unexpectedly, resulting in a denial of service (DoS) condition.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-08-14\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-asaftd-vpn-dos-dzv4mQFF ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-20349",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-20349"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Cisco Secure Firewall ASA 與 FTD 設備存在堆疊檢查安全漏洞（CVE-2026-20349），未經授權的遠端攻擊者可藉此導致設備異常重啟並造成拒絕服務（DoS）狀態。此漏洞已被 CISA 列入已知遭利用漏洞清單（KEV）。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-68820",
+        "source": "CISA_KEV",
+        "publish_date": "2026-08-11",
+        "title": "[CISA KEV] Microsoft Windows Ancillary Function Driver for WinSock  - Microsoft Windows Ancillary Function Driver for WinSock Use-After-Free Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-68820"
+        ],
+        "raw_content": "CVE: CVE-2026-68820\n廠商: Microsoft\n產品: Windows Ancillary Function Driver for WinSock \n漏洞名稱: Microsoft Windows Ancillary Function Driver for WinSock Use-After-Free Vulnerability\n說明: Microsoft Windows Ancillary Function Driver for WinSock contains a use-after-free vulnerability that allows an authorized attacker to elevate privileges locally.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-08-25\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2026-68820 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-68820",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-68820"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "Critical",
+        "summary": "Microsoft Windows 的 WinSock 輔助功能驅動程式（AFD）存在 Use-After-Free 漏洞（CVE-2026-68820），已被證實遭到在野活躍攻擊。本地攻擊者可利用此漏洞提升權限，由於公司內部有使用 Windows Server 2019，面臨極高的安全威脅。",
+        "recommendation": "請 RR40 部門立即針對 Windows Server 2019 伺服器及相關 Windows 主機，套用微軟官方發布的 CVE-2026-68820 安全更新。建議於 CISA 規定的修補截止日 2026-08-25 前完成更新安裝，並於更新後重啟系統以確保補丁生效。",
+        "company_relevance": "H",
+        "affected_assets": [
+          "資訊軟體-伺服器軟體-Windows Server 2019"
+        ],
+        "responsible_unit": "RR40"
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-72898",
+        "source": "CISA_KEV",
+        "publish_date": "2026-08-11",
+        "title": "[CISA KEV] Metabase Metabase - Metabase SQL Injection Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-72898"
+        ],
+        "raw_content": "CVE: CVE-2026-72898\n廠商: Metabase\n產品: Metabase\n漏洞名稱: Metabase SQL Injection Vulnerability\n說明: Metabase contains a SQL Injection vulnerability that allows an unauthenticated remote attacker to inject arbitrary SQL into the Metabase application database, which can give them administrator access to the instance. From there, the attacker could change the application configuration, steal stored credentials for the connected databases, read any data accessible through those connections, and export data.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-08-14\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://www.metabase.com/blog/security-update ; https://github.com/metabase/metabase/security/advisories/GHSA-vwf4-m7j8-wcjf ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-72898",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-72898"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "開源商業智能軟體 Metabase 存在未授權 SQL 注入漏洞（CVE-2026-72898），遠端攻擊者可藉此取得管理員權限、修改配置並竊取資料庫憑證。此漏洞已被列入 CISA KEV 活躍攻擊清單，但經評估公司並無使用該軟體。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
