@@ -1,0 +1,37 @@
+{
+  "source": "twcert",
+  "analyzed_at": "2026-08-15T01:05:36.247250",
+  "count": 1,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "TWCERT-TWISAC-202608-0022",
+        "source": "TWCERT",
+        "publish_date": "2026-08-14 14:02",
+        "title": "[TLP CLEAR] Fortinet旗下FortiWeb存在重大資安漏洞(CVE-2026-26035)",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-26035"
+        ],
+        "raw_content": "Fortinet旗下FortiWeb是一款提供網站應用程式的防火牆產品，其功能涵蓋異常偵測、API保護、機器人緩解和進階威脅分析等。日前，Fortinet發布重大資安漏洞公告(CVE-2026-26035，CVSS：9.8)，FortiWeb 遠端 Radius 類型管理員身分驗證配置中存在身分驗證不當漏洞，使用特定的非預設設定時，可能允許未經身分驗證的遠端攻擊者，使用隨機使用者名稱和密碼登入FortiWeb GUI/CLI。\n\n影響平台：FortiWeb 7.2.0至7.2.12版本、\nFortiWeb 7.4.0至7.4.11版本、\nFortiWeb 7.6.0至7.6.6版本、\nFortiWeb 8.0.0至8.0.2版本\n\n建議措施：請更新至以下版本：\nFortiWeb 7.2.13版本(含)之後版本、\nFortiWeb 7.4.12版本(含)之後版本、\nFortiWeb 7.6.7版本(含)之後版本、\nFortiWeb 8.0.3版本(含)之後版本\n\n參考資訊：1. https://fortiguard.fortinet.com/psirt/FG-IR-26-158\n2. https://nvd.nist.gov/vuln/detail/CVE-2026-26035\n\nTWCERT 影響等級：第 1 級",
+        "reference_urls": [
+          "https://fortiguard.fortinet.com/psirt/FG-IR-26-158",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-26035"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": "1"
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Fortinet 旗下的網站應用程式防火牆 FortiWeb 存在身分驗證不當漏洞（CVE-2026-26035），CVSS 評分高達 9.8。當系統使用特定的非預設 Radius 驗證配置時，遠端攻擊者可使用任意隨機帳密登入 GUI 或 CLI 介面，取得管理員權限。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
