@@ -1,0 +1,137 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-08-19T01:01:09.994510",
+  "count": 4,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2026-33824",
+        "source": "CISA_KEV",
+        "publish_date": "2026-08-18",
+        "title": "[CISA KEV] Microsoft Internet Key Exchange (IKE) Service Extensions - Microsoft Internet Key Exchange (IKE) Service Extensions Double Free Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-33824"
+        ],
+        "raw_content": "CVE: CVE-2026-33824\n廠商: Microsoft\n產品: Internet Key Exchange (IKE) Service Extensions\n漏洞名稱: Microsoft Internet Key Exchange (IKE) Service Extensions Double Free Vulnerability\n說明: Microsoft Internet Key Exchange (IKE) Service Extensions contains a double free vulnerability that could enable remote code execution.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-08-21\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-33824 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-33824",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-33824"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "Critical",
+        "summary": "微軟 Internet Key Exchange (IKE) 服務擴充套件存在雙重釋放漏洞（CVE-2026-33824），已被證實遭用於活躍攻擊中。攻擊者可藉此漏洞進行遠端程式碼執行（RCE），嚴重威脅地端 Windows 伺服器安全。",
+        "recommendation": "1. 針對公司內運行的『資訊軟體-伺服器軟體-Windows Server 2019』及相關 Windows VM 主機（如 AD 主機、ERP 主機等），立即套用微軟官方發布之安全更新。2. 在未完成修補前，建議透過防火牆限制外部網路對 Windows 主機之 UDP 500 與 UDP 4500 端口（IKE/IPsec 相關服務）的直接存取。",
+        "company_relevance": "H",
+        "affected_assets": [
+          "資訊軟體-伺服器軟體-Windows Server 2019",
+          "AD(Active Directory)主機",
+          "EasyFlow主機",
+          "ERP系統AP與DB主機"
+        ],
+        "responsible_unit": "RR40"
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-59310",
+        "source": "CISA_KEV",
+        "publish_date": "2026-08-18",
+        "title": "[CISA KEV] Broadcom VMware vCenter - Broadcom VMware vCenter Path Traversal Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-59310"
+        ],
+        "raw_content": "CVE: CVE-2026-59310\n廠商: Broadcom\n產品: VMware vCenter\n漏洞名稱: Broadcom VMware vCenter Path Traversal Vulnerability\n說明: Broadcom VMware vCenter contains a path traversal vulnerability which could allow a threat actor with network access to vCenter to execute arbitrary code.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-08-21\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/38017 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-59310",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-59310"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "Critical",
+        "summary": "Broadcom VMware vCenter 存在路徑遍歷漏洞（CVE-2026-59310），允許具備網路存取權限的攻擊者執行任意程式碼（RCE）。此漏洞已被收錄於 CISA KEV，顯示已有活躍的攻擊利用。由於公司內部使用 Vmware vSphere HA 架構，可能間接受到此漏洞威脅，需儘速盤點並修補。",
+        "recommendation": "1. 立即排查內部 Vmware vSphere 環境中是否部署並啟用了 vCenter Server。\n2. 依據 Broadcom 官方安全公告，儘速將 vCenter Server 升級至已修補之安全版本。\n3. 嚴格限制 vCenter 管理介面的網路存取權限，僅允許特定信任的內部管理網段連線，避免暴露於未授權的網路環境中。",
+        "company_relevance": "M",
+        "affected_assets": [
+          "資訊軟體-虛擬平台軟體-DELL OEM Vmware DELL vSphere Essentials Plus Kit",
+          "資訊軟體-虛擬平台軟體-VMWare Esxi6.5"
+        ],
+        "responsible_unit": "RR40"
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-55040",
+        "source": "CISA_KEV",
+        "publish_date": "2026-08-18",
+        "title": "[CISA KEV] Microsoft SharePoint - Microsoft SharePoint Weak Authentication Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-55040"
+        ],
+        "raw_content": "CVE: CVE-2026-55040\n廠商: Microsoft\n產品: SharePoint\n漏洞名稱: Microsoft SharePoint Weak Authentication Vulnerability\n說明: Microsoft SharePoint contains a weak authentication vulnerability which allows an unauthorized attacker to bypass a security feature over a network.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-08-21\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-55040 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-55040",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-55040"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Microsoft SharePoint 存在弱身分驗證漏洞（CVE-2026-55040），允許未授權的攻擊者繞過網路安全功能。此漏洞已被 CISA 列入已知被利用漏洞（KEV）清單，代表已有活躍的攻擊活動。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-65400",
+        "source": "CISA_KEV",
+        "publish_date": "2026-08-18",
+        "title": "[CISA KEV] Apple macOS - Apple macOS Improper Authentication Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-65400"
+        ],
+        "raw_content": "CVE: CVE-2026-65400\n廠商: Apple\n產品: macOS\n漏洞名稱: Apple macOS Improper Authentication Vulnerability\n說明: Apple macOS contains an improper authentication vulnerability that could allow an attacker on the network to authenticate to Screen Sharing without valid credentials.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-08-21\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://support.apple.com/en-us/148170; https://support.apple.com/en-us/148171; https://support.apple.com/en-us/148172 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-65400",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-65400"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "Critical",
+        "summary": "Apple macOS 存在身分驗證不當漏洞（CVE-2026-65400），攻擊者可透過網路在無有效憑證的情況下，直接驗證並登入螢幕共享（Screen Sharing）功能。此漏洞已被列入 CISA KEV 活躍攻擊名冊，對企業內部使用 macOS 的工作電腦構成極高安全風險。",
+        "recommendation": "1. 立即盤點公司內部所有 macOS 工作電腦，並更新至 Apple 官方發布之最新安全修補版本。\n2. 在完成修補前，建議於系統設定中關閉「螢幕共享」（Screen Sharing）與「遠端管理」（Remote Management）功能。\n3. 透過防火牆或 VPN 限制遠端桌面相關通訊埠的網路存取，避免其暴露於公開網路中。",
+        "company_relevance": "H",
+        "affected_assets": [
+          "資訊設備-桌上型電腦/筆記型電腦"
+        ],
+        "responsible_unit": "各部門"
+      }
+    }
+  ]
+}
