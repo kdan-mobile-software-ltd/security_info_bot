@@ -1,0 +1,27 @@
+{
+  "source": "cisa_kev",
+  "fetched_at": "2026-08-25T01:00:16.997976",
+  "count": 1,
+  "items": [
+    {
+      "intel_id": "CVE-2026-21962",
+      "source": "CISA_KEV",
+      "publish_date": "2026-08-24",
+      "title": "[CISA KEV] Oracle HTTP Server and Oracle Weblogic Server Proxy Plug-in - Oracle HTTP Server and Oracle Weblogic Server Proxy Plug-in Improper Access Control Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-21962"
+      ],
+      "raw_content": "CVE: CVE-2026-21962\n廠商: Oracle\n產品: HTTP Server and Oracle Weblogic Server Proxy Plug-in\n漏洞名稱: Oracle HTTP Server and Oracle Weblogic Server Proxy Plug-in Improper Access Control Vulnerability\n說明: Oracle HTTP Server and Oracle Weblogic Server Proxy Plug-in contain an improper access control vulnerability that can result in unauthorized creation, deletion or modification access to critical data as well as unauthorized access to critical data or complete access to all Oracle HTTP Server and Oracle Weblogic Server Proxy Plug-in accessible data.\nCISA 要求措施: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n修補截止日: 2026-08-27\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://www.oracle.com/security-alerts/cpujan2026.html ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-21962",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-21962"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    }
+  ]
+}
