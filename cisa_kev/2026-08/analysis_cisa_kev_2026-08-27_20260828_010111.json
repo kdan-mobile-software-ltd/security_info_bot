@@ -1,0 +1,101 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-08-28T01:01:11.407647",
+  "count": 3,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2023-49105",
+        "source": "CISA_KEV",
+        "publish_date": "2026-08-27",
+        "title": "[CISA KEV] ownCloud ownCloud - ownCloud Improper Authentication Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2023-49105"
+        ],
+        "raw_content": "CVE: CVE-2023-49105\n廠商: ownCloud\n產品: ownCloud\n漏洞名稱: ownCloud Improper Authentication Vulnerability\n說明: ownCloud contains an improper authentication vulnerability that allows an attacker to access, modify, or delete any file without authentication if the username of a victim is known, and the victim has no signing-key configured.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-08-30\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://owncloud.org/security ; https://owncloud.com/security-advisories/webdav-api-authentication-bypass-using-pre-signed-urls/ ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2023-49105",
+          "https://nvd.nist.gov/vuln/detail/CVE-2023-49105"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "此漏洞（CVE-2023-49105）存在於 ownCloud 雲端儲存服務中，屬於身分驗證繞過漏洞。攻擊者若已知受害者用戶名，且該用戶未配置簽名金鑰，即可在未經授權的情況下任意存取、修改或刪除檔案。此漏洞已被列入 CISA KEV，存在活躍的在野利用風險。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-53362",
+        "source": "CISA_KEV",
+        "publish_date": "2026-08-27",
+        "title": "[CISA KEV] Linux Kernel - Linux Kernel Unspecified Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-53362"
+        ],
+        "raw_content": "CVE: CVE-2026-53362\n廠商: Linux\n產品: Kernel\n漏洞名稱: Linux Kernel Unspecified Vulnerability\n說明: Linux Kernel contains an unspecified vulnerability that can allow for privilege escalation via IPv6 networking subsystem. This vulnerability can impact multiple products, including but not limited to Suse, Red Hat, and other products using Linux. \nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-08-30\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "This vulnerability affects an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: ; https://git.kernel.org/stable/c/14200d435af9a9eeb444f529fc2f689a236b7962; https://git.kernel.org/stable/c/65fb14cbebb0cd0eff903a22d33537ddc8b95769; https://git.kernel.org/stable/c/46f201f8b4c39633a1fa3dc12459f506d470993d; https://git.kernel.org/stable/c/6374fb9edf72c67a118a2c214a0dddd04c921e0a; https://git.kernel.org/stable/c/e9eacf19281ea2498b36291b56c9606118c2d74e; https://git.kernel.org/stable/c/736b380e28d0480c7bc3e022f1950f31fe53a7c5 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-53362",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-53362"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "Critical",
+        "summary": "此漏洞（CVE-2026-53362）存在於 Linux Kernel 的 IPv6 網路子系統中，允許攻擊者進行權限提升。該漏洞已被 CISA 列入已知遭活躍利用的漏洞清冊（KEV），由於公司地端及雲端環境皆有部署 Linux 系統，面臨高度被攻擊風險。",
+        "recommendation": "1. 針對地端「資訊軟體-伺服器軟體-Linux ubuntu」及相關 VM 主機，立即執行系統更新並升級 Linux Kernel 至官方修補版本。\\n2. 針對 AWS EC2、AWS Elastic Kubernetes Service (EKS) 等雲端虛擬主機與容器節點，更新其 AMI 映像檔或核心版本。\\n3. 在修補完成前，若業務無特殊需求，可評估暫時停用系統的 IPv6 協定以作為臨時緩解措施。",
+        "company_relevance": "H",
+        "affected_assets": [
+          "資訊軟體-伺服器軟體-Linux ubuntu",
+          "AWS EC2",
+          "AWS Elastic Kubernetes Service"
+        ],
+        "responsible_unit": "RR40, RR70"
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-66384",
+        "source": "CISA_KEV",
+        "publish_date": "2026-08-27",
+        "title": "[CISA KEV] JFrog Artifactory - JFrog Artifactory Improper Limitation of a Pathname to a Restricted Directory Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-66384"
+        ],
+        "raw_content": "CVE: CVE-2026-66384\n廠商: JFrog\n產品: Artifactory\n漏洞名稱: JFrog Artifactory Improper Limitation of a Pathname to a Restricted Directory Vulnerability\n說明: JFrog Artifactory contains an improper limitation of a pathname to a restricted directory vulnerability. This can allow an authenticated user to write data outside the intended Docker cache path under specific remote-repository conditions.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-10\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://docs.jfrog.com/releases/docs/jfrog-security-advisories ; https://docs.jfrog.com/releases/docs/artifactory-self-managed-releases ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-66384",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-66384"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "此漏洞（CVE-2026-66384）存在於 JFrog Artifactory 中，屬於路徑限制不當漏洞。已驗證的攻擊者可在特定遠端儲存庫條件下，將資料寫入預期 Docker 快取路徑之外。此漏洞已被 CISA 列入已知被利用漏洞名冊（KEV），具有潛在的活躍攻擊風險。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
