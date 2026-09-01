@@ -1,0 +1,67 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-09-01T01:00:43.135671",
+  "count": 2,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2026-82078",
+        "source": "CISA_KEV",
+        "publish_date": "2026-08-31",
+        "title": "[CISA KEV] PaperCut NG/MF - PaperCut NG/MF Unsafe Reflection Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-82078"
+        ],
+        "raw_content": "CVE: CVE-2026-82078\n廠商: PaperCut\n產品: NG/MF\n漏洞名稱: PaperCut NG/MF Unsafe Reflection Vulnerability\n說明: PaperCut NG/MF contains an unsafe reflection vulnerability that allows an attacker to manipulate system configuration parameters and execute arbitrary Java bytecode residing on the application classpath under the security context of the PaperCut server process. This vulnerability can be chained with CVE-2026-81578.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-14\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://www.papercut.com/kb/Main/security-bulletin-27-aug-2026-urgent-security-advisory/?lid=2oneu2wt0ct4 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-82078",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-82078"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "此漏洞（CVE-2026-82078）存在於 PaperCut NG/MF 軟體中，屬於不安全反射漏洞。攻擊者可藉此修改系統配置並執行任意 Java 位元組碼，進而取得伺服器權限並執行遠端程式碼（RCE）。目前該漏洞已被收錄於 CISA KEV，顯示已有活躍的攻擊利用。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-81578",
+        "source": "CISA_KEV",
+        "publish_date": "2026-08-31",
+        "title": "[CISA KEV] PaperCut NG/MF - PaperCut NG/MF Missing Authentication for Critical Function Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-81578"
+        ],
+        "raw_content": "CVE: CVE-2026-81578\n廠商: PaperCut\n產品: NG/MF\n漏洞名稱: PaperCut NG/MF Missing Authentication for Critical Function Vulnerability\n說明: PaperCut NG/MF contains a missing authentication for critical function vulnerability which allows an unauthenticated remote attacker to modify certain system configurations. This vulnerability can be chained with CVE-2026-82078.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-14\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://www.papercut.com/kb/Main/security-bulletin-27-aug-2026-urgent-security-advisory/ ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-81578",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-81578"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "此漏洞（CVE-2026-81578）存在於 PaperCut NG/MF 打印管理軟體中，屬於缺少關鍵功能身分驗證的漏洞。遠端未授權的攻擊者可藉此修改系統配置，甚至與其他漏洞串聯。目前該漏洞已被收錄於 CISA KEV，顯示已有在野利用跡象。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
