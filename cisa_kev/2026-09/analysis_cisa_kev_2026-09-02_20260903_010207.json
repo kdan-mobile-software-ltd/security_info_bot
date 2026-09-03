@@ -1,0 +1,219 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-09-03T01:02:07.035830",
+  "count": 7,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2026-59822",
+        "source": "CISA_KEV",
+        "publish_date": "2026-09-02",
+        "title": "[CISA KEV] BerriAI LiteLLM - BerriAI LiteLLM Improper Authentication Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-59822"
+        ],
+        "raw_content": "CVE: CVE-2026-59822\n廠商: BerriAI\n產品: LiteLLM\n漏洞名稱: BerriAI LiteLLM Improper Authentication Vulnerability\n說明: BerriAI LiteLLM contains an improper authentication vulnerability in the MCP Streamable HTTP endpoint that could allow an unauthenticated attacker to establish an authenticated MCP session using an arbitrary Bearer token.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-16\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://github.com/BerriAI/litellm/security/advisories/GHSA-7488-6r32-c95q ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-59822",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-59822"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "CISA KEV 公布了 BerriAI LiteLLM 的身分驗證繞過漏洞（CVE-2026-59822）。該漏洞存在於 MCP Streamable HTTP 端點中，允許未授權的攻擊者使用任意 Bearer 憑證建立已授權的 MCP 工作階段，進而控制相關服務。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-48710",
+        "source": "CISA_KEV",
+        "publish_date": "2026-09-02",
+        "title": "[CISA KEV] Kludex Starlette - Kludex Starlette HTTP Request/Response Smuggling Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-48710"
+        ],
+        "raw_content": "CVE: CVE-2026-48710\n廠商: Kludex\n產品: Starlette\n漏洞名稱: Kludex Starlette HTTP Request/Response Smuggling Vulnerability\n說明: Kludex Starlette contains a HTTP request/response smuggling vulnerability that could allow attackers to inject paths into the host part, prepending the actual path leading to issues such as authentication bypass when the authentication depends on the reconstructed URL’s path. This vulnerability could be chaned with CVE-2026-42271.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-16\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "This vulnerability affects an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://github.com/Kludex/starlette/security/advisories/GHSA-86qp-5c8j-p5mr ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-48710",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-48710"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "High",
+        "summary": "Kludex Starlette 存在 HTTP 請求/回應走私漏洞（CVE-2026-48710），已被 CISA 列入已知利用漏洞清單（KEV）。攻擊者可藉此繞過基於 URL 路徑重構的身份驗證機制，與其他漏洞串聯可能造成更大危害。",
+        "recommendation": "請開發團隊（KC00）針對「產品程式碼」進行相依性排查，確認是否使用 Python Starlette 庫。若有使用，應儘速升級 Starlette 至最新安全版本（參考 GitHub 安全公告 GHSA-86qp-5c8j-p5mr 建議之修補版本），或調整架構以避免單純依賴重建的 URL 路徑進行權限控管。",
+        "company_relevance": "M",
+        "affected_assets": [
+          "產品程式碼"
+        ],
+        "responsible_unit": "KC00"
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-49869",
+        "source": "CISA_KEV",
+        "publish_date": "2026-09-02",
+        "title": "[CISA KEV] Kestra Kestra OSS - Kestra OSS OS Command Injection Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-49869"
+        ],
+        "raw_content": "CVE: CVE-2026-49869\n廠商: Kestra\n產品: Kestra OSS\n漏洞名稱: Kestra OSS OS Command Injection Vulnerability\n說明: Kestra OSS contains an OS command injection vulnerability that could allow an unauthenticated remote attacker to create and execute arbitrary workflows without credentials.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-05\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "This vulnerability affects an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://github.com/kestra-io/kestra/security/advisories/GHSA-5vc5-wxxq-3fjx ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-49869",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-49869"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "Low",
+        "summary": "Kestra OSS 存在作業系統指令注入漏洞（CVE-2026-49869），允許未經授權的遠端攻擊者在無需憑證的情況下建立並執行任意工作流。此漏洞已被 CISA 列入已知遭利用漏洞清單（KEV），具有極高危害性。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-82329",
+        "source": "CISA_KEV",
+        "publish_date": "2026-09-02",
+        "title": "[CISA KEV] JFrog Artifactory - JFrog Artifactory Improper Authentication Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-82329"
+        ],
+        "raw_content": "CVE: CVE-2026-82329\n廠商: JFrog\n產品: Artifactory\n漏洞名稱: JFrog Artifactory Improper Authentication Vulnerability\n說明: JFrog Artifactory contains an improper authentication vulnerability that under default configuration can allow an unauthenticated attacker with network access to obtain administrative privileges. \nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-05\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://docs.jfrog.com/releases/docs/jfrog-security-advisories ; https://docs.jfrog.com/releases/docs/artifactory-self-managed-releases ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-82329",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-82329"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "JFrog Artifactory 存在身分驗證不當漏洞（CVE-2026-82329），在預設配置下，未經授權的網路攻擊者可藉此取得系統管理員權限。此漏洞已被收錄於 CISA KEV 說明已有在野利用，但評估本公司資產清冊並無使用此產品，故無直接影響。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-9586",
+        "source": "CISA_KEV",
+        "publish_date": "2026-09-02",
+        "title": "[CISA KEV] Sangoma Switchvox - Sangoma Switchvox SQL Injection Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-9586"
+        ],
+        "raw_content": "CVE: CVE-2026-9586\n廠商: Sangoma\n產品: Switchvox\n漏洞名稱: Sangoma Switchvox SQL Injection Vulnerability\n說明: Sangoma Switchvox contains a SQL injection vulnerability which allows an unauthenticated remote attacker to execute arbitrary SQL statements against the backend PostgreSQL database using a single crafted request, including database operations and remote code execution.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-05\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://sangomakb.atlassian.net/wiki/spaces/Switchvox/pages/1802371073/Switchvox+-+Release+Notes+Version+8.4.0.2+July+14+2026 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-9586",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-9586"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "此威脅涉及 Sangoma Switchvox 的 SQL 注入漏洞（CVE-2026-9586），遠端且未經授權的攻擊者可藉此發送惡意請求以執行任意 SQL 指令，進而導致資料庫操作與遠端程式碼執行（RCE）。目前該漏洞已被列入 CISA KEV 漏洞名冊，顯示已有活躍的攻擊活動。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-83548",
+        "source": "CISA_KEV",
+        "publish_date": "2026-09-02",
+        "title": "[CISA KEV] SonicWall SMA1000 Appliances - SonicWall SMA1000 Appliances Server-Side Request Forgery Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-83548"
+        ],
+        "raw_content": "CVE: CVE-2026-83548\n廠商: SonicWall\n產品: SMA1000 Appliances\n漏洞名稱: SonicWall SMA1000 Appliances Server-Side Request Forgery Vulnerability\n說明: SonicWall SMA1000 Appliances contains a server-side request forgery vulnerability that could allow a remote unauthenticated attacker to gain unauthorized access to sensitive functionality and perform unauthorized operations.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-05\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0016 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-83548",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-83548"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "SonicWall SMA1000 系列設備存在伺服器端請求偽造（SSRF）漏洞（CVE-2026-83548），遠端未授權的攻擊者可藉此取得敏感功能存取權限並執行未授權操作。此漏洞已被收錄於 CISA KEV 漏洞名冊中。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-83549",
+        "source": "CISA_KEV",
+        "publish_date": "2026-09-02",
+        "title": "[CISA KEV] SonicWall SMA1000 Appliances - SonicWall SMA1000 Appliances OS Command Injection Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-83549"
+        ],
+        "raw_content": "CVE: CVE-2026-83549\n廠商: SonicWall\n產品: SMA1000 Appliances\n漏洞名稱: SonicWall SMA1000 Appliances OS Command Injection Vulnerability\n說明: SonicWall SMA1000 Appliances contains an OS command injection vulnerability that could enable a remote authenticated attacker as administrator to execute arbitrary OS commands, resulting in remote code execution.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-05\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0016 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-83549",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-83549"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "SonicWall SMA1000 設備存在 OS 命令注入漏洞（CVE-2026-83549），遠端具備管理員權限的攻擊者可藉此執行任意系統指令並導致遠端代碼執行（RCE）。此漏洞已被 CISA 列入已知遭利用漏洞清單（KEV）。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
