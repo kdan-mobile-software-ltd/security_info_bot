@@ -1,0 +1,135 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-09-09T01:00:55.412205",
+  "count": 4,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2026-75650",
+        "source": "CISA_KEV",
+        "publish_date": "2026-09-08",
+        "title": "[CISA KEV] Adobe Commerce and Magento - Adobe Commerce and Magento Improper Neutralization of Special Elements Used in a Template Engine Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-75650"
+        ],
+        "raw_content": "CVE: CVE-2026-75650\n廠商: Adobe\n產品: Commerce and Magento\n漏洞名稱: Adobe Commerce and Magento Improper Neutralization of Special Elements Used in a Template Engine Vulnerability\n說明: Adobe Commerce and Magento Open Source contain an improper neutralization of special elements used in a template engine vulnerability that could allow an attacker to execute arbitrary code.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-11\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://helpx.adobe.com/security/products/magento/apsb26-146.html ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-75650",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-75650"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "此漏洞（CVE-2026-75650）存在於 Adobe Commerce 和 Magento 的模板引擎中，屬於未對特殊元素進行適當過濾的漏洞。遠端攻擊者可利用此漏洞執行任意程式碼（RCE），目前已被 CISA 列入已知被利用漏洞清單（KEV）。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-81963",
+        "source": "CISA_KEV",
+        "publish_date": "2026-09-08",
+        "title": "[CISA KEV] Microsoft Windows - Microsoft Windows Link Following Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-81963"
+        ],
+        "raw_content": "CVE: CVE-2026-81963\n廠商: Microsoft\n產品: Windows\n漏洞名稱: Microsoft Windows Link Following Vulnerability\n說明: Microsoft Windows Update Stack contains a link following vulnerability that allows a local attacker to escalate privileges locally up to SYSTEM.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-22\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-81963 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-81963",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-81963"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "Critical",
+        "summary": "Microsoft Windows Update Stack 存在連結追隨漏洞（CVE-2026-81963），允許本地攻擊者將權限提升至 SYSTEM。該漏洞已被證實存在野外活躍攻擊，將直接威脅公司內部的 Windows Server 2019、AD 主機及同仁工作電腦。",
+        "recommendation": "1. 立即針對 Windows Server 2019、AD 主機及同仁 Windows 工作電腦，套用微軟官方發布的最新安全修補程式。2. 建議透過公司現有的 VMware Workspace ONE 系統進行補丁派送與合規性盤點。3. 嚴格限制伺服器與主機的本地登入權限，以降低本地權限提升之風險。",
+        "company_relevance": "H",
+        "affected_assets": [
+          "資訊軟體-伺服器軟體-Windows Server 2019",
+          "AD(Active Directory)主機",
+          "資訊設備-桌上型電腦/筆記型電腦"
+        ],
+        "responsible_unit": "RR40"
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-86218",
+        "source": "CISA_KEV",
+        "publish_date": "2026-09-08",
+        "title": "[CISA KEV] N-able N-central - N-able N-central Static Code Injection Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-86218"
+        ],
+        "raw_content": "CVE: CVE-2026-86218\n廠商: N-able\n產品: N-central\n漏洞名稱: N-able N-central Static Code Injection Vulnerability\n說明: N-able N-central contains a static code injection vulnerability that could allow for pre-authentication remote code execution.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-11\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://status.n-able.com/2026/09/06/n-central-2026-3-hotfix-4-cve-2026-86218/ ; https://me.n-able.com/s/security-advisory/aArVy0000002Ld3KAE/cve202686218-preauthentication-remote-code-execution ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-86218",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-86218"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "N-able N-central 存在靜態程式碼注入漏洞（CVE-2026-86218），允許未經身分驗證的攻擊者進行遠端程式碼執行（RCE）。此漏洞已被 CISA 列入已知遭利用漏洞清單（KEV），具有極高的潛在威脅。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-85880",
+        "source": "CISA_KEV",
+        "publish_date": "2026-09-08",
+        "title": "[CISA KEV] Microsoft Windows - Microsoft Windows Heap-Based Buffer Overflow Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-85880"
+        ],
+        "raw_content": "CVE: CVE-2026-85880\n廠商: Microsoft\n產品: Windows\n漏洞名稱: Microsoft Windows Heap-Based Buffer Overflow Vulnerability\n說明: Microsoft Windows Advanced Local Procedure Call contains a heap-based buffer overflow vulnerability that allows an attacker to elevate privileges locally.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-22\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-85880 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-85880",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-85880"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "Critical",
+        "summary": "Microsoft Windows 的進階本機程序呼叫 (ALPC) 存在基於堆積的緩衝區溢位漏洞 (CVE-2026-85880)，允許攻擊者在本地提升權限。此漏洞已被納入 CISA KEV 說明已有在野利用，由於公司內部使用 Windows Server 2019 及 Windows 工作電腦，面臨極高被利用風險。",
+        "recommendation": "1. 針對「資訊軟體-伺服器軟體-Windows Server 2019」、「AD(Active Directory)主機」及員工 Windows 工作電腦，立即安裝 Microsoft 官方釋出的安全性更新。2. 依據 CISA KEV 要求，於 2026-09-22 前完成修補。3. 限制非必要人員對伺服器的本地存取權限，以降低本地權限提升漏洞的暴露面。",
+        "company_relevance": "H",
+        "affected_assets": [
+          "資訊軟體-伺服器軟體-Windows Server 2019",
+          "AD(Active Directory)主機",
+          "資訊設備-桌上型電腦/筆記型電腦"
+        ],
+        "responsible_unit": "RR40"
+      }
+    }
+  ]
+}
