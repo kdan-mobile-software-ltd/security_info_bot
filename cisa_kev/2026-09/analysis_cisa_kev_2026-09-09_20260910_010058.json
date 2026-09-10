@@ -1,0 +1,129 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-09-10T01:00:58.283427",
+  "count": 4,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2026-19490",
+        "source": "CISA_KEV",
+        "publish_date": "2026-09-09",
+        "title": "[CISA KEV] Citrix NetScaler - Citrix NetScaler Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-19490"
+        ],
+        "raw_content": "CVE: CVE-2026-19490\n廠商: Citrix\n產品: NetScaler\n漏洞名稱: Citrix NetScaler Authentication Bypass Using an Alternate Path or Channel Vulnerability\n說明: Citrix NetScaler ADC and NetScaler Gateway contain an authentication-bypass vulnerability involving an alternate path or channel. When the NetScaler appliance is configured as an AAA virtual server or as a Gateway (SSL VPN, ICA Proxy, CVPN, or RDP Proxy), an unauthenticated remote threat actor may be able to bypass authentication.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-12\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://support.citrix.com/external/article/CTX696939/netscaler-adc-and-netscaler-gateway-secu.html ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-19490",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-19490"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Citrix NetScaler 存在驗證繞過漏洞（CVE-2026-19490），當設備配置為 AAA 虛擬伺服器或 Gateway 時，遠端未授權攻擊者可繞過驗證。此漏洞已被 CISA 列入已知遭利用漏洞清單（KEV），具有高度危害性。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2025-25249",
+        "source": "CISA_KEV",
+        "publish_date": "2026-09-09",
+        "title": "[CISA KEV] Fortinet Multiple Products - Fortinet Multiple Products Heap-based Buffer Overflow Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2025-25249"
+        ],
+        "raw_content": "CVE: CVE-2025-25249\n廠商: Fortinet\n產品: Multiple Products\n漏洞名稱: Fortinet Multiple Products Heap-based Buffer Overflow Vulnerability\n說明: Fortinet FortiOS, FortiSwitchManager, and FortiSASE contain a heap-based buffer overflow vulnerability that allows an attacker to execute unauthorized code or commands via specially crafted packets.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-12\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://fortiguard.fortinet.com/psirt/FG-IR-25-084 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2025-25249",
+          "https://nvd.nist.gov/vuln/detail/CVE-2025-25249"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Fortinet 旗下的 FortiOS、FortiSwitchManager 及 FortiSASE 等多款產品存在堆疊緩衝區溢位漏洞（CVE-2025-25249），攻擊者可透過特製封包執行未授權的指令或程式碼。此漏洞已被收錄於 CISA KEV 且存在活躍攻擊，但由於公司目前並未部署相關 Fortinet 設備，因此對本公司無直接影響。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-87491",
+        "source": "CISA_KEV",
+        "publish_date": "2026-09-09",
+        "title": "[CISA KEV] Google Chromium V8 - Google Chromium V8 Out of Bounds Write Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-87491"
+        ],
+        "raw_content": "CVE: CVE-2026-87491\n廠商: Google\n產品: Chromium V8\n漏洞名稱: Google Chromium V8 Out of Bounds Write Vulnerability\n說明: Google Chromium V8 contains an out of bounds write vulnerability that allows a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-23\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://chromereleases.googleblog.com/2026/09/stable-channel-update-for-desktop_0808145027.html ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-87491 ",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-87491"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "Critical",
+        "summary": "Google Chromium V8 引擎存在越界寫入漏洞（CVE-2026-87491），遠端攻擊者可透過誘導使用者訪問惡意網頁，在沙盒內執行任意程式碼。此漏洞已列入 CISA KEV 且有活躍攻擊，直接威脅公司所有使用 Chrome 或 Edge 瀏覽器的員工工作電腦安全。",
+        "recommendation": "1. 針對所有員工工作電腦（「資訊設備-桌上型電腦/筆記型電腦」），立即將 Google Chrome、Microsoft Edge 等 Chromium 核心瀏覽器更新至最新安全版本。\n2. 建議透過 UEM 管理系統（VMware Workspace ONE）或 AD 群組原則（GPO）強制啟用瀏覽器自動更新機制。\n3. 加強員工資安意識，避免點擊來源不明的網頁連結。",
+        "company_relevance": "H",
+        "affected_assets": [
+          "資訊設備-桌上型電腦/筆記型電腦"
+        ],
+        "responsible_unit": "RR40"
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-20079",
+        "source": "CISA_KEV",
+        "publish_date": "2026-09-09",
+        "title": "[CISA KEV] Cisco Secure Firewall Management Center (FMC) and Security Cloud Control (SCC) Firewall Management - Cisco Firewall Management Center Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-20079"
+        ],
+        "raw_content": "CVE: CVE-2026-20079\n廠商: Cisco\n產品: Secure Firewall Management Center (FMC) and Security Cloud Control (SCC) Firewall Management\n漏洞名稱: Cisco Firewall Management Center Authentication Bypass Using an Alternate Path or Channel Vulnerability\n說明: Cisco Secure Firewall Management Center (FMC) Software and Cisco Security Cloud Control (SCC) Firewall Management contain an authentication Bypass using an alternate path or channel vulnerability that could allow an unauthenticated, remote attacker to bypass authentication and execute script files on an affected device to obtain root access to the underlying operating system.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-12\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-onprem-fmc-authbypass-5JPp45V2 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-20079",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-20079"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "此漏洞（CVE-2026-20079）存在於 Cisco Secure Firewall Management Center (FMC) 及 Security Cloud Control (SCC) 中，允許未經授權的遠端攻擊者繞過身分驗證。攻擊者可藉此在受影響設備上執行腳本檔案，進而取得底層作業系統的 root 權限。目前該漏洞已被 CISA 列入已知利用漏洞清單（KEV）。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
