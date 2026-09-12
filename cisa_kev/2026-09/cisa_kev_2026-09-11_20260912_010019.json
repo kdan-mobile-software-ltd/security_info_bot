@@ -1,0 +1,87 @@
+{
+  "source": "cisa_kev",
+  "fetched_at": "2026-09-12T01:00:19.760631",
+  "count": 4,
+  "items": [
+    {
+      "intel_id": "CVE-2026-84869",
+      "source": "CISA_KEV",
+      "publish_date": "2026-09-11",
+      "title": "[CISA KEV] ConnectWise ScreenConnect - ConnectWise ScreenConnect Improper Privilege Management and Missing Authorization Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-84869"
+      ],
+      "raw_content": "CVE: CVE-2026-84869\n廠商: ConnectWise\n產品: ScreenConnect\n漏洞名稱: ConnectWise ScreenConnect Improper Privilege Management and Missing Authorization Vulnerability\n說明: ConnectWise ScreenConnect contains both an improper privilege management and missing authorization vulnerability that may allow an attacker to file transfer and execution through an active remote sessions without authorization or host confirmation.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-14\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://www.connectwise.com/company/trust/security-bulletins/2026-09-08-screenconnect-bulletin ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-84869",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84869"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-42016",
+      "source": "CISA_KEV",
+      "publish_date": "2026-09-11",
+      "title": "[CISA KEV] JFrog Artifactory - JFrog Artifactory Incorrect Authorization Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-42016"
+      ],
+      "raw_content": "CVE: CVE-2026-42016\n廠商: JFrog\n產品: Artifactory\n漏洞名稱: JFrog Artifactory Incorrect Authorization Vulnerability\n說明: JFrog Artifactory contains an incorrect authorization vulnerability that allows leads to privilege escalation attack due to a validation check of the token signature/issuer and not the token’s scope.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-25\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://docs.jfrog.com/releases/docs/jfrog-security-advisories ; https://docs.jfrog.com/releases/docs/artifactory-self-managed-releases ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-42016",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-42016"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-42018",
+      "source": "CISA_KEV",
+      "publish_date": "2026-09-11",
+      "title": "[CISA KEV] JFrog Artifactory - JFrog Artifactory Improper Authentication Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-42018"
+      ],
+      "raw_content": "CVE: CVE-2026-42018\n廠商: JFrog\n產品: Artifactory\n漏洞名稱: JFrog Artifactory Improper Authentication Vulnerability\n說明: JFrog Artifactory contains an improper authentication vulnerability that could return an internal anonymous-user token to an unauthenticated caller when anonymous access is disabled, potentially exposing sensitive resources.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-25\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://docs.jfrog.com/releases/docs/jfrog-security-advisories ; https://docs.jfrog.com/releases/docs/artifactory-self-managed-releases ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-42018",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-42018"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-85706",
+      "source": "CISA_KEV",
+      "publish_date": "2026-09-11",
+      "title": "[CISA KEV] GitLab Community Edition and Enterprise Edition - GitLab Community Edition and Enterprise Edition Path Traversal Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-85706"
+      ],
+      "raw_content": "CVE: CVE-2026-85706\n廠商: GitLab\n產品: Community Edition and Enterprise Edition\n漏洞名稱: GitLab Community Edition and Enterprise Edition Path Traversal Vulnerability\n說明: GitLab Community Edition and Enterprise Edition contains a path traversal vulnerability that allows an unauthenticated user to read arbitrary files due to an improper path confinement and missing authentication enforcement in the repository commits API.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-14\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-3-2-released/ ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-85706",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-85706"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    }
+  ]
+}
