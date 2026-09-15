@@ -1,0 +1,37 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-09-15T01:00:31.874307",
+  "count": 1,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2026-76461",
+        "source": "CISA_KEV",
+        "publish_date": "2026-09-14",
+        "title": "[CISA KEV] Cisco Secure Email Gateway - Cisco Secure Email Gateway SQL Injection Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-76461"
+        ],
+        "raw_content": "CVE: CVE-2026-76461\n廠商: Cisco\n產品: Secure Email Gateway\n漏洞名稱: Cisco Secure Email Gateway SQL Injection Vulnerability\n說明: Cisco AsyncOS software for Cisco Secure Email Gateway (SEG) contains a SQL injection vulnerability that could allow an unauthenticated, remote attacker to execute arbitrary commands with root privileges on the underlying operating system.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-17\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-inj-2bLVGmhX ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-76461",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-76461"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Cisco Secure Email Gateway (SEG) 存在 SQL 注入漏洞（CVE-2026-76461），已被列入 CISA KEV。該漏洞允許未經授權的遠端攻擊者在底層作業系統上以 root 權限執行任意指令。經盤點，公司並未部署此受影響之 Cisco 郵件安全閘道器資產。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
