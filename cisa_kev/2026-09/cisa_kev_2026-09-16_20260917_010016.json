@@ -1,0 +1,67 @@
+{
+  "source": "cisa_kev",
+  "fetched_at": "2026-09-17T01:00:16.319949",
+  "count": 3,
+  "items": [
+    {
+      "intel_id": "CVE-2026-58704",
+      "source": "CISA_KEV",
+      "publish_date": "2026-09-16",
+      "title": "[CISA KEV] Google Pixel - Google Pixel Improper Authorization Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-58704"
+      ],
+      "raw_content": "CVE: CVE-2026-58704\n廠商: Google\n產品: Pixel\n漏洞名稱: Google Pixel Improper Authorization Vulnerability\n說明: Google Pixel devices contain an improper authorization vulnerability in the cellular modem. A logic error may allow an attacker to bypass permission checks and escalate privileges.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-19\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://source.android.com/docs/security/bulletin/pixel/2026/2026-09-01 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-58704",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-58704"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-76460",
+      "source": "CISA_KEV",
+      "publish_date": "2026-09-16",
+      "title": "[CISA KEV] Cisco Identity Services Engine - Cisco Identity Services Engine Incorrect Use of Privileged APIs Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-76460"
+      ],
+      "raw_content": "CVE: CVE-2026-76460\n廠商: Cisco\n產品: Identity Services Engine\n漏洞名稱: Cisco Identity Services Engine Incorrect Use of Privileged APIs Vulnerability\n說明: Cisco Identity Services Engine (ISE) and Cisco ISE Passive Identity Connector (ISE-PIC) contain an incorrect use of privileged APIs vulnerability that could allow an unauthenticated, remote attacker to gain unauthorized access to the affected device by bypassing the web-based management interface.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-19\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ISE-ABP-VNSW7Tn5 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-76460",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-76460"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    },
+    {
+      "intel_id": "CVE-2026-87886",
+      "source": "CISA_KEV",
+      "publish_date": "2026-09-16",
+      "title": "[CISA KEV] Acronis Backup - Acronis Backup Incorrect Default Permissions Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-87886"
+      ],
+      "raw_content": "CVE: CVE-2026-87886\n廠商: Acronis\n產品: Backup\n漏洞名稱: Acronis Backup Incorrect Default Permissions Vulnerability\n說明: Acronis Backup plugin for cPanel & WHM and extension for Plesk contains an incorrect default permissions vulnerability that could allow for privilege escalation.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-19\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://security-advisory.acronis.com/advisories/SEC-10986 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-87886",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-87886"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    }
+  ]
+}
