@@ -1,0 +1,127 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-09-23T01:01:03.053550",
+  "count": 4,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2026-93952",
+        "source": "CISA_KEV",
+        "publish_date": "2026-09-22",
+        "title": "[CISA KEV] Arista VeloCloud Orchestrator - Arista VeloCloud Orchestrator Improper Input Validation Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-93952"
+        ],
+        "raw_content": "CVE: CVE-2026-93952\n廠商: Arista\n產品: VeloCloud Orchestrator\n漏洞名稱: Arista VeloCloud Orchestrator Improper Input Validation Vulnerability\n說明: Arista VeloCloud Orchestrator (VCO) on-prem contains an improper input validation vulnerability that may allow a remote attacker to access privileged internal functionality and impact the VCO host. Successful exploitation may compromise the confidentiality, integrity, and availability of the orchestrator and data managed by the orchestrator.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-25\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://www.arista.com/en/support/advisories-notices/security-advisory/24765-security-advisory-0183 ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-93952",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-93952"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Arista VeloCloud Orchestrator 存在輸入驗證不當漏洞（CVE-2026-93952），遠端攻擊者可藉此存取內部特權功能並控制主機。此漏洞已被 CISA 列入已知利用漏洞清單（KEV），具有高度危害性。經評估，本公司並未部署此產品，故無直接安全風險。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-94127",
+        "source": "CISA_KEV",
+        "publish_date": "2026-09-22",
+        "title": "[CISA KEV] F5 BIG-IP APM - F5 BIG-IP APM Heap-based Buffer Overflow Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-94127"
+        ],
+        "raw_content": "CVE: CVE-2026-94127\n廠商: F5\n產品: BIG-IP APM\n漏洞名稱: F5 BIG-IP APM Heap-based Buffer Overflow Vulnerability\n說明: F5 BIG-IP APM contains a heap-based buffer overflow vulnerability when access policy and an OAuth profile are configured on a virtual server. This vulnerability could allow an unauthenticated attacker to perform remote code execution.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-25\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "For temporary mitigation to allow for proactive forensic triage, apply the vendor-provided iRule. Once completed, install the final vendor patch as soon as possible. For more information please see: https://my.f5.com/manage/s/article/K000162605 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-94127",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-94127"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "F5 BIG-IP APM 存在堆疊緩衝區溢位漏洞（CVE-2026-94127），未經授權的攻擊者可利用該漏洞執行遠端程式碼（RCE）。此漏洞已被 CISA 列入已知遭利用漏洞清單（KEV），具備高度危害，但經盤點公司資產並無使用 F5 相關設備。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-93616",
+        "source": "CISA_KEV",
+        "publish_date": "2026-09-22",
+        "title": "[CISA KEV] Check Point Multiple Products - Check Point Multiple Products Path Traversal Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-93616"
+        ],
+        "raw_content": "CVE: CVE-2026-93616\n廠商: Check Point\n產品: Multiple Products\n漏洞名稱: Check Point Multiple Products Path Traversal Vulnerability\n說明: Check Point Security Management Server, Multi-Domain Security Management Server, Log Server, Multi-Domain Log Server, and SmartEvent contain a path traversal vulnerability that allows an unauthenticated attacker to upload and execute arbitrary scripts.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-25\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://support.checkpoint.com/results/sk/sk1000171/ ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-93616",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-93616"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "CISA KEV 公布 Check Point 多款安全管理與日誌伺服器產品存在路徑穿越漏洞（CVE-2026-93616），允許未經身分驗證的攻擊者上傳並執行任意腳本。經比對公司資產清冊，本公司並未使用 Check Point 相關產品，無直接安全風險。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-85102",
+        "source": "CISA_KEV",
+        "publish_date": "2026-09-22",
+        "title": "[CISA KEV] Check Point Multiple Products - Check Point Multiple Products Improper Certificate Validation Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-85102"
+        ],
+        "raw_content": "CVE: CVE-2026-85102\n廠商: Check Point\n產品: Multiple Products\n漏洞名稱: Check Point Multiple Products Improper Certificate Validation Vulnerability\n說明: Check Point Security Gateway and Check Point Spark Firewall using Site to Site VPN or Remote Access VPN contain an improper certificate validation vulnerability which could allow an unauthenticated remote attacker to execute arbitrary code on the Gateway.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-25\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://support.checkpoint.com/results/sk/sk1000117 ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-85102",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-85102"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Check Point 安全閘道器與 Spark 防火牆之 VPN 功能存在憑證驗證不當漏洞（CVE-2026-85102），允許未授權的遠端攻擊者在閘道器上執行任意代碼。經評估，本公司並未採用 Check Point 相關網路安全設備，因此不受此漏洞影響。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
