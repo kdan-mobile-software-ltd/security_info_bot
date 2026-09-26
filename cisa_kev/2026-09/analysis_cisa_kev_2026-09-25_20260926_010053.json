@@ -1,0 +1,99 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-09-26T01:00:53.639989",
+  "count": 3,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2026-67279",
+        "source": "CISA_KEV",
+        "publish_date": "2026-09-25",
+        "title": "[CISA KEV] MikroTik RouterOS - Mikrotik RouterOS Improper Enforcement of Behavioral Workflow Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-67279"
+        ],
+        "raw_content": "CVE: CVE-2026-67279\n廠商: MikroTik\n產品: RouterOS\n漏洞名稱: Mikrotik RouterOS Improper Enforcement of Behavioral Workflow Vulnerability\n說明: Mikrotik RouterOS contains an improper enforcement of behavioral workflow vulnerability that could allow an unauthenticated client to open a session channel and send an exec request. This vulnerability can be chained to achieve unauthenticated exploitation of CVE-2026-86060.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-28\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://mikrotik.com/supportsec/september-2026-vulnerability/?utm_source=chatgpt.com ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-67279",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-67279"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "此漏洞（CVE-2026-67279）存在於 MikroTik RouterOS 中，允許未經授權的攻擊者建立工作階段並執行指令。該漏洞已被收錄於 CISA KEV 且存在活躍攻擊，可與其他漏洞串聯以實現遠端程式碼執行（RCE）。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-65660",
+        "source": "CISA_KEV",
+        "publish_date": "2026-09-25",
+        "title": "[CISA KEV] Microsoft SharePoint - Microsoft SharePoint Code Injection Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-65660"
+        ],
+        "raw_content": "CVE: CVE-2026-65660\n廠商: Microsoft\n產品: SharePoint\n漏洞名稱: Microsoft SharePoint Code Injection Vulnerability\n說明: Microsoft SharePoint contains a code injection vulnerability which could allow an authorized attacker to execute code over a network.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-28\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-65660 ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-65660",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-65660"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Microsoft SharePoint 存在代碼注入漏洞（CVE-2026-65660），允許已授權的攻擊者透過網路執行任意代碼。該漏洞已被 CISA 列入已知活躍利用（KEV）清單，具有極高安全風險。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-87902",
+        "source": "CISA_KEV",
+        "publish_date": "2026-09-25",
+        "title": "[CISA KEV] WordPress Core - WordPress Core Remote File Inclusion Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-87902"
+        ],
+        "raw_content": "CVE: CVE-2026-87902\n廠商: WordPress\n產品: Core\n漏洞名稱: WordPress Core Remote File Inclusion Vulnerability\n說明: WordPress Core contains a remote file inclusion vulnerability which could allow an unauthenticated attacker to make page-template resolution include a chosen readable local `.php` file outside the active theme directories, leading to remote code execution.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-09-28\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-7hp8-65ch-5whp ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-87902",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-87902"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "Critical",
+        "summary": "WordPress Core 存在遠端檔案包含 (RFI) 漏洞 (CVE-2026-87902)，未經授權的攻擊者可藉此在 active theme 目錄外引入惡意 .php 檔案並執行任意程式碼 (RCE)。此漏洞已被 CISA 列入 KEV（已知遭利用漏洞清單），且公司內部正使用 WordPress 作為部落格平台，面臨直接且嚴重的入侵風險。",
+        "recommendation": "1. 立即將所有 WordPress 網站核心版本升級至官方釋出的最新安全修補版本（請參考官方安全公告 GHSA-7hp8-65ch-5whp）。\n2. 在完成升級前，於 AWS WAF 或相關防護設備上啟用針對 RFI 與 RCE 攻擊的過濾規則，阻斷異常的頁面模板請求。\n3. 檢查 WordPress 伺服器日誌，排查是否有異常的外部檔案讀取或未授權的 .php 檔案執行紀錄。",
+        "company_relevance": "H",
+        "affected_assets": [
+          "Wordpress"
+        ],
+        "responsible_unit": "WF20, DA20"
+      }
+    }
+  ]
+}
