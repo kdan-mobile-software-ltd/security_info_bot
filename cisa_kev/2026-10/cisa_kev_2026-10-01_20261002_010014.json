@@ -1,0 +1,27 @@
+{
+  "source": "cisa_kev",
+  "fetched_at": "2026-10-02T01:00:14.472697",
+  "count": 1,
+  "items": [
+    {
+      "intel_id": "CVE-2026-104286",
+      "source": "CISA_KEV",
+      "publish_date": "2026-10-01",
+      "title": "[CISA KEV] Fortinet FortiMail - Fortinet FortiMail Path Traversal Vulnerability",
+      "intel_type": "101-漏洞訊息",
+      "cve_ids": [
+        "CVE-2026-104286"
+      ],
+      "raw_content": "CVE: CVE-2026-104286\n廠商: Fortinet\n產品: FortiMail\n漏洞名稱: Fortinet FortiMail Path Traversal Vulnerability\n說明: Fortinet FortiMail contains a path traversal and an improper neutralization of NULL byte or NULL character vulnerability that may allow an unauthenticated attacker to write arbitrary files on the underlying system via crafted HTTP or HTTPS requests.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-10-04\n已知勒索軟體利用: Unknown\n",
+      "reference_urls": [
+        "https://fortiguard.fortinet.com/psirt/FG-IR-26-175 ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-104286",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-104286"
+      ],
+      "attachment_urls": [],
+      "ioc_ips": [],
+      "ioc_hashes": [],
+      "ioc_domains": [],
+      "impact_level": ""
+    }
+  ]
+}
