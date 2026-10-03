@@ -1,0 +1,67 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-10-03T01:00:47.420416",
+  "count": 2,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2026-102490",
+        "source": "CISA_KEV",
+        "publish_date": "2026-10-02",
+        "title": "[CISA KEV] Zammad GmbH Zammad - Zammad GmbH Zammad Improper Privilege Management Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-102490"
+        ],
+        "raw_content": "CVE: CVE-2026-102490\n廠商: Zammad GmbH\n產品: Zammad\n漏洞名稱: Zammad GmbH Zammad Improper Privilege Management Vulnerability\n說明: Zammad GmbH Zammad contains an improper privilege management vulnerability that can allow the local zammad user to escalate privileges to root. This vulnerability can be chained with CVE-2026-102489.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-10-05\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://zammad.com/en/product/releases/ ; https://community.zammad.org/t/take-care-local-privilege-escalation-cve-2026-102490-is-reported-as-being-actively-exploited/21297/2 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-102490",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-102490"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "此情資指出開源客服系統 Zammad 存在權限管理不當漏洞（CVE-2026-102490），允許本地 zammad 使用者將權限提升至 root。該漏洞已被收錄於 CISA KEV 且傳出有活躍攻擊，但由於公司並未部署或使用 Zammad 相關系統，因此不受此漏洞影響。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-102489",
+        "source": "CISA_KEV",
+        "publish_date": "2026-10-02",
+        "title": "[CISA KEV] Zammad GmbH Zammad - Zammad GmbH Zammad Session Fixation Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-102489"
+        ],
+        "raw_content": "CVE: CVE-2026-102489\n廠商: Zammad GmbH\n產品: Zammad\n漏洞名稱: Zammad GmbH Zammad Session Fixation Vulnerability\n說明: Zammad GmbH Zammad contains a session fixation vulnerability that can lead to remote code execution as the zammad user. This vulnerability can be chained with CVE-2026-102490.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-10-05\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://zammad.com/en/product/releases/ ; https://community.zammad.org/t/take-care-local-privilege-escalation-cve-2026-102490-is-reported-as-being-actively-exploited/21297/2 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-102489",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-102489"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Zammad 存在會話固定漏洞（CVE-2026-102489），攻擊者可藉此漏洞進行鏈結攻擊，以 zammad 使用者權限執行遠端程式碼（RCE）。此漏洞已被列入 CISA KEV 漏洞名單，顯示已有活躍的攻擊活動。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
