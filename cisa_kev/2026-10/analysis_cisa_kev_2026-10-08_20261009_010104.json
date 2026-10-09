@@ -1,0 +1,157 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-10-09T01:01:04.505419",
+  "count": 5,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2015-5477",
+        "source": "CISA_KEV",
+        "publish_date": "2026-10-08",
+        "title": "[CISA KEV] ISC BIND -  ISC BIND Data Processing Errors Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2015-5477"
+        ],
+        "raw_content": "CVE: CVE-2015-5477\n廠商: ISC\n產品: BIND\n漏洞名稱:  ISC BIND Data Processing Errors Vulnerability\n說明: ISC BIND contains a data processing errors vulnerability that could allow remote attackers to cause a denial of service via TKEY queries.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-10-11\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://web.archive.org/web/20150729014733/https://kb.isc.org/article/AA-01272 ; https://access.redhat.com/errata/RHSA-2015:1513.html; https://supportportal.juniper.net/s/article/2016-01-Security-Bulletin-Junos-Vulnerability-in-ISC-BIND-named-CVE-2015-5477 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2015-5477",
+          "https://nvd.nist.gov/vuln/detail/CVE-2015-5477"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "此情資指出開源 DNS 軟體 ISC BIND 存在安全漏洞（CVE-2015-5477），遠端攻擊者可透過特製的 TKEY 查詢觸發資料處理錯誤，進而導致 DNS 服務阻斷（DoS）。此漏洞為 2015 年發布之舊漏洞，且本公司並無自建 BIND 伺服器。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2016-3081",
+        "source": "CISA_KEV",
+        "publish_date": "2026-10-08",
+        "title": "[CISA KEV] Apache Struts - Apache Struts Command Injection Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2016-3081"
+        ],
+        "raw_content": "CVE: CVE-2016-3081\n廠商: Apache\n產品: Struts\n漏洞名稱: Apache Struts Command Injection Vulnerability\n說明: Apache Struts contains a command injection vulnerability that could allow remote attackers to execute arbitrary code via method:prefix when Dynamic Method Invocation is enabled.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-10-11\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://cwiki.apache.org/confluence/display/WW/S2-032 ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2016-3081",
+          "https://nvd.nist.gov/vuln/detail/CVE-2016-3081"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "此情資指出 Apache Struts 存在遠端命令執行漏洞（CVE-2016-3081），當啟用動態方法調用（DMI）時，遠端攻擊者可透過特定前綴執行任意程式碼。該漏洞已被列入 CISA KEV 列表中。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2023-22894",
+        "source": "CISA_KEV",
+        "publish_date": "2026-10-08",
+        "title": "[CISA KEV] Strapi Strapi - Strapi Cleartext Storage of Sensitive Information Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2023-22894"
+        ],
+        "raw_content": "CVE: CVE-2023-22894\n廠商: Strapi\n產品: Strapi\n漏洞名稱: Strapi Cleartext Storage of Sensitive Information Vulnerability\n說明: Strapi contains a cleartext storage of sensitive information vulnerability that could allow attackers with access to the admin panel to discover sensitive user details via the query filter. The impacted product(s) could be end-of-life (EoL) and/or end-of-service (EoS). Users are advised to discontinue use and/or transition to a supported version. This vulnerability can be chained with CVE-2023-22621 to achieve remote code execution. \nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-10-11\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://strapi.io/blog/security-disclosure-of-vulnerabilities-cve ; https://github.com/strapi/strapi/releases ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2023-22894",
+          "https://nvd.nist.gov/vuln/detail/CVE-2023-22894"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "此情資指出開源內容管理系統 Strapi 存在敏感資訊明文儲存漏洞（CVE-2023-22894），具備後台權限的攻擊者可藉此竊取用戶機敏資料。該漏洞亦可與其他漏洞串接以執行遠端程式碼（RCE），已被 CISA 列入已知利用漏洞清單。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2021-3199",
+        "source": "CISA_KEV",
+        "publish_date": "2026-10-08",
+        "title": "[CISA KEV] ONLYOFFICE Docs - ONLYOFFICE Docs Server Path Traversal Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2021-3199"
+        ],
+        "raw_content": "CVE: CVE-2021-3199\n廠商: ONLYOFFICE\n產品: Docs\n漏洞名稱: ONLYOFFICE Docs Server Path Traversal Vulnerability\n說明: ONLYOFFICE Docs contains a path traversal vulnerability that can occur when JWT is used, via a /.. sequence in an image upload parameter and could allow for remote code execution.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-10-11\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: ; https://github.com/ONLYOFFICE/DocumentServer/blob/903fe5ab7a275bd69c3c3346af2d21cf87ebeabf/CHANGELOG.md#563 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2021-3199",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-3199"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "ONLYOFFICE Docs 存在路徑穿越漏洞（CVE-2021-3199），當啟用 JWT 時，攻擊者可透過圖片上傳參數中的特定序列進行目錄穿越，進而執行任意程式碼（RCE）。此漏洞已被收錄於 CISA KEV，顯示已有在野利用跡象。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2015-3306",
+        "source": "CISA_KEV",
+        "publish_date": "2026-10-08",
+        "title": "[CISA KEV] ProFTPD ProFTPD - ProFTPD Improper Access Control Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2015-3306"
+        ],
+        "raw_content": "CVE: CVE-2015-3306\n廠商: ProFTPD\n產品: ProFTPD\n漏洞名稱: ProFTPD Improper Access Control Vulnerability\n說明: ProFTPD contains an improper access control vulnerability that could allow remote attackers to read and write to arbitrary files via the site cpfr and site cpto commands.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-10-11\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "This vulnerability could affect an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: http://www.proftpd.org/ ; https://lists.debian.org/debian-security-announce/2015/msg00154.html ; https://lists.opensuse.org/archives/list/updates@lists.opensuse.org/message/WE6YZRG5UVXMGQ7IVDRYBPIWV4M6UUGM/ ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2015-3306",
+          "https://nvd.nist.gov/vuln/detail/CVE-2015-3306"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "此漏洞（CVE-2015-3306）存在於 ProFTPD 的 mod_copy 模組中，遠端未授權的攻擊者可透過 site cpfr 與 site cpto 指令讀寫伺服器上的任意檔案。此漏洞已被 CISA 列入已知遭利用漏洞清單（KEV），具有極高的安全風險，可能導致遠端程式碼執行。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
