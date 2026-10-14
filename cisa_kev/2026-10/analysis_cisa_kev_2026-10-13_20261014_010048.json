@@ -1,0 +1,71 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-10-14T01:00:48.908044",
+  "count": 2,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2026-104935",
+        "source": "CISA_KEV",
+        "publish_date": "2026-10-13",
+        "title": "[CISA KEV] Ivanti Connect Secure - Ivanti Connect Secure Authentication Bypass by Spoofing Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-104935"
+        ],
+        "raw_content": "CVE: CVE-2026-104935\n廠商: Ivanti\n產品: Connect Secure\n漏洞名稱: Ivanti Connect Secure Authentication Bypass by Spoofing Vulnerability\n說明: Ivanti Connect Secure contains an authentication bypass by spoofing vulnerability that allows a remote unauthenticated attacker to execute arbitrary commands.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-10-16\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https:/forums.ivanti.com/s/article/Security-Advisory-Ivanti-Connect-Secure-CVE-2026-104935 ; https://nvd.nist.gov/vuln/detail/CVE-2026-104935",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-104935"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Ivanti Connect Secure 存在身分驗證繞過漏洞（CVE-2026-104935），遠端未授權攻擊者可利用此漏洞執行任意命令。該漏洞已被收錄於 CISA KEV 且有活躍攻擊風險，惟經盤點公司資產清冊中並無使用此產品。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-96951",
+        "source": "CISA_KEV",
+        "publish_date": "2026-10-13",
+        "title": "[CISA KEV] Microsoft Windows - Microsoft Windows Command Injection Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-96951"
+        ],
+        "raw_content": "CVE: CVE-2026-96951\n廠商: Microsoft\n產品: Windows\n漏洞名稱: Microsoft Windows Command Injection Vulnerability\n說明: Microsoft Windows Shell contains a command injection vulnerability that allows an unauthorized attacker to bypass a security feature over a network.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-10-16\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-96951 ; BOD 26-04: BOD 26-04: Prioritizing Security Updates Based on Risk | CISA ; Forensics Triage Requirements: BOD 26-04: Implementation Guidance for Prioritizing Security Updates Based on Risk | CISA ;  https://nvd.nist.gov/vuln/detail/CVE-2026-96951",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-96951"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "Critical",
+        "summary": "CISA KEV 已將微軟 Windows Shell 命令注入漏洞（CVE-2026-96951）列入已知利用清單，攻擊者可透過網路繞過安全機制並執行命令。由於公司資產清冊包含 Windows Server 2019 與 AD 主機等 Windows 系統資產，若遭利用將造成嚴重的系統控制權失竊風險。",
+        "recommendation": "請資安與 MIS 團隊（RR40）依微軟官方安全指南儘速為 Windows Server 2019、AD 主機及 Windows 端點設備安裝修補程式，並依 CISA BOD 26-04 規範於 2026 年 10 月 16 日前完成對外曝險資產之風險評估與修補作業。",
+        "company_relevance": "H",
+        "affected_assets": [
+          "資訊軟體-伺服器軟體-Windows Server 2019",
+          "AD(Active Directory)主機",
+          "資訊設備-桌上型電腦/筆記型電腦"
+        ],
+        "responsible_unit": "RR40"
+      }
+    }
+  ]
+}
