@@ -1,0 +1,127 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-10-15T01:00:54.628580",
+  "count": 4,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2026-105134",
+        "source": "CISA_KEV",
+        "publish_date": "2026-10-14",
+        "title": "[CISA KEV] Ahsay AhsayCBS - Ahsay AhsayCBS Command Injection Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-105134"
+        ],
+        "raw_content": "CVE: CVE-2026-105134\n廠商: Ahsay\n產品: AhsayCBS\n漏洞名稱: Ahsay AhsayCBS Command Injection Vulnerability\n說明: Ahsay AhsayCBS contains a command injection vulnerability that could allow a remote attacker to execute operating system commands via manipulation of the random parameter in the Replication Receiver component’s /rps/api/json/UpdateReceivers.do endpoint. This vulnerability can be chained with CVE-2026-105133.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-10-17\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://www.ahsay.com/en/company/announcements/patch-cve-105133-105134-update ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-105134",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-105134"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "CISA KEV 公告指出 AhsayCBS 備份軟體之 Replication Receiver 元件存在命令注入漏洞（CVE-2026-105134），遠端攻擊者可藉由操縱 UpdateReceivers.do 接口的 random 參數執行作業系統指令。該漏洞已知遭活躍利用，且可與 CVE-2026-105133 鏈接攻擊。經核對公司資產清冊，內部並未採用或部署此產品。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-76519",
+        "source": "CISA_KEV",
+        "publish_date": "2026-10-14",
+        "title": "[CISA KEV] Cisco Secure Email Gateway - Cisco Secure Email Gateway Relative Path Traversal Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-76519"
+        ],
+        "raw_content": "CVE: CVE-2026-76519\n廠商: Cisco\n產品: Secure Email Gateway\n漏洞名稱: Cisco Secure Email Gateway Relative Path Traversal Vulnerability\n說明: Cisco Secure Email Gateway contains a relative path traversal vulnerability that could allow an unauthenticated, remote attacker to write arbitrary files on the underlying operating system.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-10-17\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-afw-zqYJkjxp ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-76519",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-76519"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Cisco Secure Email Gateway 存在相對路徑穿越漏洞（CVE-2026-76519），未經身份驗證的遠端攻擊者可利用此漏洞於底層作業系統中寫入任意檔案。該漏洞已被 CISA 列入已知遭利用漏洞清單（KEV）。經比對資產清冊，公司未部署或使用受影響之 Cisco 產品。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-105133",
+        "source": "CISA_KEV",
+        "publish_date": "2026-10-14",
+        "title": "[CISA KEV] Ahsay AhsayCBS - Ahsay AhsayCBS Improper Authentication Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-105133"
+        ],
+        "raw_content": "CVE: CVE-2026-105133\n廠商: Ahsay\n產品: AhsayCBS\n漏洞名稱: Ahsay AhsayCBS Improper Authentication Vulnerability\n說明: Ahsay AhsayCBS contains an improper authentication vulnerability that could allow a remote attacker to bypass authentication via manipulation of the random parameter in the API component’s checkSysPwd function. This vulnerability can be chained with CVE-2026-105134.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-10-17\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://www.ahsay.com/en/company/announcements/patch-cve-105133-105134-update ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-105133",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-105133"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "AhsayCBS 備份軟體存在身分驗證繞過漏洞（CVE-2026-105133），遠端攻擊者可透過操縱 checkSysPwd 函式中的隨機參數繞過驗證機制。此漏洞已被 CISA 列入已知遭利用漏洞清冊（KEV），具高度安全風險。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-0322",
+        "source": "CISA_KEV",
+        "publish_date": "2026-10-14",
+        "title": "[CISA KEV] Palo Alto Networks PAN-OS - Palo Alto Networks PAN-OS Code Injection Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-0322"
+        ],
+        "raw_content": "CVE: CVE-2026-0322\n廠商: Palo Alto Networks\n產品: PAN-OS\n漏洞名稱: Palo Alto Networks PAN-OS Code Injection Vulnerability\n說明: Palo Alto Networks PAN-OS contains a code injection vulnerability that could allow an authenticated attacker with network access to execute arbitrary code with root privileges on the firewall.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-10-17\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://security.paloaltonetworks.com/CVE-2026-0322 ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-0322",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-0322"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "CISA KEV 公布 Palo Alto Networks PAN-OS 存在程式碼注入漏洞（CVE-2026-0322），可允許具網路存取權的驗證攻擊者以 root 權限執行任意程式碼。經比對公司資產清冊，內部並未採用任何 Palo Alto Networks 或 PAN-OS 相關產品。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
