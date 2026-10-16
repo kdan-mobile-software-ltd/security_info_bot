@@ -1,0 +1,39 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-10-16T01:00:36.603000",
+  "count": 1,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2026-21589",
+        "source": "CISA_KEV",
+        "publish_date": "2026-10-15",
+        "title": "[CISA KEV] Atlassian Multiple Products - Atlassian Multiple Products Files or Directories Accessible to External Parties Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-21589"
+        ],
+        "raw_content": "CVE: CVE-2026-21589\n廠商: Atlassian\n產品: Multiple Products\n漏洞名稱: Atlassian Multiple Products Files or Directories Accessible to External Parties Vulnerability\n說明: Multiple Atlassian products (Bitbucket Data Center ,Confluence Data Center, Jira Service Management Data Center, Jira Software Data Center, Bamboo Data Center, Crowd Data Center, Crucible and Fisheye) contain a files or directories accessible to external parties vulnerability which could allow an unauthenticated attacker to access specific files within the web application root directory in affected versions.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-10-18\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://confluence.atlassian.com/security/cve-2026-21589-arbitrary-file-access-vulnerability-impacts-multiple-products-1870495748.html?ref=labs.watchtowr.com ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-21589",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-21589"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "Critical",
+        "summary": "CISA KEV 已將漏洞 CVE-2026-21589 列入已知利用清單，該漏洞影響包含 Jira 在內的 Atlassian 多款產品。未授權的外部攻擊者可藉由此漏洞存取 Web 應用程式根目錄中的特定檔案，可能導致敏感資訊外洩。由於公司資產包含 Jira 且該漏洞已有活躍攻擊，具高風險威脅。",
+        "recommendation": "請 WF10 部門立即確認內部 Jira 系統版本，並依據 Atlassian 官方安全公告升級至修補版本。若暫時無法進行版本更新，應依官方建議實施存取控制與緩解措施，並於 2026-10-18 前完成修補作業。",
+        "company_relevance": "H",
+        "affected_assets": [
+          "Jira"
+        ],
+        "responsible_unit": "WF10"
+      }
+    }
+  ]
+}
