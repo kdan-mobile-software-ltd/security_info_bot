@@ -1,0 +1,187 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-10-21T01:01:05.412537",
+  "count": 6,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2026-106931",
+        "source": "CISA_KEV",
+        "publish_date": "2026-10-20",
+        "title": "[CISA KEV] EG Secure Solutions SiteGuard Server Edition - EG Secure Solutions SiteGuard Server Edition OS Command Injection Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-106931"
+        ],
+        "raw_content": "CVE: CVE-2026-106931\n廠商: EG Secure Solutions\n產品: SiteGuard Server Edition\n漏洞名稱: EG Secure Solutions SiteGuard Server Edition OS Command Injection Vulnerability\n說明: EG Secure Solutions SiteGuard Server Edition contains an OS command injection vulnerability which may allow an attacker to execute arbitrary OS commands with root or SYSTEM privileges on the system running the affected product.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-10-23\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://www.eg-secure.co.jp/siteguard/news/alert-202610-1 ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-106931",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-106931"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "CISA KEV 已將 EG Secure Solutions SiteGuard Server Edition 的 OS 指令注入漏洞（CVE-2026-106931）列入已知被利用漏洞清單。攻擊者可藉此漏洞以 root 或 SYSTEM 高權限執行任意系統指令。此漏洞目前已有活躍攻擊行為，需盡速處置。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-96656",
+        "source": "CISA_KEV",
+        "publish_date": "2026-10-20",
+        "title": "[CISA KEV] Plex Media Server - Plex Media Server External Control of File Name or Path Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-96656"
+        ],
+        "raw_content": "CVE: CVE-2026-96656\n廠商: Plex\n產品: Media Server\n漏洞名稱: Plex Media Server External Control of File Name or Path Vulnerability\n說明: Plex Media Server contains an external control of file name or path vulnerability which can allow an admin user to write arbitrary files that may be executed on load. This vulnerability can be chained with CVE-2026-96652, CVE-2026-96654, and CVE-2026-96655.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-10-23\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://forums.plex.tv/t/important-security-update-for-plex-media-server-v1-43-2-and-earlier/942319 ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-96656",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-96656"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Plex Media Server 存在檔案名稱與路徑控制不當漏洞（CVE-2026-96656），管理者權限攻擊者可藉此寫入任意檔案並於系統載入時執行程式碼。該漏洞已納入 CISA 已知被利用漏洞清單（KEV），並可與其他 CVE 漏洞結合進行串連攻擊。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-96655",
+        "source": "CISA_KEV",
+        "publish_date": "2026-10-20",
+        "title": "[CISA KEV] Plex Media Server - Plex Media Server Server-Side Request Forgery (SSRF) Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-96655"
+        ],
+        "raw_content": "CVE: CVE-2026-96655\n廠商: Plex\n產品: Media Server\n漏洞名稱: Plex Media Server Server-Side Request Forgery (SSRF) Vulnerability\n說明: Plex Media Server contains a server-side request forgery (SSRF) vulnerability that could allow an authenticated user to request arbitrary internal or external addresses via the '/video/:/transcode/universal' path parameter. This vulnerability can be chained with CVE-2026-96652, CVE-2026-96654, and CVE-2026-96656.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-11-03\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://forums.plex.tv/t/important-security-update-for-plex-media-server-v1-43-2-and-earlier/942319 ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-96655",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-96655"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Plex Media Server 存在伺服器端請求偽造（SSRF）漏洞（CVE-2026-96655），具備權限之攻擊者可透過特定路徑發起任意內部或外部請求。此漏洞已遭活躍利用並被收錄於 CISA KEV 清單中。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-96654",
+        "source": "CISA_KEV",
+        "publish_date": "2026-10-20",
+        "title": "[CISA KEV] Plex Media Server - Plex Media Server Improper Neutralization of Encoded URI Schemes in a Web Page Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-96654"
+        ],
+        "raw_content": "CVE: CVE-2026-96654\n廠商: Plex\n產品: Media Server\n漏洞名稱: Plex Media Server Improper Neutralization of Encoded URI Schemes in a Web Page Vulnerability\n說明: Plex Media Server contains an improper neutralization of encoded URI schemes in a web page vulnerability that could allow an attacker to call other plugins' functions and supply their own parameters. This vulnerability can be chained with CVE-2026-96652, CVE-2026-96655, and CVE-2026-96656.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-10-23\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://forums.plex.tv/t/important-security-update-for-plex-media-server-v1-43-2-and-earlier/942319 ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-96654",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-96654"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Plex Media Server 存在網頁編碼 URI 方案處理不當漏洞（CVE-2026-96654），攻擊者可藉此呼叫其他外掛功能並代入參數。該漏洞已被 CISA 列入已知遭利用漏洞清單（KEV），顯示已有活躍攻擊。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-96652",
+        "source": "CISA_KEV",
+        "publish_date": "2026-10-20",
+        "title": "[CISA KEV] Plex Media Server - Plex Media Server Server-Side Request Forgery (SSRF) Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-96652"
+        ],
+        "raw_content": "CVE: CVE-2026-96652\n廠商: Plex\n產品: Media Server\n漏洞名稱: Plex Media Server Server-Side Request Forgery (SSRF) Vulnerability\n說明: Plex Media Server contains a server-side request forgery (SSRF) vulnerability which could allow an attacker using any X-Plex-Token value to include a full URL in the 'protocol' parameter and force the Plex server to POST to the attacker's chosen destination. This vulnerability can be chained with CVE-2026-96654, CVE-2026-96655, and CVE-2026-96656. \nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-11-03\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://forums.plex.tv/t/important-security-update-for-plex-media-server-v1-43-2-and-earlier/942319 ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-96652",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-96652"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Plex Media Server 存在伺服器端請求偽造（SSRF）漏洞（CVE-2026-96652）。未授權攻擊者可於 protocol 參數中帶入任意 URL 並透過 X-Plex-Token 特徵，強制伺服器發送 POST 請求至指定目標。該漏洞已被 CISA 列入已知被利用漏洞清單（KEV）。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-110936",
+        "source": "CISA_KEV",
+        "publish_date": "2026-10-20",
+        "title": "[CISA KEV] Siemens Software Center - Siemens Software Center Uncontrolled Search Path Element Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-110936"
+        ],
+        "raw_content": "CVE: CVE-2026-110936\n廠商: Siemens\n產品: Software Center\n漏洞名稱: Siemens Software Center Uncontrolled Search Path Element Vulnerability\n說明: Siemens Software Center contains an uncontrolled search path element vulnerability that could allow an authenticated local attacker to place a specially crafted DLL in a directory that the application searches, leading to arbitrary code execution with the privileges of the affected application.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-11-03\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://productcert.siemens.com/productcert/html/ssa-580366.html ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-110936",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-110936"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Siemens Software Center 存在搜尋路徑未受控漏洞（CVE-2026-110936），已獲 CISA 列入已知遭利用漏洞清單。經身份驗證的本地攻擊者可透過放置特製 DLL 檔案，以受影響應用程式之權限執行任意程式碼。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
