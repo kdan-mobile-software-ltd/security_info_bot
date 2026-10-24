@@ -1,0 +1,67 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-10-24T01:00:48.979737",
+  "count": 2,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2026-114625",
+        "source": "CISA_KEV",
+        "publish_date": "2026-10-23",
+        "title": "[CISA KEV] Arista VeloCloud Orchestrator - Arista VeloCloud Orchestrator SQL Injection Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-114625"
+        ],
+        "raw_content": "CVE: CVE-2026-114625\n廠商: Arista\n產品: VeloCloud Orchestrator\n漏洞名稱: Arista VeloCloud Orchestrator SQL Injection Vulnerability\n說明: Arista VeloCloud Orchestrator on-prem contains a SQL injection vulnerability that may allow a remote attacker to access privileged internal functionality and impact the VCO host. Successful exploitation may compromise the confidentiality, integrity, and availability of the orchestrator and data managed by the orchestrator.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-10-26\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://www.arista.com/en/support/advisories-notices/security-advisory/24838-security-advisory-0199 ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-114625",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-114625"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "CISA KEV 公布 Arista VeloCloud Orchestrator 地端版存在 SQL 注入漏洞（CVE-2026-114625），遠端攻擊者可藉此存取特權內部功能並影響主機機密性與完整性。經核對公司資產清冊，未包含此產品或相關技術元件。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-110447",
+        "source": "CISA_KEV",
+        "publish_date": "2026-10-23",
+        "title": "[CISA KEV] Collabora Collabora Online – Built-in CODE Server - Collabora Online – Built-in CODE Server OS Command Injection Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-110447"
+        ],
+        "raw_content": "CVE: CVE-2026-110447\n廠商: Collabora\n產品: Collabora Online – Built-in CODE Server\n漏洞名稱: Collabora Online – Built-in CODE Server OS Command Injection Vulnerability\n說明: Collabora Collabora Online – Built-in CODE Server when used within the NextCloud platform contains an OS command injection vulnerability that allows for remote code execution when the CODE server isn't running.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-10-26\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://help.nextcloud.com/t/to-collabora-built-in-user-update-asap/250516 ; https://github.com/CollaboraOnline/online/security/advisories/GHSA-g3vx-3m76-fghh ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-110447",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-110447"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Collabora Online 内建的 CODE Server 於 Nextcloud 平台上存在 OS 命令注入漏洞（CVE-2026-110447），攻擊者可藉此實施遠端程式碼執行。該漏洞已被 CISA 列入已知遭利用漏洞清單（KEV）。經比對公司資產清冊，內部並未部署或使用 Collabora 或 Nextcloud 相關系統。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
