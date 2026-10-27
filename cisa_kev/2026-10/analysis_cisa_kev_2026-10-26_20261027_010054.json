@@ -1,0 +1,73 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-10-27T01:00:54.080922",
+  "count": 2,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2026-109618",
+        "source": "CISA_KEV",
+        "publish_date": "2026-10-26",
+        "title": "[CISA KEV] PHP Group PHP - PHP Memory Corruption Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-109618"
+        ],
+        "raw_content": "CVE: CVE-2026-109618\n廠商: PHP Group\n產品: PHP\n漏洞名稱: PHP Memory Corruption Vulnerability\n說明: PHP contains an out-of-memory corruption vulnerability that allows for unauthenticated remote code execution.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-10-29\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "This vulnerability affects an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://www.php.net/ ; https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ;  https://nvd.nist.gov/vuln/detail/CVE-2026-109618",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-109618"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "Critical",
+        "summary": "CISA KEV 已將 CVE-2026-109618 PHP 記憶體損壞漏洞列為已知遭活躍利用漏洞。攻擊者可利用此漏洞在未經身份驗證的情況下進行遠端程式碼執行（RCE），造成嚴重的系統受控風險。",
+        "recommendation": "1. 盤點公司內部與雲端環境中依賴 PHP 運作之服務（如 Wordpress、Sendy 等）。 2. 依照廠商指示儘速將 PHP 升級至最新的安全修補版本。 3. 在修補完成前，應透過 AWS WAF 設定防護規則並加強網路存取控制。",
+        "company_relevance": "M",
+        "affected_assets": [
+          "Wordpress",
+          "Sendy"
+        ],
+        "responsible_unit": "RR70"
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-109619",
+        "source": "CISA_KEV",
+        "publish_date": "2026-10-26",
+        "title": "[CISA KEV] PHP Group PHP - PHP Stale Internal Request-State Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-109619"
+        ],
+        "raw_content": "CVE: CVE-2026-109619\n廠商: PHP Group\n產品: PHP\n漏洞名稱: PHP Stale Internal Request-State Vulnerability\n說明: PHP contains a stale internal request-state vulnerability that allows for unauthenticated remote code execution.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-10-29\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "This vulnerability affects an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://www.php.net/ ; https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ;  https://nvd.nist.gov/vuln/detail/CVE-2026-109619",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-109619"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "Critical",
+        "summary": "PHP 存在未授權遠端程式碼執行（RCE）漏洞（CVE-2026-109619），已被 CISA 列入已知遭利用漏洞清單（KEV），證實已有活躍攻擊行為。公司資產清冊中雖無直接標註 PHP，但 Wordpress 與 Sendy 等系統均相依於 PHP 運行環境，若未及時修補將面臨伺服器遭遠端控管之高風險。",
+        "recommendation": "1. 立即盤點執行 Wordpress 及 Sendy 等服務之伺服器與容器所使用的 PHP 版本。 2. 依照 PHP 官方修補指南，儘速將 PHP 升級至安全版本。 3. 在完成修補前，於 AWS WAF 設定相關防護規則並限制非必要之網路存取。",
+        "company_relevance": "M",
+        "affected_assets": [
+          "Wordpress",
+          "Sendy"
+        ],
+        "responsible_unit": "RR70"
+      }
+    }
+  ]
+}
