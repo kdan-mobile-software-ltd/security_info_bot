@@ -1,0 +1,69 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-10-30T01:00:49.278905",
+  "count": 2,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2026-97229",
+        "source": "CISA_KEV",
+        "publish_date": "2026-10-29",
+        "title": "[CISA KEV] GitLab Community Edition and Enterprise Edition - GitLab Community Edition and Enterprise Edition Integer Overflow or Wraparound Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-97229"
+        ],
+        "raw_content": "CVE: CVE-2026-97229\n廠商: GitLab\n產品: Community Edition and Enterprise Edition\n漏洞名稱: GitLab Community Edition and Enterprise Edition Integer Overflow or Wraparound Vulnerability\n說明: GitLab Community Edition and Enterprise Edition contain a integer overflow or wraparound vulnerability that could allow an unauthenticated user to execute arbitrary code on the GitLab server via a specially crafted regular expression in a CI/CD configuration, due to insufficient regular expression validation.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-11-01\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "Other products can potentially be affected by the same underlying Ruby/Onigmo Integer Overflow issue in CI/CD Regular Expression Compiler. For more information please see: https://www.ruby-lang.org/en/news/2026/10/23/regexp-fixes-for-gitlab-cves ; https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-2-released/ ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-97229",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-97229"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "Critical",
+        "summary": "GitLab 社群版與企業版存在整數溢位漏洞（CVE-2026-97229），允許未授權攻擊者經由 CI/CD 設定檔中的特製正則表達式於伺服器上執行任意程式碼 (RCE)。此漏洞已被 CISA KEV 列為遭活躍利用之漏洞，且公司資產清冊中包含 KDAN Gitlab，面臨極高安全風險。",
+        "recommendation": "請 RR70 部門立即將 KDAN Gitlab 升級至官方釋出之安全修補版本（如 19.4.2 或更新版本）。在完成升級前，檢視並限制 CI/CD 配置與未授權專案之存取權限，並遵循 CISA BOD 26-04 規範進行風險處置與鑑識排查。",
+        "company_relevance": "H",
+        "affected_assets": [
+          "KDAN Gitlab"
+        ],
+        "responsible_unit": "RR70"
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-76418",
+        "source": "CISA_KEV",
+        "publish_date": "2026-10-29",
+        "title": "[CISA KEV] Cisco Secure Firewall ASA Software and Cisco Secure FTD Software - Cisco Secure Firewall ASA Software and Cisco Secure FTD Software Unchecked Return Value to NULL Pointer Dereference Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-76418"
+        ],
+        "raw_content": "CVE: CVE-2026-76418\n廠商: Cisco\n產品: Secure Firewall ASA Software and Cisco Secure FTD Software\n漏洞名稱: Cisco Secure Firewall ASA Software and Cisco Secure FTD Software Unchecked Return Value to NULL Pointer Dereference Vulnerability\n說明: Cisco Secure Firewall ASA Software and Cisco Secure FTD Software contains an unchecked return value to NULL pointer dereference vulnerability that could allow an unauthenticated, remote attacker to cause the device to reload unexpectedly, resulting in a denial of service (DoS) condition.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-11-01\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-asaftd-tunnel-dos-s6mgkb75 ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-76418",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-76418"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Cisco Secure Firewall ASA 與 Cisco Secure FTD 軟體存在未檢查傳回值導致之空指標解引用漏洞（CVE-2026-76418），未經身分驗證之遠端攻擊者可藉此造成設備無預警重啟並引發阻斷服務（DoS）。此漏洞已被 CISA 列入已知遭利用漏洞清單（KEV）。經比對資產清冊，公司內部環境並未使用或部署受影響之 Cisco 防火牆系統。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
