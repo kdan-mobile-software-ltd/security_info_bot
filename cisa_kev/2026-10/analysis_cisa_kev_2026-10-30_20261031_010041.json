@@ -1,0 +1,67 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-10-31T01:00:41.715094",
+  "count": 2,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2026-118527",
+        "source": "CISA_KEV",
+        "publish_date": "2026-10-30",
+        "title": "[CISA KEV] Ivanti Connect Secure - Ivanti Connect Secure Generation of Predictable Numbers or Identifiers Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-118527"
+        ],
+        "raw_content": "CVE: CVE-2026-118527\n廠商: Ivanti\n產品: Connect Secure\n漏洞名稱: Ivanti Connect Secure Generation of Predictable Numbers or Identifiers Vulnerability\n說明: Ivanti Connect Secure contains a generation of predictable numbers or identifiers vulnerability that allows a remote authenticated attacker to upload files with attacker-controlled content to a known location on disk. This vulnerability can be chained with CVE-2026-104935 and CVE-2026-111357.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-11-13\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Connect-Secure-CVE-2026-104935?language=en_US ; ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-118527",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-118527"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Ivanti Connect Secure 存在預測性標識符生成漏洞（CVE-2026-118527），已通過身份驗證的遠端攻擊者可利用此漏洞將任意內容檔案上傳至磁碟的已知位置。該漏洞已納入 CISA 已知被利用漏洞清冊（KEV），並可與其他漏洞進行組合攻擊。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-111357",
+        "source": "CISA_KEV",
+        "publish_date": "2026-10-30",
+        "title": "[CISA KEV] Ivanti Connect Secure - Ivanti Connect Secure Missing Authentication for Critical Function Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-111357"
+        ],
+        "raw_content": "CVE: CVE-2026-111357\n廠商: Ivanti\n產品: Connect Secure\n漏洞名稱: Ivanti Connect Secure Missing Authentication for Critical Function Vulnerability\n說明: Ivanti Connect Secure contains a missing authentication for critical function vulnerability that could allow a local authenticated attacker to escalate their privileges. This vulnerability can be chained with CVE-2026-104935 and CVE-2026-118527.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-11-02\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://hub.ivanti.com/s/article/Security-Advisory-Ivanti-Connect-Secure-CVE-2026-104935?language=en_US ; https://www.cisa.gov/news-events/alerts/2026/10/13/cisa-urges-patching-newly-exploited-vulnerability-ivanti-connect-secure ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-111357",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-111357"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "CISA 已將 CVE-2026-111357 加入已知受利用漏洞清單（KEV），此漏洞影響 Ivanti Connect Secure 產品。本地已驗證的攻擊者可利用該 critical 級未授權驗證缺陷進行權限提升，並可與其他漏洞串接利用。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
