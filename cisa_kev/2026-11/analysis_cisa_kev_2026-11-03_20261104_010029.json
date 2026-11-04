@@ -1,0 +1,39 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-11-04T01:00:29.961261",
+  "count": 1,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2026-119977",
+        "source": "CISA_KEV",
+        "publish_date": "2026-11-03",
+        "title": "[CISA KEV] WordPress WordPress Core - WordPress WordPress Core Time-of-check Time-of-use (TOCTOU) Race Condition Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-119977"
+        ],
+        "raw_content": "CVE: CVE-2026-119977\n廠商: WordPress\n產品: WordPress Core\n漏洞名稱: WordPress WordPress Core Time-of-check Time-of-use (TOCTOU) Race Condition Vulnerability\n說明: WordPress WordPress Core contains a time-of-check time-of-use (TOCTOU) race condition vulnerability that could allow unauthenticated attackers to execute code on the server during the upgrade window. This is due to predictable, web-accessible staging paths used during full-package core upgrades.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-11-06\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://wordpress.org/news/2026/10/wordpress-7-1-4 ; https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-core/wordpress-core-470-713-unauthenticated-upgrade-window-staged-installer-remote-code-execution ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-119977",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-119977"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "Critical",
+        "summary": "CVE-2026-119977 為 WordPress Core 的 TOCTOU 競態條件漏洞，已被 CISA KEV 列為已遭在野利用的活躍攻擊。未經身份驗證的攻擊者可在系統升級期間利用可預測的暫存路徑執行任意程式碼 (RCE)。由於公司有使用 WordPress 作為 Blog 平台，此漏洞對公司資產構成重大威脅。",
+        "recommendation": "請相關營運部門立即將 WordPress 核心系統升級至最新修補版本（例如 7.1.4 以上）。在無法即時完成升級前，應於更新窗口期間加強存取控制與監控，並依照 CISA BOD 26-04 指引落實威脅排查與防護措施。",
+        "company_relevance": "H",
+        "affected_assets": [
+          "Wordpress"
+        ],
+        "responsible_unit": "WF20"
+      }
+    }
+  ]
+}
