@@ -1,0 +1,37 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-11-07T01:00:31.317388",
+  "count": 1,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2026-19868",
+        "source": "CISA_KEV",
+        "publish_date": "2026-11-06",
+        "title": "[CISA KEV] SonicWall SonicOS SSLVPN - SonicWall SonicOS SSLVPN Use of Single-factor Authentication Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-19868"
+        ],
+        "raw_content": "CVE: CVE-2026-19868\n廠商: SonicWall\n產品: SonicOS SSLVPN\n漏洞名稱: SonicWall SonicOS SSLVPN Use of Single-factor Authentication Vulnerability\n說明: SonicWall SonicOS SSLVPN contains a use of single-factor authentication vulnerability that may allow a user with valid credentials for an alternate authentication method to bypass SAML authentication controls. Successful exploitation may also bypass SAML-enforced multi-factor authentication (MFA).\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-11-20\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2026-0014 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-19868",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-19868"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "SonicWall SonicOS SSLVPN 存在單因子身份驗證漏洞（CVE-2026-19868），可能允許攻擊者繞過 SAML 驗證控制與多因子驗證（MFA）。該漏洞已被 CISA 列入已遭利用漏洞清單（KEV）。經比對公司資產清冊，內部並未部署 SonicWall 相關產品或 VPN 設備。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
