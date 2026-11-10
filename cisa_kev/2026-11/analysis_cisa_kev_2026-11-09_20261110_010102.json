@@ -1,0 +1,130 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-11-10T01:01:02.888350",
+  "count": 4,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2026-102895",
+        "source": "CISA_KEV",
+        "publish_date": "2026-11-09",
+        "title": "[CISA KEV] GPUStack GPUStack - GPUStack Improper Authentication Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-102895"
+        ],
+        "raw_content": "CVE: CVE-2026-102895\n廠商: GPUStack\n產品: GPUStack\n漏洞名稱: GPUStack Improper Authentication Vulnerability\n說明: GPUStack contains an improper authentication vulnerability which could allow unauthenticated administrative access, including user and model changes, persistent administrator API-key creation, disclosure of worker and cloud-provider secrets, and code execution through POST /v2/inference-backends/from-yaml.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-11-12\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "This vulnerability affects an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: ; https://github.com/gpustack/gpustack/security/advisories/GHSA-gj9m-f8ph-pmhr ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-102895",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-102895"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "GPUStack 存在不當身份驗證漏洞（CVE-2026-102895），攻擊者可存取管理員權限並執行任意程式碼。該漏洞已被 CISA 納入已知被利用漏洞清單（KEV）中。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-123158",
+        "source": "CISA_KEV",
+        "publish_date": "2026-11-09",
+        "title": "[CISA KEV] OpenBSD OpenSSH - OpenBSD OpenSSH Unexpected Status Code or Return Value Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-123158"
+        ],
+        "raw_content": "CVE: CVE-2026-123158\n廠商: OpenBSD\n產品: OpenSSH\n漏洞名稱: OpenBSD OpenSSH Unexpected Status Code or Return Value Vulnerability\n說明: OpenBSD OpenSSH on Linux contains an unexpected status code or return value vulnerability that could allow for authentication bypass.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-11-12\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "This vulnerability affects an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://www.openssh.org/releasenotes.html ; https://alpinelinux.org/posts/2026-11-05-openssh-password-authentication-bypass/ ; https://github.com/openssh/openssh-portable/commit/4353fdc43ef646c43a8dda7025cc1a898caf1482 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-123158",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-123158"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "Critical",
+        "summary": "CISA KEV 釋出 OpenSSH on Linux 身份驗證繞過漏洞（CVE-2026-123158）之資安通報，攻擊者可利用此未預期狀態碼漏洞繞過驗證機制。該漏洞已有野外活躍攻擊紀錄，將直接威脅公司內部與雲端 Linux 伺服器之控制安全。",
+        "recommendation": "請系統管理團隊立即檢視並更新所有 Linux 伺服器（包含地端 Ubuntu Server 及 AWS EC2 實例）之 OpenSSH 套件至官方安全修補版本。若無法即時修補，請透過防火牆或 Security Group 嚴格限制 SSH 存取來源 IP，並持續監控異常登入行為。",
+        "company_relevance": "H",
+        "affected_assets": [
+          "資訊軟體-伺服器軟體-Linux ubuntu",
+          "AWS EC2"
+        ],
+        "responsible_unit": "RR40"
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-116779",
+        "source": "CISA_KEV",
+        "publish_date": "2026-11-09",
+        "title": "[CISA KEV] SignalWire FreeSwitch - SignalWire FreeSwitch Code Injection Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-116779"
+        ],
+        "raw_content": "CVE: CVE-2026-116779\n廠商: SignalWire\n產品: FreeSwitch\n漏洞名稱: SignalWire FreeSwitch Code Injection Vulnerability\n說明: SignalWire FreeSwitch contains a code injection vulnerability that permits configuration and credential disclosure, arbitrary call control, and command execution.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-11-12\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "This vulnerability affects an open-source component, third-party library, protocol, or proprietary implementation that could be used by different products. For more information, please see: https://github.com/signalwire/freeswitch/security/advisories/GHSA-mg63-h38w-8p9p ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-116779",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-116779"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "SignalWire FreeSwitch 被發現存在程式碼注入漏洞（CVE-2026-116779），攻擊者可藉此洩漏系統組態與憑證，並執行任意命令或操控通話。CISA 已將此漏洞列入已知被利用漏洞清單（KEV），顯示已有活躍攻擊風險。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-123218",
+        "source": "CISA_KEV",
+        "publish_date": "2026-11-09",
+        "title": "[CISA KEV] IBM Aspera Faspex - IBM Aspera Faspex Incorrect Authorization Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-123218"
+        ],
+        "raw_content": "CVE: CVE-2026-123218\n廠商: IBM\n產品: Aspera Faspex\n漏洞名稱: IBM Aspera Faspex Incorrect Authorization Vulnerability\n說明: IBM Aspera Faspex contains an incorrect authorization vulnerability that could allow an authenticated user to craft a specific message to bypass authorization, causing privilege escalations.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-11-12\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://www.ibm.com/support/pages/node/7295921 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-123218",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-123218"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "CISA KEV 公告 IBM Aspera Faspex 存在授權不當漏洞（CVE-2026-123218）。已驗證身份的攻擊者可透過發送特定訊息繞過權限控制，進而達成權限提升攻擊。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
