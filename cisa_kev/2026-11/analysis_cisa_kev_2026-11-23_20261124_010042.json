@@ -1,0 +1,67 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-11-24T01:00:42.673542",
+  "count": 2,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2026-133968",
+        "source": "CISA_KEV",
+        "publish_date": "2026-11-23",
+        "title": "[CISA KEV] Project MONAI MONAI Label - Project MONAI MONAI Label Path Traversal Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-133968"
+        ],
+        "raw_content": "CVE: CVE-2026-133968\n廠商: Project MONAI\n產品: MONAI Label\n漏洞名稱: Project MONAI MONAI Label Path Traversal Vulnerability\n說明: Project MONAI MONAI Label contains a path traversal vulnerability that allows an unauthenticated remote attacker to write arbitrary files outside the intended datastore directory, potentially resulting in remote code execution.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-11-26\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://github.com/Project-MONAI/MONAILabel/security/advisories/GHSA-qc22-rmgc-vg94 ; https://github.com/Project-MONAI/MONAILabel/pull/1915 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-133968",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-133968"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "CISA KEV 公告 Project MONAI MONAI Label 存在路徑穿越漏洞（CVE-2026-133968）。未經身份驗證的遠端攻擊者可寫入任意檔案，可能導致遠端程式碼執行（RCE）。經資產清冊比對，公司未部署此軟體產品。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-134624",
+        "source": "CISA_KEV",
+        "publish_date": "2026-11-23",
+        "title": "[CISA KEV] N-able MailAssure - N-able MailAssure (SpamExperts) Server-Side Request Forgery (SSRF) Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-134624"
+        ],
+        "raw_content": "CVE: CVE-2026-134624\n廠商: N-able\n產品: MailAssure\n漏洞名稱: N-able MailAssure (SpamExperts) Server-Side Request Forgery (SSRF) Vulnerability\n說明: N-able MailAssure (SpamExperts) contains a server-side request forgery vulnerability in the LDAP synchronization connection check that allows an authenticated API user to connect to arbitrary internal hosts and ports, determine which are reachable, and send crafted data to internal services.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-11-26\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://me.n-able.com/s/security-advisory/aArVy0000002mrlKAA ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-134624",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-134624"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "N-able MailAssure (SpamExperts) 在 LDAP 同步連線檢查機制中存在伺服器端請求偽造 (SSRF) 漏洞 (CVE-2026-134624)。通過身份驗證的 API 使用者可利用此漏洞連線至任意內部主機與連接埠，並發送惡意資料至內部服務。該漏洞已被 CISA 列入已遭利用漏洞清單 (KEV)。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
