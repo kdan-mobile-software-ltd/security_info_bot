@@ -1,0 +1,97 @@
+{
+  "source": "cisa_kev",
+  "analyzed_at": "2026-11-28T01:00:51.083145",
+  "count": 3,
+  "items": [
+    {
+      "intel": {
+        "intel_id": "CVE-2026-120705",
+        "source": "CISA_KEV",
+        "publish_date": "2026-11-27",
+        "title": "[CISA KEV] OSGeo GeoServer - OSGeo GeoServer XML Injection Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-120705"
+        ],
+        "raw_content": "CVE: CVE-2026-120705\n廠商: OSGeo\n產品: GeoServer\n漏洞名稱: OSGeo GeoServer XML Injection Vulnerability\n說明: OsGeo GeoServer contains an XML injection vulnerability that allows an unauthenticated remote attacker to cause the server to read local text files accessible to the GeoServer process or fetch attacker-specified HTTP or HTTPS URLs via a crafted ID parameter in the WFS 2.0 GetFeatureById stored query. This vulnerability can be chained with CVE-2026-129244, CVE-2026-129243, CVE-2026-129245, and CVE-2026-129242 to achieve unauthenticated remote code execution on an affected GeoServer instance.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-11-30\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://geoserver.org/vulnerability/2026/11/23/cve-update.html ; https://github.com/geoserver/geoserver/security/advisories/GHSA-39mw-5chv-jh47 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-120705",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-120705"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "OSGeo GeoServer 存在 XML 注入漏洞（CVE-2026-120705），未授權攻擊者可存取伺服器檔案或發起 HTTP 請求，並可鏈結其他漏洞達成遠端執行程式碼（RCE）。該漏洞已登錄於 CISA KEV 中。經比對資產清冊，公司現有軟體與雲端環境皆未採用 GeoServer 資產。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-129243",
+        "source": "CISA_KEV",
+        "publish_date": "2026-11-27",
+        "title": "[CISA KEV] OSGeo GeoServer - OSGeo GeoServer Incorrect Authorization Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-129243"
+        ],
+        "raw_content": "CVE: CVE-2026-129243\n廠商: OSGeo\n產品: GeoServer\n漏洞名稱: OSGeo GeoServer Incorrect Authorization Vulnerability\n說明: GeoServer contains an incorrect authorization vulnerability that allows an unauthenticated remote attacker to bypass service-level role checks and invoke operations protected solely by those checks via a request with a prefixed service parameter. This vulnerability can be chained with CVE-2026-129244, CVE-2026-120705, CVE-2026-129245, and CVE-2026-129242 to achieve unauthenticated remote code execution on an affected GeoServer instance.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-11-30\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://geoserver.org/vulnerability/2026/11/23/cve-update.html ; https://github.com/geoserver/geoserver/security/advisories/GHSA-rv5g-g2r9-58rj ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-129243",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-129243"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "OSGeo GeoServer 存在權限控管繞過漏洞（CVE-2026-129243），未經身分驗證的遠端攻擊者可透過特定服務參數繞過角色檢查並執行受保護的操作。該漏洞可與其他相關漏洞串聯，從而實現未授權的遠端程式碼執行（RCE），目前已收錄於 CISA KEV 清單中。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    },
+    {
+      "intel": {
+        "intel_id": "CVE-2026-136716",
+        "source": "CISA_KEV",
+        "publish_date": "2026-11-27",
+        "title": "[CISA KEV] Drupal Core - Drupal Core Improper Check for Unusual or Exceptional Conditions Vulnerability",
+        "intel_type": "101-漏洞訊息",
+        "cve_ids": [
+          "CVE-2026-136716"
+        ],
+        "raw_content": "CVE: CVE-2026-136716\n廠商: Drupal\n產品: Core\n漏洞名稱: Drupal Core Improper Check for Unusual or Exceptional Conditions Vulnerability\n說明: Drupal Core contains an improper check for unusual or exceptional conditions vulnerability that allows an unauthenticated remote attacker to take over a site via the exposed Drupal installer when the site is in one of the affected unusual or incomplete installation states.\nCISA 要求措施: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n修補截止日: 2026-11-30\n已知勒索軟體利用: Unknown\n",
+        "reference_urls": [
+          "https://www.drupal.org/sa-core-2026-019 ; BOD 26-04: https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk ; Forensics Triage Requirements: https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk ; https://nvd.nist.gov/vuln/detail/CVE-2026-136716",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-136716"
+        ],
+        "attachment_urls": [],
+        "ioc_ips": [],
+        "ioc_hashes": [],
+        "ioc_domains": [],
+        "impact_level": ""
+      },
+      "analysis": {
+        "risk_level": "無",
+        "summary": "Drupal Core 存在安裝程序邏輯檢查不當漏洞（CVE-2026-136716），允許未授權遠端攻擊者在特定安裝狀態下接管網站系統，並已列入 CISA KEV 漏洞清單。經比對公司資產清冊，內部及產品線均未採用 Drupal 相關系統與軟體，因此無相關安全性風險。",
+        "recommendation": "公司資產清冊未包含受影響資產，無需處置。",
+        "company_relevance": "無",
+        "affected_assets": [],
+        "responsible_unit": ""
+      }
+    }
+  ]
+}
